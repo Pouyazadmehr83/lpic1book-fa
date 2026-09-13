@@ -202,7 +202,7 @@ def build_site():
         title = meta.get('title', fname.replace('.md', ''))
         
         weight = ''
-        w_match = re.search(r'\*(?:Weight|وزن)\s*:\s*(\d+)\*', body, re.IGNORECASE)
+        w_match = re.search(r'[\*_](?:Weight|وزن)\s*:\s*(\d+)[\*_]', body, re.IGNORECASE)
         if w_match:
             weight = f'وزن: {w_match.group(1)}'
             
