@@ -4,15 +4,15 @@
 
 **ترجمه، راست‌چین‌سازی و بازطراحی مدرن بر اساس کتاب [linux1st.com](https://linux1st.com/) اثر جادی**
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?style=for-the-badge&logo=github)](https://pouyazadmehr83.github.io/lpic1-fa/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-brightgreen?style=for-the-badge&logo=github)](https://pouyazadmehr83.github.io/lpic1book-fa/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/Pouyazadmehr83/lpic1-fa/pulls)
-[![Issues](https://img.shields.io/github/issues/Pouyazadmehr83/lpic1-fa?style=for-the-badge&color=orange)](https://github.com/Pouyazadmehr83/lpic1-fa/issues)
-[![Stars](https://img.shields.io/github/stars/Pouyazadmehr83/lpic1-fa?style=for-the-badge&color=yellow)](https://github.com/Pouyazadmehr83/lpic1-fa/stargazers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/Pouyazadmehr83/lpic1book-fa/pulls)
+[![Issues](https://img.shields.io/github/issues/Pouyazadmehr83/lpic1book-fa?style=for-the-badge&color=orange)](https://github.com/Pouyazadmehr83/lpic1book-fa/issues)
+[![Stars](https://img.shields.io/github/stars/Pouyazadmehr83/lpic1book-fa?style=for-the-badge&color=yellow)](https://github.com/Pouyazadmehr83/lpic1book-fa/stargazers)
 
 <br/>
 
-### 🌐 [برای مطالعه آنلاین و رایگان کتاب اینجا کلیک کنید](https://pouyazadmehr83.github.io/lpic1-fa/)
+### 🌐 [برای مطالعه آنلاین و رایگان کتاب اینجا کلیک کنید](https://pouyazadmehr83.github.io/lpic1book-fa/)
 
 </div>
 
@@ -67,7 +67,7 @@
 4. **پیشنهاد برای بهبود رابط کاربری یا قابلیت‌های جدید**
 
 بسیار خوشحال می‌شویم که مشارکت کنید:
-- 📌 **ثبت ایشو (Issue):** می‌توانید در بخش **[GitHub Issues](https://github.com/Pouyazadmehr83/lpic1-fa/issues)** مورد را ثبت کنید تا با هم بررسی و رفع کنیم.
+- 📌 **ثبت ایشو (Issue):** می‌توانید در بخش **[GitHub Issues](https://github.com/Pouyazadmehr83/lpic1book-fa/issues)** مورد را ثبت کنید تا با هم بررسی و رفع کنیم.
 - 🔀 **ارسال پول‌ریکوئست (PR):** می‌توانید مستقیماً فایل مورد نظر را در پوشه `persian-book/content` ویرایش کرده و یک Pull Request بفرستید. مشارکت شما با نام خودتان در گیت‌هاب ثبت خواهد شد!
 
 ---
@@ -78,8 +78,8 @@
 
 ### ۱. کلون کردن مخزن
 ```bash
-git clone https://github.com/Pouyazadmehr83/lpic1-fa.git
-cd lpic1-fa
+git clone https://github.com/Pouyazadmehr83/lpic1book-fa.git
+cd lpic1book-fa
 ```
 
 ### ۲. نصب پیش‌نیازها
