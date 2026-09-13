@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>109.4 DNS سمت سرویس گیرنده را پیکربندی کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item active"><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۹</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 2</em></p>
+<p>کاندیداها باید بتوانند DNS را روی یک میزبان مشتری پیکربندی کنند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>سرورهای DNS راه دور را پرس و جو کنید.</li>
+<li>وضوح نام محلی را پیکربندی کنید و از سرورهای DNS راه دور استفاده کنید.</li>
+<li>ترتیب انجام تفکیک نام را تغییر دهید.</li>
+<li>خطاهای اشکال زدایی مربوط به وضوح نام</li>
+<li>آگاهی از systemd-resolved</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/hosts</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/resolv.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/nsswitch.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">host</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">dig</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">getent</code></bdi></li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/wUDhmSpr3lg?si=O1LCyXq_L4LmLn39" title="YouTube video player" width="560"></iframe></div>
+<h3 id="dns">DNS</h3>
+<p>ما قبلاً چیزهای زیادی در مورد سیستم نام دامنه می دانیم. سرویسی که نام دامنه (مثلا yahoo.com) را به آدرس های IP (مثلا 206.190.36.45) ترجمه می کند. سرور DNS زمانی استفاده می شود که سروری را با استفاده از نام دامنه آن پینگ می کنید. شما فایل های پیکربندی DNS را مشاهده کرده اید و باید بدانید که سرور DNS واقعی که توسط رایانه استفاده می شود را می توان از <bdi><code class="inline-code" dir="ltr">/etc/resolv.conf</code></bdi> (موقتا) بررسی کرد / تغییر داد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ cat /etc/resolv.conf
+# Generated by NetworkManager
+nameserver 192.168.1.1
+nameserver 4.2.2.4
+
+$ ping x.org
+PING x.org (131.252.210.176) 56(84) bytes of data.
+64 bytes from annarchy.freedesktop.org (131.252.210.176): icmp_seq=1 ttl=45 time=338 ms
+64 bytes from  annarchy.freedesktop.org (131.252.210.176): icmp_seq=2 ttl=45 time=333 ms
+^C
+--- x.org ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 333.088/335.612/338.136/2.524 ms
+</code></pre></div>
+<h3 id="host"><bdi><code class="inline-code" dir="ltr">host</code></bdi></h3>
+<p>این یک برنامه ساده برای جستجوی پرس و جوهای DNS است. این یک نمونه بدون آرگومان است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ host kernel.org
+kernel.org has address 139.178.84.217
+kernel.org has IPv6 address 2604:1380:4641:c500::1
+kernel.org mail is handled by 10 smtp1.kernel.org.
+kernel.org mail is handled by 10 smtp2.kernel.org.
+kernel.org mail is handled by 10 smtp3.kernel.org.
+</code></pre></div>
+<p>همانطور که می بینید، دستور <bdi><code class="inline-code" dir="ltr">host</code></bdi> تمام رکوردهایی را که می تواند برای یک دامنه خاص پیدا کند، برمی گرداند. در این مورد IPv4 (A)، IPv6 (AAAA) و دو رکورد Mail (MX) را برمی گرداند.</p>
+<blockquote class="callout-box">
+<p>اگر می‌خواهید فقط یک رکورد خاص را بررسی کنید، می‌توانید آن را از طریق <bdi><code class="inline-code" dir="ltr">-t</code></bdi> سوئیچ ارائه کنید. بنابراین <bdi><code class="inline-code" dir="ltr">-t A</code></bdi> فقط سوابق IPv4 را برمی گرداند.</p>
+</blockquote>
+<h3 id="_3">حفاری</h3>
+<p>ابزار <bdi><code class="inline-code" dir="ltr">dig</code></bdi> به طور خاص برای درخواست سرورهای DNS ساخته شده است. اگر می خواهید بدانید که x.org به کجا اشاره می کند، می توانید انجام دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ dig x.org
+
+; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-RedHat-9.10.3-12.P4.fc23 &lt;&lt;&gt;&gt; x.org
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 7483
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;x.org.                IN    A
+
+;; ANSWER SECTION:
+x.org.            1625    IN    A    131.252.210.176
+
+;; Query time: 35 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1)
+;; WHEN: Sun Apr 17 12:45:02 IRDT 2016
+;; MSG SIZE  rcvd: 50
+</code></pre></div>
+<p>همانطور که می بینید، <bdi><code class="inline-code" dir="ltr">dig</code></bdi> ** ip lookup<strong> برای <bdi><code class="inline-code" dir="ltr">x.org</code></bdi> انجام داد و به من گفت که IP آن 131.252.210.176 است. <bdi><code class="inline-code" dir="ltr">1625</code></bdi> </strong>TTL** یا <em>Time To Live</em> نامیده می شود و نشان می دهد که چند ثانیه این پاسخ در حافظه کش (Cache) معتبر در نظر گرفته می شود. این دستور همچنین به ما می گوید که از کدام سرور برای پرس و جو کردن پاسخ (4 خط آخر) استفاده می شود و چه زمانی و چقدر طول کشید.</p>
+<p>همچنین راهی برای گفتن دستور <bdi><code class="inline-code" dir="ltr">dig</code></bdi> وجود دارد که باید از چه سروری به عنوان DNS vi <bdi><code class="inline-code" dir="ltr">@&lt;DNS-SERVER&gt;</code></bdi> استفاده کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ dig @8.8.8.8 google.com
+
+; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-RedHat-9.10.3-12.P4.fc23 &lt;&lt;&gt;&gt; @8.8.8.8 google.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 24313
+;; flags: qr rd ra; QUERY: 1, ANSWER: 11, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;google.com.            IN    A
+
+;; ANSWER SECTION:
+google.com.        112    IN    A    173.194.32.133
+google.com.        112    IN    A    173.194.32.136
+google.com.        112    IN    A    173.194.32.132
+google.com.        112    IN    A    173.194.32.129
+google.com.        112    IN    A    173.194.32.137
+google.com.        112    IN    A    173.194.32.130
+google.com.        112    IN    A    173.194.32.134
+google.com.        112    IN    A    173.194.32.135
+google.com.        112    IN    A    173.194.32.128
+google.com.        112    IN    A    173.194.32.131
+google.com.        112    IN    A    173.194.32.142
+
+;; Query time: 238 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Sun Apr 17 13:03:38 IRDT 2016
+;; MSG SIZE  rcvd: 215
+</code></pre></div>
+<p>در اینجا من از دیگ خواسته ام که از <bdi><code class="inline-code" dir="ltr">8.8.8.8</code></bdi> به عنوان DNS خود استفاده کند و از <bdi><code class="inline-code" dir="ltr">google.com</code></bdi> پرس و جو کند. می بینید که من بیش از یک پاسخ (در واقع خیلی بیشتر از یک پاسخ) دریافت کرده ام. رایانه من می تواند به طور تصادفی با هر یک از این IP ها تماس بگیرد تا به <bdi><code class="inline-code" dir="ltr">google.com</code></bdi> برسد. به عبارت دیگر، google.com از بیش از یک سرور/IP استفاده می‌کند و <bdi><code class="inline-code" dir="ltr">8.8.8.8</code></bdi> همه آنها را هنگام درخواست برای آن دامنه ارائه می‌کند.</p>
+<h3 id="etchosts"><bdi><code class="inline-code" dir="ltr">/etc/hosts</code></bdi></h3>
+<p>این فایل حاوی آدرس های IP و نام های مربوط به آنها است. این یک نوع وضوح نام ثابت در رایانه شما است. بیایید نگاهی بیندازیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ head /etc/hosts
+127.0.0.1    funlife localhost.localdomain    localhost clickadu.com
+::1    funlife localhost6.localdomain6    localhost6
+
+10.159.32.155 nsproxy
+172.16.12.134 linuxclass wonderland
+193.40.12.135 salma
+
+87.106.233.90 gratis.vps
+
+192.168.59.231 mass1
+</code></pre></div>
+<p>این فایل را می توان با روت تغییر داد و برخی از نام های دامنه (localhost, mass1, gratis.vps, ...) را به برخی از آدرس های IP نگاشت می کند. اگر من روی این کامپیوتر <em>mass1</em> را پینگ کنم، ببینیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ dig mass1
+
+; &lt;&lt;&gt;&gt; DiG 9.10.3-P4-RedHat-9.10.3-12.P4.fc23 &lt;&lt;&gt;&gt; mass1
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NXDOMAIN, id: 39464
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;mass1.                IN    A
+
+;; AUTHORITY SECTION:
+.            600    IN    SOA    a.root-servers.net. nstld.verisign-grs.com. 2016041700 1800 900 604800 86400
+
+;; Query time: 516 msec
+;; SERVER: 192.168.1.1#53(192.168.1.1)
+;; WHEN: Sun Apr 17 13:15:07 IRDT 2016
+;; MSG SIZE  rcvd: 109
+
+$ ping mass1
+PING mass1 (192.168.59.231) 56(84) bytes of data.
+From 85-15-16-103.shatel.ir (85.15.16.103) icmp_seq=1 Packet filtered
+From 85-15-16-103.shatel.ir (85.15.16.103) icmp_seq=2 Packet filtered
+</code></pre></div>
+<p>هنگامی که من برای mass1 می روم، کامپیوتر من 192.168.59.231 را پینگ می کند، حتی زمانی که DNS نمی تواند این نام را پیدا کند، زیرا در <bdi><code class="inline-code" dir="ltr">/etc/hosts</code></bdi> تعریف شده است.</p>
+<h3 id="nsswitch">nsswitch</h3>
+<p>فایل <bdi><code class="inline-code" dir="ltr">/etc/nsswitch.conf</code></bdi> اولویت جستجوها، بررسی رمز عبور، ... را به سیستم می گوید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ cat /etc/nsswitch.conf
+#
+# /etc/nsswitch.conf
+#
+# An example Name Service Switch config file. This file should be
+# sorted with the most-used services at the beginning.
+#
+# The entry '[NOTFOUND=return]' means that the search for an
+# entry should stop if the search in the previous entry turned
+# up nothing. Note that if the search failed due to some other reason
+# (like no NIS server responding) then the search continues with the
+# next entry.
+#
+# Valid entries include:
+#
+#    nisplus            Use NIS+ (NIS version 3)
+#    nis            Use NIS (NIS version 2), also called YP
+#    dns            Use DNS (Domain Name Service)
+#    files            Use the local files
+#    db            Use the local database (.db) files
+#    compat            Use NIS on compat mode
+#    hesiod            Use Hesiod for user lookups
+#    [NOTFOUND=return]    Stop searching if not found so far
+#
+
+# To use db, put the "db" in front of "files" for entries you want to be
+# looked up first in the databases
+#
+# Example:
+#passwd:    db files nisplus nis
+#shadow:    db files nisplus nis
+#group:     db files nisplus nis
+
+passwd:     files sss
+shadow:     files sss
+group:      files sss
+
+#hosts:     db files nisplus nis dns
+hosts:      files mdns4_minimal [NOTFOUND=return] dns myhostname mymachines
+
+# Example - obey only what nisplus tells us...
+#services:   nisplus [NOTFOUND=return] files
+#networks:   nisplus [NOTFOUND=return] files
+#protocols:  nisplus [NOTFOUND=return] files
+#rpc:        nisplus [NOTFOUND=return] files
+#ethers:     nisplus [NOTFOUND=return] files
+#netmasks:   nisplus [NOTFOUND=return] files
+
+bootparams: nisplus [NOTFOUND=return] files
+
+ethers:     files
+netmasks:   files
+networks:   files
+protocols:  files
+rpc:        files
+services:   files sss
+
+netgroup:   files sss
+
+publickey:  nisplus
+
+automount:  files sss
+aliases:    files nisplus
+</code></pre></div>
+<p>در خط DNS من <bdi><code class="inline-code" dir="ltr">hosts: files mdns4_minimal [NOTFOUND=return] dns myhostname mymachines</code></bdi> دارم. این بدان معناست که وقتی سیستم می خواهد آدرس IP یک نام را پیدا کند، ابتدا به دنبال <bdi><code class="inline-code" dir="ltr">files</code></bdi> (/etc/hosts) و سپس برای m<strong>dns</strong>4_minimal و سپس <strong>dns</strong> و غیره می رود. در این مورد، اگر <bdi><code class="inline-code" dir="ltr">facebook.com</code></bdi> را به <bdi><code class="inline-code" dir="ltr">/etc/hosts</code></bdi> خود اضافه کنم، به این صورت:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">127.0.0.1 facebook.com
+</code></pre></div>
+<p>و سپس مرورگر من را به facebook.com هدایت کنید، کامپیوتر من سعی می کند به جای IP واقعی فیس بوک به وب سرور در 127.0.0.1 متصل شود.</p>
+<h3 id="getent">getent</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">getent</code></bdi> ابزاری برای دریافت ورودی‌ها از کتابخانه‌های Name Service Switch (read /etc/nsswitch.conf) است. اگر می خواهید بررسی کنید که پیکربندی هاست شما چیست، می توانید به صورت زیر عمل کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ getent hosts
+127.0.0.1       funlife localhost.localdomain localhost clickadu.com
+127.0.0.1       funlife localhost6.localdomain6 localhost6
+10.159.32.155   nsnproxy
+172.16.12.134   linuxclass wonderland
+193.40.12.135   salma
+87.106.233.90   gratisvps
+192.168.59.231  mass1
+192.168.59.232  mass2
+192.168.59.233  mass3
+192.168.59.234  mass4
+192.168.59.235  mass5
+192.168.59.236  mass6
+192.168.59.237  mass7
+192.168.59.238  mass8
+192.168.59.239  mass9
+127.0.0.1       frctlstartupfailure localtodoer localdeliv
+127.0.0.1       frctlmeth
+</code></pre></div>
+<h3 id="systemd-resolved"><bdi><code class="inline-code" dir="ltr">systemd-resolved</code></bdi></h3>
+<p>لازم به ذکر است که <bdi><code class="inline-code" dir="ltr">systemd</code></bdi> یک DNS به نام <bdi><code class="inline-code" dir="ltr">systemd-resolved</code></bdi> ارائه می دهد. به درخواست‌های DNS در <bdi><code class="inline-code" dir="ltr">127.0.0.53</code></bdi> گوش می‌دهد و پس از مشورت با <bdi><code class="inline-code" dir="ltr">/etc/systemd/resolv.conf</code></bdi> یا <bdi><code class="inline-code" dir="ltr">/etc/resolv.conf</code></bdi> پاسخ می‌دهد.</p>
+<p>بیشتر بخوانید <a href="https://wiki.archlinux.org/title/Systemd-resolved">اینجا</a> درباره <bdi><code class="inline-code" dir="ltr">systemd-resolved</code></bdi>.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1093_basic_network_troubleshooting.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">109.3 عیب یابی اساسی شبکه</span></a><a href="1101_perform_security_administration_tasks.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">110.1 انجام وظایف مدیریت امنیتی</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

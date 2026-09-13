@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item active"><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۱: معماری سیستم (System Architecture)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        <span class="meta-item weight-tag">وزن: 3</span>
+                        <span class="meta-item topic-tag">مبحث ۱۰۱</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>توضیحات: داوطلبان باید بتوانند سطح runlevel یا systemd boot هدف سیستم را مدیریت کنند. این هدف شامل تغییر به حالت تک کاربره و خاموش کردن یا راه اندازی مجدد سیستم است. کاندیداها باید بتوانند قبل از تغییر سطوح اجرا / اهداف بوت به کاربران هشدار دهند و فرآیندها را به درستی خاتمه دهند. این هدف همچنین شامل تنظیم سطح اجرای پیش فرض SysVinit یا هدف بوت سیستم است. همچنین شامل آگاهی از Upstart به عنوان جایگزینی برای SysVinit یا systemd است.</p>
+<h2 id="_1">حوزه های دانش کلیدی:</h2>
+<ul>
+<li>سطح اجرا یا هدف بوت پیش فرض را تنظیم کنید.</li>
+<li>تغییر بین سطوح اجرا / اهداف بوت از جمله حالت تک کاربره.</li>
+<li>خاموش کردن و راه اندازی مجدد از خط فرمان (Command Line).</li>
+<li>قبل از تغییر سطوح اجرا / اهداف بوت یا سایر رویدادهای مهم سیستم به کاربران هشدار دهید.</li>
+<li>به درستی فرآیندها را خاتمه دهید.</li>
+<li>آگاهی از acpi.</li>
+</ul>
+<h2 id="_2">فهرستی جزئی از فایل‌ها، اصطلاحات و ابزارهای استفاده شده در زیر آمده است:</h2>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/inittab</code></bdi></li>
+<li>خاموش شدن</li>
+<li>شروع</li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/init.d/</code></bdi></li>
+<li>telinit</li>
+<li>سیستم شده</li>
+<li>systemctl</li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/systemd/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/usr/lib/systemd/</code></bdi></li>
+<li>دیوار</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/1mOKv5LsPsw" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_3">سطوح اجرا</h2>
+<p>Runlevel ها تعریف می کنند که چه وظایفی را می توان در وضعیت فعلی (یا runlevel) یک سیستم لینوکس انجام داد. به آن به عنوان مراحل مختلف <em>زنده بودن</em> فکر کنید.</p>
+<h3 id="_4">سیستم شده</h3>
+<p>در systemd، ما اهداف مختلفی داریم که گروه‌هایی از خدمات هستند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:~# systemctl list-units --type=target # On a Debian machine
+  UNIT                LOAD   ACTIVE SUB    DESCRIPTION
+---------------------------------------------------------
+  basic.target        loaded active active Basic System
+  cryptsetup.target   loaded active active Local Encrypted Volumes
+  getty.target        loaded active active Login Prompts
+  graphical.target    loaded active active Graphical Interface
+  local-fs-pre.target loaded active active Local File Systems (Pre)
+  local-fs.target     loaded active active Local File Systems
+  multi-user.target   loaded active active Multi-User System
+  network.target      loaded active active Network
+  paths.target        loaded active active Paths
+  remote-fs.target    loaded active active Remote File Systems
+  slices.target       loaded active active Slices
+  sockets.target      loaded active active Sockets
+  sound.target        loaded active active Sound Card
+  swap.target         loaded active active Swap
+  sysinit.target      loaded active active System Initialization
+  time-set.target     loaded active active System Time Set
+  time-sync.target    loaded active active System Time Synchronized
+  timers.target       loaded active active Timers
+</code></pre></div>
+<p>و ما می توانیم پیش فرض را بررسی کنیم یا وضعیت هر یک از آنها را دریافت کنیم: </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:~# systemctl get-default 
+graphical.target
+
+root@debian:~# systemctl status multi-user.target 
+● multi-user.target - Multi-User System
+     Loaded: loaded (/lib/systemd/system/multi-user.target; static)
+     Active: active since Sat 2022-05-07 11:58:36 EDT; 4h 24min left
+       Docs: man:systemd.special(7)
+</code></pre></div>
+<p>همچنین امکان <em>ایزوله</em> هر یک از اهداف یا حرکت به دو هدف خاص نیز وجود دارد:</p>
+<ol>
+<li><bdi><code class="inline-code" dir="ltr">rescue</code></bdi>: سیستم‌های فایل محلی نصب شده‌اند، بدون شبکه و فقط کاربر ریشه (حالت <em>نگهداری</em>)</li>
+<li><bdi><code class="inline-code" dir="ltr">emergency</code></bdi>: فقط سیستم‌فایل (Filesystem) ریشه و در حالت فقط خواندنی، بدون شبکه و فقط کاربر ریشه (<em>حالت نگهداری</em>)</li>
+<li><bdi><code class="inline-code" dir="ltr">reboot</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">halt</code></bdi>: تمام فرآیندها را متوقف می کند و فعالیت های CPU را متوقف می کند</li>
+<li><bdi><code class="inline-code" dir="ltr">poweroff</code></bdi>: مانند توقف است، اما سیگنال خاموش شدن ACPI را نیز ارسال می کند (بدون چراغ!)</li>
+</ol>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># systemctl isolate emergency
+Welcome to emergency mode! After logging in, type "journalctl -xb" to view system logs, "systemctl reboot" to reboot, "systemctl default" or ^D to try again to boot into default mode.
+Give root password for maintenance
+(or type Control-D to continue):
+#
+# systemctl is-system-running
+maintenance
+</code></pre></div>
+<h3 id="sysv">سطوح اجرا SysV</h3>
+<p>در SysV توانستیم مراحل مختلفی را تعریف کنیم. در یک سیستم مبتنی بر کلاه قرمزی معمولاً 7 مورد داشتیم:</p>
+<ul>
+<li>0- خاموش شدن</li>
+<li>1- حالت تک کاربره (بازیابی); S یا s نیز نامیده می شود</li>
+<li>2- چند کاربر بدون شبکه</li>
+<li>3- چند کاربره با شبکه</li>
+<li>4- توسط ادمین سفارشی شود</li>
+<li>5- چند کاربره با شبکه و گرافیک</li>
+<li>6- راه اندازی مجدد</li>
+</ul>
+<p>و در سیستم مبتنی بر دبیان داشتیم:</p>
+<ul>
+<li>0- خاموش شدن</li>
+<li>1- حالت تک کاربره</li>
+<li>2- حالت چند کاربره با گرافیک</li>
+<li>6- راه اندازی مجدد</li>
+</ul>
+<h2 id="_5">بررسی وضعیت و تنظیم پیش فرض ها</h2>
+<p>با دستور <bdi><code class="inline-code" dir="ltr">runlevel</code></bdi> می توانید سطح اجرای فعلی خود را بررسی کنید. از دوران SysV می آید اما هنوز روی سیستم های سیستمی کار می کند. 
+پیش‌فرض در <bdi><code class="inline-code" dir="ltr">/etc/inittab</code></bdi> بود </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">grep "^id:" /etc/inittab #on initV systems
+id:5:initdefault:
+</code></pre></div>
+<p>همچنین می توان آن را بر روی پارامترهای هسته grub انجام داد.</p>
+<p>یا از دستور runlevel و <bdi><code class="inline-code" dir="ltr">telinit</code></bdi> استفاده کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># runlevel
+N 3
+# telinit 5
+# runlevel
+3 5
+# init 0 # shutdown the system
+</code></pre></div>
+<p>می‌توانید فایل‌ها را در <bdi><code class="inline-code" dir="ltr">/etc/init.d</code></bdi> و سطوح اجرا را در فهرست‌های <bdi><code class="inline-code" dir="ltr">/etc/rc[0-6].d</code></bdi> پیدا کنید که S نشان‌دهنده Start و K نشان‌دهنده Kill است. </p>
+<p>در systemd، می توانید تنظیمات را در موارد زیر پیدا کنید:</p>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/systemd</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/usr/lib/systemd/</code></bdi></li>
+</ul>
+<p>همانطور که در 101.2 بحث شد</p>
+<h3 id="etcinittab">/etc/inittab</h3>
+<p>با upstart و systemd جایگزین شده است اما هنوز بخشی از امتحان است.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">#
+# inittab       This file describes how the INIT process should be set up
+#               the system in a certain run-level.
+#
+# Author:       Miquel van Smoorenburg, &lt;miquels@drinkel.nl.mugnet.org&gt;
+#               Modified for RHS Linux by Marc Ewing and Donnie Barnes
+#
+
+# Default runlevel. The runlevels used by RHS are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single-user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode
+#   4 - unused
+#   5 - X11
+#   6 - reboot (Do NOT set initdefault to this)
+#
+id:5:initdefault:
+
+# System initialization.
+si::sysinit:/etc/rc.d/rc.sysinit
+
+l0:0:wait:/etc/rc.d/rc 0
+l1:1:wait:/etc/rc.d/rc 1
+l2:2:wait:/etc/rc.d/rc 2
+l3:3:wait:/etc/rc.d/rc 3
+l4:4:wait:/etc/rc.d/rc 4
+l5:5:wait:/etc/rc.d/rc 5
+l6:6:wait:/etc/rc.d/rc 6
+
+# Trap CTRL-ALT-DELETE
+ca::ctrlaltdel:/sbin/shutdown -t3 -r now
+
+# When our UPS tells us power has failed, assume we have a few minutes
+# of power left.  Schedule a shutdown for 2 minutes from now.
+# This does, of course, assume you have powered installed and your
+# UPS connected and working correctly.
+pf::powerfail:/sbin/shutdown -f -h +2 "Power Failure; System Shutting Down"
+
+# If power was restored before the shutdown kicked in, cancel it.
+pr:12345:powerokwait:/sbin/shutdown -c "Power Restored; Shutdown Cancelled"
+
+
+# Run gettys in standard runlevels
+1:2345:respawn:/sbin/mingetty tty1
+2:2345:respawn:/sbin/mingetty tty2
+3:2345:respawn:/sbin/mingetty tty3
+4:2345:respawn:/sbin/mingetty tty4
+5:2345:respawn:/sbin/mingetty tty5
+6:2345:respawn:/sbin/mingetty tty6
+
+# Run xdm in runlevel 5
+x:5:respawn:/etc/X11/prefdm -nodaemon
+</code></pre></div>
+<p>این فرمت است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">id:runlevels:action:process
+</code></pre></div>
+<ul>
+<li>شناسه: 2 یا 3 کاراکتر</li>
+<li>runlevels: این دستورات به کدام سطح اجرا اشاره دارد (خالی یعنی همه)</li>
+<li>اقدام: Respawn، صبر کنید، یک بار، initdefault (سطح اجرای پیش‌فرض همانطور که در بالا مشاهده می‌شود)، ctrlaltdel (با Ctrl+Alt+Delete چه کار کنیم؟</li>
+</ul>
+<p>همه اسکریپت ها اینجا هستند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">ls -ltrh /etc/init.d
+</code></pre></div>
+<p>و start/stop در سطوح اجرا از این دایرکتوری (پوشه) ها کنترل می شود:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">root@funlife:~# ls /etc/rc2.d/
+</code></pre></div>
+<h2 id="_6">توقف سیستم</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/C7kr7fZtWqs" title="YouTube video player" width="560"></iframe></div>
+<p>روش ترجیحی برای خاموش کردن یا راه‌اندازی مجدد سیستم استفاده از دستور <bdi><code class="inline-code" dir="ltr">shutdown</code></bdi> است که ابتدا یک پیام هشدار برای همه کاربرانی که وارد سیستم شده‌اند ارسال می‌کند و هرگونه ورود غیر ریشه‌ای دیگر را مسدود می‌کند. سپس به init سیگنال می دهد تا سطوح اجرا را تغییر دهد. سپس فرآیند init به همه فرآیندهای در حال اجرا یک سیگنال SIGTERM ارسال می‌کند و به آنها فرصتی می‌دهد تا داده‌ها را ذخیره کنند یا به‌درستی خاتمه دهند. پس از 1 دقیقه یا تاخیر دیگر، در صورت مشخص شدن، init یک سیگنال SIGKILL ارسال می کند تا به زور هر فرآیند باقی مانده را پایان دهد.</p>
+<ul>
+<li>پیش‌فرض یک تاخیر ۱ دقیقه‌ای است و سپس به مرحله اجرا ۱ می‌رود</li>
+<li><bdi><code class="inline-code" dir="ltr">-h</code></bdi> سیستم را متوقف می کند</li>
+<li><bdi><code class="inline-code" dir="ltr">-r</code></bdi> سیستم را راه اندازی مجدد می کند</li>
+<li>زمان <bdi><code class="inline-code" dir="ltr">hh:mm</code></bdi> یا n (دقیقه) یا اکنون است</li>
+<li>هر چیزی که اضافه کنید، با استفاده از دستور <bdi><code class="inline-code" dir="ltr">wall</code></bdi> برای کاربرانی که وارد سیستم شده اند پخش می شود.</li>
+<li>اگر دستور اجرا می شود، ctrl+c یا <bdi><code class="inline-code" dir="ltr">shutdown -c</code></bdi> آن را لغو می کند</li>
+</ul>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">shutdown -r 60 Reloading updated kernel
+</code></pre></div>
+<p>برای کاربران پیشرفته تر:</p>
+<ul>
+<li>-t60 بین SIGTERM و SIGKILL 60 ثانیه به تاخیر می افتد</li>
+<li>اگر خاموش کردن را لغو کنید، کاربران اخبار را دریافت خواهند کرد</li>
+</ul>
+<h3 id="_7">توقف، راه اندازی مجدد، و خاموش کردن</h3>
+<ul>
+<li>دستور <bdi><code class="inline-code" dir="ltr">halt</code></bdi> سیستم را متوقف می کند.</li>
+<li>دستور <bdi><code class="inline-code" dir="ltr">poweroff</code></bdi> سیستم را متوقف می کند و سپس سعی می کند آن را خاموش کند.</li>
+<li>دستور <bdi><code class="inline-code" dir="ltr">reboot</code></bdi> سیستم را متوقف می کند و سپس آن را راه اندازی مجدد می کند.</li>
+</ul>
+<blockquote class="callout-box">
+<p>در اکثر توزیع‌ها، اینها پیوندهای نمادین به ابزار systemctl هستند</p>
+</blockquote>
+<h3 id="acpi">پیکربندی پیشرفته و رابط برق (ACPI)</h3>
+<p>ACPI یک استاندارد باز ارائه می‌کند که سیستم‌عامل‌ها می‌توانند از آن برای کشف و پیکربندی اجزای سخت‌افزار کامپیوتر، انجام مدیریت انرژی (مانند قرار دادن اجزای سخت‌افزاری استفاده‌نشده به حالت خواب)، انجام پیکربندی خودکار (مانند Plug and Play و Hot Swapping) و نظارت بر وضعیت استفاده کنند.</p>
+<p>این زیرسیستم اجازه می دهد تا دستورات سیستم عامل (مانند خاموش کردن) سیگنال هایی را به رایانه ارسال کند که منجر به خاموش شدن کل رایانه شخصی می شود. در زمان‌های قدیم ما این صفحه‌کلیدهای مکانیکی را برای خاموش کردن <em>واقعی</em> پس از خاموش شدن سیستم عامل داشتیم و به ما می‌گفتیم که "خاموش کردن رایانه امن نیست".</p>
+<p><img alt="Vintage poweroff" class="content-img img-fluid" src="./images/vintage_poweroff.jpeg"/></p>
+<h2 id="_8">اطلاع رسانی به کاربران</h2>
+<p>خوب است که مطلع شوید! به خصوص اگر سیستم در حال سقوط باشد. به خصوص در سرور اشتراکی. لینوکس ابزارهای مختلفی برای مدیران سیستم دارد تا به کاربران خود اطلاع دهند:</p>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">wall</code></bdi>: ارسال <em>پیام های دیواری</em> به کاربرانی که وارد سیستم شده اند</li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/issue</code></bdi>: متنی که باید در ورود به ترمینال tty نمایش داده شود (قبل از ورود به سیستم)</li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/issue.net</code></bdi>: متنی که باید در ورودی های ترمینال راه دور نمایش داده شود (قبل از ورود به سیستم)</li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/motd</code></bdi>: پیام روز (پس از ورود به سیستم). برخی از شرکت‌ها متن‌های «اگر مجاز نیستید وارد نشوید» را به دلایل قانونی در اینجا اضافه می‌کنند.</li>
+<li><bdi><code class="inline-code" dir="ltr">mesg</code></bdi>: اگر می‌خواهید پیام‌های دیواری دریافت کنید یا نه، فرمان را کنترل می‌کند. می توانید <bdi><code class="inline-code" dir="ltr">mesg n</code></bdi> را انجام دهید و <bdi><code class="inline-code" dir="ltr">who -T</code></bdi> وضعیت پیام را نشان می دهد. توجه داشته باشید که پیام های دیواری <bdi><code class="inline-code" dir="ltr">shutdown</code></bdi> به وضعیت <bdi><code class="inline-code" dir="ltr">mesg</code></bdi> احترام نمی گذارند</li>
+</ul>
+<blockquote class="callout-box">
+<p>systemctl پیام های دیواری را برای موارد اضطراری، توقف، خاموش کردن، راه اندازی مجدد و نجات ارسال می کند.</p>
+</blockquote>
+                </div>
+
+                <div class="chapter-pager"><a href="1012_boot_the_system.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">101.2 سیستم را بوت کنید</span></a><a href="1021_design_hard_disk_layout.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">102.1 طراحی چیدمان هارد دیسک</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

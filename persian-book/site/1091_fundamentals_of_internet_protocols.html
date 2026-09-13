@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>109.1 مبانی پروتکل های اینترنتی | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item active"><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">109.1 مبانی پروتکل های اینترنتی</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۹</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>داوطلبان باید درک درستی از اصول شبکه TCP/IP نشان دهند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>درک ماسک های شبکه و نماد CIDR را نشان دهید.</li>
+<li>آگاهی از تفاوت‌های بین آدرس‌های IP خصوصی و عمومی "چهار نقطه‌دار".</li>
+<li>دانش در مورد پورت ها و سرویس های رایج TCP و UDP (20، 21، 22، 23، 25، 53، 80، 110، 123، 139، 143، 161، 162، 389، 443، 465، 514، 465، 514، 80، 139، 143، 443، 465، 514، 593، 63، 20، 20، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 13، 20، 13.</li>
+<li>دانش در مورد تفاوت ها و ویژگی های اصلی UDP، TCP و ICMP.</li>
+<li>آگاهی از تفاوت های عمده بین IPv4 و IPv6.</li>
+<li>آشنایی با ویژگی های اساسی IPv6.</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/services</code></bdi></li>
+<li>IPv4، IPv6</li>
+<li>زیر شبکه</li>
+<li>TCP، UDP، ICMP</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/_QD4413ezWs" title="LPIC1 - 068 - 109.1 (1/3) - Networking Fundamentals; A look at IP Networking and its Basics" width="560"></iframe></div>
+<h3 id="tcpip">TCP/IP</h3>
+<p><em>پروتکل کنترل انتقال/پروتکل اینترنت</em> (یا به طور خلاصه TCP/IP) پشته یا پروتکل هایی است که بیشترین قدرت ارتباطات را در اینترنت (و بسیاری از شبکه های دیگر) می دهد. اگرچه به طور کلی TCP نامیده می شود، اما شامل UDP، ICMP، DNS و بسیاری دیگر نیز می شود. </p>
+<h3 id="ip">IP</h3>
+<p>پروتکل اینترنت یا IP راهی برای اشاره منطقی به هاست در اینترنت است. هنگامی که یک دستگاه دارای یک آدرس IP است، امکان ارسال داده به سمت آن وجود دارد. آدرس‌های IP باید منحصربه‌فرد باشند تا شبکه بداند هر بسته به کجا می‌رود. 2 نسخه فعال از پروتکل IP وجود دارد. 4 و 6.</p>
+<p>IPv4 به شکل A.B.C.D است که A، B، C و D بین 0-255 هستند. موارد زیر همه آدرس های IP معتبر هستند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>1.2.3.4
+1.1.1.1
+100.0.0.100
+192.168.1.4
+</code></pre></div>
+<blockquote class="callout-box">
+<p>هر قسمت از یک آدرس IP را Octet می نامند زیرا از یک عدد 8 بیتی (0..255) ساخته شده است و می تواند به صورت دودویی یا هگزا یا هر نمادی نشان داده شود، اما فرمت اعشاری رایج تر است.</p>
+</blockquote>
+<p>با توجه به اینکه هر اکتت می تواند بین 0 تا 255 باشد، در مجموع می توانیم 256 * 256 * 256 * 256 = 4294967296 آدرس IPv4 داشته باشیم. این حدود 4.3 میلیارد است - فقط! به همین دلیل است که ما به IPv6 تغییر می کنیم.</p>
+<h4 id="_3">آی پی های خصوصی</h4>
+<p>آدرس‌های IP باید در شبکه یکپارچه باشند، بنابراین افراد باید آدرس‌های IP خود را از یک مرجع مرکزی به نام Internet Assigned Numbers Authority (IANA) دریافت کنند. آدرس های IP موجود در 3 کلاس گروه بندی می شوند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>کلاس</th>
+<th>اکتت اول</th>
+<th>محدوده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1-126</td>
+<td><bdi><code class="inline-code" dir="ltr">1.0.0.0</code></bdi> تا <bdi><code class="inline-code" dir="ltr">126.255.255.255</code></bdi></td>
+</tr>
+<tr>
+<td>B</td>
+<td>128-191</td>
+<td><bdi><code class="inline-code" dir="ltr">128.0.0.0</code></bdi> تا <bdi><code class="inline-code" dir="ltr">191.255.255.255</code></bdi></td>
+</tr>
+<tr>
+<td>ج</td>
+<td>192-223</td>
+<td><bdi><code class="inline-code" dir="ltr">192.0.0.0</code></bdi> تا <bdi><code class="inline-code" dir="ltr">223.255.255.255</code></bdi></td>
+</tr>
+</tbody>
+</table></div>
+<p>معمولاً اگر در حال ایجاد یک سرور در ارائه دهنده خدمات خود هستید، آن ارائه دهنده خدمات یک آدرس IP خریداری شده از IANA (از طریق ثبت منطقه ای کوچکتر) به شما می دهد. اما اگر بخواهید یک IP به لپ تاپ یا تلفن همراه تبلت خود <em>داخل</em> خانه خود اختصاص دهید، چه اتفاقی می افتد؟ این دستگاه ها به طور مستقیم در اینترنت قابل مشاهده نیستند و شما قرار نیست برای آنها IP خریداری کنید.</p>
+<p>در اینجا محدوده <em>آدرس IP خصوصی</em> بازی می شود. محدوده‌های زیر آدرس‌های «خصوصی» نامیده می‌شوند و هر کسی می‌تواند آن‌ها را به هر دستگاهی که می‌خواهد اختصاص دهد، تا زمانی که در اینترنت باز قابل مشاهده نباشد.</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">محدوده</th>
+<th style="text-align: left;">تعداد IP های این محدوده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">192.168.0-255.0-255</td>
+<td style="text-align: left;">65 هزار آی پی</td>
+</tr>
+<tr>
+<td style="text-align: left;">172.16-31.0-255.0-255</td>
+<td style="text-align: left;">1M آی پی</td>
+</tr>
+<tr>
+<td style="text-align: left;">10.0-255.0-255.0-255</td>
+<td style="text-align: left;">16 میلیون آی پی</td>
+</tr>
+</tbody>
+</table></div>
+<p>هر کسی می تواند از هر یک از این IP ها در دستگاه های خود استفاده کند تا زمانی که مستقیماً به اینترنت متصل نباشد. به این مثال نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">                                                                                              XXXXXX
+                                                                          XXXXXX   XXXXX    XXX    XX
+                 +--------+                                              X     XXXXX   XXXXXX       XX
+        +--------+172.16. |                                             XX                           X
+        |        |1.1     |                                             X                            X
+   +--------+    |        |                                             X                           XX
+   |192.168.|    +--------+                                           XXX  Internet, Only         XX
+   |2.100   |         |           +-----------------+              XXXXX   uses Public          XXXX
+   |        |         |           |                 |           XXX        IP Addresses        XX
+   +--------+    Private Network  | NAT, Translates |Public IP XX                              X
+        |             +-----------+ between Public  +---------+X      Devices with Private IPs  XX
+        |             |           | and Private IPs | 87.3.91.4 XX     reach the Internet via     X
+   +--------+     +--------+      |                 |           XX    the Public IP configured   XX
+   |192.168.|     |        |      |                 |            XXX    on their NAT device.     X
+   |2.200   |     |172.16. |      +-----------------+               XX                          XX
+   |        |     |1.2     |                                      XXX                           X
+   +--------+     |        |                                     XX                             XX
+                  +--------+                                     X                               XX
+                                                                 X                              XXX
+                                                                 XX                           XXX
+                                                                   XX    XXXXXXX     XXXXXXXXXX
+                                                                    XXXXXX     XXXXXXX
+</code></pre></div>
+<p>در وسط می توانید یک دستگاه <bdi><code class="inline-code" dir="ltr">Network Address Translation</code></bdi> یا <bdi><code class="inline-code" dir="ltr">NAT</code></bdi> را ببینید. فقط با استفاده از یک IP عمومی (ممکن است 87.3.91.4 باشد) به اینترنت متصل است. در سمت چپ جعبه NAT، 4 دستگاه با IP خصوصی وجود دارد. هر بار که هر یک از این دستگاه‌ها آدرسی را در اینترنت (IP عمومی\" هدف قرار می‌دهند، دستگاه NAT از IP عمومی خود برای درخواست آن IP استفاده می‌کند و وقتی پاسخ آماده شد، آن را به دستگاه <em>Natted</em> - دستگاهی که پشت NAT قرار دارد، ارائه می‌کند. به این ترتیب می‌توانیم شبکه‌های عظیمی را پشت دستگاه NAT ایجاد کنیم. در این سناریو، همه دستگاه ها می توانند به اینترنت دسترسی پیدا کنند، اما هیچ کس از اینترنت نمی تواند مستقیماً به هیچ یک از آنها دسترسی پیدا کند. مگر اینکه یک DMZ را پیکربندی کرده باشیم. </p>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/A3SIx41ivBk" title="LPIC1 - 069 - 109.1 (2/3) - Networking Fundamentals; IP Subnetting. Netmasks &amp; CIDR notation" width="560"></iframe></div>
+<h4 id="netmask">زیر شبکه (و Netmask)</h4>
+<p>باشه! ما حدود 4B آدرس در IPv4 داریم. اما اگر بسته ای را به IP دیگری ارسال کنم چه اتفاقی می افتد؟ می‌گویید من سعی می‌کنم با استفاده از IP خصوصی آن، همانطور که در بخش قبل یاد گرفتید، سندی را روی چاپگر <em>local</em> چاپ کنم؟ چه کسی باید این بسته را گوش کند؟ آیا کل اینترنت آن را دست به دست می دهد؟ معلومه که نه! فقط شبکه <em>local</em> من باید بتواند آن بسته را دریافت کند و در این مورد خاص، فقط آنها چاپگر باید آن را در IP محلی خود دریافت کنند.</p>
+<p>این با زیرشبکه به دست می آید. هدف از زیر شبکه ایجاد <em>زیر</em>-<em>شبکه</em>ها در محدوده آدرس IP شماست. شما قبلاً این را بارها و بارها در مورد Netmask خود (255.255.255.0 معروف است) یا علامت CIDR آن که <bdi><code class="inline-code" dir="ltr">/24</code></bdi> است، دیده اید. بیایید نگاه عمیق تری داشته باشیم.</p>
+<blockquote class="callout-box">
+<p>CIDR مخفف Classless Inter-Domain Routing است</p>
+</blockquote>
+<p>وقتی در مورد شبکه صحبت می کنید، باید تصمیم بگیرید</p>
+<ol>
+<li>چند بیت از آدرس IP من قرار است بین همه دستگاه های من (شبکه) به اشتراک گذاشته شود</li>
+<li>چند بیت از آدرس IP من قرار است دستگاه های من را در این شبکه متمایز کند (میزبان)</li>
+</ol>
+<p>به عنوان مثال، اگر <bdi><code class="inline-code" dir="ltr">192.168.1.1</code></bdi> را به روتر خود اختصاص دهید و Netmask را روی <bdi><code class="inline-code" dir="ltr">/24</code></bdi> تنظیم کنید، 24 (بیت های دست چپ) از <bdi><code class="inline-code" dir="ltr">192.168.1.1</code></bdi> را به عنوان شبکه خود ادعا می کنید (بنابراین <bdi><code class="inline-code" dir="ltr">192.168.1.</code></bdi> زیرا 24 = 8 * 3 بیتی شما) و اولین بیت شما). در این شبکه می توانید این IP ها را به دستگاه های خود اختصاص دهید: <bdi><code class="inline-code" dir="ltr">192.168.1.10</code></bdi>، <bdi><code class="inline-code" dir="ltr">192.168.1.2</code></bdi>، <bdi><code class="inline-code" dir="ltr">192.168.1.200</code></bdi> و آنها یکدیگر را به درستی خواهند دید. </p>
+<p>2 روش برای صحبت در مورد بیت های Netmask وجود دارد. روش CIDR <bdi><code class="inline-code" dir="ltr">/24</code></bdi> و روش Netmask اعشاری (255.255.255.0). در CIDR می گوییم چند بیت 1 هستند (بخش شبکه یک آدرس IP) و در روش اعشاری، این 1 بیت را در قالب آدرس IP نشان می دهیم. به جدول زیر دقت کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>اعشاری</th>
+<th>سیدر</th>
+<th>باینری</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>255.0.0.0</td>
+<td>/8</td>
+<td>11111111.00000000.00000000.00000000</td>
+</tr>
+<tr>
+<td>255.255.0.0</td>
+<td>/16</td>
+<td>11111111.11111111.00000000.00000000</td>
+</tr>
+<tr>
+<td>255.255.255.0</td>
+<td>/24</td>
+<td>11111111.11111111.11111111.00000000</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>در جدول بالا من فقط موارد آسان را نشان می دهم ؛) اگر در امتحان CCNA شرکت می کنید، باید بتوانید بخش Network/Host را برای چیزی شبیه /13 محاسبه کنید. که اکنون که مفهوم آن را می دانید دشوار نیست.</p>
+</blockquote>
+<p>هر زمان که هر بسته سعی می کند به هر IP در <strong>زیر شبکه</strong> (یعنی 192.168.1.0-255) برسد، روتر من بسته ها را به درستی به مقصد هدایت می کند. اما اگر هر دستگاهی سعی کند به چیزی از زیر شبکه من \ (مثلاً یک IP عمومی) دسترسی پیدا کند، روتر من از عملکرد NAT (یا روش‌های دیگر) برای ارسال بسته‌ها از طریق اینترنت (یا شبکه صحیح بر اساس جدول مسیریابی) استفاده می‌کند.</p>
+<blockquote class="callout-box">
+<p>برای درک بهتر زیرشبکه، نگاهی به [سند سیسکو] (http://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html) بیندازید</p>
+</blockquote>
+<h3 id="_4">آدرس شبکه و پخش</h3>
+<p>هنگام داشتن آدرس IP و Network Mask می توانیم آدرس شبکه و آدرس پخش را محاسبه کنیم. </p>
+<p>آدرس شبکه یک AND منطقی بین آدرس IP و ماسک شبکه است. آدرس پخش، آدرس شبکه با یک OR منطقی است زمانی که همه بیت های میزبان به 1 تغییر می کنند. </p>
+<p>گیج کننده... بله. چون صحبت در مورد ریاضی سخت است. فرض کنید آدرس IP ما <bdi><code class="inline-code" dir="ltr">192.168.4.12</code></bdi> است و CIDR ما 24/ است (یعنی 255.255.255.0). اجازه می دهد تا آدرس شبکه و پخش را محاسبه کنیم. <bdi><code class="inline-code" dir="ltr">ipcalc</code></bdi> یک ابزار مفید که می توانید استفاده کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>IP:        11000000.10101000.00000100.00001100 (192.168.4.12)
+Netmask:   11111111.11111111.11111111.00000000 (255.255.255.0)
+Network:   11000000.10101000.00000100.00000000 (192.168.4.0)
+Broadcast: 11000000.10101000.00000100.11111111 (192.168.4.255)
+</code></pre></div>
+<h3 id="_5">تبدیل باینری به اعشاری</h3>
+<p>احتمالاً با پایه باینری آشنا هستید - این پایه هر چیزی است که به رایانه مربوط می شود. اگر نه، من به شما توصیه می کنم که یک جستجو در گوگل انجام دهید و آن را از منبع دیگری مطالعه کنید، زیرا این کتاب فرض می کند که شما قبلاً آن را می دانید. به طور خلاصه هنگام نوشتن اعداد در فرمت باینری (پایه 2)، تنها ارقام مورد استفاده 0 و 1 هستند. یک راه آسان برای تبدیل استفاده از جدول زیر برای تبدیل 0 و 1 به فرمت اعشاری <em>normal</em> ما است. برای دانستن ارزش هر بیت و جمع کردن آنهایی که 1 در آنها وجود دارد کافی است.</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">128</th>
+<th style="text-align: left;">64</th>
+<th style="text-align: left;">32</th>
+<th style="text-align: left;">16</th>
+<th style="text-align: left;">8</th>
+<th style="text-align: left;">4</th>
+<th style="text-align: left;">2</th>
+<th style="text-align: left;">1</th>
+<th style="text-align: left;">اعشاری</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">128</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">129</td>
+</tr>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">32</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">132</td>
+</tr>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">179</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">255</td>
+</tr>
+</tbody>
+</table></div>
+<p>بنابراین <bdi><code class="inline-code" dir="ltr">11000000.10101000.00000001.00001111</code></bdi> برابر است با <bdi><code class="inline-code" dir="ltr">192.168.1.15</code></bdi>.</p>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/rUQe5ezhmRE" title="LPIC1 - 070 - 109.1 (3/3) - Networking Fundamentals; TCP/IP Protocols, Ports and TCP vs UDP vs ICMP" width="560"></iframe></div>
+<h3 id="_6">پروتکل های ارتباطی</h3>
+<p>هنگامی که رایانه ها با هم ارتباط برقرار می کنند، از پروتکل ها استفاده می کنند. این پروتکل‌ها به گونه‌ای طراحی شده‌اند که به رایانه‌ها اجازه می‌دهند به روش‌های مختلف برای برآوردن نیازهای مختلف صحبت کنند. در اینجا ما نگاهی به سه پروتکل محبوب در اینترنت خواهیم داشت: TCP / UDP / ICMP.</p>
+<h4 id="tcp">TCP</h4>
+<p>پروتکل کنترل انتقال یا TCP برای اطمینان از اینکه هر دو طرف بدون از دست دادن هیچ اطلاعاتی با یکدیگر صحبت می کنند طراحی شده است. در این پروتکل، گیرنده هر چیزی را که فرستنده ارسال می کند، دقیقاً همانطور که ارسال می کند، دریافت می کند. زمانی که برنامه ای را از اینترنت دانلود می کنید، TCP بهترین گزینه است زیرا باید فایل را دقیقاً همانطور که روی سرور ذخیره می شود دانلود کنید. ارتباط TCP به شکل زیر است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">A- Are you ready?
+B- Yes
+A- Please share with me the file XYZ
+B- Ok. Are you ready?
+A- Yes. Start sending
+B- OK. This is the part 1 of XYZ
+A- OK I got it based on these criteria?
+B- Good. Now is it correct?
+A- Yes. Please send the second part
+B- OK. Are you ready for the second part?
+A- Yes.
+B- Here comes the second part
+A- ...
+B- ...
+</code></pre></div>
+<p><img alt="tcp flow diagram" class="content-img img-fluid" src="./images/tcpflow.gif"/></p>
+<p>همانطور که می بینید، TCP به ارتباطات زیادی نیاز دارد و زمان صرف می کند (یا حتی داده ها را دوباره ارسال می کند) تا مطمئن شود گیرنده داده های دقیق موجود در سرور را دریافت می کند. عجیب است که در برخی موارد این چیزی نیست که ما به دنبال آن هستیم. اگر در حال تماشای فیلم یا تماس تلفنی هستید یا از جریان بازی لذت می برید، ترجیح می دهید در صورت بروز مشکل 1s در شبکه خود، به تماشای زنده ادامه دهید. به همین دلیل است که ما UDP را نیز داریم. </p>
+<h4 id="udp">UDP</h4>
+<p>شما در حال چت تصویری با یک دوست هستید و شبکه در نوسان است. کدام انتخاب بهتر است؟ 
+الف) ارسال مجدد بسته های گم شده و/یا برقراری مجدد اتصال و ادامه کل مکالمه با تاخیر 2 ثانیه یا ...  
+ب) فقط بسته‌های جدیدتری را که دریافت کرده‌ایم نشان دهیم و کنفرانس ویدئویی زنده را ادامه دهیم و فقط آن نوسان 2 ثانیه (داده‌های از دست رفته) را فراموش کنیم؟ اگر انتخاب شما B است، بهتر است از UDP (User Datagram Protocol) برای برنامه چت خود استفاده کنید. UDP کمتر قابل اعتماد است: فرستنده بسته ها را بدون ارتباط زیاد ارسال می کند و از گیرنده می شنود و گیرنده بسته ها را بدون مذاکره با جزئیات دقیق با فرستنده گوش می دهد. این بسیار سریعتر از TCP است اما نمی توانید مطمئن باشید که 100٪ بسته ها توسط طرف B دریافت می شود.</p>
+<h4 id="icmp">ICMP</h4>
+<p>پروتکل پیام رسانی کنترل اینترنت یا ICMP یک پروتکل هدف خاص است که برای بررسی اتصال سرورها با دستور <bdi><code class="inline-code" dir="ltr">ping</code></bdi> استفاده می شود. اولین کامپیوتر فقط می گوید "آنجا هستی؟" و دومی پاسخ خواهد داد "بله من اینجا هستم". به این مثال کاربردی نگاه کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">[jadi@funlife ~]$ ping google.com
+PING google.com (173.194.32.135) 56(84) bytes of data.
+64 bytes from 173.194.32.135: icmp_seq=1 ttl=48 time=239 ms
+64 bytes from 173.194.32.135: icmp_seq=2 ttl=48 time=236 ms
+^C
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 236.707/238.174/239.642/1.546 ms
+</code></pre></div>
+<p>همانطور که می بینید، ما در حال پینگ (ارسال بسته های ICMP) به یک سرور هستیم و پاسخ می دهد (پاسخ به بسته های ICMP ما).</p>
+<blockquote class="callout-box">
+<p>ICMP برای عیب یابی شبکه استفاده می شود و داده های کاربر را منتقل نمی کند</p>
+</blockquote>
+<h3 id="_7">بندر</h3>
+<p>هر کامپیوتری یک آدرس دارد اما برنامه های زیادی روی آن کامپیوتر اجرا می شود. با استفاده از یک آدرس IP می توانید مقصد بسته های خود را به اینترنت بگویید، اما چگونه می توانید تصمیم بگیرید که کدام برنامه در آن رایانه باید به بسته شما پاسخ دهد؟ ما می دانیم که رایانه ای با آدرس 5.1.23.1 دارای یک وب سرور و یک سرور ftp است، اما چگونه می توانیم به آن دسترسی پیدا کنیم و به آن بگوییم "I want the index.html وب سرور شما" یا "فایل XYZ را از سرور FTP خود به من تحویل دهید"؟ این کار با استفاده از پورت ها انجام می شود. پورت ها اعدادی هستند که یک برنامه به آنها گوش می دهد. به عنوان مثال پورت 80 برای وب سرورها رزرو شده است، بنابراین اگر به 5.1.23.1:80 متصل شوم مطمئن هستم که با وب سرور صحبت می کنم. به همین ترتیب، هنگامی که پروتکل انتقال فایل (FTP) شروع می شود، شروع به گوش دادن در پورت 20 و 21 می کند و اگر از یک سرویس گیرنده FTP برای دسترسی به آن رایانه استفاده کنم، به طور خودکار به پورت 21 که برای FTP رزرو شده است متصل می شوم.</p>
+<p>پورت های مختلف می توانند از پروتکل های انتقال مختلف (UDP یا TCP) استفاده کنند. پورت پیش فرض برخی از پروتکل ها به شرح زیر است. اینها بسیار مهم هستند و اکثر ادمین ها آنها را می شناسند.</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">بندر</th>
+<th style="text-align: center;">استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">20، 21</td>
+<td style="text-align: center;">FTP (یک داده، یک کنترل)</td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">SSH</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">شبکه راه دور</td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">SMTP</td>
+</tr>
+<tr>
+<td style="text-align: center;">53</td>
+<td style="text-align: center;">DNS</td>
+</tr>
+<tr>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">HTTP</td>
+</tr>
+<tr>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">POP3</td>
+</tr>
+<tr>
+<td style="text-align: center;">123</td>
+<td style="text-align: center;">NTP</td>
+</tr>
+<tr>
+<td style="text-align: center;">139</td>
+<td style="text-align: center;">نت بایوس</td>
+</tr>
+<tr>
+<td style="text-align: center;">143</td>
+<td style="text-align: center;">IMAP</td>
+</tr>
+<tr>
+<td style="text-align: center;">161, 162</td>
+<td style="text-align: center;">SNMP</td>
+</tr>
+<tr>
+<td style="text-align: center;">389</td>
+<td style="text-align: center;">LDAP</td>
+</tr>
+<tr>
+<td style="text-align: center;">443</td>
+<td style="text-align: center;">HTTPS</td>
+</tr>
+<tr>
+<td style="text-align: center;">465</td>
+<td style="text-align: center;">SMTPS</td>
+</tr>
+<tr>
+<td style="text-align: center;">636</td>
+<td style="text-align: center;">LDAPS</td>
+</tr>
+<tr>
+<td style="text-align: center;">993</td>
+<td style="text-align: center;">IMAPS</td>
+</tr>
+<tr>
+<td style="text-align: center;">995</td>
+<td style="text-align: center;">POP3S</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>توجه داشته باشید که در این جدول تمام پورت های بالای 400 به S ختم می شوند که مخفف <strong>S</strong>ecure است.</p>
+</blockquote>
+<p>می توانید همه پورت های بالا و بسیاری از پورت های دیگر را در <bdi><code class="inline-code" dir="ltr">/etc/services</code></bdi> بیابید</p>
+<h3 id="ipv6">IPv6</h3>
+<p>دیدیم که فقط حدود 4B IPv4 در دسترس است. فقط در نظر بگیرید که ما حدود 7 میلیارد نفر در سیاره زمین هستیم، بنابراین حتی IP کافی برای هر فردی که در محدوده IPv4 است وجود ندارد. به این موارد جدیدترین خواسته های همه تلفن های همراه، ماشین ها، یخچال ها، ساعت ها، تلویزیون ها، دوربین ها و ... را اضافه کنید! همه آنها می خواهند در اینترنت باشند. به این می گویند اینترنت اشیا. چه باید کرد؟ ما یک راه حل به نام NAT دیدیم اما راه حل دائمی نسخه جدیدی از IP است. IP نسخه 6. در نسخه 6 IP ها دیگر محدود به 4 octet نیست.</p>
+<p>هر IPv6 دارای 128 بیت است. آنها در گروه های 8، 16 بیتی گروه بندی می شوند و معمولاً در قالب Hex (پایه 16) نوشته می شوند. یک آدرس IPv6 نمونه شبیه <bdi><code class="inline-code" dir="ltr">2001:0db8:0a0b:12f0:0000:0000:0000:0001</code></bdi> است و می توان آن را به <bdi><code class="inline-code" dir="ltr">2001:db8:a0b:12f0::1</code></bdi> کوتاه کرد. در اینجا اعداد اعشاری از <strong>0000</strong> تا <strong>FFFF</strong> و <strong>8</strong> داریم که با <strong>:</strong> از هم جدا شده اند. </p>
+<p>IPv6 حدود 3.4*(10^38) IP را در اختیار ما قرار می دهد که برای هر چیزی که در حال حاضر می توانیم تصور کنیم کافی است. فقط تصور کنید که می تواند 2^52 آدرس برای هر ستاره قابل مشاهده در جهان شناخته شده اختصاص دهد.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1084_manage_printers_and_printing.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a><a href="1092_basic_network_configuration.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">109.2 پیکربندی شبکه پایدار</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

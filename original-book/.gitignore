@@ -1,0 +1,10 @@
+/output/
+node_modules
+/_book/
+.*.swo
+.*.swp
+.DS_Store
+*~
+*.pyc
+__pycache__
+._.DS_Store

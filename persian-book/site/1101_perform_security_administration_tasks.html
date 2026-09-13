@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>110.1 انجام وظایف مدیریت امنیتی | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item active"><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۱۰: امنیت سیستم (Security)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">110.1 انجام وظایف مدیریت امنیتی</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۱۰</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>داوطلبان باید بدانند که چگونه پیکربندی سیستم را برای اطمینان از امنیت میزبان مطابق با سیاست های امنیتی محلی بررسی کنند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>یک سیستم را برای یافتن فایل‌های دارای مجموعه بیت suid/sgid حسابرسی کنید.</li>
+<li>رمز عبور کاربر و اطلاعات قدیمی رمز عبور را تنظیم یا تغییر دهید.</li>
+<li>امکان استفاده از nmap و netstat برای کشف پورت های باز در یک سیستم.</li>
+<li>برای ورود کاربران، فرآیندها و استفاده از حافظه محدودیت ایجاد کنید.</li>
+<li>تعیین کنید کدام کاربران وارد سیستم شده اند یا در حال حاضر وارد سیستم شده اند.</li>
+<li>پیکربندی و استفاده اولیه sudo.</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">find</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">passwd</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">fuser</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">lsof</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">nmap</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">chage</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">netstat</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">sudo</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/sudoers</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">su</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">usermod</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">ulimit</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">who, w, last</code></bdi></li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/rNxitwVtRvo" title="LPIC 1 - 77  - 110.1 (1/3) - Perform Security Admin Tasks;su,sudo,online users &amp;password management" width="560"></iframe></div>
+<h2 id="_3">کاربران</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/rNxitwVtRvo?si=V6a_wAv84xjOIbjx" title="YouTube video player" width="560"></iframe></div>
+<h3 id="sudo-su"><bdi><code class="inline-code" dir="ltr">sudo</code></bdi> در مقابل <bdi><code class="inline-code" dir="ltr">su</code></bdi></h3>
+<p>ما عملاً در تمام فصل‌ها از <bdi><code class="inline-code" dir="ltr">sudo</code></bdi> و <bdi><code class="inline-code" dir="ltr">su</code></bdi> استفاده کرده‌ایم و اکنون زمان آن است که نگاه دقیق‌تری داشته باشیم! <bdi><code class="inline-code" dir="ltr">su</code></bdi> شما را به حساب دیگری تغییر می دهد. یک "هویت کاربر جایگزین". پس از <bdi><code class="inline-code" dir="ltr">su</code></bdi> موفقیت آمیز بودن <bdi><code class="inline-code" dir="ltr">su</code></bdi> به آن حساب، یک درخواست جدید با حساب کاربری جدید دریافت می کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife ~$ whoami
+jadi
+jadi@funlife ~$ su -
+Password:
+root@funlife:~# whoami
+root
+root@funlife:~# su jadi -
+jadi@funlife /root$ whoami
+jadi
+jadi@funlife /root$ exit
+exit
+root@funlife:~# whoami
+root
+root@funlife:~# exit
+logout
+jadi@funlife ~$ whoami
+jadi
+jadi@funlife ~$
+</code></pre></div>
+<p>توجه داشته باشید که هنگام اجرای <bdi><code class="inline-code" dir="ltr">su</code></bdi> باید <strong>رمز عبور root</strong> را برای تبدیل شدن به روت ارائه دهید. یا هر رمز عبور کاربر دیگری برای تبدیل شدن به آن کاربر!</p>
+<p>از طرف دیگر، sudo رمز عبور خود را می‌خواهد و دستوری را که به آن داده‌اید، با امتیازات root اجرا می‌کند. بنابراین <bdi><code class="inline-code" dir="ltr">sudo ls</code></bdi> پس از درخواست <strong>رمز عبور</strong>، دستور ls را با امتیازات ریشه اجرا می کند. بدیهی است که شما باید حق <em>sudo</em> را برای صدور sudo داشته باشید. این در فایل <bdi><code class="inline-code" dir="ltr">/etc/sudoers</code></bdi> تعریف شده است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ sudo cat /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults    env_reset
+Defaults    mail_badpass
+Defaults    secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo    ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
+</code></pre></div>
+<p>به 2 خط مهم توجه کنید:</p>
+<ul>
+<li>چگونه root حق اجرای تمام دستورات را می گیرد:</li>
+</ul>
+<p><bdi><code class="inline-code" dir="ltr">root    ALL=(ALL:ALL) ALL</code></bdi>
+- و اینکه چگونه گروه‌های sudo و admin حقوق اجرای دستورات را به عنوان root دریافت می‌کنند: </p>
+<p>```
+  # Members of the admin group may gain root privileges
+  %admin ALL=(ALL) ALL</p>
+<p># Allow members of group sudo to execute any command
+  %sudo    ALL=(ALL:ALL) ALL
+  ```</p>
+<p><bdi><code class="inline-code" dir="ltr">ALL:ALL</code></bdi> به این معنی است که این کاربران می توانند به عنوان هر کاربر و هر گروهی اجرا شوند. آخرین ALL به sudo می گوید که این کاربران/گروه ها می توانند همه دستورات را اجرا کنند. این امکان وجود دارد که <bdi><code class="inline-code" dir="ltr">/bin/ping</code></bdi> را در قسمت آخر قرار دهید تا به sudo بگویید که این کاربر فقط می تواند پینگ را به عنوان root اجرا کند، مانند زیر:</p>
+<p><bdi><code class="inline-code" dir="ltr">username ALL=(ALL) /bin/ping</code></bdi></p>
+<blockquote class="callout-box">
+<p>فایل /etc/sudoers بسیار مهم است و شکستن آن مشکلات بزرگی ایجاد می کند. برای جلوگیری از اضافه کردن خطوط غیرقابل تفسیر در آن فایل، باید به جای <bdi><code class="inline-code" dir="ltr">vi /etc/sudoers</code></bdi> از دستور <bdi><code class="inline-code" dir="ltr">visudo</code></bdi> استفاده شود. این ابزار ویرایش های شما را بررسی می کند تا مطمئن شود که دستور sudo می تواند آنها را درک کند.</p>
+</blockquote>
+<p>اکنون می دانیم <bdi><code class="inline-code" dir="ltr">sudo su -</code></bdi> به چه معناست. sudo به سیستم می گوید که دستور <bdi><code class="inline-code" dir="ltr">su -</code></bdi> را با دسترسی ریشه اجرا کند. اگر دسترسی sudo دارید، رمز عبور شما را می‌پرسد و <bdi><code class="inline-code" dir="ltr">su -</code></bdi> را به عنوان ریشه اجرا می‌کند. دستورات <bdi><code class="inline-code" dir="ltr">su</code></bdi> کاربر شما را به روت تغییر می دهد و سوئیچ <bdi><code class="inline-code" dir="ltr">-</code></bdi> متغیرهای محیط ریشه را بارگیری می کند. به این ترتیب می توانید با استفاده از رمز عبور خود از طریق اجرای <bdi><code class="inline-code" dir="ltr">su</code></bdi> با <bdi><code class="inline-code" dir="ltr">sudo</code></bdi> تبدیل به روت شوید.</p>
+<h3 id="_4">بررسی کاربران در سیستم</h3>
+<p>اگر می خواهید بررسی کنید چه کسی در سیستم شما (و تا حدودی چه کاری انجام می دهد) می توانید از این دستورات استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$  w
+ 22:03:37 up 3 days,  5:33, 13 users,  load average: 1.48, 1.12, 1.19
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+jadi     tty7     :0               Wed16    3days  2:30m  1.96s /sbin/upstart --user
+jadi     pts/18   :0               Wed16    3:04m  1:02   1:02  /usr/bin/python manage.py runserver 0.0.0.0:8000
+jadi     pts/19   :0               Wed16    1:11m  0.35s  0.35s /bin/bash
+root     tty2                      Wed16    3days  0.07s  0.03s -bash
+jadi     pts/21   :0               08:41   45:37   0.06s  0.06s /bin/bash
+jadi     pts/23   :0               Thu11   46:49   0.25s  0.23s ssh startups
+jadi     pts/21   funlife          Fri22   45:37   0.06s  0.06s /bin/bash
+jadi     pts/25   :0               10:17   31:37   0.07s  5.81s /usr/bin/python /usr/bin/x-terminal-emulator
+jadi     pts/26   :0               21:39    0.00s  0.07s  0.00s w
+jadi     pts/27   :0               21:55    8:09   0.01s  0.01s /bin/bash
+</code></pre></div>
+<p>شما یک خط برای هر کاربر وارد شده دارید (هر پنجره پوسته یک ورود جداگانه است).</p>
+<p>دستور مفید دیگر <bdi><code class="inline-code" dir="ltr">who</code></bdi> است. بیایید آن را بررسی کنیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ who
+jadi     tty7         2016-06-01 16:30 (:0)
+jadi     pts/17       2016-06-01 16:30 (funlife)
+jadi     pts/2        2016-06-01 16:32 (:0)
+jadi     pts/18       2016-06-01 16:32 (:0)
+jadi     pts/19       2016-06-01 16:33 (:0)
+root     tty2         2016-06-01 16:36
+jadi     pts/21       2016-06-04 08:41 (:0)
+jadi     pts/22       2016-06-01 18:37 (funlife)
+jadi     pts/23       2016-06-02 11:41 (:0)
+jadi     pts/21       2016-06-03 22:22 (funlife)
+jadi     pts/25       2016-06-04 10:17 (:0)
+jadi     pts/26       2016-06-04 21:39 (:0)
+jadi     pts/27       2016-06-04 21:55 (:0)
+</code></pre></div>
+<p>همانطور که می بینید هر دو این دستورات به شما می گویند زمانی که کاربر وارد سیستم شده است اما افراد خارج شده را نشان نمی دهد (زیرا آنها دیگر در سیستم نیستند!). اگر به آن داده نیاز دارید از دستور <bdi><code class="inline-code" dir="ltr">last</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">~$ last | head
+jadi     pts/27       :0               Sat Jun  4 21:55    gone - no logout
+jadi     pts/26       :0               Sat Jun  4 21:39    gone - no logout
+jadi     pts/26       :0               Sat Jun  4 18:55 - 19:42  (00:46)
+jadi     pts/25       :0               Sat Jun  4 10:17    gone - no logout
+jadi     pts/26       :0               Sat Jun  4 09:25 - 09:26  (00:00)
+jadi     pts/26       :0               Sat Jun  4 09:25 - 09:25  (00:00)
+jadi     pts/25       :0               Sat Jun  4 08:52 - 09:27  (00:35)
+jadi     pts/21       :0               Sat Jun  4 08:41    gone - no logout
+jadi     pts/21       funlife          Fri Jun  3 22:22 - 08:41  (10:18)
+jadi     pts/21       :0               Fri Jun  3 18:44 - 19:47  (01:03)
+</code></pre></div>
+<blockquote class="callout-box">
+<p>راهی برای بررسی ورود ناموفق نیز وجود دارد: <bdi><code class="inline-code" dir="ltr">last -f /var/log/btmp</code></bdi></p>
+</blockquote>
+<h3 id="_5">مدیریت رمز عبور</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">passwd</code></bdi> برای به روز رسانی / تغییر رمز عبور کاربران استفاده می شود. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  passwd     
+Changing password for jadi.
+Current password: 
+New password: 
+Retype new password: 
+passwd: password updated successfully
+➜  sudo passwd jadi
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+</code></pre></div>
+<p>همچنین می توانید از این دستور برای بررسی وضعیت یک کاربر استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ passwd -S
+jadi P 2023-09-14 0 99999 7 -1
+</code></pre></div>
+<p>می گوید کاربر من jadi است، رمز عبور <em>P</em> معتبری دارم (ممکن است <em>L</em>ocked یا <em>NP</em> بدون رمز عبور باشد)، آخرین زمان تغییر رمز عبور، حداقل و حداکثر سن رمز عبور، دوره هشدار قبل از انقضای رمز عبور و غیرفعال بودن مجاز رمز عبور در چند روز. دستور <bdi><code class="inline-code" dir="ltr">passwd</code></bdi> همچنین می تواند برای <bdi><code class="inline-code" dir="ltr">--lock</code></bdi> (یا <bdi><code class="inline-code" dir="ltr">-l</code></bdi>) یک کاربر، <bdi><code class="inline-code" dir="ltr">--expire</code></bdi> (یا <bdi><code class="inline-code" dir="ltr">-e</code></bdi>) یک کاربر یا <bdi><code class="inline-code" dir="ltr">--unlock</code></bdi> (یا ___IN_LINE_70) استفاده شود.</p>
+<blockquote class="callout-box">
+<p>همانطور که قبلا در بخش مدیریت کاربر مشاهده کردید، برای تغییر پوسته کاربر، خانه، ... باید از دستور <bdi><code class="inline-code" dir="ltr">usermod</code></bdi> استفاده کنید.</p>
+</blockquote>
+<p>اما برای بررسی صحیح/تغییر سن رمز عبور و تنظیمات کاربران، باید از ابزار <bdi><code class="inline-code" dir="ltr">chage</code></bdi> استفاده شود. آن را با <bdi><code class="inline-code" dir="ltr">-l</code></bdi> برای <bdi><code class="inline-code" dir="ltr">list</code></bdi> اجرا کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ chage -l jadi
+Last password change                    : Sep 14, 2023
+Password expires                    : never
+Password inactive                   : never
+Account expires                     : never
+Minimum number of days between password change      : 0
+Maximum number of days between password change      : 99999
+Number of days of warning before password expires   : 7
+</code></pre></div>
+<p>یا بدون هیچ سوئیچ برای حالت تعاملی:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ chage jadi
+chage: Permission denied.
+➜  ~ sudo chage jadi
+Changing the aging information for jadi
+Enter the new value, or press ENTER for the default
+
+    Minimum Password Age [0]: 
+    Maximum Password Age [99999]: 
+    Last Password Change (YYYY-MM-DD) [2023-09-14]: 
+    Password Expiration Warning [7]: 3
+    Password Inactive [-1]: 
+    Account Expiration Date (YYYY-MM-DD) [-1]: 
+</code></pre></div>
+<p>همچنین می توانید از سوئیچ ها برای تغییر مستقیم مقادیر استفاده کنید. بگویید <bdi><code class="inline-code" dir="ltr">-m</code></bdi> برای --mindays یا <bdi><code class="inline-code" dir="ltr">-M</code></bdi> برای --maxdays. </p>
+<h3 id="suid">suid و راهنما</h3>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/1wyPXxrnI7g" title="LPIC 1 - 78  - 110.1 (2/3) - Perform Security Admin Tasks; suid, guid &amp; ulimits" width="560"></iframe></div>
+<p>ما قبلاً <bdi><code class="inline-code" dir="ltr">suid</code></bdi> را پوشش داده ایم. به طور خلاصه، هنگامی که بیت suid روی یک فایل اجرایی تنظیم می شود، کاربر با سطح دسترسی صاحب فایل (و نه runner) اجرا می شود. به دستور <bdi><code class="inline-code" dir="ltr">passwd</code></bdi> نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ type passwd
+passwd is /usr/bin/passwd
+➜  ~ ls -ltrh /usr/bin/passwd 
+-rwsr-xr-x 1 root root 63K Nov 23  2022 /usr/bin/passwd
+</code></pre></div>
+<p><bdi><code class="inline-code" dir="ltr">s</code></bdi> در قسمت حقوق دسترسی، فایل را با استفاده از دسترسی صاحبان (در اینجا ریشه آن) اجرا می کند. صرف نظر از اینکه چه کسی آن را اجرا می کند. این مورد نیاز است زیرا دستورات <bdi><code class="inline-code" dir="ltr">passwd</code></bdi> باید بتوانند رمزهای عبور فایل <em>shadow</em> را تغییر دهند، حتی اگر یک کاربر عادی آن را اجرا کند. اما اگر شخصی suid دستور vi را تغییر دهد چه اتفاقی می افتد؟ بیایید ببینیم مالک <bdi><code class="inline-code" dir="ltr">vi</code></bdi> کیست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife ~$ type vi
+vi is /usr/bin/vi
+jadi@funlife ~$ ls -ltrh /usr/bin/vi
+lrwxrwxrwx 1 root root 20 Jun  1 12:52 /usr/bin/vi -&gt; /etc/alternatives/vi
+</code></pre></div>
+<p><bdi><code class="inline-code" dir="ltr">vi</code></bdi> متعلق به root است، بنابراین اگر بیت suid تنظیم شود، vi همیشه به عنوان root اجرا می شود! در این صورت، هر کسی می‌تواند هر فایلی را ویرایش کند! بنابراین اگر یک هکر هستید و یک روت موقت دریافت می‌کنید، کافی است vi را در جایی کپی کنید (با نام غیر مشکوک دیگری) و به آن دسترسی <bdi><code class="inline-code" dir="ltr">suid</code></bdi> بدهید. اکنون می توانید آن را با کاربران عادی اجرا کنید و در صورت نیاز فایل های سیستم را تغییر دهید! به همین دلیل است که یک مدیر سیستم باید بتواند در صورت نیاز فایل های اجرایی سیستم خود را با بیت <bdi><code class="inline-code" dir="ltr">suid</code></bdi> بررسی کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$sudo find / -perm -u+s
+</code></pre></div>
+<p>در اینجا، <bdi><code class="inline-code" dir="ltr">-perm -u+s</code></bdi> به <bdi><code class="inline-code" dir="ltr">find</code></bdi> می گوید که فایلی را که دارای <bdi><code class="inline-code" dir="ltr">suid</code></bdi> در <bdi><code class="inline-code" dir="ltr">user</code></bdi> است، جستجو کند. برای اطلاعات بیشتر، <bdi><code class="inline-code" dir="ltr">man find</code></bdi> را بررسی کنید و <bdi><code class="inline-code" dir="ltr">perm</code></bdi> را جستجو کنید. </p>
+<blockquote class="callout-box">
+<p>همین امر در مورد راهنما نیز صدق می کند. اگر راهنما تنظیم شده باشد، فایل با دسترسی گروه خود اجرا می شود</p>
+</blockquote>
+<h3 id="_6">محدودیت های کاربر</h3>
+<p>منابع موجود در یک ماشین لینوکس را می توان با دستور <bdi><code class="inline-code" dir="ltr">ulimit</code></bdi> برای کاربران مدیریت کرد. بخشی از سیستم PAM است. اگر می‌خواهید محدودیت‌های اجرای سیستم را بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">~$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 47457
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 47457
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+</code></pre></div>
+<p>و می توانید آنها را به این صورت تغییر دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ulimit -t 1
+</code></pre></div>
+<p>با این کار، CPU TIME هر فرآیندی به 1 ثانیه محدود می شود. اگر بیشتر از آن استفاده کنید، فرآیند به طور خودکار (توسط ماژول PAM) از بین می‌رود. لطفا توجه داشته باشید که زمان ساعت دیواری شما با زمان CPU متفاوت است. برای اینکه ببینید یک فرآیند چقدر از زمان CPU استفاده می کند، آن را به صورت زیر اجرا کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ time firefox
+</code></pre></div>
+<p>تغییر ulimit همانطور که ما انجام دادیم یک چیز موقتی است. فقط در آن پوسته خاص باقی می ماند.</p>
+<p>برای تغییر ulimits در سراسر سیستم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ cat /etc/security/limits.conf
+# /etc/security/limits.conf
+#
+#Each line describes a limit for a user in the form:
+#
+#&lt;domain&gt;        &lt;type&gt;  &lt;item&gt;  &lt;value&gt;
+#
+#Where:
+#&lt;domain&gt; can be:
+#        - a user name
+#        - a group name, with @group syntax
+#        - the wildcard *, for default entry
+#        - the wildcard %, can be also used with %group syntax,
+#                 for maxlogin limit
+#        - NOTE: group and wildcard limits are not applied to root.
+#          To apply a limit to the root user, &lt;domain&gt; must be
+#          the literal username root.
+#
+#&lt;type&gt; can have the two values:
+#        - "soft" for enforcing the soft limits
+#        - "hard" for enforcing hard limits
+#
+#&lt;item&gt; can be one of the following:
+#        - core - limits the core file size (KB)
+#        - data - max data size (KB)
+#        - fsize - maximum filesize (KB)
+#        - memlock - max locked-in-memory address space (KB)
+#        - nofile - max number of open files
+#        - rss - max resident set size (KB)
+#        - stack - max stack size (KB)
+#        - cpu - max CPU time (MIN)
+#        - nproc - max number of processes
+#        - as - address space limit (KB)
+#        - maxlogins - max number of logins for this user
+#        - maxsyslogins - max number of logins on the system
+#        - priority - the priority to run user process with
+#        - locks - max number of file locks the user can hold
+#        - sigpending - max number of pending signals
+#        - msgqueue - max memory used by POSIX message queues (bytes)
+#        - nice - max nice priority allowed to raise to values: [-20, 19]
+#        - rtprio - max realtime priority
+#        - chroot - change root to directory (Debian-specific)
+#
+#&lt;domain&gt;      &lt;type&gt;  &lt;item&gt;         &lt;value&gt;
+#
+
+#*               soft    core            0
+#root            hard    core            100000
+#*               hard    rss             10000
+#@student        hard    nproc           20
+#@faculty        soft    nproc           20
+#@faculty        hard    nproc           50
+#ftp             hard    nproc           0
+#ftp             -       chroot          /ftp
+#@student        -       maxlogins       4
+
+# End of file
+</code></pre></div>
+<blockquote class="callout-box">
+<p>محدودیت های نرم را می توان توسط کاربر تغییر داد اما محدودیت های سخت نقطه توقف واقعی هستند.</p>
+</blockquote>
+<h2 id="_7">پورت ها را باز کنید</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/9yycyd7ShyM" title="LPIC 1 - 79  - 110.1 (3/3) - Perform Security Admin Tasks; checking for open ports &amp; scan with nmap" width="560"></iframe></div>
+<h3 id="netstat-fuser-lsof">netstat، fuser و lsof</h3>
+<p>در ماژول 109.1 در مورد پورت ها صحبت کردیم. پورت ها مانند کل سیستم های ما هستند که توسط برنامه ها برای گوش دادن به دنیای خارج استفاده می شود. اگر من یک وب سرور را روی رایانه خود اجرا می کنم، باید یک پورت باز داشته باشم تا مردم بتوانند از آن سرور بپرسند "لطفا index.html خود را به من نشان دهید". بسیاری از بدافزارها پورت ها را باز می کنند تا مهاجم بتواند با آنها ارتباط برقرار کند. مهم است که هر چند وقت یکبار رایانه خود را از نظر پورت های باز بررسی کنید. دستور قدیمی برای این <bdi><code class="inline-code" dir="ltr">netstat</code></bdi> است. با استفاده از سوئیچ <bdi><code class="inline-code" dir="ltr">-na</code></bdi> یا <bdi><code class="inline-code" dir="ltr">-ap</code></bdi> یا <bdi><code class="inline-code" dir="ltr">-tuna</code></bdi>.. مطمئنم اگر از ساندویچ تن ماهی لذت برده اید <strong>تونا</strong> را به راحتی به خاطر بسپارید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife ~$ netstat -tuna
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.1.1:53            0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN     
+tcp       25      0 192.168.59.9:49934      192.168.59.192:139      CLOSE_WAIT
+tcp        0      0 127.0.0.1:60228         127.0.0.1:1080          ESTABLISHED
+tcp        0      0 192.168.1.35:55324      159.203.148.169:8385    ESTABLISHED
+tcp        0      0 127.0.0.1:59590         127.0.0.1:1080          ESTABLISHED
+tcp        0      0 127.0.0.1:60212         127.0.0.1:1080          ESTABLISHED
+tcp        0      0 192.168.1.35:54220      159.203.148.169:8385    ESTABLISHED
+tcp        0      0 127.0.0.1:57186         127.0.0.1:1080          ESTABLISHED
+tcp        0      0 192.168.1.35:49574      173.194.122.231:443     ESTABLISHED
+tcp        0      0 127.0.0.1:59002         127.0.0.1:1080          ESTABLISHED
+udp        0      0 0.0.0.0:54502           0.0.0.0:*                          
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                          
+udp        0      0 0.0.0.0:5353            0.0.0.0:*
+</code></pre></div>
+<p>همه پورت های <bdi><code class="inline-code" dir="ltr">LISTEN</code></bdi> سرور هستند. آنها در حال گوش دادن به اتصالات ورودی جدید هستند. اتصالات <bdi><code class="inline-code" dir="ltr">ESTABLISHED</code></bdi> اتصالات فعال بین رایانه شما و رایانه دیگری هستند. در این جداول <bdi><code class="inline-code" dir="ltr">0.0.0.0</code></bdi> <em>any address</em> یا <em>any interface</em> را دیکته می کند.</p>
+<p>ابزارهای مفید دیگر <bdi><code class="inline-code" dir="ltr">ss</code></bdi> برای همان هدفی هستند که در فصل 109 و <bdi><code class="inline-code" dir="ltr">lsof</code></bdi> و <bdi><code class="inline-code" dir="ltr">fuser</code></bdi> دیدید. <bdi><code class="inline-code" dir="ltr">lsof</code></bdi> قبلاً در بخش های قبلی مورد بحث قرار گرفته است. فایل های باز روی سیستم را نشان می دهد و با در نظر گرفتن اینکه <em>همه چیز در لینوکس یک فایل یا یک فرآیند است</em> می توانید نتیجه بگیرید که این دستور باید بتواند اتصالات باز را نیز نمایش دهد. و حق با شماست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># lsof -i
+COMMAND     PID       USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+privoxy     806    privoxy    4u  IPv4   16130      0t0  TCP funlife:8118 (LISTEN)
+cups-brow   903       root    8u  IPv4   17477      0t0  UDP *:ipp
+mysqld      971      mysql   19u  IPv4   20875      0t0  TCP funlife:mysql (LISTEN)
+tor        1038 debian-tor    6u  IPv4   19155      0t0  TCP funlife:9050 (LISTEN)
+dnsmasq    1260     nobody   11u  IPv4 1910037      0t0  UDP *:18666
+adb        1278       jadi    5u  IPv4  579541      0t0  TCP funlife:5037 (LISTEN)
+chromium-  2891       jadi   88u  IPv4  813611      0t0  TCP 192.168.1.35:45702-&gt;do-13.lastpass.com:https (ESTABLISHED)
+chromium-  2891       jadi  126u  IPv4 1907389      0t0  TCP 192.168.1.35:50642-&gt;ntt-2.lastpass.com:https (ESTABLISHED)
+chromium-  2891       jadi  133u  IPv4 1909733      0t0  TCP 192.168.1.35:50644-&gt;ntt-2.lastpass.com:https (ESTABLISHED)
+chromium-  2891       jadi  268u  IPv4  785289      0t0  TCP 192.168.1.35:60736-&gt;lf-in-f188.1e100.net:5228 (ESTABLISHED)
+python     4925       jadi    4u  IPv4  658287      0t0  TCP funlife:8000 (LISTEN)
+Telegram   4943       jadi   39u  IPv4  773463      0t0  TCP 192.168.1.35:44732-&gt;149.154.175.50:https (ESTABLISHED)
+dhclient   9984       root    6u  IPv4  787885      0t0  UDP *:bootpc
+nginx     11095       root    6u  IPv4   17998      0t0  TCP *:http (LISTEN)
+nginx     11099   www-data    7u  IPv6   17999      0t0  TCP *:http (LISTEN)
+chrome    14264       jadi  114u  IPv4  788089      0t0  UDP *:mdns
+chrome    14264       jadi  126u  IPv4 1872872      0t0  TCP funlife:60370-&gt;funlife:socks (ESTABLISHED)
+chrome    14264       jadi  138u  IPv4 1908382      0t0  TCP funlife:60408-&gt;funlife:socks (ESTABLISHED)
+</code></pre></div>
+<p>عجب! این دستور فرمان، PID، کاربر در حال اجرا و IP مبدا و مقصد را نشان می دهد و می گوید که آیا این یک اتصال LISTENING یا STABLISHED است.</p>
+<p>اگر می‌خواهید بررسی کنید کدام فرآیند از پورت 80 استفاده می‌کند، می‌توانید خروجی هر دستور بالا را grep کنید یا به سادگی از دستور <bdi><code class="inline-code" dir="ltr">fuser</code></bdi> (کاربر فایل؛ کسی که از این فایل استفاده می‌کند) استفاده کنید تا تمام PID‌های مربوط به آن پورت خاص را پیدا کنید. یک سوئیچ رایج <bdi><code class="inline-code" dir="ltr">-v</code></bdi> است که پرمخاطب است. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">➜  bin sudo fuser 22/tcp -v      
+                     USER        PID ACCESS COMMAND
+22/tcp:              root          1 F.... systemd
+</code></pre></div>
+<h3 id="nmap">nmap</h3>
+<p><bdi><code class="inline-code" dir="ltr">nmap</code></bdi> یکی از ابزارهای محبوب هکرها است! شما می توانید یک سرور را nmap کنید تا از اطلاعات زیادی در مورد آن سرور مطلع شوید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># nmap localhost
+
+Starting Nmap 7.01 ( https://nmap.org ) at 2016-06-04 21:32 IRDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000070s latency).
+rDNS record for 127.0.0.1: funlife
+Not shown: 995 closed ports
+PORT     STATE SERVICE
+80/tcp   open  http
+1080/tcp open  socks
+3306/tcp open  mysql
+8000/tcp open  http-alt
+9050/tcp open  tor-socks
+
+Nmap done: 1 IP address (1 host up) scanned in 1.66 seconds
+root@funlife:~#
+</code></pre></div>
+<p>در ابتدایی ترین شکل، nmap تمام پورت های باز را از 1 تا 1000 بررسی می کند و نتایج را چاپ می کند. سوئیچ های زیادی برای یافتن اطلاعات دیگر در مورد هاست وجود دارد و هر هکری که می خواهد وضعیت سرور را بررسی کند از آنها استفاده می کند.</p>
+<p>یک جستجوی سریع برای [nmap oneliners] (https://duckduckgo.com/?t=h_&amp;q=nmap+oneliners&amp;ia=web) انجام دهید و ده ها دستور و ترفند جالب برای آن پیدا خواهید کرد. آنقدر جالب است که وب سایت آن [بخشی درباره nmap در فیلم ها دارد] (https://nmap.org/movies/)!</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1094_configure_client_side_dns.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a><a href="1102_setup_host_security.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">110.2 راه اندازی امنیت میزبان</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

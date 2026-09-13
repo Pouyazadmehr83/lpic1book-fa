@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>110.3 ایمن سازی داده ها با رمزگذاری | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item active"><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۱۰: امنیت سیستم (Security)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">110.3 ایمن سازی داده ها با رمزگذاری</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۱۰</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>داوطلب باید بتواند از تکنیک های کلید عمومی برای ایمن سازی داده ها و ارتباطات استفاده کند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>پیکربندی و استفاده اولیه کلاینت OpenSSH 2 را انجام دهید.</li>
+<li>نقش کلیدهای میزبان سرور OpenSSH 2 را درک کنید.</li>
+<li>پیکربندی، استفاده و لغو اولیه GnuPG را انجام دهید.</li>
+<li>از GPG برای رمزگذاری، رمزگشایی، امضا و تأیید فایل ها استفاده کنید.</li>
+<li>تونل های پورت SSH (از جمله تونل های X11) را بدانید.</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li>ssh</li>
+<li>ssh-keygen</li>
+<li>ssh-agent</li>
+<li>ssh-add</li>
+<li>~/.ssh/id_rsa و id_rsa.pub</li>
+<li>~/.ssh/id_dsa و id_dsa.pub</li>
+<li>~/.ssh/id_ecdsa و id_ecdsa.pub</li>
+<li>~/.ssh/id_ed25519 و id_ed25519.pub</li>
+<li>/etc/ssh/ssh_host_rsa_key و ssh_host_rsa_key.pub</li>
+<li>/etc/ssh/ssh_host_dsa_key و ssh_host_dsa_key.pub</li>
+<li>/etc/ssh/ssh_host_ecdsa_key و ssh_host_ecdsa_key.pub</li>
+<li>/etc/ssh/ssh_host_ed25519_key و ssh_host_ed25519_key.pub</li>
+<li>~/.ssh/authorized_keys</li>
+<li>ssh_known_hosts</li>
+<li>gpg</li>
+<li>gpg-agent</li>
+<li>~/.gnupg/</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/ElbC0EtZc4c?si=PemOqHr6s7V53wwS" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_3">جفت کلید</h2>
+<p>در رمزنگاری سنتی، از کلیدهای متقارن استفاده می شد: هر دو طرف یک رمز عبور مشترک داشتند. داده ها با آن رمز رمزگذاری شده و سپس با استفاده از همان رمز رمزگشایی شدند. اما در سال 1976، ایده جدیدی مطرح شد: اگر 2 کلید ایجاد کنیم (اجازه دهید آنها را کلید خصوصی و کلید عمومی بنامیم) به گونه ای که فقط افرادی که کلید عمومی را دارند بتوانند هر چیزی را که با کلید خصوصی رمزگذاری شده است را باز کنند؟ دانشمندان این را به واقعیت تبدیل کردند و اکنون، بیشتر رمزگذاری های ما از طریق این <strong>جفت کلید</strong>ها انجام می شود. هنگام تولید یک جفت کلید، ما دو کلید را با استفاده از یک الگوریتم کامپیوتری تولید می کنیم، به گونه ای که هر پیامی که با استفاده از یکی رمزگذاری می شود، تنها با استفاده از دیگری باز می شود. اینها کلید عمومی و خصوصی نامیده می شوند. شما کلید عمومی را برای دوستان خود یا حتی به صورت عمومی در شبکه منتشر می کنید و اگر شخصی بخواهد برای شما پیام رمزگذاری شده ارسال کند، با استفاده از کلید عمومی شما آن را رمزگذاری می کند و با هر وسیله ای برای شما ارسال می کند (یا پیام رمزگذاری شده را در اینترنت منتشر می کند) و فقط و فقط شما قادر خواهید بود آن را باز کنید، زیرا شما هستید که کلید خصوصی را دارید!</p>
+<blockquote class="callout-box">
+<p>نکته مهم در مورد کلید عمومی / خصوصی این است که داده ها را می توان از طریق اینترنت بدون ترس از هکرها یا دولت ها منتقل کرد. شما در حال انتشار کلید خود در جهان هستید، یکی آن را انتخاب می کند و از آن برای رمزگذاری برخی داده ها استفاده می کند و نتیجه را برای شما ارسال می کند. مردم می توانند ببینند که شما "برخی داده ها" را دریافت می کنید اما نمی توانند آن را رمزگذاری کنند زیرا کلید خصوصی مورد نیاز برای رمزگشایی آن را ندارند.</p>
+</blockquote>
+<h3 id="ssh">کلیدهای ssh</h3>
+<p>همین فناوری (رمزنگاری کلید عمومی یا رمزنگاری نامتقارن) را می توان در بیشتر ارتباطات شبکه نیز مورد استفاده قرار داد. در واقع <bdi><code class="inline-code" dir="ltr">ssh</code></bdi> بر اساس این مفهوم کار می کند. برای احراز هویت هاست و ایمن سازی ترافیک استفاده می شود. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ ssh 192.168.70.2
+The authenticity of host '192.168.70.2 (192.168.70.2)' can't be established.
+ED25519 key fingerprint is SHA256:4Wp2zz6sgPAhnbqhkNjOd6QDpNQ4jvjX7qAzslPX09U.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '192.168.70.2' (ED25519) to the list of known hosts.
+jadi@192.168.70.2's password:
+Linux debian 6.4.0-2-arm64 #1 SMP Debian 6.4.4-3 (2023-08-08) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+You have no mail.
+Last login: Sun Sep 17 04:43:18 2023 from 192.168.70.1
+jadi@debian:~$
+</code></pre></div>
+<p>در بالای سرور، اثر انگشت کلید ED25519 خود را به ما نشان می دهد و از ما می خواهد که آن را تأیید کنیم. از این به بعد، سیستم ما برای همان کلید با همان سرور به ما هشدار نمی دهد. اما اگر اثر انگشت (پس کلید) همان سرور تغییر کند، یک مورد جدی در نظر گرفته می شود:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ ssh 192.168.70.2
+Host key verification failed.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:4Wp2zz6sgPAhnbqhkNjOd6QDpNQ4jvjX7qAzslPX09U.
+Please contact your system administrator.
+Add correct host key in /Users/jadi/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /Users/jadi/.ssh/known_hosts:548
+Host key for 192.168.70.2 has changed and you have requested strict checking.
+</code></pre></div>
+<p>اگر می خواهید این مشکل را حل کنید - پس از اطمینان از اینکه این یک حمله نیست - باید داده های 192.168.70.2 را از فایل <bdi><code class="inline-code" dir="ltr">.ssh/known_hosts</code></bdi> حذف کنید. خوشبختانه نیازی به ویرایش مستقیم فایل ندارید. برای استفاده از دستور <bdi><code class="inline-code" dir="ltr">ssh-keygen</code></bdi> کافی است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ ssh-keygen -R 192.168.70.2
+# Host 192.168.70.2 found: line 547
+# Host 192.168.70.2 found: line 548
+# Host 192.168.70.2 found: line 549
+/Users/jadi/.ssh/known_hosts updated.
+Original contents retained as /Users/jadi/.ssh/known_hosts.old
+</code></pre></div>
+<h4 id="_4">جفت کلید خود را ایجاد کنید</h4>
+<p>شما به راحتی می توانید هر تعداد جفت کلید بخواهید ایجاد کنید. حتی با الگوریتم های مختلف (تعریف شده توسط سوئیچ <bdi><code class="inline-code" dir="ltr">-t</code></bdi> و شامل dsa، ecdsa، ecdsa-sk، ed25519، ed25519-sk، rsa). انتخاب های رایج عبارتند از <em>rsa</em> که پیش فرض است و <em>ecdsa</em> که توسط بیت کوین استفاده می شود!</p>
+<p>بیایید یک جفت کلید ecdsa در دستگاه خود ایجاد کنیم. ما می‌توانیم از این برای ورود به سرورها بدون ارائه رمز عبور یا امضا/رمزگذاری پیام‌ها استفاده کنیم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@debian:~$ ssh-keygen -t ecdsa
+Generating public/private ecdsa key pair.
+Enter file in which to save the key (/home/jadi/.ssh/id_ecdsa):
+/home/jadi/.ssh/id_ecdsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/jadi/.ssh/id_ecdsa
+Your public key has been saved in /home/jadi/.ssh/id_ecdsa.pub
+The key fingerprint is:
+SHA256:WvJu5D7ns0a2z0sB6l8ZrCXnAgxSmb2kSwgo/lK0QYA jadi@debian
+The key's randomart image is:
++---[ECDSA 256]---+
+|.oo.  .+         |
+|E .o .o o        |
+|o ..+..o ..      |
+| . o..oo.. o     |
+|  o  ...S . *    |
+| . .  .*..o* +   |
+|  .   .oooo.=    |
+|       .+.==     |
+|       oo=+++.   |
++----[SHA256]-----+
+</code></pre></div>
+<p>و از آنجایی که رایگان است، اجازه دهید یک کلید rsa نیز ایجاد کنیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@debian:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/jadi/.ssh/id_rsa):
+/home/jadi/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/jadi/.ssh/id_rsa
+Your public key has been saved in /home/jadi/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:Q67Ob1DOfmF3gG449OfNLHXxE5QEH4B/UzHR8ycAHao jadi@debian
+The key's randomart image is:
++---[RSA 3072]----+
+|          .oo++*=|
+|           oo .+=|
+|        . ......+|
+|       oo.. ...=o|
+|       =E+   ...*|
+|      ..=.* o o.o|
+|      .o + = * ..|
+|     o  o . o +  |
+|      oo..   .   |
++----[SHA256]-----+
+</code></pre></div>
+<p>آن <em>Image</em> سرگرم کننده چیزی است که می توانید به دوستان خود نشان دهید تا مطمئن شوند که از کلید صحیح استفاده می کنند. </p>
+<blockquote class="callout-box">
+<p>در بالا، رمز عبور برای کلیدها قرار ندادم. اگر این کار را می‌کردم، باید هر بار که می‌خواستم از آن کلید استفاده کنم، آن رمز عبور را ارائه می‌کردم</p>
+</blockquote>
+<p>این کلیدها در فهرست کاربران <bdi><code class="inline-code" dir="ltr">~/.ssh</code></bdi> ذخیره می شوند. همانطور که می توانید حدس بزنید، کلیدهای گسترده سیستم مورد استفاده برای سرور ssh در <bdi><code class="inline-code" dir="ltr">/etc/ssh</code></bdi> قرار دارند.</p>
+<h3 id="_5">بر اساس کلید / ورود بدون رمز عبور</h3>
+<p>سرور ssh را می توان برای بررسی هویت شما با استفاده از کلیدهای خود پیکربندی کرد. کافی است کلید عمومی خود را در حساب کاربری سرور ذخیره کنید و به سرور بگویید لاگین های مبتنی بر کلید را نیز بررسی کند. در این صورت کلاینت ssh شما کلید خصوصی شما را به عنوان مدرک هویت در اختیار سرور ssh قرار می دهد و می توانید بدون ارائه پسورد وارد کاربر شوید.</p>
+<p>ابتدا کلید <em>public</em> خود را کپی کرده و وارد سرور شوید. فایل <bdi><code class="inline-code" dir="ltr">~/.ssh/authorized_keys</code></bdi> را باز کنید و فایل خود را اضافه کنید. همچنین مطمئن شوید که <bdi><code class="inline-code" dir="ltr">/etc/ssh/sshd_config</code></bdi> حاوی <bdi><code class="inline-code" dir="ltr">PubkeyAuthentication yes</code></bdi> باشد. اکنون از سیستم خارج شوید و در ورود بعدی بتوانید بدون رمز ورود وارد شوید! وقتی سرورهای زیادی را مدیریت می‌کنید یا می‌خواهید کپی‌های <bdi><code class="inline-code" dir="ltr">scp</code></bdi> و موارد دیگر را خودکار کنید، بسیار کاربردی است. همچنین از نظر sysadmin ایمن تر است زیرا اگر لازم باشد به کاربر جدیدی اجازه ورود به سیستم من را بدهم، نیازی به اشتراک گذاری رمز عبور یا ارتباط رمز عبور در هیچ کانالی ندارم. کافی است از شخص <strong>کلید عمومی</strong> خود را بخواهید و آن را به فایل <bdi><code class="inline-code" dir="ltr">.ssh/authorized_keys</code></bdi> کاربران اضافه کنید.</p>
+<p>اوه! و نیازی نیست <em>key copying</em> را به صورت دستی انجام دهید. فقط از دستور <bdi><code class="inline-code" dir="ltr">ssh-copy-id</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ ssh-copy-id 192.168.70.2
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/jadi/.ssh/id_dsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+jadi@192.168.70.2's password:
+
+Number of key(s) added:        1
+
+Now try logging into the machine, with:   "ssh '192.168.70.2'"
+and check to make sure that only the key(s) you wanted were added.
+</code></pre></div>
+<h4 id="ssh-agent">ssh-agent</h4>
+<p><bdi><code class="inline-code" dir="ltr">ssh-agent</code></bdi> مانند یک مدیر کلید برای کلیدهای ssh شما کار می کند. کلیدهای خصوصی شما را در حافظه نگه می دارد و در صورت نیاز آنها را ارائه می دهد. به عنوان مثال اگر روی کلید خود رمز عبور تعیین کرده اید، باید هر بار که می خواهید از آن کلید استفاده کنید رمز عبور را تایپ کنید. برای سهولت در استفاده از ssh-agent، باید پوسته ای را با ssh-agent وارد کنید و تمام کلید خود را به عامل اضافه کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@debian:~$ ssh-agent /bin/bash
+jadi@debian:~$ ssh-add
+Identity added: /home/jadi/.ssh/id_rsa (jadi@debian)
+Identity added: /home/jadi/.ssh/id_ecdsa (jadi@debian)
+Identity added: /home/jadi/.ssh/id_dsa (/home/jadi/.ssh/id_dsa)
+</code></pre></div>
+<p>اکنون، نماینده در مورد کلیدهای شما می داند و دیگر رمز عبور را نمی خواهد.</p>
+<p><bdi><code class="inline-code" dir="ltr">ssh-agent</code></bdi> همچنین می تواند کلیدهای شما را به صورت ایمن در حافظه به سرورهای دیگر <em>انتقال</em> کند. فرض کنید باید به سرور A ssh کنید و زمانی که در سرور A هستید، از کلید خود برای ssh به سرور B استفاده کنید (یا با استفاده از کلیدهای خصوصی خود git pull را انجام دهید). کلیدها در سرور A هستند و کپی کردن آنها به صورت واقعی و فیزیکی در سرور B امن نیست. در این حالت شما <bdi><code class="inline-code" dir="ltr">ssh-agent</code></bdi> را اجرا می کنید و حتی زمانی که در سرور B هستید کلیدهای خود را در اختیار دارید. </p>
+<h4 id="ssh_1">تونل های ssh</h4>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/bjvOJNmWgYI?si=UFKx2TDaF9l5GCjw" title="YouTube video player" width="560"></iframe></div>
+<p>ssh همچنین می تواند برای <em>tunnelling</em> استفاده شود. این یک مفهوم بسیار سرگرم کننده و یک ابزار فوق العاده کاربردی در دست یک نینجا شبکه است! صادقانه بگویم که ما همیشه از آن برای حل مشکلات پیچیده استفاده می کنیم. </p>
+<p>همانطور که از نام پیداست، تیونینگ ssh <em>تونل</em> داده ها را بین ماشین ها ایجاد می کند. به این مثال نگاه کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>ssh -L 9000:hckrnews.com:80 root@5.161.197.79
+</code></pre></div>
+<p>در اینجا من به رایانه خود می گویم که با استفاده از کاربر <bdi><code class="inline-code" dir="ltr">root</code></bdi> (که ایده خوبی نیست) به سرور <bdi><code class="inline-code" dir="ltr">5.161.197.79</code></bdi> ssh کند. و یک <strong>تونل محلی</strong> (<bdi><code class="inline-code" dir="ltr">-L</code></bdi>) از دستگاه من به سمت پورت <bdi><code class="inline-code" dir="ltr">hckrnews.com</code></bdi> <bdi><code class="inline-code" dir="ltr">80</code></bdi> از طریق آن دستگاه ایجاد کنید. اکنون اگر به <bdi><code class="inline-code" dir="ltr">localhost:9000</code></bdi> <strong>در دستگاه خود</strong> متصل شوم، درخواست از طریق <bdi><code class="inline-code" dir="ltr">5.161.197.79</code></bdi> به سمت پورت 80 hckrnews.com خواهد بود. می توانید آن را با <bdi><code class="inline-code" dir="ltr">curl localhost:9000</code></bdi> امتحان کنید.</p>
+<p>چرا این مفید است؟ فرض کنید برنامه ای روی سرور خود دارید که فقط به درخواست های محلی (و نه اینترنت) پاسخ می دهد. با استفاده از حمل و نقل محلی، می توانید یک پورت را در رایانه خود به پورتی که برنامه ها روی آن کار می کنند، فوروارد کنید و از برنامه در دستگاه خود استفاده کنید!</p>
+<p>همچنین مفهوم <strong>Remote Forwarding</strong> وجود دارد. در این حالت، یک پورت را از یک سرور راه دور به سرور دیگری (عمدتاً رایانه شخصی خود) متصل می کنید. با استفاده از این، می توانید یک وب سرور را از رایانه شخصی خود در اینترنت در معرض دید قرار دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ssh -R 8000:localhost:80 root@5.161.197.79
+</code></pre></div>
+<p>در مثال بالا، من به ssh می گویم که یک تونل <strong>Remote</strong> ایجاد کند. پس از این، هر درخواستی در پورت 8000 از کامپیوتر 5.161.197.79 به پورت 80 لوکال هاست (دستگاه من) می رسد!</p>
+<p>حتی می‌توانید از دستگاه راه دور بخواهید که در یک پورت خاص در تمام رابط‌هایش (به روی شبکه و نه فقط لوکال هاست باز شود) شروع به گوش دادن کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>ssh -R 0.0.0.0:8000:localhost:7777 192.168.70.2
+</code></pre></div>
+<p>در بالا، من به دستگاه 192.168.70.2 می گویم که پورت 8000 را به همه اینترفیس ها باز کند و هر آنچه را که به دست آورد را به پورت machiens 7777 من ارسال کند.</p>
+<blockquote class="callout-box">
+<p>برای اینکه به کلاینت‌ها اجازه دهید پورت‌های گوش را به هر چیزی غیر از localhost متصل کنند، پیکربندی <bdi><code class="inline-code" dir="ltr">GatewayPorts clientspecified</code></bdi> باید در فایل پیکربندی سرور ssh تنظیم شود.</p>
+</blockquote>
+<p>موارد استفاده بیشتر هم وجود دارد. برای مثال شما از سوئیچ -D برای فواردینگ درگاه سطح برنامه <bdi><code class="inline-code" dir="ltr">dynamic</code></bdi> استفاده می کنید. این مانند یک پروکسی / ضد سانسور کار می کند. اگر انجام دهم </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>ssh -D 1080 192.168.70.2
+</code></pre></div>
+<p>پورت 1080 کار خواهد کرد از یک پروکسی <em>socks</em> در دستگاه من بپرسید و هر درخواستی را که به آن رسید به دستگاه 192.168.70.2 فوروارد کرده و پاسخ ها را برمی گرداند. اکنون می توانم برنامه های خود را طوری پیکربندی کنم که از localhost:1080 به عنوان پراکسی socks خود استفاده کنند و 192.168.70.2 به عنوان یک پروکسی در اینجا کار خواهد کرد. این زمانی مفید است که در لوکال هاست خود اینترنت ندارید، اما 192.168.70.2 آن را دارد.</p>
+<h5 id="x-forwarding">X Forwarding</h5>
+<p>آخرین مفهومی که می خواهم در بخش فورواردینگ در مورد آن صحبت کنم، حمل و نقل X است. همانطور که قبلاً از [ماژول 106] (1061-install-and-configure-x11.html) می دانید، برنامه های گرافیکی لینوکس از X به عنوان میزبان گرافیکی خود استفاده می کنند. این X همچنین می تواند در شبکه به عنوان هر ارتباط مبتنی بر شبکه دیگر ارسال شود. حتی سوئیچ خود را روی برنامه ssh دارد. برای ارسال X، کافی است یک <bdi><code class="inline-code" dir="ltr">-X</code></bdi> به ssh خود اضافه کنید. لطفاً توجه داشته باشید که پیکربندی <bdi><code class="inline-code" dir="ltr">X11Forwarding yes</code></bdi> باید در فایل sshd_config شما وجود داشته باشد.</p>
+<p>برای فعال کردن ارسال X11 در یک جلسه ssh، کافی است <bdi><code class="inline-code" dir="ltr">-X</code></bdi> را به ssh خود اضافه کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>ssh -X 192.168.70.2
+</code></pre></div>
+<p>و سپس می توانید برنامه های گرافیکی (برای سرگرمی مثلا <bdi><code class="inline-code" dir="ltr">xeyes</code></bdi>) را روی دستگاه راه دور اجرا کنید و قسمت گرافیکی آن را روی سرور X خودتان ببینید!</p>
+<blockquote class="callout-box">
+<p>اگر در دستگاه گنو/لینوکس با سرور X11 نیستید، باید آن را نصب کنید (به عنوان مثال XQuartz در مک)</p>
+</blockquote>
+<p>این زمانی بسیار مفید است که می خواهید برنامه ای را روی یک سرور پرمحتوا اجرا کنید یا از خانه کار کنید در حالی که برنامه های گرافیکی شما در دفتر هستند ؛)</p>
+<h2 id="ecnrypt-gpg">ecnrypt کرده و با استفاده از gpg امضا کنید</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/BX6BB8bqy24?si=iIWhRQnFmADr93n6" title="YouTube video player" width="560"></iframe></div>
+<p>همانطور که در بخش قبل توضیح داده شد، می توان از یک جفت کلید عمومی و خصوصی برای رمزگذاری یا امضای پیام ها استفاده کرد. یک پیاده سازی از این روش به نام <bdi><code class="inline-code" dir="ltr">gpg</code></bdi> وجود دارد که می تواند در لینوکس (و سایر ماشین ها) برای انجام این کارها استفاده شود. ابتدا باید یک کلید ایجاد کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@debian:~$ gpg --gen-key
+gpg (GnuPG) 2.2.40; Copyright (C) 2022 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+gpg: directory '/home/jadi/.gnupg' created
+gpg: keybox '/home/jadi/.gnupg/pubring.kbx' created
+Note: Use "gpg --full-generate-key" for a full featured key generation dialog.
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: Jadi
+Name must be at least 5 characters long
+Real name: Jadi M
+Email address: jadijadi@gmail.com
+You selected this USER-ID:
+    "Jadi M &lt;jadijadi@gmail.com&gt;"
+
+Change (N)ame, (E)mail, or (O)kay/(Q)uit?
+Change (N)ame, (E)mail, or (O)kay/(Q)uit? O
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /home/jadi/.gnupg/trustdb.gpg: trustdb created
+gpg: directory '/home/jadi/.gnupg/openpgp-revocs.d' created
+
+
+gpg: revocation certificate stored as '/home/jadi/.gnupg/openpgp-revocs.d/E279681DC09318AB5B23D359C9063DD26365986A.rev'
+public and secret key created and signed.
+
+pub   rsa3072 2023-09-17 [SC] [expires: 2025-09-16]
+      E279681DC09318AB5B23D359C9063DD26365986A
+uid                      Jadi M &lt;jadijadi@gmail.com&gt;
+sub   rsa3072 2023-09-17 [E] [expires: 2025-09-16]
+</code></pre></div>
+<p>اکنون کلید در پوشه <bdi><code class="inline-code" dir="ltr">~/.gnupg</code></bdi> ایجاد شده است و ما می توانیم کلید عمومی خود را با دیگران به اشتراک بگذاریم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@debian:~$ gpg --list-keys
+/home/jadi/.gnupg/pubring.kbx
+-----------------------------
+pub   rsa3072 2023-09-17 [SC] [expires: 2025-09-16]
+      E279681DC09318AB5B23D359C9063DD26365986A
+uid           [ultimate] Jadi M &lt;jadijadi@gmail.com&gt;
+sub   rsa3072 2023-09-17 [E] [expires: 2025-09-16]
+
+jadi@debian:~$ gpg --export jadi &gt; jadi.pub.key
+jadi@debian:~$ file jadi.pub.key
+jadi.pub.key: OpenPGP Public Key Version 4, Created Sun Sep 17 12:39:19 2023, RSA (Encrypt or Sign, 3072 bits); User ID; Signature; OpenPGP Certificate
+</code></pre></div>
+<blockquote class="callout-box">
+<p>کلید صادر شده در فرمت باینری است، <bdi><code class="inline-code" dir="ltr">-a</code></bdi> را به آن در ascii اضافه کنید</p>
+</blockquote>
+<p>حالا باید این کلید را بین دیگران توزیع کنید. می توانید آن را در جایی آپلود کنید، آن را ایمیل کنید، آن را در وب سایت خود قرار دهید یا از برخی از فروشگاه های کلید عمومی برای به اشتراک گذاری آن با دیگران استفاده کنید. اگر کسی آن را دریافت کرد، می تواند با استفاده از دستور زیر آن را به فروشگاه کلید خود وارد کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">gpg --import jadi.pub.key
+</code></pre></div>
+<p>اوه! و اگر احساس کنید کلید شما به خطر افتاده است چه اتفاقی می افتد!؟ در این حالت باید یک فایل <strong>ابطال</strong> ایجاد کنید و آن را با دیگران به اشتراک بگذارید تا به آنها بگویید که کلید شما دیگر معتبر نیست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">gpg --output jadi.revoke.asc --gen-revoke jadijadi@gmail.com
+</code></pre></div>
+<p>این به gpg می‌گوید که یک فایل ابطال به نام jadi.revoke.asc برای هویت jadijadi@gmail.com ایجاد کند. اگر jadijadi@gmail.com نیاز به باطل کردن کلید عمومی خود داشته باشد، باید این فایل را در اینترنت یا سرورهای کلید منتشر کند و دیگران بدانند که کلید عمومی قبلی دیگر معتبر نیست.</p>
+<h3 id="_6">رمزگذاری / رمزگشایی فایل ها</h3>
+<p>در این مرحله، من یک کلید دارم و دوستانم کلید عمومی من را در دستگاه خود وارد می کنند. اگر هر یک از آنها بخواهد یک پیام رمزگذاری شده برای من ارسال کند، می تواند کارهای زیر را انجام دهد: </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>echo "I Loved your course! I'll tell all my friends about it." &gt; file.txt
+gpg --out file.txt.encrypted --recipient jadijdai@gmail.com --encrypt file.txt
+</code></pre></div>
+<p>حالا کافی است این فایل را برای من بفرستند. حتی استفاده از کانال های ناامن، زیرا توسط ابزارهای درجه یک رمزگذاری شده است. همه می توانند این فایل را دانلود کنند اما فقط من می توانم آن را رمزگشایی کنم. چون فقط من <strong>کلید خصوصی</strong> jadijadi@gmail.com را دارم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">gpg --out out.txt --decrypt file.txt.encrypted
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر این دوره را دوست داشتید، نیازی به رمزگذاری پیام نیست، فقط <a href="https://linux1st.com">linux1st.com</a> را در اینترنت به اشتراک بگذارید! </p>
+</blockquote>
+<h4 id="_7">امضا و تایید فایل ها</h4>
+<p>در قسمت قبل از gpg برای رمزگذاری داده ها استفاده کردیم. ما از کلید عمومی شخصی برای رمزگذاری استفاده کردیم و سپس از کلید خصوصی خود برای رمزگشایی داده ها استفاده کردیم. اما اگر من از کلید خصوصی خود در کنار خود استفاده کنم و به دیگران اجازه دهم از کلید عمومی من برای <em>باز کردن</em> داده ها استفاده کنند، چه اتفاقی می افتد؟ به این می گویند <strong>امضاء</strong>.</p>
+<p>لطفاً به یاد داشته باشید که فقط من به کلید خصوصی خود دسترسی دارم. بنابراین اگر آن را روی یک فایل اعمال کنم، هر کدام:</p>
+<ol>
+<li>قادر خواهد بود فایل را با استفاده از کلید عمومی من باز کند</li>
+<li>مطمئن باشید که <strong>I</strong> این را امضا کرده است زیرا فقط <strong>I</strong> به کلید خصوصی کلید عمومی که برای باز کردن فایل استفاده کرده است دسترسی دارد.</li>
+</ol>
+<p>بیایید یک پیام را امضا کنیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ echo "I'm Jadi and I'm glad that you reached to the end of your LPIC study" &gt; message-jadi.txt
+$ gpg --output message-jadi.sig --sign message-jadi.txt
+</code></pre></div>
+<p>اکنون برای من کافی است که <bdi><code class="inline-code" dir="ltr">message-jadi.sig</code></bdi> را در اینترنت منتشر کنم یا برای کسی ارسال کنم. اگر آنها می خواهند مطمئن شوند که واقعاً از من ارسال می شود، کافی است امضای من را بررسی کنند (بدیهی است پس از وارد کردن کلید عمومی من):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@debian:~$ gpg --verify message-jadi.sig
+gpg: Signature made Sun 17 Sep 2023 09:26:15 AM EDT
+gpg:                using RSA key E279681DC09318AB5B23D359C9063DD26365986A
+gpg: Good signature from "Jadi M &lt;jadijadi@gmail.com&gt;" [ultimate]
+</code></pre></div>
+<p>این فقط امضا را بررسی می‌کند، در صورتی که آنها نیاز به رمزگشایی پیامی را که باید به شرح زیر انجام می‌دادند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@debian:~$ gpg --output message.jadi --decrypt message-jadi.sig
+gpg: Signature made Sun 17 Sep 2023 09:26:15 AM EDT
+gpg:                using RSA key E279681DC09318AB5B23D359C9063DD26365986A
+gpg: Good signature from "Jadi M &lt;jadijadi@gmail.com&gt;" [ultimate]
+jadi@debian:~$ cat message.jadi
+I'm Jadi and I'm glad that you reached to the end of your LPIC study
+</code></pre></div>
+<p>لطفاً به گزینه <bdi><code class="inline-code" dir="ltr">--clearsign</code></bdi> نیز توجه کنید. این گزینه یک فایل با پایان <bdi><code class="inline-code" dir="ltr">.asc</code></bdi> ایجاد می کند که حاوی پیام اصلی رمزگذاری نشده (متن پاک) در کنار امضا است. به این ترتیب افراد غیرمتخصص فناوری نیز می‌توانند پیام را بخوانند و فقط در صورت تمایل، او می‌تواند <bdi><code class="inline-code" dir="ltr">--verify</code></bdi> امضا کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@debian:~$ cat message-jadi.txt
+I'm Jadi and I'm glad that you reached to the end of your LPIC study
+jadi@debian:~$ gpg --clearsign message-jadi.txt
+jadi@debian:~$ ls -ltrh
+total 16M
+drwxr-xr-x 27 jadi jadi 4.0K Jun 15 09:00 rust-for-linux
+drwxr-xr-x  2 jadi jadi 4.0K Jun 15 09:09 Downloads
+drwx------  2 jadi jadi 4.0K Jul 17 10:53 BRF
+-rw-r--r--  1 jadi jadi    6 Jul 17 10:57 myfile
+drwxr-xr-x  5 jadi jadi 4.0K Jul 25 13:34 nltk_data
+drwxr-xr-x  4 jadi jadi 4.0K Aug 13 07:29 w
+-rw-r--r--  1 jadi jadi  16M Aug 24 01:15 nvim-linux64.tar.gz
+drwxr-xr-x  6 jadi jadi 4.0K Aug 24 05:38 nvim-linux64
+-rw-r--r--  1 jadi jadi 3.8K Aug 27 15:49 report.xml
+-rw-r--r--  1 jadi jadi 1.8K Sep 17 08:50 jadi.pub.key
+-rw-r--r--  1 jadi jadi   69 Sep 17 09:26 message-jadi.txt
+-rw-r--r--  1 jadi jadi  549 Sep 17 09:26 message-jadi.sig
+-rw-r--r--  1 jadi jadi   69 Sep 17 09:27 message.jadi
+-rw-r--r--  1 jadi jadi  777 Sep 17 09:28 message-jadi.txt.asc
+jadi@debian:~$ cat message-jadi.txt.asc
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+I'm Jadi and I'm glad that you reached to the end of your LPIC study
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEE4nloHcCTGKtbI9NZyQY90mNlmGoFAmUG/xYACgkQyQY90mNl
+mGqpXQv/QNv0NlCR+S7HJhxiOZcKXE3RB1sx4jRVrOtMd6ZoXYLb28Zz4xN/Lzh2
+sipohDbNttr1ovNZvMMu83bbuSeViY9L7nvjNjKsY50u5V1KnrMJPHRaGV8g/0p2
+t5zFJuzSFWXQczIjjXMpoLVH8jK3mJuBOmVFwLuBqUoW8827tCLIdr1DNyHXBW47
+fcLK5/bO/ljdwGnAX46d+Prg0TIfMLjPpb7uFXVkRBo+zMtCEVDGObaVHQ3J8t6w
+8i2YgMrmA3h9h4Gy/yM9Agb2kPeKl6iToeCfQ0EwTcnPF1TN0KZ1PS8Pr3Jp3LcS
+A+p32zj7YTzTeE1uBAb7/BorBqaArX8HtLe15yFkNKhPluXya9GG4/Nsxk33Qpd3
+c1KiLK9YhTFy7u+Q6tbTKG+uuGj71wANhkqRP30iMjLcBQ7aAO3ehVSYZFyZ7dbL
+SJollwyG1sf4zH0g5SQZOxpjyz874IrlFc7GldDCr5jXZw6H+4NuY2yiVWKAcOcU
+Qv23xWL2
+=q81y
+-----END PGP SIGNATURE-----
+jadi@debian:~$ gpg --verify message-jadi.txt.asc
+gpg: Signature made Sun 17 Sep 2023 09:28:54 AM EDT
+gpg:                using RSA key E279681DC09318AB5B23D359C9063DD26365986A
+gpg: Good signature from "Jadi M &lt;jadijadi@gmail.com&gt;" [ultimate]
+gpg: WARNING: not a detached signature; file 'message-jadi.txt' was NOT verified!
+</code></pre></div>
+<blockquote class="callout-box">
+<p>در اینجا <bdi><code class="inline-code" dir="ltr">--clearsign</code></bdi> به gpg می گوید که پیام متنی واضح را نیز در فایل خروجی قرار دهد. فایل خروجی originalfile.asc خواهد بود</p>
+</blockquote>
+<p>و یکی دیگر برای تأیید اینکه یک سند به درستی نوشته شده است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">gpg --verify recievedfile
+</code></pre></div>
+<h4 id="gpg-agent">gpg-agent</h4>
+<p>درست مانند <bdi><code class="inline-code" dir="ltr">ssh-agent</code></bdi>، <bdi><code class="inline-code" dir="ltr">gpg-agent</code></bdi> ابزاری است که مانند یک مدیر رمز عبور برای کلیدهای gpg شما عمل می کند. این کلیدها را در حافظه نگه می دارد، بنابراین نیازی به ارائه رمز عبور در هر بار استفاده ندارید.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1102_setup_host_security.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">110.2 راه اندازی امنیت میزبان</span></a><div class="pager-empty"></div></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

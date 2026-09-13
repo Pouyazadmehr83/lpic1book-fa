@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>103.3 مدیریت فایل اولیه را انجام دهید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item active"><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">103.3 مدیریت فایل اولیه را انجام دهید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۳</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>داوطلبان باید بتوانند از دستورات پایه لینوکس برای مدیریت فایل ها و دایرکتوری (پوشه) ها استفاده کنند.</p>
+<h2 id="_1">اهداف</h2>
+<ul>
+<li>کپی، انتقال و حذف فایل ها و دایرکتوری (پوشه) ها به صورت جداگانه.</li>
+<li>چندین فایل و دایرکتوری (پوشه) را به صورت بازگشتی کپی کنید.</li>
+<li>فایل ها و دایرکتوری (پوشه) ها را به صورت بازگشتی حذف کنید.</li>
+<li>از مشخصات ساده و پیشرفته عام در دستورات استفاده کنید.</li>
+<li>استفاده از Find برای مکان یابی و عمل بر روی فایل ها بر اساس نوع، اندازه یا زمان.</li>
+<li>استفاده از tar، cpio و dd.</li>
+</ul>
+<h3 id="_2">شرایط</h3>
+<ul>
+<li>cp</li>
+<li><bdi><code class="inline-code" dir="ltr">find</code></bdi></li>
+<li>mkdir</li>
+<li>mv</li>
+<li>ls</li>
+<li>rm</li>
+<li>rmdir</li>
+<li>لمس کردن</li>
+<li>قیر</li>
+<li>cpio</li>
+<li>dd</li>
+<li>فایل</li>
+<li>gzip</li>
+<li>زیپ</li>
+<li>bzip2</li>
+<li>bunzip2</li>
+<li>xz</li>
+<li>unxz</li>
+<li>globbing فایل</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/lTnkGg9o6u0" title="YouTube video player" width="560"></iframe></div>
+<h3 id="globbing">حروف عام و globbing فایل</h3>
+<p>File globbing یک قابلیت پوسته است که به شما امکان می دهد مواردی مانند:
+- همه فایل ها
+- هر چیزی که با A شروع می شود
+- تمام فایل‌های دارای نام 3 حرفی که به A یا B یا C ختم می‌شوند
+-...</p>
+<p>برای این کار باید این شخصیت ها را بدانید:</p>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">*</code></bdi> به معنای <strong>هر رشته</strong> است</li>
+<li><bdi><code class="inline-code" dir="ltr">?</code></bdi> به معنای هر کاراکتری است</li>
+<li><bdi><code class="inline-code" dir="ltr">[ABC]</code></bdi> با A، B یا C مطابقت دارد</li>
+<li><bdi><code class="inline-code" dir="ltr">[a-k]</code></bdi> با a، b، c، ...، k (هر دو حروف کوچک و بزرگ) مطابقت دارد.</li>
+<li><bdi><code class="inline-code" dir="ltr">[0-9a-z]</code></bdi> با تمام ارقام و اعداد مطابقت دارد</li>
+<li><bdi><code class="inline-code" dir="ltr">[!x]</code></bdi> به معنای X نیست.</li>
+</ul>
+<p>با دانستن اینها، می توانید الگوهای خود را ایجاد کنید. به عنوان مثال:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">فرمان</th>
+<th style="text-align: left;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rm *</td>
+<td style="text-align: left;">تمام فایل های این دایرکتوری (پوشه) را حذف کنید</td>
+</tr>
+<tr>
+<td style="text-align: left;">ls A*B</td>
+<td style="text-align: left;">نمایش تمام فایل هایی که با A شروع می شوند و با B ختم می شوند</td>
+</tr>
+<tr>
+<td style="text-align: left;">cp ???.* /tmp</td>
+<td style="text-align: left;">همه فایل‌های دارای 3 کاراکتر، سپس یک نقطه و سپس هر چیزی (حتی هیچ چیز) را در /tmp</td>
+</tr>
+<tr>
+<td style="text-align: left;">rmdir [a-z]*</td>
+<td style="text-align: left;">تمام دایرکتوری (پوشه) های خالی که با حرف</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="_3">دستورات کلی</h3>
+<h4 id="ls">فهرست با <bdi><code class="inline-code" dir="ltr">ls</code></bdi></h4>
+<p><bdi><code class="inline-code" dir="ltr">ls</code></bdi> برای <em>فهرست</em> فهرست_ فهرست ها و فایل ها استفاده می شود. شما می توانید یک مسیر مطلق یا نسبی ارائه دهید. در صورت حذف "." به عنوان هدف استفاده خواهد شد.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 16K
+-rw-rw-r-- 1 jadi jadi 207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi  29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi  24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi 116 Aug 14 04:44 note_to_self
+</code></pre></div>
+<blockquote class="callout-box">
+<p>فیلد اول نشان می دهد که آیا این یک فایل (<bdi><code class="inline-code" dir="ltr">-</code></bdi>) یا فهرست (<bdi><code class="inline-code" dir="ltr">d</code></bdi>) است.</p>
+</blockquote>
+<p>برخی از سوئیچ های رایج عبارتند از:</p>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">-l</code></bdi> برای <em>long</em> است (اطلاعات بیشتر برای هر فایل)</li>
+<li><bdi><code class="inline-code" dir="ltr">-1</code></bdi> در هر خط یک فایل چاپ می کند</li>
+<li><bdi><code class="inline-code" dir="ltr">-t</code></bdi> بر اساس تاریخ اصلاح مرتب می شود</li>
+<li><bdi><code class="inline-code" dir="ltr">-r</code></bdi> جستجو را معکوس می کند (بنابراین <bdi><code class="inline-code" dir="ltr">-tr</code></bdi> زمان معکوس است (فایل های جدیدتر در پایین).</li>
+</ul>
+<blockquote class="callout-box">
+<p>می توانید سوئیچ ها را مخلوط کنید. یکی از معروف‌ترین آنها <bdi><code class="inline-code" dir="ltr">-ltrh</code></bdi> (طول + اندازه‌های قابل خواندن توسط انسان + زمان معکوس) است.</p>
+</blockquote>
+<h3 id="cp-mv-rm">کپی (<bdi><code class="inline-code" dir="ltr">cp</code></bdi>)، انتقال (<bdi><code class="inline-code" dir="ltr">mv</code></bdi>)، و حذف (<bdi><code class="inline-code" dir="ltr">rm</code></bdi>)</h3>
+<h4 id="cp"><strong>cp</strong></h4>
+<p>با این کار فایل ها از یک مکان/نام به مکان/نام دیگر <em>کپی</em> می شود. اگر هدف یک دایرکتوری (پوشه) باشد، همه منابع در آنجا کپی می شوند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">cp source destination
+</code></pre></div>
+<p>یک سوئیچ معمولی <bdi><code class="inline-code" dir="ltr">-r</code></bdi> (یا <bdi><code class="inline-code" dir="ltr">-R</code></bdi>) است که به صورت بازگشتی (دایرکتوری (پوشه) ها و محتویات آنها) کپی می شود. بنابراین برای کپی کردن دایرکتوری (پوشه) به نام <bdi><code class="inline-code" dir="ltr">A</code></bdi> در <bdi><code class="inline-code" dir="ltr">/tmp/</code></bdi> می توانید <bdi><code class="inline-code" dir="ltr">cp -r A /tmp/</code></bdi> را صادر کنید.</p>
+<h4 id="mv"><strong>mv</strong></h4>
+<p>فایل‌ها یا دایرکتوری (پوشه)‌ها را <em>move</em> یا تغییر نام می‌دهد. مانند دستور <bdi><code class="inline-code" dir="ltr">cp</code></bdi> عمل می کند. اگر در حال انتقال یک فایل در یک سیستم‌فایل (Filesystem) هستید، <strong>inode</strong> تغییر نمی کند.</p>
+<p>به طور کلی:</p>
+<ul>
+<li>اگر هدف یک فهرست موجود باشد، تمام منابع در هدف کپی می شوند</li>
+<li>اگر دایرکتوری (پوشه) هدف وجود نداشته باشد، منبع باید تنها یک دایرکتوری (پوشه) باشد که به دایرکتوری (پوشه) هدف تغییر نام می‌دهد.</li>
+<li>اگر هدف یک فایل است، پس منبع باید فقط یک فایل باشد، بنابراین تغییر نام اتفاق خواهد افتاد.</li>
+</ul>
+<p>اینها شبیه "فرمول" هستند اما عقل سلیم هستند!</p>
+<h4 id="rm"><strong>rm</strong></h4>
+<p>حذف (حذف) <strong>فایل</strong>. می توانید این کار را به صورت بازگشتی با استفاده از سوئیچ <bdi><code class="inline-code" dir="ltr">-r</code></bdi> انجام دهید یا حتی با استفاده از سوئیچ <bdi><code class="inline-code" dir="ltr">-f</code></bdi> (اجباری) از بررسی تاییدیه ها جلوگیری کنید. بنابراین یک <bdi><code class="inline-code" dir="ltr">rm -rf /</code></bdi> به معنای <em>حذف همه چیز از سیستم‌فایل (Filesystem)</em> است.</p>
+<p><strong>یادداشت</strong></p>
+<p>به طور معمول، اگر فایل موجود قابل نوشتن باشد، دستور cp یک فایل را روی یک نسخه موجود کپی می کند. از سوی دیگر، <bdi><code class="inline-code" dir="ltr">mv</code></bdi> در صورت وجود هدف، فایلی را جابجا یا تغییر نام نمی دهد. اگرچه این به شدت به پیکربندی سیستم شما بستگی دارد. اما در همه موارد، می توانید با استفاده از سوئیچ <bdi><code class="inline-code" dir="ltr">-f</code></bdi> بر این مشکل غلبه کنید.</p>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">-f</code></bdi> (--force) باعث می شود که cp بازنویسی هدف را امتحان کند.</li>
+<li><bdi><code class="inline-code" dir="ltr">-i</code></bdi> (--تعاملی) سوال بلی/نه (حذف / بازنویسی) می پرسد.</li>
+<li><bdi><code class="inline-code" dir="ltr">-b</code></bdi> (--پشتیبان گیری) از فایل های رونویسی شده پشتیبان تهیه می کند</li>
+<li><bdi><code class="inline-code" dir="ltr">-p</code></bdi> ویژگی ها را _حفظ می کند.</li>
+</ul>
+<h3 id="mkdir-rmdir">ایجاد (mkdir) و حذف (rmdir) دایرکتوری (پوشه) ها</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">mkdir</code></bdi> دایرکتوری (پوشه) ها را ایجاد می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 16K
+-rw-rw-r-- 1 jadi jadi 207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi  29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi  24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi 116 Aug 14 04:44 note_to_self
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ mkdir new_dir
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 20K
+-rw-rw-r-- 1 jadi jadi  207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 04:44 note_to_self
+drwxrwxr-x 2 jadi jadi 4.0K Aug 14 04:57 new_dir
+</code></pre></div>
+<p>اگر می‌خواهید درختی از دایرکتوری (پوشه)‌ها ایجاد کنید، می‌توانید از سوئیچ <bdi><code class="inline-code" dir="ltr">-p</code></bdi> استفاده کنید تا به <bdi><code class="inline-code" dir="ltr">mkdir</code></bdi> بگویید در صورت نیاز، فهرست‌های <em>والد</em> را ایجاد کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 20K
+-rw-rw-r-- 1 jadi jadi  207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 04:44 note_to_self
+drwxrwxr-x 2 jadi jadi 4.0K Aug 14 04:57 new_dir
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ mkdir -p 1/2/3 
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ tree
+.
+├── 1
+│   └── 2
+│       └── 3
+├── data.txt
+├── info.txt
+├── new_dir
+├── note_to_self
+└── tasks.txt
+</code></pre></div>
+<p>اگر نیاز به حذف دایرکتوری (پوشه) دارید، دستور <bdi><code class="inline-code" dir="ltr">rmdir</code></bdi> است و همچنین می توانید از -p برای حذف تودرتو استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ rmdir -p 1/2/3
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ rmdir new_dir
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ tree
+.
+├── data.txt
+├── info.txt
+├── note_to_self
+└── tasks.txt
+
+0 directories, 4 files
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر از <bdi><code class="inline-code" dir="ltr">rmdir</code></bdi> برای حذف دایرکتوری (پوشه) استفاده می کنید، <em>باید خالی باشد</em>! به همین دلیل است که بسیاری از افراد از <bdi><code class="inline-code" dir="ltr">rm -rf directory_name</code></bdi> برای حذف پوشه خالی و هر آنچه در آن است استفاده می کنند.</p>
+</blockquote>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/tSN1MSaFYEw" title="YouTube video player" width="560"></iframe></div>
+<h4 id="_4"><em>لمس</em>*</h4>
+<p><bdi><code class="inline-code" dir="ltr">touch</code></bdi> یک فایل خالی ایجاد می کند (اگر وجود نداشته باشد) یا تاریخ <strong>تغییر</strong> یک فایل را در صورت وجود به روز می کند. زمان پیش‌فرض <em>اکنون</em> است اما می‌توانید زمان‌های دیگر را نیز مشخص کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 16K
+-rw-rw-r-- 1 jadi jadi 207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi  29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi  24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi 116 Aug 14 04:44 note_to_self
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ touch new_file
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 16K
+-rw-rw-r-- 1 jadi jadi 207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi  29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi  24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi 116 Aug 14 04:44 note_to_self
+-rw-rw-r-- 1 jadi jadi   0 Aug 14 05:08 new_file
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ touch note_to_self
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 16K
+-rw-rw-r-- 1 jadi jadi 207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi  29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi  24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi   0 Aug 14 05:08 new_file
+-rw-rw-r-- 1 jadi jadi 116 Aug 14 05:08 note_to_self
+</code></pre></div>
+<p>یا می توانید زمان ها را مشخص کنید. می توانید از <bdi><code class="inline-code" dir="ltr">-d</code></bdi> استفاده کنید و تاریخ بدهید یا از <bdi><code class="inline-code" dir="ltr">-t</code></bdi> استفاده کنید و یک مهر زمانی به شکل <bdi><code class="inline-code" dir="ltr">[[CC]YY]MMDDhhmm[.ss]</code></bdi> بدهید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ touch -t 200908121510.59 file1
+$ touch -d 11am file2
+$ touch -d "last fortnight" file3
+$ touch -d "yesterday 6am" file4
+$ touch -d "2 days ago 12:00" file5
+$ touch -d "tomorrow 02:00" file6
+$ touch -d "5 Nov" file3
+$ ls -ltrh file?
+-rw-rw-r-- 1 jadi jadi 0 Aug 12  2009 file1
+-rw-rw-r-- 1 jadi jadi 0 Aug 12 12:00 file5
+-rw-rw-r-- 1 jadi jadi 0 Aug 13 06:00 file4
+-rw-rw-r-- 1 jadi jadi 0 Aug 14  2022 file2
+-rw-rw-r-- 1 jadi jadi 0 Aug 15  2022 file6
+-rw-rw-r-- 1 jadi jadi 0 Nov  5  2022 file3
+</code></pre></div>
+<p>اوه.. و می توان از زمان فایل دیگری برای تنظیم استفاده کرد، با سوئیچ <bdi><code class="inline-code" dir="ltr">-r</code></bdi> (برای -- مرجع)):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -l /etc/debian_version
+-rw-r--r-- 1 root root 13 Aug 22  2021 /etc/debian_version
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ touch -r /etc/debian_version file1
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 20K
+-rw-rw-r-- 1 jadi jadi   0 Aug 22  2021 file1
+</code></pre></div>
+<h4 id="_5"><strong>پرونده</strong></h4>
+<p>برای تعیین نوع فایل باید از دستور <bdi><code class="inline-code" dir="ltr">file</code></bdi> استفاده کنید. <em>به</em> فایل نگاه می کند و نوع آن را تعیین می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ file file1
+file1: empty
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ file note_to_self
+note_to_self: ASCII text
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ file /bin/bash
+/bin/bash: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=33a5554034feb2af38e8c75872058883b2988bc5, for GNU/Linux 3.2.0, stripped
+</code></pre></div>
+<blockquote class="callout-box">
+<p>سوئیچ <bdi><code class="inline-code" dir="ltr">-i</code></bdi> قالب mime را چاپ می کند</p>
+</blockquote>
+<h4 id="dd"><strong>dd</strong></h4>
+<p>دستور <bdi><code class="inline-code" dir="ltr">dd</code></bdi> داده ها را از ورودی خود به خروجی آن (مثلاً فایل ها یا دستگاه ها) کپی می کند. شما می توانید از آن درست مانند کپی استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ dd if=note_to_self of=new_file
+0+1 records in
+0+1 records out
+116 bytes copied, 0.00141561 s, 81.9 kB/s
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ cat new_file
+I will continue learning... and if I get confused, I'll repeat the last section once more till everything is clear!
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$
+</code></pre></div>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">if</code></bdi> فایل ورودی است</li>
+<li><bdi><code class="inline-code" dir="ltr">of</code></bdi> فایل خروجی است</li>
+</ul>
+<p>اما معمولاً مردم از آن برای خواندن/نوشتن از دستگاه‌های بلوکی (Block Devices) استفاده می کنند. برای مثال، این کار همه بخش‌ها را از <bdi><code class="inline-code" dir="ltr">/dev/sdb</code></bdi> می‌خواند و آنها را در فایلی به نام<bdi><code class="inline-code" dir="ltr">backup.dd</code></bdi> می‌نویسد. بعداً می‌توانید با تعویض <bdi><code class="inline-code" dir="ltr">if</code></bdi> و <bdi><code class="inline-code" dir="ltr">of</code></bdi> و نوشتن از <bdi><code class="inline-code" dir="ltr">backup.dd</code></bdi> به <bdi><code class="inline-code" dir="ltr">/dev/sdb</code></bdi>، این نسخه پشتیبان را بازیابی کنید. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># dd if=/dev/sda of=backup.dd bs=4096
+</code></pre></div>
+<p>یا حتی:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># dd if=/dev/sda2 | gzip &gt; backup.dd.gzip
+</code></pre></div>
+<p>یکی دیگر از کاربردهای رایج ایجاد فایل هایی با اندازه های خاص است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ dd if=/dev/zero of=1g.bin bs=1G count=1
+</code></pre></div>
+<p>یا حتی <em>نوشتن</em> فایل های iso خود بر روی یک دیسک USB برای داشتن یک USB قابل بوت زنده:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ sudo dd if=ubuntu.iso of=/dev/sdc bs=2048
+</code></pre></div>
+<blockquote class="callout-box">
+<p>احتیاط: در اینجا شما مستقیماً روی یک دستگاه بلوک می نویسید. اگر کار اشتباهی انجام دهید ... دیسک خود را خراب می کنید و باید آن را دوباره فرمت کنید.</p>
+</blockquote>
+<h4 id="_6"><strong>پیدا کردن</strong></h4>
+<p>دستور <bdi><code class="inline-code" dir="ltr">find</code></bdi> به ما کمک می کند تا فایل ها را بر اساس معیارهای مختلف پیدا کنیم. به این نگاه کن:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ find . -iname "[a-j]*"
+./howcool.sort
+./alldata
+./mydir/howcool.sort
+./mydir/newDir/insideNew
+./howcool
+</code></pre></div>
+<ul>
+<li>پارامتر اول می گوید کجا باید جستجو کنیم (از جمله زیر شاخه ها).</li>
+<li>سوئیچ <bdi><code class="inline-code" dir="ltr">-name</code></bdi> معیارها را نشان می‌دهد (در اینجا <bdi><code class="inline-code" dir="ltr">iname</code></bdi> به معنای جستجوی فایل‌های با این نام است و حروف حروف را نادیده می‌گیرید (z برابر است با Z)). </li>
+</ul>
+<p>سوئیچ رایج دیگر <bdi><code class="inline-code" dir="ltr">-type</code></bdi> برای نشان دادن نوع مورد جستجوی ما است (<bdi><code class="inline-code" dir="ltr">f</code></bdi> برای فایل های معمولی، <bdi><code class="inline-code" dir="ltr">d</code></bdi> برای فهرست ها، و <bdi><code class="inline-code" dir="ltr">l</code></bdi> برای پیوندهای نمادین):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ find . -type d -iname "[a-j]*"
+./directory
+./directory/innder_one
+</code></pre></div>
+<p>اگر می خواهید اندازه فایل ها را جستجو کنید به صورت زیر عمل کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">فرمان</th>
+<th style="text-align: left;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-سایز 100c</td>
+<td style="text-align: left;">فایل هایی که دقیقا 100 کاراکتر/بایت هستند (می توانید از <bdi><code class="inline-code" dir="ltr">b</code></bdi> نیز استفاده کنید)</td>
+</tr>
+<tr>
+<td style="text-align: left;">-سایز +100k</td>
+<td style="text-align: left;">فایل های بیش از 100 کیلوبایت</td>
+</tr>
+<tr>
+<td style="text-align: left;">-سایز -20M</td>
+<td style="text-align: left;">فایل های کوچکتر از 20 مگابایت</td>
+</tr>
+<tr>
+<td style="text-align: left;">اندازه +2G</td>
+<td style="text-align: left;">فایل های بزرگتر از 2 گیگابایت</td>
+</tr>
+</tbody>
+</table></div>
+<p>بنابراین تمام فایل‌هایی که به <em>tmp</em> ختم می‌شوند را با اندازه‌های بین 1 تا 100 مگابایت در فهرست /var/ پیدا می‌کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">find /var -iname '*tmp' -size +1M -size -100M
+</code></pre></div>
+<blockquote class="callout-box">
+<p>می‌توانید همه فایل‌های خالی را با <bdi><code class="inline-code" dir="ltr">find . -size 0b</code></bdi> یا <bdi><code class="inline-code" dir="ltr">find . -empty</code></bdi> پیدا کنید</p>
+</blockquote>
+<p>یکی دیگر از معیارهای جستجوی مفید زمان است. اینها برخی از گزینه ها هستند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">سوئیچ</th>
+<th style="text-align: left;">معنی</th>
+<th style="text-align: left;">نمونه ها</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-امین</td>
+<td style="text-align: left;">دقیقه دسترسی</td>
+<td style="text-align: left;"><bdi><code class="inline-code" dir="ltr">-amin 40</code></bdi> به معنای "فایل هایی است که دقیقاً 40 دقیقه قبل به آن ها دسترسی پیدا کرده اند" یا <bdi><code class="inline-code" dir="ltr">-amin +40</code></bdi> فایل هایی که بیش از 40 دقیقه پیش به آن ها دسترسی پیدا کرده اند و <bdi><code class="inline-code" dir="ltr">-amin -40</code></bdi> به معنای فایل هایی است که کمتر از 40 دقیقه پیش به آن ها دسترسی یافته اند</td>
+</tr>
+<tr>
+<td style="text-align: left;">-cm</td>
+<td style="text-align: left;">حداقل تغییر وضعیت</td>
+<td style="text-align: left;"><bdi><code class="inline-code" dir="ltr">-cmin +60</code></bdi> وضعیت فایل قبل از آخرین ساعت تغییر کرد</td>
+</tr>
+<tr>
+<td style="text-align: left;">-mmin</td>
+<td style="text-align: left;">صورتجلسه اصلاح شده</td>
+<td style="text-align: left;"><bdi><code class="inline-code" dir="ltr">-mmin -60</code></bdi> فایل های اصلاح شده در ساعت گذشته را به ما می دهد</td>
+</tr>
+<tr>
+<td style="text-align: left;">-atime</td>
+<td style="text-align: left;">زمان دسترسی به روز</td>
+<td style="text-align: left;"><bdi><code class="inline-code" dir="ltr">-atime +1</code></bdi> یعنی دسترسی به فایل "بیش از 1 روز پیش (یعنی 2 روز و بیشتر)</td>
+</tr>
+<tr>
+<td style="text-align: left;">-ctime</td>
+<td style="text-align: left;">تغییر وضعیت در چند روز</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">-mtime</td>
+<td style="text-align: left;">روزهای اصلاح شده</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">-جدیدتر</td>
+<td style="text-align: left;">جدیدتر از مرجع</td>
+<td style="text-align: left;"><bdi><code class="inline-code" dir="ltr">-newer file1</code></bdi> به شما فایل هایی می دهد که جدیدتر از file1</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>اگر سوئیچ <bdi><code class="inline-code" dir="ltr">-daystart</code></bdi> را به -mtime یا -atime اضافه کنید، به این معنی است که می خواهیم روزها را به عنوان روزهای تقویم در نظر بگیریم که از نیمه شب شروع می شود.</p>
+</blockquote>
+<h4 id="_7">اقدام بر روی فایل ها</h4>
+<p>ما می‌توانیم با سوئیچ‌های مختلف، دستورات را اجرا کنیم یا اقدامات دیگری را روی فایل‌ها انجام دهیم:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">سوئیچ</th>
+<th style="text-align: left;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-ls</td>
+<td style="text-align: left;">ls -dils را روی هر فایل اجرا می کند</td>
+</tr>
+<tr>
+<td style="text-align: left;">-چاپ</td>
+<td style="text-align: left;">نام کامل فایل ها را در هر خط چاپ می کند</td>
+</tr>
+</tbody>
+</table></div>
+<p>اما بهترین راه برای اجرای دستورات روی فایل های یافت شده سوئیچ <bdi><code class="inline-code" dir="ltr">-exec</code></bdi> است. می‌توانید با <bdi><code class="inline-code" dir="ltr">'{}'</code></bdi> یا <bdi><code class="inline-code" dir="ltr">{}</code></bdi> به فایل اشاره کنید و دستور خود را با <bdi><code class="inline-code" dir="ltr">\;</code></bdi> تمام کنید.</p>
+<p>به عنوان مثال، این همه فایل های خالی این فهرست و زیرشاخه های آن را حذف می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>find . -empty -exec rm '{}' \;
+</code></pre></div>
+<p>یا با این کار نام تمام فایل های htm به html تغییر می کند</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>find . -name "*.htm" -exec mv '{}' '{}l' \;
+</code></pre></div>
+<blockquote class="callout-box">
+<p>از آنجایی که حذف فایل های یافت شده یک کار رایج است، یک سوئیچ برای آن وجود دارد: <bdi><code class="inline-code" dir="ltr">-delete</code></bdi></p>
+</blockquote>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/6MLaCDTRgis" title="YouTube video player" width="560"></iframe></div>
+<h3 id="_8">فشرده سازی</h3>
+<h4 id="gzip-gunzip"><strong>gzip &amp; gunzip</strong></h4>
+<p>مستقیم به جلو، یک فایل gzips و یک فایل ungzips. در محل:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 20K
+-rw-rw-r-- 1 jadi jadi  207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi    0 Aug 14 05:08 new_file
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 05:08 note_to_self
+drwxrwxr-x 3 jadi jadi 4.0K Aug 14 05:20 directory
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 20K
+-rw-rw-r-- 1 jadi jadi  171 Aug 14 04:43 tasks.txt.gz
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi    0 Aug 14 05:08 new_file
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 05:08 note_to_self
+drwxrwxr-x 3 jadi jadi 4.0K Aug 14 05:20 directory
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ gunzip tasks.txt.gz
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 20K
+-rw-rw-r-- 1 jadi jadi  207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi    0 Aug 14 05:08 new_file
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 05:08 note_to_self
+drwxrwxr-x 3 jadi jadi 4.0K Aug 14 05:20 directory
+</code></pre></div>
+<ul>
+<li>gzip زمان را حفظ می کند</li>
+<li>gzip فایل فشرده جدیدی را با همین نام اما با انتهای gz. ایجاد می کند</li>
+<li>gzip فایل های اصلی را پس از ایجاد فایل فشرده حذف می کند (می توانید فایل ورودی را با سوئیچ <bdi><code class="inline-code" dir="ltr">-k</code></bdi> نگه دارید)</li>
+</ul>
+<h4 id="bzip2-bunzip2"><strong>bzip2 و bunzip2</strong></h4>
+<p><bdi><code class="inline-code" dir="ltr">bzip2</code></bdi> یکی دیگر از ابزارهای فشرده سازی است. درست مانند <bdi><code class="inline-code" dir="ltr">gzip</code></bdi> معروف اما با الگوریتم فشرده سازی متفاوت کار می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ bzip2 tasks.txt
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls  -ltrh
+total 20K
+-rw-rw-r-- 1 jadi jadi  172 Aug 14 04:43 tasks.txt.bz2
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi    0 Aug 14 05:08 new_file
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 05:08 note_to_self
+drwxrwxr-x 3 jadi jadi 4.0K Aug 14 05:20 directory
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ bunzip2 tasks.txt.bz2
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls
+data.txt  directory  info.txt  new_file  note_to_self  tasks.txt
+</code></pre></div>
+<h4 id="xz-unxz"><strong>xz &amp; unxz</strong></h4>
+<p>یکی دیگر از ابزارهای فشرده سازی/فشرده سازی درست مانند <bdi><code class="inline-code" dir="ltr">gzip</code></bdi> و <bdi><code class="inline-code" dir="ltr">bzip2</code></bdi> است. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ xz tasks.txt
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 24K
+-rw-rw-r-- 1 jadi jadi  224 Aug 14 04:43 tasks.txt.xz
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 05:08 note_to_self
+drwxrwxr-x 3 jadi jadi 4.0K Aug 14 05:20 directory
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 07:51 new_file
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ unxz tasks.txt.xz
+jadi@lpicjadi:~/lpic1-practice-iso/100/103.3$ ls -ltrh
+total 24K
+-rw-rw-r-- 1 jadi jadi  207 Aug 14 04:43 tasks.txt
+-rw-rw-r-- 1 jadi jadi   29 Aug 14 04:43 info.txt
+-rw-rw-r-- 1 jadi jadi   24 Aug 14 04:44 data.txt
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 05:08 note_to_self
+drwxrwxr-x 3 jadi jadi 4.0K Aug 14 05:20 directory
+-rw-rw-r-- 1 jadi jadi  116 Aug 14 07:51 new_file
+</code></pre></div>
+<p>لطفاً توجه داشته باشید که <em>فشرده کردن</em> یک فایل متنی کوچک آن را بزرگتر می کند. این امر در فایل‌های کوچک <em>طبیعی</em> است زیرا همه سرصفحه‌ها و ابرداده‌ها هستند.</p>
+<blockquote class="callout-box">
+<p>در برخی موارد، دستوراتی مانند <bdi><code class="inline-code" dir="ltr">unxz</code></bdi> فقط یک تماس با <bdi><code class="inline-code" dir="ltr">xz --dcompress</code></bdi> است.</p>
+</blockquote>
+<h3 id="tar-cpio">بایگانی با tar &amp; cpio</h3>
+<p>گاهی اوقات ما نیاز به ایجاد یک محفظه فایل آرشیو از بسیاری از فایل های دیگر داریم. این عملیات با فشرده سازی متفاوت است، فایل ها را در یکی ترکیب می کند و سپس دوباره آنها را استخراج می کند. آرشیو بیشتر در پشتیبان گیری، انتقال فایل ها به مکان جدید (مثلاً از طریق ایمیل) و مواردی از این دست استفاده می شود. این کار با <bdi><code class="inline-code" dir="ltr">cpio</code></bdi> و <bdi><code class="inline-code" dir="ltr">tar</code></bdi> انجام می شود.</p>
+<h4 id="_9"><strong>تار</strong></h4>
+<p>TapeARchive یا tar رایج ترین ابزار بایگانی است. به طور خودکار یک فایل بایگانی را از یک دایرکتوری (پوشه) و همه زیرشاخه های آن ایجاد می کند.</p>
+<p>سوئیچ های رایج عبارتند از:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">سوئیچ</th>
+<th style="text-align: left;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-cf <bdi><code class="inline-code" dir="ltr">myarchive.tar</code></bdi></td>
+<td style="text-align: left;">ایجاد فایل با نام myarchive.tar</td>
+</tr>
+<tr>
+<td style="text-align: left;">-xf <bdi><code class="inline-code" dir="ltr">myarchive.tar</code></bdi></td>
+<td style="text-align: left;">فایلی به نام myarchive.tar</td>
+</tr>
+<tr>
+<td style="text-align: left;">-z</td>
+<td style="text-align: left;">پس از ایجاد آرشیو با gzip فشرده کنید</td>
+</tr>
+<tr>
+<td style="text-align: left;">-j</td>
+<td style="text-align: left;">پس از ایجاد آرشیو با bzip2 آن را فشرده کنید</td>
+</tr>
+<tr>
+<td style="text-align: left;">-v</td>
+<td style="text-align: left;">پر حرف! اطلاعات زیادی در مورد آنچه اتفاق می افتد چاپ کنید</td>
+</tr>
+<tr>
+<td style="text-align: left;">-r</td>
+<td style="text-align: left;">فایل های جدید را به آرشیو موجود در حال حاضر اضافه کنید</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>اگر مسیرهای مطلق صادر می کنید، tar به دلایل ایمنی هنگام ایجاد بایگانی، اسلش شروع (/) را حذف می کند. اگر می خواهید لغو کنید، از گزینه -p استفاده کنید.</p>
+<p>تار می تواند با نوارها و سایر انبارها کار کند. به همین دلیل است که از <bdi><code class="inline-code" dir="ltr">-f</code></bdi> استفاده می کنیم تا به آن بگوییم که با فایل ها کار می کنیم.</p>
+</blockquote>
+<h4 id="cpio"><strong>cpio</strong></h4>
+<p>لیستی از فایل ها را دریافت می کند و یک آرشیو (یک فایل) ایجاد می کند. این فایل می تواند بعدا برای استخراج فایل های اصلی استفاده شود.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ls | cpio -o &gt; allfilesls.cpio
+3090354 blocks
+</code></pre></div>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">-o</code></bdi> به cpio می گوید که از ورودی خود خروجی ایجاد کند</li>
+</ul>
+<p>لطفاً توجه داشته باشید که <bdi><code class="inline-code" dir="ltr">cpio</code></bdi> به پوشه ها نگاه نمی کند. بنابراین بیشتر ما از آن با find استفاده می کنیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>find . -name "*" | cpio -o &gt; myarchivefind.cpio
+</code></pre></div>
+<p>برای استخراج فایل های اصلی:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>mkdir extract
+mv myarchivefind.cpio extract
+cd extract
+cpio -id &lt; myarchivefind.cpio
+</code></pre></div>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">-d</code></bdi> پوشه ها را ایجاد می کند</li>
+<li><bdi><code class="inline-code" dir="ltr">-i</code></bdi> برای استخراج است</li>
+</ul>
+                </div>
+
+                <div class="chapter-pager"><a href="1032_process_text_streams_using_filters.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a><a href="1034_use_streams_pipes_and_redirects.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

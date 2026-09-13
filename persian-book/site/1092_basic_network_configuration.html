@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>109.2 پیکربندی شبکه پایدار | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item active"><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">109.2 پیکربندی شبکه پایدار</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۹</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>کاندیداها باید قادر به مشاهده، تغییر و تأیید تنظیمات پیکربندی در میزبان مشتری باشند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>پیکربندی اصلی میزبان TCP/IP را بدانید</li>
+<li>پیکربندی شبکه اترنت و وای فای را با استفاده از NetworkManager پیکربندی کنید</li>
+<li>آگاهی از systemd-networkd</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/hostname</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/hosts</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/nsswitch.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/resolv.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">nmcli</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">hostnamectl</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">ifup</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">ifdown</code></bdi></li>
+</ul>
+<h3 id="_3">مقدمه</h3>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/YN8sJuy9df8?si=BEs4RmfvW1zdSUA4" title="YouTube video player" width="560"></iframe></div>
+<p>همانطور که در قسمت قبل دیدیم، هر رایانه شخصی، سرور، لپ تاپ، تلفن، .. باید یک پیکربندی IP (IP، Netmask، Default Gateway، DNS، ...) داشته باشد تا در شبکه به درستی کار کند. این را می توان به روش های مختلف انجام داد. برخی از دستگاه‌ها مانند لپ‌تاپ‌ها دائماً شبکه خود را تغییر می‌دهند و باید بتوانند با تغییرات همراه باشند. برخی از سرورها در تمام طول عمر خود در یک مکان (از لحاظ فیزیکی و شبکه) باقی می مانند و باید این پیکربندی را پس از راه اندازی مجدد، قطع، ارتقاء و تغییرات HW حفظ کنند.</p>
+<p>در این بخش خواهیم دید که چگونه می توان به این امر در سیستم های مدرن گنو/لینوکس دست یافت.</p>
+<h3 id="_4">رابط شبکه</h3>
+<p>NIC (یا کارت رابط شبکه) سخت افزار فیزیکی شبکه در رایانه شما است. این می تواند تراشه + آنتن تلفن همراه شما یا یک کارت اترنت متصل به کابل شبکه در رایانه شخصی شما باشد.</p>
+<p>در سیستم‌های قدیمی‌تر، مواردی مانند <bdi><code class="inline-code" dir="ltr">eth0</code></bdi>، <bdi><code class="inline-code" dir="ltr">eth1</code></bdi>، <bdi><code class="inline-code" dir="ltr">eth2</code></bdi>، ... نامیده می‌شدند که در آن 0، 1 و 2 توسط هسته تعیین می‌شدند - بیشتر بر اساس ترتیب بارگیری درایورها. در ماشین‌های لینوکس اخیر، NIC‌ها توسط <bdi><code class="inline-code" dir="ltr">wlan0</code></bdi>، <bdi><code class="inline-code" dir="ltr">eno1</code></bdi>، <bdi><code class="inline-code" dir="ltr">ens1</code></bdi>، <bdi><code class="inline-code" dir="ltr">enp3s2</code></bdi> و غیره فراخوانی می‌شوند. این بر اساس برخی داده‌های ملموس‌تر است، مانند <bdi><code class="inline-code" dir="ltr">wireless</code></bdi> یا <bdi><code class="inline-code" dir="ltr">ethernet</code></bdi>، PCI (<bdi><code class="inline-code" dir="ltr">ens</code></bdi>) یا اتوبوسی مانند (<bdi><code class="inline-code" dir="ltr">enp</code></bdi>) بودن. </p>
+<p>دستور <bdi><code class="inline-code" dir="ltr">ip</code></bdi> می تواند این موارد را نشان دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ ip link show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: wlp108s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether 00:bb:60:97:6b:07 brd ff:ff:ff:ff:ff:ff
+3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+    link/ether 02:42:75:d3:e6:ff brd ff:ff:ff:ff:ff:ff
+</code></pre></div>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">lo</code></bdi> یک آداپتور شبکه مجازی به نام دستگاه <em>loopback</em> است. همیشه وجود دارد و به "این دستگاه یا 127.0.0.1 همانطور که IPv4 آن را می نامد" اشاره می کند.</p>
+</blockquote>
+<h3 id="_5">پیکربندی کارت های شبکه</h3>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/KKL-r4eAZHI?si=Av2ehqBv7eoRHuGw" title="YouTube video player" width="560"></iframe></div>
+<p>در توزیع‌های قدیمی‌تر، از <bdi><code class="inline-code" dir="ltr">ifconfig</code></bdi> برای بررسی/پیکربندی تنظیمات IP در کارت‌های شبکه استفاده می‌شد. نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ifconfig
+enp0s25: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+        ether f0:de:f1:62:c5:73  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 20  memory 0xd1500000-d1520000  
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 560719  bytes 339937974 (324.1 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 560719  bytes 339937974 (324.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp3s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.35  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::8ea9:82ff:fe7b:8906  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 8c:a9:82:7b:89:06  txqueuelen 1000  (Ethernet)
+        RX packets 2325385  bytes 2629859900 (2.4 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2023796  bytes 510997240 (487.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre></div>
+<p>همچنین می توان از <bdi><code class="inline-code" dir="ltr">ifconfig</code></bdi> برای تغییر تنظیمات شبکه استفاده کرد، اما باید دسترسی ریشه داشته باشید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$  sudo ifconfig enp0s25 192.168.42.42
+password for jadi:
+$ ifconfig enp0s25
+enp0s25: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+        inet 192.168.42.42  netmask 255.255.255.0  broadcast 192.168.42.255
+        ether f0:de:f1:62:c5:73  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 20  memory 0xd1500000-d1520000  
+
+$
+</code></pre></div>
+<p>اگر می‌خواهید نقاب شبکه یک رابط را تغییر دهید، <bdi><code class="inline-code" dir="ltr">ifconfig eth0 netmask 255.255.0.0</code></bdi> را انجام دهید یا همانطور که اغلب ما انجام می‌دادیم، هر دو را در یک دستور صادر کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># ifconfig eth0 192.168.42.42 netmask 255.255.255.0
+</code></pre></div>
+<p>همچنین می توان رابط های <em>up</em> و <em>down</em> (روشن و خاموش) را با استفاده از تنظیمات از پیش تعریف شده توسط:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ sudo ifconfig enp0s25 down
+[sudo] password for jadi:
+$ ifconfig
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 562273  bytes 340257228 (324.4 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 562273  bytes 340257228 (324.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp3s0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 192.168.1.35  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::8ea9:82ff:fe7b:8906  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 8c:a9:82:7b:89:06  txqueuelen 1000  (Ethernet)
+        RX packets 2330388  bytes 2634026235 (2.4 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2027352  bytes 511549072 (487.8 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+</code></pre></div>
+<p>همانطور که می بینید، پایین آوردن رابط، آن را از لیست رابط های فعال حذف کرد، با استفاده از سوئیچ <bdi><code class="inline-code" dir="ltr">-a</code></bdi> به <bdi><code class="inline-code" dir="ltr">ifconfig</code></bdi> می گوید که همه اینترفیس ها را نشان دهد، حتی اگر خاموش باشند.</p>
+<p>در بسیاری از سیستم ها دستورات <bdi><code class="inline-code" dir="ltr">ifup</code></bdi> و <bdi><code class="inline-code" dir="ltr">ifdown</code></bdi> به طور مستقیم به رابط های بالا و پایین وجود دارد. آنها درست مانند <bdi><code class="inline-code" dir="ltr">ifup eth0</code></bdi> کار می کنند.</p>
+<p>این پیکربندی‌های از پیش تعریف‌شده در <bdi><code class="inline-code" dir="ltr">/etc/network/interfaces</code></bdi> در ماشین‌های مبتنی بر Debian و در <bdi><code class="inline-code" dir="ltr">/etc/sysconfig/network-scripts/</code></bdi> در توزیع مبتنی بر RPM قرار دارند. </p>
+<p>این نمونه ای از چنین فایلی در توزیع مبتنی بر RedHat است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ cat /etc/sysconfig/network-scripts/ifcfg-eth0
+DEVICE=eth0
+ONBOOT=yes
+TYPE=Ethernet
+IPADDR=192.168.1.10
+NETMASK=255.255.255.0
+DNS1=4.2.2.4
+</code></pre></div>
+<p>در سیستم های RPM، دروازه پیش فرض از طریق فایل زیر پیکربندی می شود:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">cat /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=lpictest
+GATEWAY=192.168.1.1
+</code></pre></div>
+<p>در سیستم های مبتنی بر دبیان (از جمله اوبونتو) فایل پیکربندی اصلی برای رابط های شبکه <bdi><code class="inline-code" dir="ltr">/etc/network/interfaces</code></bdi> است. این یک فایل دارای پیکربندی برای تمام رابط ها است. نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">auto lo
+iface lo inte loopback
+
+auto eth0
+#ifconfig eth0 inet dhcp
+iface eth0 inet static
+address 192.168.1.10
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 4.2.2.4
+</code></pre></div>
+<h3 id="ip"><bdi><code class="inline-code" dir="ltr">ip</code></bdi></h3>
+<p>توزیع های اخیر بیشتر از دستور <bdi><code class="inline-code" dir="ltr">ip</code></bdi> استفاده می کنند. این دستور می‌تواند کارهای زیادی از جمله نمایش و پیکربندی آدرس‌های IP، ماسک‌های شبکه، دروازه‌های پیش‌فرض و قوانین مسیریابی را انجام دهد.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>ip addr add 172.19.1.10/24 dev eth2 # temporary adding an IP
+ip addr show eth2
+ip addr del 172.19.1.10/24 dev eth2 # deleting an IP address
+ip link set eth2 up # brining a NIC up
+ip route show
+ip route add default via 192.168.1.1 # add default gateway
+</code></pre></div>
+<p>لطفاً توجه داشته باشید که دستورات بالا تغییرات موقتی را انجام می دهند که پس از راه اندازی مجدد سرویس <bdi><code class="inline-code" dir="ltr">NetworkManager</code></bdi> از بین می روند. اگر به تغییرات دائمی نیاز دارید، باید با استفاده از فایل های پیکربندی یا رابط های Network Manager انجام شود. </p>
+<h3 id="nmcli">مدیر شبکه و <bdi><code class="inline-code" dir="ltr">nmcli</code></bdi></h3>
+<p>در سال های اخیر، خدمات <bdi><code class="inline-code" dir="ltr">NetworkManager</code></bdi> محبوبیت زیادی پیدا کرده است. این سرویس می تواند وضعیت شبکه و پیکربندی های مختلف را تماشا کند و کارت های شبکه (مخصوصاً وای فای) را بر اساس آن پیکربندی کند. این همان چیزی است که باعث می‌شود لپ‌تاپ ما هر زمان که آن را در منطقه‌ای با وای‌فای شناخته‌شده باز می‌کنیم یا در مورد رمز عبور می‌پرسیم اگر می‌خواهیم به شبکه جدیدی متصل شویم یا به محض اتصال کابل به کارت اترنت خود آدرس‌های IP اختصاص دهیم، متصل شود. این تخصیص IP ممکن است از طریق "پیکربندی IP دائمی" در دستگاه شما یا پروتکلی به نام DHCP اتفاق بیفتد. هنگام استفاده از DHCP (پروتکل پیکربندی میزبان پویا)، رایانه شما از یک سرور DHCP (مثلا روتر وای فای خانه شما) در مورد IP، Netmask، دروازه پیش فرض، DNS و موارد دیگر سؤال می کند و آنها را تنظیم می کند.</p>
+<p>به طور پیش فرض، شبح NetworkManager شبکه هایی را که در <bdi><code class="inline-code" dir="ltr">/etc/network/interfaces</code></bdi> ذکر نشده اند، کنترل می کند. این سرویس در پس زمینه اجرا می شود و NIC هایی را که در آنجا پیکربندی نشده اند کنترل می کند. برنامه‌های مختلف رابط کاربری گرافیکی (واسط کاربری گرافیکی) یا TUI (واسط کاربری متنی. <bdi><code class="inline-code" dir="ltr">nmtui</code></bdi> را امتحان کنید) یا CLI (واسط‌های خط فرمان (Command Line)) برای کنترل یا پیکربندی شبح NetworkManager وجود دارد. اگر از یک لینوکس رومیزی استفاده می کنید، احتمالاً قبلاً از آن استفاده کرده اید / می شناسید (مثلاً اپلت مدیر شبکه). در اینجا نحوه استفاده از <bdi><code class="inline-code" dir="ltr">nmcli</code></bdi> را از خط فرمان (Command Line) به شما نشان خواهم داد.</p>
+<p>ما همیشه <bdi><code class="inline-code" dir="ltr">nmcli</code></bdi> را با یکی از دستورات مختلف آن فراخوانی می کنیم، در اینجا لیستی وجود دارد:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>فرمان</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>عمومی</td>
+<td>وضعیت کلی و عملیات NetworkManager.</td>
+</tr>
+<tr>
+<td>شبکه</td>
+<td>کنترل کلی شبکه</td>
+</tr>
+<tr>
+<td>رادیو</td>
+<td>سوئیچ های رادیویی NetworkManager.</td>
+</tr>
+<tr>
+<td>اتصال</td>
+<td>کنترل اتصال</td>
+</tr>
+<tr>
+<td>دستگاه</td>
+<td>دستگاه های کنترل شده توسط NetworkManager</td>
+</tr>
+<tr>
+<td>عامل</td>
+<td>مامور مخفی یا پولکیت</td>
+</tr>
+<tr>
+<td>مانیتور</td>
+<td>نظارت بر تغییرات</td>
+</tr>
+</tbody>
+</table></div>
+<p>برای مثال، می‌توانیم وضعیت فعلی را با دستور <bdi><code class="inline-code" dir="ltr">general</code></bdi> بررسی کنیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ nmcli general
+STATE      CONNECTIVITY  WIFI-HW  WIFI     WWAN-HW  WWAN    
+connected  full          enabled  enabled  missing  enabled
+</code></pre></div>
+<p>یا اگر می‌خواهید دستگاه‌ها یا لیست اتصالات Wi-Fi را بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>➜  ~ nmcli device          
+DEVICE            TYPE      STATE                   CONNECTION          
+wlp108s0          wifi      connected               Sharm Bar Sansoor 5 
+docker0           bridge    connected (externally)  docker0             
+lo                loopback  connected (externally)  lo                  
+p2p-dev-wlp108s0  wifi-p2p  disconnected            --                  
+➜  ~ nmcli device wifi     
+IN-USE  BSSID              SSID                 MODE   CHAN  RATE        SIGNAL  BARS  SECURITY  
+        6C:AD:EF:38:13:38  AxLTE                Infra  3     270 Mbit/s  84      ▂▄▆█  WPA2      
+        00:E0:4C:93:1D:B8  Lanat Be Sansoorchi  Infra  6     130 Mbit/s  59      ▂▄▆_  WPA2      
+*       24:F5:A2:42:DE:CE  Sharm Bar Sansoor 5  Infra  36    540 Mbit/s  47      ▂▄__  WPA2      
+        30:A2:20:DD:8B:54  AvinaAmin            Infra  7     270 Mbit/s  29      ▂___  WPA1 WPA2 
+        30:85:A9:8C:71:2C  bahram               Infra  11    65 Mbit/s   29      ▂___  WPA2
+</code></pre></div>
+<p>برای اتصال به یک شبکه Wi-Fi، باید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>nmcli device wifi connect AxLTE password AFunkyPassword 
+</code></pre></div>
+<h3 id="_6">نام های فانتزی برای کامپیوترها</h3>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/yR07UaiNeME?si=UcsRifk-HXLH-L4U" title="YouTube video player" width="560"></iframe></div>
+<h4 id="_7">نام میزبان</h4>
+<p>به خاطر سپردن آدرس های IP برای روبات ها آسان است اما برای انسان ها نه. به همین دلیل است که ما "نام میزبان" را داریم. نام میزبان مانند یک لیست تماس است که در آن شما فقط به "Call Jadi" بگویید و سیستم شماره تلفن من را می‌داند. اگر <bdi><code class="inline-code" dir="ltr">/etc/hostname</code></bdi> خود را بررسی کنید، نام دستگاه خود را در آنجا خواهید دید. اگرچه می توانید آن را به طور موقت (یا دائم) تغییر دهید. دستور <bdi><code class="inline-code" dir="ltr">hostnamectl</code></bdi> است. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[funlap ~]# hostnamectl set-hostname mycoolmachine
+[funlap ~]# hostname
+mycoolmachine
+[funlap ~]# cat /etc/hostname 
+mycoolmachine
+[funlap ~]# bash
+[mycoolmachine ~]# 
+</code></pre></div>
+<p>یا می توانید آن را به عنوان <em>گذرا</em> تغییر دهید، که یک تغییر موقت با استفاده از سوئیچ <bdi><code class="inline-code" dir="ltr">--transient</code></bdi> است.</p>
+<p>همچنین می توان یک نام "زیبا" برای رایانه خود تعریف کرد تا سایر سیستم ها آن را در رابط های خود به خوبی نشان دهند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[mycoolmachine ~]# hostnamectl --pretty set-hostname "LAN Shared Storage"
+[mycoolmachine ~]# hostnamectl status
+ Static hostname: mycoolmachine
+ Pretty hostname: LAN Shared Storage
+       Icon name: computer-convertible
+         Chassis: convertible
+      Machine ID: 0b126c4b6f4347168140eaa6202ce8be
+         Boot ID: 675eff37f42648c6bdea31177596557f
+Operating System: Manjaro Linux                   
+          Kernel: Linux 6.1.38-1-MANJARO
+    Architecture: x86-64
+ Hardware Vendor: Dell Inc.
+  Hardware Model: Latitude 7390 2-in-1
+Firmware Version: 1.30.0
+</code></pre></div>
+<h4 id="etchosts"><bdi><code class="inline-code" dir="ltr">/etc/hosts</code></bdi></h4>
+<p>این فایل حاوی لیستی از IP ها و نام های مربوط به آنها، از جمله رایانه های شخصی شما است. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[mycoolmachine ~]# head -20 /etc/hosts
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1   localhost funlife db
+255.255.255.255 broadcasthost
+::1             localhost
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+
+198.74.56.50 jobs.jadi.net
+192.168.1.22 amoledtesting 
+
+67.217.170.72 vps
+</code></pre></div>
+<p>بنابراین هنگامی که شما نیاز به دسترسی به دستگاهی با نام آن دارید، سیستم عامل شما اکنون به کدام IP دسترسی دارد.</p>
+<h4 id="dns">پیکربندی DNS</h4>
+<p>DNS (که مخفف Domain Name System) است سروری است که نام‌های دامنه قابل خواندن توسط انسان (یا از نظر فنی، نام دامنه مبتنی بر متن) را به آدرس‌های IP مربوطه ترجمه می‌کند. باید رایانه خود را برای استفاده از DNS پیکربندی کنید تا بداند اگر می‌خواهید به <bdi><code class="inline-code" dir="ltr">linux1st.com</code></bdi> (و شاید [اهدا] (https://linux1st.com/support) دسترسی پیدا کنید، با کدام IP تماس بگیرید.</p>
+<p>این پیکربندی را می توان در <bdi><code class="inline-code" dir="ltr">/etc/resolv.conf</code></bdi> پیدا کرد.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>nameserver 192.168.1.1
+nameserver 4.2.2.4
+domain jadi.net
+search jadi.net company.com
+</code></pre></div>
+<p>در اینجا من به رایانه خود می گویم که اگر نیاز به ترجمه آدرس به IP داشت، با DNS در شبکه خانگی من (192.168.1.1) یا یک DNS واقع در 4.2.2.4 تماس بگیرد. </p>
+<p>پیکربندی <bdi><code class="inline-code" dir="ltr">domain</code></bdi> یک نام دامنه محلی تنظیم می‌کند، بنابراین ماشین‌های موجود در این دامنه می‌توانند از یک نام کوتاه (tv، به جای tv.jadi.net) استفاده کنند و پیکربندی <bdi><code class="inline-code" dir="ltr">search</code></bdi> نیز همین کار را می‌کند و به حل‌کننده می‌گوید که <bdi><code class="inline-code" dir="ltr">tv.jadi.net</code></bdi> و <strong><em>_IN</em>7 را جستجو کند و </strong>__IN_7 را حل کند. <bdi><code class="inline-code" dir="ltr">tv</code></bdi>.</p>
+<h4 id="nsswitch">nsswitch</h4>
+<p>فایل <bdi><code class="inline-code" dir="ltr">/etc/nsswitch.conf</code></bdi> برای پیکربندی سرویس هایی که قرار است برای تعیین اطلاعاتی مانند نام میزبان، فایل های رمز عبور و فایل های گروهی استفاده شوند، استفاده می شود. مال من است</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># cat /etc/nsswitch.conf
+# Begin /etc/nsswitch.conf
+
+passwd: files
+group: files
+shadow: files
+
+publickey: files
+
+hosts: files dns myhostname
+networks: files
+
+protocols: files
+services: files
+ethers: files
+rpc: files
+
+netgroup: files
+
+# End /etc/nsswitch.conf
+</code></pre></div>
+<p>بنابراین اگر شخصی بخواهد رمز عبور را بررسی کند، سیستم رمز عبور <em>file</em> را در سیستم امتحان می کند. یا اگر بخواهند آدرس آی‌پی نام میزبان را بررسی کنند، پیکربندی من می‌گوید <bdi><code class="inline-code" dir="ltr">hosts: files dns myhostname</code></bdi>، بنابراین کامپیوتر ابتدا فایل‌های (/etc/hosts) را امتحان می‌کند و سپس به سراغ DNS می‌رود. اگر اینها را برگردانم و خط را به</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">hosts:      dns files
+</code></pre></div>
+<p>هر درخواست حل و فصل ابتدا به یک سرور DNS ارسال می شود و از /etc/hosts فقط در صورتی استفاده می شود که سرورهای DNS پاسخ "نمی دانم!"</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1091_fundamentals_of_internet_protocols.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">109.1 مبانی پروتکل های اینترنتی</span></a><a href="1093_basic_network_troubleshooting.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">109.3 عیب یابی اساسی شبکه</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

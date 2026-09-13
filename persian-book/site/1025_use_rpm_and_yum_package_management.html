@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>102.5 از مدیریت بسته RPM و YUM استفاده کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item active"><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۲</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>داوطلبان باید بتوانند مدیریت بسته را با استفاده از RPM، YUM و Zypper انجام دهند.</p>
+<h2 id="_1">حوزه های دانش کلیدی</h2>
+<ul>
+<li>نصب، نصب مجدد، ارتقا و حذف بسته ها با استفاده از RPM، YUM، و Zypper</li>
+<li>اطلاعات مربوط به بسته های RPM مانند نسخه، وضعیت، وابستگی ها، یکپارچگی و امضاها را به دست آورید.
+تعیین کنید که یک بسته چه فایل هایی را ارائه می دهد، و همچنین پیدا کنید که یک فایل خاص از کدام بسته می آید
+آگاهی از dnf</li>
+</ul>
+<p>در زیر لیستی جزئی از فایل ها، اصطلاحات و ابزارهای استفاده شده آمده است:</p>
+<h2 id="_2">شرایط و امکانات</h2>
+<ul>
+<li>دور در دقیقه</li>
+<li>rpm2cpio</li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/yum.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/yum.repos.d/</code></bdi>
+*آره</li>
+<li>زیپ</li>
+</ul>
+<h2 id="_3">مقدمه</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/qk6qcEAvf4A" title="YouTube video player" width="560"></iframe></div>
+<p><strong>RedHat Package Manager (RPM)</strong> و <strong>YellowDog Update Manager (YUM)</strong> توسط Fedora، RedHat، RHEL، CentOS، RocksOS، ... برای مدیریت بسته ها استفاده می شود. فرمت بسته RPM نامیده می شود و می تواند توسط ابزارهای <bdi><code class="inline-code" dir="ltr">rpm</code></bdi> مدیریت شود، اما اگر می خواهید از مخازن نرم‌افزاری (Repositories) برای نصب، به روز رسانی، جستجو، ... بسته ها یا حتی ارتقاء کل سیستم استفاده کنید، می توانید از دستور <bdi><code class="inline-code" dir="ltr">yum</code></bdi> استفاده کنید. برای درک عمیق تر از مخازن نرم‌افزاری (Repositories)، لطفاً به بخش قبلی (102.4) مراجعه کنید. در اینجا من فرض می کنم که شما مفهوم را می دانید.</p>
+<h2 id="_4">خوشمزه</h2>
+<p><bdi><code class="inline-code" dir="ltr">yum</code></bdi> مدیر بسته‌ها (Package Manager) مورد استفاده سیستم های مبتنی بر RedHat است. فایل های پیکربندی آن در <bdi><code class="inline-code" dir="ltr">/etc/yum.conf</code></bdi> و <bdi><code class="inline-code" dir="ltr">/etc/yum.repos.d/</code></bdi> قرار دارند. در زیر یک نمونه است.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># cat /etc/yum.conf
+[main]
+cachedir=/var/cache/yum/$basearch/$releasever
+keepcache=0
+debuglevel=2
+logfile=/var/log/yum.log
+exactarch=1
+obsoletes=1
+gpgcheck=1
+plugins=1
+installonly_limit=3
+</code></pre></div>
+<p>و در اینجا نمونه ای از یک فایل Repo واقعی در سیستم فدورا آمده است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># cat /etc/yum.repos.d/fedora.repo
+[fedora]
+name=Fedora $releasever - $basearch
+#baseurl=http://download.example/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
+metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&amp;arch=$basearch
+enabled=1
+countme=1
+metadata_expire=7d
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+
+[fedora-debuginfo]
+name=Fedora $releasever - $basearch - Debug
+#baseurl=http://download.example/pub/fedora/linux/releases/$releasever/Everything/$basearch/debug/tree/
+metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-debug-$releasever&amp;arch=$basearch
+enabled=0
+metadata_expire=7d
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+
+[fedora-source]
+name=Fedora $releasever - Source
+#baseurl=http://download.example/pub/fedora/linux/releases/$releasever/Everything/source/tree/
+metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-source-$releasever&amp;arch=$basearch
+enabled=0
+metadata_expire=7d
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+</code></pre></div>
+<p>ما از yum مانند <bdi><code class="inline-code" dir="ltr">yum [OPTIONS] [COMMAND] [PACKAGE_NAME]</code></bdi> استفاده می کنیم.</p>
+<p>یکی از مهم‌ترین گزینه‌ها <bdi><code class="inline-code" dir="ltr">-y</code></bdi> است که به سوالات Y/N _ بله می‌گوید.</p>
+<p>و در اینجا می توانید برخی از دستورات را پیدا کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>فرمان</th>
+<th>توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>update</td>
+<td>متادیتا مخزن را به روز می کند و بسته مشخص شده یا همه بسته های نصب شده را به آخرین نسخه های موجود خود ارتقا می دهد.</td>
+</tr>
+<tr>
+<td>نصب</td>
+<td>نصب بسته</td>
+</tr>
+<tr>
+<td>reinstall</td>
+<td>نصب مجدد بسته</td>
+</tr>
+<tr>
+<td>list</td>
+<td>نمایش لیستی از بسته ها</td>
+</tr>
+<tr>
+<td>اطلاعات</td>
+<td>نمایش اطلاعات مربوط به یک بسته</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>پکیج نصب شده را حذف می کند</td>
+</tr>
+<tr>
+<td>جستجو</td>
+<td>جستجوی مخازن نرم‌افزاری (Repositories) بسته ها</td>
+</tr>
+<tr>
+<td>ارائه می دهد</td>
+<td>بررسی کنید که کدام بسته ها یک فایل خاص را ارائه می دهند</td>
+</tr>
+<tr>
+<td>upgrade</td>
+<td>پکیج ها را ارتقا می دهد و بسته های منسوخ را حذف می کند</td>
+</tr>
+<tr>
+<td>localinstall</td>
+<td>نصب از فایل rpm محلی</td>
+</tr>
+<tr>
+<td>localupdate</td>
+<td>به روز رسانی از یک فایل rpm محلی</td>
+</tr>
+<tr>
+<td>check-update</td>
+<td>مخزن ها را برای به روز رسانی بسته های نصب شده بررسی می کند</td>
+</tr>
+<tr>
+<td>deplist</td>
+<td>وابستگی های یک بسته را نشان می دهد</td>
+</tr>
+<tr>
+<td>groupinstall</td>
+<td>گروهی را نصب کنید، بگویید "KDE Plasma Workspaces"</td>
+</tr>
+<tr>
+<td>history</td>
+<td>نمایش تاریخچه استفاده</td>
+</tr>
+</tbody>
+</table></div>
+<p>این یک نمونه نصب است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># yum install bzr
+Last metadata expiration check: 0:00:47 ago on Tue 21 Jun 2022 06:38:00 PM +0430.
+Dependencies resolved.
+=====================================================================================================================
+ Package                                  Architecture       Version                       Repository           Size
+=====================================================================================================================
+Installing:
+ breezy                                   x86_64             3.2.1-3.fc36                  fedora              6.0 M
+Installing dependencies:
+ libsodium                                x86_64             1.0.18-9.fc36                 fedora              163 k
+ python3-bcrypt                           x86_64             3.2.2-1.fc36                  updates              43 k
+ python3-certifi                          noarch             2021.10.8-1.fc36              fedora               15 k
+ python3-configobj                        noarch             5.0.6-27.fc36                 fedora               63 k
+ python3-cryptography                     x86_64             36.0.0-3.fc36                 fedora              1.0 M
+ python3-dulwich                          x86_64             0.20.32-1.fc36                fedora              408 k
+ python3-httplib2                         noarch             0.20.3-2.fc36                 fedora              122 k
+ python3-jeepney                          noarch             0.7.1-2.fc36                  fedora              324 k
+ python3-jwt                              noarch             2.4.0-1.fc36                  updates              41 k
+ python3-keyring                          noarch             23.6.0-1.fc36                 updates              78 k
+ python3-lazr-restfulclient               noarch             0.14.4-2.fc36                 fedora               84 k
+ python3-lazr-uri                         noarch             1.0.6-2.fc36                  fedora               33 k
+ python3-oauthlib                         noarch             3.0.2-12.fc36                 fedora              169 k
+ python3-paramiko                         noarch             2.11.0-1.fc36                 updates             303 k
+ python3-patiencediff                     x86_64             0.2.2-4.fc36                  fedora               45 k
+ python3-pynacl                           x86_64             1.4.0-5.fc36                  fedora              108 k
+ python3-secretstorage                    noarch             3.3.1-4.fc36                  fedora               35 k
+ python3-wadllib                          noarch             1.3.6-2.fc36                  fedora               60 k
+Installing weak dependencies:
+ python3-jwt+crypto                       noarch             2.4.0-1.fc36                  updates             8.9 k
+ python3-launchpadlib                     noarch             1.10.15.1-2.fc36              fedora              167 k
+ python3-oauthlib+signedtoken             noarch             3.0.2-12.fc36                 fedora              8.5 k
+ python3-pyasn1                           noarch             0.4.8-8.fc36                  fedora              134 k
+
+Transaction Summary
+=====================================================================================================================
+Install  23 Packages
+
+Total download size: 9.4 M
+Installed size: 44 M
+Is this ok [y/N]: y
+Downloading Packages:
+(1/23): python3-certifi-2021.10.8-1.fc36.noarch.rpm                                  1.8 kB/s |  15 kB     00:08
+(2/23): libsodium-1.0.18-9.fc36.x86_64.rpm                                            15 kB/s | 163 kB     00:10
+(3/23): python3-configobj-5.0.6-27.fc36.noarch.rpm                                    10 kB/s |  63 kB     00:06
+(4/23): breezy-3.2.1-3.fc36.x86_64.rpm                                               262 kB/s | 6.0 MB     00:23
+(5/23): python3-dulwich-0.20.32-1.fc36.x86_64.rpm                                     47 kB/s | 408 kB     00:08
+(6/23): python3-cryptography-36.0.0-3.fc36.x86_64.rpm                                 77 kB/s | 1.0 MB     00:13
+(7/23): python3-httplib2-0.20.3-2.fc36.noarch.rpm                                    105 kB/s | 122 kB     00:01
+(8/23): python3-jeepney-0.7.1-2.fc36.noarch.rpm                                      259 kB/s | 324 kB     00:01
+(9/23): python3-launchpadlib-1.10.15.1-2.fc36.noarch.rpm                              74 kB/s | 167 kB     00:02
+(10/23): python3-lazr-restfulclient-0.14.4-2.fc36.noarch.rpm                          36 kB/s |  84 kB     00:02
+(11/23): python3-lazr-uri-1.0.6-2.fc36.noarch.rpm                                     15 kB/s |  33 kB     00:02
+(12/23): python3-oauthlib+signedtoken-3.0.2-12.fc36.noarch.rpm                       4.2 kB/s | 8.5 kB     00:02
+(13/23): python3-oauthlib-3.0.2-12.fc36.noarch.rpm                                    58 kB/s | 169 kB     00:02
+(14/23): python3-patiencediff-0.2.2-4.fc36.x86_64.rpm                                 15 kB/s |  45 kB     00:02
+(15/23): python3-pyasn1-0.4.8-8.fc36.noarch.rpm                                       61 kB/s | 134 kB     00:02
+(16/23): python3-pynacl-1.4.0-5.fc36.x86_64.rpm                                       36 kB/s | 108 kB     00:03
+(17/23): python3-secretstorage-3.3.1-4.fc36.noarch.rpm                                12 kB/s |  35 kB     00:02
+(18/23): python3-wadllib-1.3.6-2.fc36.noarch.rpm                                      24 kB/s |  60 kB     00:02
+(19/23): python3-bcrypt-3.2.2-1.fc36.x86_64.rpm                                       16 kB/s |  43 kB     00:02
+(20/23): python3-jwt+crypto-2.4.0-1.fc36.noarch.rpm                                  3.2 kB/s | 8.9 kB     00:02
+(21/23): python3-jwt-2.4.0-1.fc36.noarch.rpm                                          16 kB/s |  41 kB     00:02
+(22/23): python3-keyring-23.6.0-1.fc36.noarch.rpm                                     18 kB/s |  78 kB     00:04
+(23/23): python3-paramiko-2.11.0-1.fc36.noarch.rpm                                    38 kB/s | 303 kB     00:08
+---------------------------------------------------------------------------------------------------------------------
+Total                                                                                177 kB/s | 9.4 MB     00:54
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                             1/1
+  Installing       : python3-cryptography-36.0.0-3.fc36.x86_64                                                  1/23
+  Installing       : python3-lazr-uri-1.0.6-2.fc36.noarch                                                       2/23
+  Installing       : python3-jeepney-0.7.1-2.fc36.noarch                                                        3/23
+  Installing       : python3-httplib2-0.20.3-2.fc36.noarch                                                      4/23
+  Installing       : python3-secretstorage-3.3.1-4.fc36.noarch                                                  5/23
+  Installing       : python3-keyring-23.6.0-1.fc36.noarch                                                       6/23
+  Installing       : python3-wadllib-1.3.6-2.fc36.noarch                                                        7/23
+  Installing       : python3-jwt-2.4.0-1.fc36.noarch                                                            8/23
+  Installing       : python3-jwt+crypto-2.4.0-1.fc36.noarch                                                     9/23
+  Installing       : python3-oauthlib-3.0.2-12.fc36.noarch                                                     10/23
+  Installing       : python3-oauthlib+signedtoken-3.0.2-12.fc36.noarch                                         11/23
+  Installing       : python3-lazr-restfulclient-0.14.4-2.fc36.noarch                                           12/23
+  Installing       : python3-launchpadlib-1.10.15.1-2.fc36.noarch                                              13/23
+  Installing       : python3-bcrypt-3.2.2-1.fc36.x86_64                                                        14/23
+  Installing       : python3-pyasn1-0.4.8-8.fc36.noarch                                                        15/23
+  Installing       : python3-patiencediff-0.2.2-4.fc36.x86_64                                                  16/23
+  Installing       : python3-configobj-5.0.6-27.fc36.noarch                                                    17/23
+  Installing       : python3-certifi-2021.10.8-1.fc36.noarch                                                   18/23
+  Installing       : python3-dulwich-0.20.32-1.fc36.x86_64                                                     19/23
+  Installing       : libsodium-1.0.18-9.fc36.x86_64                                                            20/23
+  Installing       : python3-pynacl-1.4.0-5.fc36.x86_64                                                        21/23
+  Installing       : python3-paramiko-2.11.0-1.fc36.noarch                                                     22/23
+  Installing       : breezy-3.2.1-3.fc36.x86_64                                                                23/23
+  Running scriptlet: breezy-3.2.1-3.fc36.x86_64                                                                23/23
+  Verifying        : breezy-3.2.1-3.fc36.x86_64                                                                 1/23
+  Verifying        : libsodium-1.0.18-9.fc36.x86_64                                                             2/23
+  Verifying        : python3-certifi-2021.10.8-1.fc36.noarch                                                    3/23
+  Verifying        : python3-configobj-5.0.6-27.fc36.noarch                                                     4/23
+  Verifying        : python3-cryptography-36.0.0-3.fc36.x86_64                                                  5/23
+  Verifying        : python3-dulwich-0.20.32-1.fc36.x86_64                                                      6/23
+  Verifying        : python3-httplib2-0.20.3-2.fc36.noarch                                                      7/23
+  Verifying        : python3-jeepney-0.7.1-2.fc36.noarch                                                        8/23
+  Verifying        : python3-launchpadlib-1.10.15.1-2.fc36.noarch                                               9/23
+  Verifying        : python3-lazr-restfulclient-0.14.4-2.fc36.noarch                                           10/23
+  Verifying        : python3-lazr-uri-1.0.6-2.fc36.noarch                                                      11/23
+  Verifying        : python3-oauthlib+signedtoken-3.0.2-12.fc36.noarch                                         12/23
+  Verifying        : python3-oauthlib-3.0.2-12.fc36.noarch                                                     13/23
+  Verifying        : python3-patiencediff-0.2.2-4.fc36.x86_64                                                  14/23
+  Verifying        : python3-pyasn1-0.4.8-8.fc36.noarch                                                        15/23
+  Verifying        : python3-pynacl-1.4.0-5.fc36.x86_64                                                        16/23
+  Verifying        : python3-secretstorage-3.3.1-4.fc36.noarch                                                 17/23
+  Verifying        : python3-wadllib-1.3.6-2.fc36.noarch                                                       18/23
+  Verifying        : python3-bcrypt-3.2.2-1.fc36.x86_64                                                        19/23
+  Verifying        : python3-jwt+crypto-2.4.0-1.fc36.noarch                                                    20/23
+  Verifying        : python3-jwt-2.4.0-1.fc36.noarch                                                           21/23
+  Verifying        : python3-keyring-23.6.0-1.fc36.noarch                                                      22/23
+  Verifying        : python3-paramiko-2.11.0-1.fc36.noarch                                                     23/23
+
+Installed:
+  breezy-3.2.1-3.fc36.x86_64                                 libsodium-1.0.18-9.fc36.x86_64
+  python3-bcrypt-3.2.2-1.fc36.x86_64                         python3-certifi-2021.10.8-1.fc36.noarch
+  python3-configobj-5.0.6-27.fc36.noarch                     python3-cryptography-36.0.0-3.fc36.x86_64
+  python3-dulwich-0.20.32-1.fc36.x86_64                      python3-httplib2-0.20.3-2.fc36.noarch
+  python3-jeepney-0.7.1-2.fc36.noarch                        python3-jwt-2.4.0-1.fc36.noarch
+  python3-jwt+crypto-2.4.0-1.fc36.noarch                     python3-keyring-23.6.0-1.fc36.noarch
+  python3-launchpadlib-1.10.15.1-2.fc36.noarch               python3-lazr-restfulclient-0.14.4-2.fc36.noarch
+  python3-lazr-uri-1.0.6-2.fc36.noarch                       python3-oauthlib-3.0.2-12.fc36.noarch
+  python3-oauthlib+signedtoken-3.0.2-12.fc36.noarch          python3-paramiko-2.11.0-1.fc36.noarch
+  python3-patiencediff-0.2.2-4.fc36.x86_64                   python3-pyasn1-0.4.8-8.fc36.noarch
+  python3-pynacl-1.4.0-5.fc36.x86_64                         python3-secretstorage-3.3.1-4.fc36.noarch
+  python3-wadllib-1.3.6-2.fc36.noarch
+
+Complete!
+
+</code></pre></div>
+<p>همچنین می توانید از حروف عام استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># yum update 'cal*'
+</code></pre></div>
+<blockquote class="callout-box">
+<p>واقعیت جالب: فدورا لینوکس از <bdi><code class="inline-code" dir="ltr">dnf</code></bdi> به عنوان مدیر بسته‌ها (Package Manager) خود استفاده می کند و دستورات <bdi><code class="inline-code" dir="ltr">yum</code></bdi> شما را به معادل های <bdi><code class="inline-code" dir="ltr">dnf</code></bdi> خود ترجمه می کند.</p>
+</blockquote>
+<h3 id="yumdownloader">yumdownloader</h3>
+<p>این ابزار rpm ها را بدون نصب از مخازن نرم‌افزاری (Repositories) دانلود می کند. اگر می‌خواهید همه وابستگی‌ها را نیز دانلود کنید، از سوئیچ <bdi><code class="inline-code" dir="ltr">--resolve</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">yumdownloader --resolve bzr
+</code></pre></div>
+<h2 id="_5">دور در دقیقه</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/0E_EuBUSuz4" title="YouTube video player" width="560"></iframe></div>
+<p>دستور <bdi><code class="inline-code" dir="ltr">rpm</code></bdi> می تواند ACTION ها را روی فایل های RPM مجزا اجرا کند. می توانید از آن مانند <bdi><code class="inline-code" dir="ltr">rpm ACTION [OPTION] rpm_file.rpm</code></bdi> استفاده کنید</p>
+<p>یکی از گزینه های رایج، <bdi><code class="inline-code" dir="ltr">-v</code></bdi> برای خروجی پرمخاطب است و اینها ACTION های رایج هستند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>فرم کوتاه</th>
+<th>فرم بلند</th>
+<th>توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i</td>
+<td>--install</td>
+<td>یک بسته را نصب می کند</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>--erase</td>
+<td>یک بسته را حذف می کند</td>
+</tr>
+<tr>
+<td>-U</td>
+<td>--upgrade</td>
+<td>یک بسته را نصب/ارتقا می‌دهد</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>--query</td>
+<td>بررسی می‌کند که آیا بسته نصب شده است</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>--freshen</td>
+<td>فقط اگر قبلاً نصب شده باشد به روز رسانی شود</td>
+</tr>
+<tr>
+<td>-V</td>
+<td>--verify</td>
+<td>یکپارچگی نصب را بررسی کنید</td>
+</tr>
+<tr>
+<td>-K</td>
+<td>--checksig</td>
+<td>یکپارچگی یک بسته rpm را بررسی می کند</td>
+</tr>
+</tbody>
+</table></div>
+<p>لطفاً توجه داشته باشید که هر عمل ممکن است گزینه های خاص خود را داشته باشد.</p>
+<h3 id="_6">نصب و به روز رسانی</h3>
+<p>در بیشتر موارد، ما از <bdi><code class="inline-code" dir="ltr">-U</code></bdi> استفاده می کنیم که بسته ای را نصب یا ارتقا می دهد. </p>
+<ul>
+<li>RPM پایگاه داده نصب بسته خودکار ندارد، بنابراین نمی تواند وابستگی های نصب شده به طور خودکار را حذف کند.</li>
+</ul>
+<p>اگر یک دور در دقیقه با همه وابستگی‌های آن دارید، می‌توانید با استفاده از <bdi><code class="inline-code" dir="ltr">rpm -Uvh *.rpm</code></bdi> آنها را نصب کنید. این به rpm می‌گوید در صورت ارائه در فایل‌های دیگر، از وابستگی‌ها شکایت نکند. در اینجا <bdi><code class="inline-code" dir="ltr">-h</code></bdi> 50 علامت هش ایجاد می کند تا پیشرفت را نشان دهد.</p>
+<p>در برخی موارد - اگر می‌دانید دارید چه کار می‌کنید - می‌توانید از <bdi><code class="inline-code" dir="ltr">--nodeps</code></bdi> برای جلوگیری از بررسی وابستگی استفاده کنید یا حتی از <bdi><code class="inline-code" dir="ltr">--force</code></bdi> برای اجبار نصب/ارتقا با وجود همه مشکلات و شکایات استفاده کنید.</p>
+<h3 id="_7">پرس و جو</h3>
+<p>یک پرس و جو معمولی به این صورت است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[root@fedora tmp]# rpm -q breezy-3.2.1-3.fc36.x86_64.rpm
+breezy-3.2.1-3.fc36.x86_64
+[root@fedora tmp]# rpm -q breezy
+breezy-3.2.1-3.fc36.x86_64
+[root@fedora tmp]# rpm -q emacs
+package emacs is not installed
+</code></pre></div>
+<p>و می‌توانید از این گزینه‌ها برای تند کردن آن استفاده کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>کوتاه</th>
+<th>طولانی</th>
+<th>توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>--configfiles</td>
+<td>نمایش فایل های پیکربندی بسته ها</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>--info</td>
+<td>اطلاعات تفصیلی درباره یک بسته</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>--all</td>
+<td>نمایش همه بسته های نصب شده</td>
+</tr>
+<tr>
+<td></td>
+<td>--whatprovides</td>
+<td>نشان می دهد که چه بسته هایی این فایل را ارائه می دهند</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>--list</td>
+<td>لیست فایل هایی را که بسته نصب می کند پرس و جو کنید</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>--requires</td>
+<td>نمایش وابستگی های یک بسته</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>--file</td>
+<td>پرونده مالک بسته پرس و جو</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="_8">تأیید کنید</h3>
+<p>می توانید بسته های خود را تأیید کنید و ببینید که آیا آنها به درستی نصب شده اند یا خیر. می‌توانید از گزینه <bdi><code class="inline-code" dir="ltr">-Vv</code></bdi> برای خروجی کامل استفاده کنید یا فقط از <bdi><code class="inline-code" dir="ltr">-V</code></bdi> برای تأیید و مشاهده فقط مشکلات استفاده کنید. این خروجی پس از ویرایش دستی <bdi><code class="inline-code" dir="ltr">/bin/tmux</code></bdi> است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[root@fedora tmp]# rpm -V tmux
+S.5....T.    /usr/bin/tmux
+</code></pre></div>
+<p>و این بخشی از بخش <bdi><code class="inline-code" dir="ltr">man rpm</code></bdi> <bdi><code class="inline-code" dir="ltr">-V</code></bdi> است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>    S Size differs
+    M Mode differs (includes permissions and file type)
+    5 digest (formerly MD5 sum) differs
+    D Device major/minor number mismatch
+    L readLink(2) path mismatch
+    U User ownership differs
+    G Group ownership differs
+    T mTime differs
+    P caPabilities differ
+</code></pre></div>
+<p>همچنین می‌توانید یکپارچگی یک بسته دور در دقیقه را با <bdi><code class="inline-code" dir="ltr">-K</code></bdi> بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># rpm -Kv breezy-3.2.1-3.fc36.x86_64.rpm
+breezy-3.2.1-3.fc36.x86_64.rpm:
+    Header V4 RSA/SHA256 Signature, key ID 38ab71f4: OK
+    Header SHA256 digest: OK
+    Header SHA1 digest: OK
+    Payload SHA256 digest: OK
+    V4 RSA/SHA256 Signature, key ID 38ab71f4: OK
+    MD5 digest: OK
+</code></pre></div>
+<p>خروجی بالا نشان می دهد که این فایل معتبر است.</p>
+<h3 id="_9">حذف نصب کنید</h3>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[root@fedora tmp]# rpm -e tmux
+error: Failed dependencies:
+    tmux is needed by (installed) anaconda-install-env-deps-36.16.5-1.fc36.x86_64
+</code></pre></div>
+<ul>
+<li>دور در دقیقه بسته را بدون درخواست حذف می کند!</li>
+<li>دور در دقیقه بسته ای را که بسته دیگری به آن نیاز دارد حذف نمی کند</li>
+</ul>
+<h3 id="rpm">فایل های RPM را استخراج کنید</h3>
+<h4 id="rpm2cpio">rpm2cpio</h4>
+<p><strong>cpio</strong> یک فرمت آرشیو است (درست مانند zip یا rar یا tar). می‌توانید از دستور <bdi><code class="inline-code" dir="ltr">rpm2cpio</code></bdi> برای تبدیل فایل‌های RPM به <em>cpio</em> استفاده کنید و سپس از ابزار <bdi><code class="inline-code" dir="ltr">cpio</code></bdi> برای استخراج آن‌ها استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[root@fedora tmp]# rpm2cpio breezy-3.2.1-3.fc36.x86_64.rpm &gt; breezy.cpio
+[root@fedora tmp]# cpio -idv &lt; breezy.cpio
+./usr/bin/brz
+./usr/bin/bzr
+./usr/bin/bzr-receive-pack
+./usr/bin/bzr-upload-pack
+./usr/bin/git-remote-brz
+./usr/bin/git-remote-bzr
+[...]
+</code></pre></div>
+<h2 id="_10">زیپر</h2>
+<p>لینوکس SUSE و برادرش openSUSE از ZYpp به عنوان موتور مدیریت بسته خود استفاده می کنند. می توانید از ابزارهای YAST یا Zypper برای برقراری ارتباط با آن استفاده کنید. </p>
+<p>اینها دستورات اصلی استفاده شده در <bdi><code class="inline-code" dir="ltr">zypper</code></bdi> هستند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>فرمان</th>
+<th>توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>راهنما</td>
+<td>کمک عمومی</td>
+</tr>
+<tr>
+<td>install</td>
+<td>یک بسته را نصب می کند</td>
+</tr>
+<tr>
+<td>info</td>
+<td>نمایش اطلاعات یک بسته</td>
+</tr>
+<tr>
+<td>list-updates</td>
+<td>به روز رسانی های موجود را نشان می دهد</td>
+</tr>
+<tr>
+<td>lr</td>
+<td>اطلاعات مخزن را نشان می دهد</td>
+</tr>
+<tr>
+<td>packages</td>
+<td>لیست تمام بسته ها یا بسته های موجود از یک مخزن خاص</td>
+</tr>
+<tr>
+<td>what-provides</td>
+<td>نمایش صاحب یک فایل</td>
+</tr>
+<tr>
+<td>refresh</td>
+<td>اطلاعات مخازن نرم‌افزاری (Repositories) را تازه می کند</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>یک بسته را از سیستم حذف می کند</td>
+</tr>
+<tr>
+<td>جستجو</td>
+<td>جستجوی بسته</td>
+</tr>
+<tr>
+<td>update</td>
+<td>مخزن ها را بررسی می کند و بسته های نصب شده را به روز می کند</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>یک بسته و وابستگی های آن را بررسی می کند</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>هنگام استفاده از <bdi><code class="inline-code" dir="ltr">zypper</code></bdi> می توانید فرمان را کوتاه کنید، بنابراین <bdi><code class="inline-code" dir="ltr">zypper se tmux</code></bdi> tmux را جستجو می کند.</p>
+</blockquote>
+<h2 id="_11">ابزارهای دیگر</h2>
+<p>YUM و RPM مدیران بسته اصلی در Fedora، RHEL و Centos هستند، اما ابزارهای دیگری نیز در دسترس هستند. همانطور که گفته شد، SUSE از <bdi><code class="inline-code" dir="ltr">YaST</code></bdi> استفاده می کند، و برخی از دسکتاپ های مدرن (KDE &amp; Gnome) از <bdi><code class="inline-code" dir="ltr">PackageKit</code></bdi> استفاده می کنند که یک ابزار گرافیکی است. همچنین خوب است توجه داشته باشید که مجموعه <bdi><code class="inline-code" dir="ltr">dnf</code></bdi> نیز در حال محبوبیت است و بر روی سیستم های فدورا از قبل نصب شده است.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1024_use_debian_package_management.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a><a href="1026_linux_as_virtualization_guest.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

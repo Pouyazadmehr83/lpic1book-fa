@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item active"><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۳</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>کاندیداها باید بتوانند جریان‌ها را ریدایرکت / تغییر مسیر (Redirection) داده و آنها را برای پردازش مؤثر داده‌های متنی متصل کنند. وظایف شامل ریدایرکت / تغییر مسیر (Redirection) ورودی استاندارد (Standard Input - stdin)، خروجی استاندارد (Standard Output - stdout) و خطای استاندارد (Standard Error - stderr)، پایپینگ / پایپ / لوله (Pipe) (Piping) خروجی یک دستور به ورودی دستور دیگر، استفاده از خروجی یک دستور به عنوان آرگومان برای دستور دیگر و ارسال خروجی به stdout و یک فایل است.</p>
+<h2 id="_1">اهداف</h2>
+<ul>
+<li>ریدایرکت / تغییر مسیر (Redirection) ورودی استاندارد (Standard Input - stdin)، خروجی استاندارد (Standard Output - stdout) و خطای استاندارد (Standard Error - stderr).</li>
+<li>خروجی یک دستور را به ورودی فرمان دیگر لوله کنید.</li>
+<li>از خروجی یک دستور به عنوان آرگومان برای دستور دیگر استفاده کنید.</li>
+<li>خروجی را هم به stdout و هم به یک فایل ارسال کنید.</li>
+</ul>
+<h2 id="_2">شرایط</h2>
+<ul>
+<li>سه راهی</li>
+<li>xargs</li>
+</ul>
+<p>این ویژگی ها به ما کمک می کند تا ورودی/خروجی دستورات را کنترل کنیم و کارهایی مانند ذخیره خروجی یک دستور در یک فایل، دریافت ورودی یک دستور از دستور دیگر یا جداسازی خروجی عادی از خطاها را انجام دهیم. ما قبلاً از آنها در بخش های قبلی استفاده کرده ایم، اما بیایید بیشتر بیاموزیم و درک خود را از آنها عمیق تر کنیم.</p>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/PeUhwMoSCko" title="YouTube video player" width="560"></iframe></div>
+<h2 id="redirection-io">ریدایرکت / تغییر مسیر (Redirection) IO استاندارد</h2>
+<p>در سیستم لینوکس، اکثر پوسته ها از جریان ها برای ورودی و خروجی استفاده می کنند. این استریم ها می توانند از (و به سمت) چیزهای مختلفی از جمله صفحه کلید، دستگاه‌های بلوکی (Block Devices) (هارد، USB، ..)، فایل ها و ... باشند.</p>
+<p>ما 3 جریان استاندارد مختلف داریم:</p>
+<ol start="0">
+<li><b>STDIN</b> جریان ورودی استاندارد (Standard Input - stdin) است که ورودی یک فرمان را ارائه می دهد.</li>
+<li><b>STDOUT</b> جریان خروجی استاندارد (Standard Output - stdout) است که شامل خروجی یک فرمان است.</li>
+<li><b>STDERR</b> جریان خطای استاندارد (Standard Error - stderr) است که شامل خروجی خطای یک فرمان است.</li>
+</ol>
+<blockquote class="callout-box">
+<p>شماره گذاری <bdi><code class="inline-code" dir="ltr">0</code></bdi>، <bdi><code class="inline-code" dir="ltr">1</code></bdi> و <bdi><code class="inline-code" dir="ltr">2</code></bdi> بر این اساس <strong><em>STDIN</em></strong>، <strong><em>STDOUT</em></strong> و <strong>*STDERR</strong> را نشان می دهد. به عنوان مثال، اگر می خواهید stderror را ریدایرکت / تغییر مسیر (Redirection) دهید، می توانید از 2&gt; استفاده کنید و STDERR ریدایرکت / تغییر مسیر (Redirection) داده می شود.</p>
+</blockquote>
+<p>اینها تغییر مسیرهای دیگری هستند که می توانید استفاده کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>اپراتور</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;</td>
+<td>STDOUT را به یک فایل هدایت کنید. بازنویسی در صورت وجود</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>STDOUT را به یک فایل هدایت کنید. در صورت وجود پیوست کنید</td>
+</tr>
+<tr>
+<td>2&gt;</td>
+<td>STDERR را به یک فایل هدایت کنید. بازنویسی در صورت وجود</td>
+</tr>
+<tr>
+<td>2&gt;&gt;</td>
+<td>STDERR را به یک فایل هدایت کنید. در صورت وجود پیوست کنید</td>
+</tr>
+<tr>
+<td>&amp;&gt;</td>
+<td>ریدایرکت / تغییر مسیر (Redirection) STDOUT و STDERR. بازنویسی در صورت وجود</td>
+</tr>
+<tr>
+<td>&amp;&gt;&gt;</td>
+<td>ریدایرکت / تغییر مسیر (Redirection) STDOUT و STDERR; در صورت وجود پیوست کنید</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>ریدایرکت / تغییر مسیر (Redirection) STDIN از یک فایل</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>STDIN را از فایل هدایت کنید و STDOUT را به آن ارسال کنید</td>
+</tr>
+</tbody>
+</table></div>
+<p>
+چند نمونه: </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ls
+bob jack    jadi    linus   sara who_uses_what.txt
+$ ls x*
+ls: x*: No such file or directory
+$ ls j*
+jack    jadi
+$ ls j* x* &gt; output 2&gt; errors
+$ cat output
+jack
+jadi
+$ cat errors
+ls: x*: No such file or directory
+$ cat who_uses_what.txt
+jadi, fedora
+linux, fedora
+bob, ubuntu
+jack, arch
+sara, fedora
+$ tr ' ', '' &lt; who_uses_what.txt
+tr: empty string2
+$ cat who
+$ tr ',', '|' &lt; who_uses_what.txt
+jadi| fedora
+linux| fedora
+bob| ubuntu
+jack| arch
+sara| fedora
+</code></pre></div>
+<p>همچنین می توان از <bdi><code class="inline-code" dir="ltr">&amp;1</code></bdi> و <bdi><code class="inline-code" dir="ltr">&amp;2</code></bdi> و <bdi><code class="inline-code" dir="ltr">&amp;0</code></bdi> برای مراجعه به <strong>هدف</strong> STDOUT، STDERR و STDIN استفاده کرد. در این مورد <bdi><code class="inline-code" dir="ltr">ls &gt; file1 2&gt;&amp;1</code></bdi> به معنای <em>redirect خروجی به file1 و خروجی stderr به همان مکان stdout (file1)</em> است.</p>
+<blockquote class="callout-box">
+<p>مراقب باش! <bdi><code class="inline-code" dir="ltr">ls 2&gt;&amp;1 &gt; file1</code></bdi> به معنای <em>print stderr در محل فعلی stdout (ترمینال) است و سپس stdout را به file1</em> تغییر دهید.</p>
+</blockquote>
+<h4 id="null">ارسال به null</h4>
+<p>در لینوکس <strong>/dev/null</strong> دستگاه مانند یک پرتگاه کار می کند. شما می توانید هر چیزی را به آنجا بفرستید و بدون اینکه باری بر سیستم شما وارد شود ناپدید می شود. پس طبیعی است که بگوییم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ls j* x* &gt; file1
+ls: x*: No such file or directory
+$ ls j* x* &gt; file1 2&gt;/dev/null
+$ cat file1
+jack
+jadi
+</code></pre></div>
+<h4 id="_3">در اینجا اسناد</h4>
+<p>بسیاری از پوسته‌ها اسناد here-docs (همچنین اینجا-docs نامیده می‌شوند) را به عنوان راهی برای ورودی دارند. شما از <bdi><code class="inline-code" dir="ltr">&lt;&lt;</code></bdi> و یک <bdi><code class="inline-code" dir="ltr">WORD</code></bdi> استفاده می کنید و سپس هر آنچه را که وارد می کنید، stdin در نظر گرفته می شود تا زمانی که فقط WORD را در یک خط بدهید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ tr ' ' '.' &lt;&lt; END_OF_DATA
+&gt; this is a line
+&gt; and then this
+&gt;
+&gt; we'll still type
+&gt; and,
+&gt; done!
+&gt; END_OF_DATA
+this.is.a.line
+and.then.this
+
+we'll.still.type
+and,
+done!
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر در حال نوشتن اسکریپت و کارهای خودکار هستید، اسناد اینجا بسیار مفید هستند.</p>
+</blockquote>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/j3L_7Wxcl0U" title="YouTube video player" width="560"></iframe></div>
+<h3 id="_4">لوله ها</h3>
+<p>با لوله (<bdi><code class="inline-code" dir="ltr">|</code></bdi>)، می‌توانید STDOUT، STDIN، و STDERR را بین چند دستور در یک خط فرمان (Command Line) هدایت کنید. وقتی <bdi><code class="inline-code" dir="ltr">command1 | command2</code></bdi> را انجام می دهید؛ فرمان 1 اجرا می شود اما STDOUT آن به عنوان STDIN به COMMAND2 هدایت می شود. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ cat who_uses_what.txt
+jadi, fedora
+linux, fedora
+bob, ubuntu
+jack, arch
+sara, fedora
+$ cut -f2 -d, who_uses_what.txt | sed -e 's/ //g' | sort  | uniq -c | sort -nr
+   3 fedora
+   1 ubuntu
+   1 arch
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر می‌خواهید پایپ / لوله (Pipe) خود را با محتوای یک فایل شروع کنید، با <bdi><code class="inline-code" dir="ltr">cat filename | ...</code></bdi> شروع کنید یا از یک ریدایرکت / تغییر مسیر (Redirection) <bdi><code class="inline-code" dir="ltr">&lt;</code></bdi> stdin استفاده کنید.</p>
+</blockquote>
+<p>لوله ها یکی از ویژگی های فوق العاده قوی و فوق العاده شگفت انگیز در دنیای یونیکس هستند. آنها به شما اجازه می دهند با ترکیب ابزارهایی که کارهای اتمی را انجام می دهند، ابزارهای <em>جدید</em> ایجاد کنید. به عنوان مثال، این را بررسی کنید:</p>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/86V5amp1u7U" title="YouTube video player" width="560"></iframe></div>
+<h3 id="xargs">xargs</h3>
+<p>ابزار xargs رشته های فاصله، تب، خط جدید و انتهای فایل را از ورودی استاندارد (Standard Input - stdin) می خواند و ابزار ارائه شده را با رشته ها به عنوان آرگومان های آنها اجرا می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ls
+bob         file1           jadi            output          who_uses_what.txt
+errors          jack            linus           sara
+$ ls | xargs echo these are files:
+these are files: bob errors file1 jack jadi linus output sara who_uses_what.txt
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر هیچ فرمانی به <bdi><code class="inline-code" dir="ltr">xargs</code></bdi> ندهید، echo دستور پیش فرض خواهد بود. </p>
+</blockquote>
+<p>یکی از سوئیچ های رایج <bdi><code class="inline-code" dir="ltr">-I</code></bdi> است. اگر بخواهید آرگومان های stdin را در وسط (یا حتی شروع) دستورات خود ارسال کنید، مفید است. از آن به این صورت استفاده کنید: <bdi><code class="inline-code" dir="ltr">xargs -I SOMETHING echo here is SOMETHING end</code></bdi>:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ cat who_uses_what.txt
+jadi, fedora
+linus, fedora
+bob, ubuntu
+jack, arch
+sara, fedora
+$ cat who_uses_what.txt | xargs -I DATA echo name is DATA is the choice.
+name is jadi, fedora is the choice.
+name is linus, fedora is the choice.
+name is bob, ubuntu is the choice.
+name is jack, arch is the choice.
+name is sara, fedora is the choice.
+</code></pre></div>
+<p>دو سوئیچ مفید دیگر:
+1. <bdi><code class="inline-code" dir="ltr">-L 1</code></bdi> بر اساس خطوط جدید شکسته می شود 
+2. <bdi><code class="inline-code" dir="ltr">-n 1</code></bdi> به xargs می گوید که پس از دریافت 1 آرگومان، ابزار ارائه شده را فراخوانی کند.  </p>
+<h3 id="_5">سه راهی</h3>
+<p>مشکل ریدایرکت / تغییر مسیر (Redirection) این است که نمی توانید پیشرفت دستورات خود را در همان ترمینال ببینید. ابزار <bdi><code class="inline-code" dir="ltr">tee</code></bdi> این مشکل را حل می کند. اگر باید خروجی را روی صفحه ببینید و همچنین آن را در یک فایل ذخیره کنید، <bdi><code class="inline-code" dir="ltr">tee</code></bdi> دوست شماست. یک یا چند نام فایل به آن بدهید و این کار را انجام می دهد.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ls -1 | tee allfiles myfiles
+bob
+errors
+file1
+jack
+jadi
+linus
+output
+sara
+who_uses_what.txt
+$ cat allfiles myfiles
+bob
+errors
+file1
+jack
+jadi
+linus
+output
+sara
+who_uses_what.txt
+bob
+errors
+file1
+jack
+jadi
+linus
+output
+sara
+who_uses_what.txt
+</code></pre></div>
+<p>سوئیچ <bdi><code class="inline-code" dir="ltr">-a</code></bdi> در صورت وجود به فایل‌ها اضافه می‌شود.</p>
+<blockquote class="callout-box">
+<p>اگر باید <strong><em>stderr</em></strong> را نیز ذخیره کنید، ابتدا آن را به <strong><em>stdout</em></strong> هدایت کنید.</p>
+</blockquote>
+                </div>
+
+                <div class="chapter-pager"><a href="1033_perform_basic_file_management.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a><a href="1035_create-_monitor_and_kill_processes.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

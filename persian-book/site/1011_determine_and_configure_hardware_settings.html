@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item active"><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۱: معماری سیستم (System Architecture)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        <span class="meta-item weight-tag">وزن: 2</span>
+                        <span class="meta-item topic-tag">مبحث ۱۰۱</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 2</em></p>
+<p>داوطلبان باید قادر به تعیین و پیکربندی سخت افزار اساسی سیستم باشند.</p>
+<h2 id="_1">اهداف</h2>
+<ul>
+<li>دستگاه های جانبی یکپارچه را فعال و غیرفعال کنید</li>
+<li>بین انواع مختلف دستگاه های ذخیره سازی انبوه تفاوت قائل شوید</li>
+<li>تعیین منابع سخت افزاری برای دستگاه ها</li>
+<li>ابزارها و ابزارهای کمکی برای فهرست کردن اطلاعات سخت افزاری مختلف (مانند lsusb، lspci و غیره)</li>
+<li>ابزارها و ابزارهای کمکی برای دستکاری دستگاه های USB</li>
+<li>درک مفهومی sysfs، udev، dbus</li>
+<li><bdi><code class="inline-code" dir="ltr">/sys</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/proc</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/dev</code></bdi></li>
+<li>modprobe</li>
+<li>lsmod</li>
+<li>lspci</li>
+<li>lsusb</li>
+</ul>
+<h2 id="_2">در مورد سخت افزار اطلاعات کسب کنید</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/xCPDxgp0zXY" title="YouTube video player" width="560"></iframe></div>
+<p>سیستم عامل (OS) نرم افزار سیستمی است که سخت افزار و منابع نرم افزاری کامپیوتر را مدیریت می کند و خدمات مشترکی را برای برنامه های کامپیوتری ارائه می دهد. در بالای سخت افزار قرار می گیرد و زمانی که نرم افزارهای دیگر (گاهی اوقات برنامه فضای کاربری نامیده می شود) آن را درخواست می کنند، منابع را مدیریت می کند. </p>
+<p>Firmware نرم افزار <em>روی</em> سخت افزار شماست که آن را اجرا می کند. آن را به عنوان یک سیستم عامل داخلی یا درایور برای سخت افزار خود در نظر بگیرید. مادربردها برای اینکه بتوانند کار کنند نیاز به سیستم عامل دارند. </p>
+<p>Firmware نوعی نرم افزار است که در سخت افزار زندگی می کند. نرم افزار به هر برنامه یا گروهی از برنامه ها گفته می شود که توسط کامپیوتر اجرا می شوند.</p>
+<p><img alt="BIOS" class="content-img img-fluid" src="./images/bios.png"/>
+1. BIOS (سیستم ورودی/خروجی پایه). قدیمی و زائد. از طریق یک سیستم مبتنی بر منوی متنی قابل حل نیست و با دسترسی به بخش اول اولین پارتیشن دیسک سخت شما (MBR) کامپیوتر را بوت می کند. این برای سیستم های مدرن کافی نیست و اکثر سیستم ها از روش بوت دو مرحله ای استفاده می کنند.</p>
+<p><img alt="UEFI" class="content-img img-fluid" src="./images/uefi.jpeg"/>
+2. UEFI (رابط یکپارچه نرم افزار توسعه پذیر). به عنوان EFI در سال 1998 در اینتل شروع به کار کرد. حالا استاندارد. از یک پارتیشن دیسک خاص برای بوت (EFI System Partition (ESP)) استفاده می کند و از FAT استفاده می کند. در لینوکس در <bdi><code class="inline-code" dir="ltr">/boot/efi</code></bdi> قرار دارد و فایل‌ها از پسوند <bdi><code class="inline-code" dir="ltr">.efi</code></bdi> استفاده می‌کنند. شما باید هر بوت‌لودر (Bootloader) را ثبت کنید.</p>
+<p><img alt="BIOSvsUEFI" class="content-img img-fluid" src="./images/BIOSvsUEFI.png"/></p>
+<h2 id="_3">دستگاه های جانبی</h2>
+<p>اینها رابط های دستگاه هستند.</p>
+<h3 id="pci">PCI</h3>
+<p>اتصال اجزای جانبی کاربر را قادر می سازد تا اجزای اضافی را به مادربرد اضافه کند. اکنون اکثر سرورها از PCI Express (PCIe) استفاده می کنند</p>
+<p><img alt="PCI" class="content-img img-fluid" src="./images/pci.jpeg"/></p>
+<ul>
+<li>هارد دیسک داخلی<ul>
+<li>پاتا (قدیمی)</li>
+<li>SATA (سریال و حداکثر 4 دستگاه) (II-III)</li>
+<li>SCSI (موازی و حداکثر 8 دستگاه) (رابط سیستم کامپیوتری کوچک)</li>
+</ul>
+</li>
+<li>هارد دیسک خارجی</li>
+<li>فیبر (ارائه اتصال داده با سرعت بالا)</li>
+<li>SSD روی USB</li>
+<li>کارت های شبکه RJ 45 (جک ثبت شده 45)</li>
+<li>کارت های بی سیم IEEE 802.11</li>
+<li>بلوتوث IEEE 802.15 (استاندارد فناوری بی سیم برد کوتاه (تا 10 متر))</li>
+<li>شتاب دهنده های ویدئویی مدارهای سخت افزاری روی کارت گرافیک که سرعت فیلمبرداری تمام حرکت را افزایش می دهد.</li>
+<li>کارت های صوتی</li>
+</ul>
+<h4 id="ssd-hdd">SSD در مقابل HDD</h4>
+<ul>
+<li>حافظه های SSD سریع تر (تا 10 بار خواندن و تا 20 بار سریع تر می نویسند)، ساکت تر، کوچکتر، بادوام تر و مصرف انرژی کمتری دارند، در حالی که هاردهای HDD ارزان تر هستند و ظرفیت ذخیره سازی بیشتری را ارائه می دهند و در صورت آسیب، بازیابی آسان تر داده ها را ارائه می دهند.</li>
+<li>SSD ها قطعات متحرکی مانند بازوهای محرک و صفحات چرخان مانند هارد دیسک ندارند (یک SSD از حافظه فلش بدون هیچ قطعه متحرک استفاده می کند). این یکی از دلایلی است که SSD ها می توانند در برابر افت تصادفی و سایر شوک ها، لرزش، دمای شدید و میدان های مغناطیسی بهتر از HDD مقاومت کنند.</li>
+<li>هارد دیسک ها حدود 3 تا 5 سال عمر می کنند، SSD ها می توانند تا 10 سال یا بیشتر دوام بیاورند. (درایوهای SSD فعلی دارای ظرفیت ذخیره هستند. این فضاهای ذخیره سازی در دسترس کاربر نیست، اما به اصطلاح برای تعمیر سلول های آسیب دیده استفاده می شود. سلول های معیوب با سلول های ذخیره کاملاً جدید جایگزین می شوند؛ این روش "Bad-Block-Management" نامیده می شود. بنابراین سلول های ذخیره سازی SSD در عملکرد عادی یک عمر دوام می آورند.)</li>
+</ul>
+<h4 id="_4">کارت های شبکه در مقابل کارت های بی سیم</h4>
+<ul>
+<li>NIC (کارت رابط شبکه) اتصال شبکه محاسباتی را روی یک دستگاه محاسباتی به شبکه اترنت در خانه یا دفتر از طریق پورت RJ45 فراهم می کند. کارت آداپتور بی‌سیم اتصال بی‌سیم به شبکه محاسباتی را فراهم می‌کند که توسط نقاط دسترسی در محل (در خانه یا محل کار) در یک دستگاه محاسباتی فعال شده است.</li>
+<li>کارت های بی سیم نصب شده بر روی یک کامپیوتر صنعتی برای فعال کردن اتصال بی سیم به اینترنت استفاده می شود.</li>
+</ul>
+<h3 id="usb">USB</h3>
+<p>گذرگاه سریال عمومی (USB). سریال و نیاز به اتصالات کمتری دارد.</p>
+<p><img alt="USB Interfaces" class="content-img img-fluid" src="./images/usb.png"/></p>
+<ul>
+<li>1 (12 مگابیت در ثانیه)، 2 (480 مگابیت در ثانیه)، 3 (گذرگاه PCI.e 2.0: 5 گیگابیت در ثانیه، PCI.e 3.0 باس: 10 گیگابیت در ثانیه، PCI.e 3.2 باس: 20 گیگابیت در ثانیه، PCI.e گذرگاه 4.0: 40 گیگابیت در ثانیه)</li>
+<li>الف، ب، ج</li>
+</ul>
+<h3 id="gpio">GPIO</h3>
+<p>خروجی ورودی همه منظوره </p>
+<p><img alt="GPIO on a Raspberry Pi" class="content-img img-fluid" src="./images/gpio.jpeg"/></p>
+<ul>
+<li>برای کنترل دستگاه های دیگر</li>
+<li>به عنوان مثال می توان به Arduino، Raspberrypi و غیره اشاره کرد.</li>
+</ul>
+<h2 id="sysfs">Sysfs</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/879oHKwgDG8" title="YouTube video player" width="560"></iframe></div>
+<p>Sysfs یک سیستم فایل شبه ارائه شده توسط هسته لینوکس است که اطلاعات مربوط به زیرسیستم های مختلف هسته، دستگاه های سخت افزاری و درایورهای دستگاه مرتبط را از مدل دستگاه هسته به فضای کاربر از طریق فایل های مجازی صادر می کند.[1] علاوه بر ارائه اطلاعات در مورد دستگاه های مختلف و زیر سیستم های هسته، از فایل های مجازی صادراتی نیز برای پیکربندی آنها استفاده می شود.</p>
+<p>Sysfs در زیر نقطه مانت (Mount Point) <bdi><code class="inline-code" dir="ltr">/sys</code></bdi> نصب شده است.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@funlife:~$ ls /sys
+block  bus  class  dev  devices  firmware  fs  hypervisor  kernel  module  power
+</code></pre></div>
+<p>همه دستگاه‌های بلوک در دایرکتوری <bdi><code class="inline-code" dir="ltr">block</code></bdi> و <bdi><code class="inline-code" dir="ltr">bus</code></bdi> هستند، همه دستگاه‌های PCI، USB، سریال و ... متصل هستند. توجه داشته باشید که در اینجا در <bdi><code class="inline-code" dir="ltr">sys</code></bdi> ما دستگاه‌ها را بر اساس فناوری آنها داریم اما <bdi><code class="inline-code" dir="ltr">/dev/</code></bdi> انتزاعی شده است.</p>
+<h2 id="udev">udev</h2>
+<p>udev (userspace <bdi><code class="inline-code" dir="ltr">/dev</code></bdi>) یک مدیر دستگاه برای هسته لینوکس است. به عنوان جانشین devfsd و hotplug، udev عمدتاً گره‌های دستگاه را در دایرکتوری <bdi><code class="inline-code" dir="ltr">/dev</code></bdi> مدیریت می‌کند. در همان زمان، udev همچنین تمام رویدادهای فضای کاربر را که هنگام افزودن دستگاه‌های سخت‌افزاری به سیستم یا حذف آن‌ها از آن، از جمله بارگذاری میان‌افزار در صورت نیاز توسط دستگاه‌های خاص، ایجاد می‌شوند، مدیریت می‌کند.</p>
+<p>دستگاه‌های زیادی در <bdi><code class="inline-code" dir="ltr">/dev/</code></bdi> وجود دارد و اگر دستگاهی را وصل کنید، فایلی در <bdi><code class="inline-code" dir="ltr">/dev</code></bdi> به آن اختصاص داده می‌شود (مثلا <bdi><code class="inline-code" dir="ltr">/dev/sdb2</code></bdi>). <strong>udev</strong> به شما امکان می‌دهد کنترل کنید که چه چیزی در <bdi><code class="inline-code" dir="ltr">/dev</code></bdi> چیست. به عنوان مثال، می‌توانید از یک قانون استفاده کنید تا درایو فلش 128 گیگابایتی خود را با یک فروشنده خاص مجبور کنید که هر بار که آن را متصل می‌کنید <bdi><code class="inline-code" dir="ltr">/dev/mybackup</code></bdi> باشد و حتی می‌توانید به محض اتصال آن، یک پردازش برگشتی را شروع کنید.</p>
+<p>در اصل، <strong>udev</strong> به عنوان نگهبان دایرکتوری <bdi><code class="inline-code" dir="ltr">/dev/</code></bdi> عمل می کند. نمایش دستگاه‌هایی مانند هارد دیسک را که با نام های <bdi><code class="inline-code" dir="ltr">/dev/sda</code></bdi> یا <bdi><code class="inline-code" dir="ltr">/dev/hd0</code></bdi> شناسایی می‌شود، صرف نظر از سازنده، مدل، یا فناوری زیربنایی آن، خلاصه می‌شود.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@funlife:/dev# ls /dev/sda*
+/dev/sda  /dev/sda1  /dev/sda2  /dev/sda3  /dev/sda5  /dev/sda6
+</code></pre></div>
+<p>اگر برنامه ای بخواهد از/روی دستگاهی بخواند/بنویسد، از فایل مربوطه در /dev برای این کار استفاده می کند. این را می توان در <strong>دستگاه های شخصیت</strong> یا <strong>دستگاه های مسدود</strong> انجام داد. هنگام فهرست کردن، یک <bdi><code class="inline-code" dir="ltr">b</code></bdi> یا <bdi><code class="inline-code" dir="ltr">c</code></bdi> این را نشان می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@ocean:~# ls -ltrh /dev/  # Partial output is shown
+crw-rw---- 1 root tty       4,   1 Dec 15  2019 tty1
+crw-rw-rw- 1 root root      1,   5 Dec 15  2019 zero
+brw-rw---- 1 root disk      1,   0 Dec 15  2019 ram0
+brw-rw---- 1 root disk 253,   0 Dec 15  2019 /dev/vda
+</code></pre></div>
+<h2 id="dbus">dbus</h2>
+<p>D-Bus یک سیستم گذرگاه پیام است، روشی ساده برای صحبت برنامه‌ها با یکدیگر. علاوه بر ارتباطات بین فرآیندی، D-Bus به هماهنگ کردن چرخه حیات فرآیند کمک می کند. کدگذاری یک برنامه یا دیمون "تک نمونه" و راه اندازی برنامه ها و دیمون ها در صورت نیاز در صورت نیاز به خدمات آنها ساده و قابل اعتماد است.</p>
+<p>دایرکتوری ## proc
+این جایی است که هسته تنظیمات و ویژگی های خود را حفظ می کند. این دایرکتوری روی رم ایجاد می شود و فایل ها ممکن است دسترسی به نوشتن داشته باشند (مثلاً برای برخی از تنظیمات سخت افزاری). می توانید مواردی مانند:</p>
+<ul>
+<li>IRQ (درخواست وقفه)</li>
+<li>پورت های ورودی/خروجی (مکان هایی در حافظه که CPU می تواند با دستگاه ها صحبت کند)</li>
+<li>DMA (دسترسی مستقیم به حافظه، سریعتر از پورت های ورودی/خروجی)</li>
+<li>فرآیندها</li>
+<li>تنظیمات شبکه
+-...</li>
+</ul>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ls /proc/
+1      1249   1451   1565   18069  20346  2426  2765  2926  3175  3317  3537  39    468   4921  53    689   969      filesystems  misc       sysvipc
+10     13     146    157    18093  20681  2452  2766  2929  3183  3318  354   397   4694  4934  538   7     97       fs       modules        timer_list
+1039   1321   147    1572   18243  21     2456  28    2934  3187  34    3541  404   4695  4955  54    737   acpi     interrupts   mounts         timer_stats
+10899  13346  148    1576   18274  21021  2462  2841  2936  3191  3450  3550  41    47    4970  546   74    asound   iomem        mtrr       tty
+10960  13438  14817  158    1859   21139  25    2851  2945  32    3459  357   42    4720  4982  55    742   buddyinfo    ioports      net        uptime
+11     13619  149    16     18617  2129   2592  2852  2947  3202  3466  36    43    4731  4995  551   75    bus      irq          pagetypeinfo   version
+11120  13661  15     1613   18781  214    26    2862  2948  3206  3467  3683  44    4756  5 56    77    cgroups  kallsyms     partitions     version_signature
+11145  13671  150    1630   1880   215    27    2865  2952  3208  3469  3699  4484  4774  50    577   8     cmdline  kcore        sched_debug    vmallocinfo
+1159   13927  151    1633   1882   2199   2707  2866  2955  3212  3470  37    4495  4795  5008  5806  892   consoles     keys         schedstat      vmstat
+1163   14     1512   1634   19     22     2708  2884  2957  3225  3474  3710  45    48    5013  60    9     cpuinfo  key-users    scsi       zoneinfo
+1164   14045  1515   1693   19061  2219   2709  2887  2961  3236  3475  3752  4506  4811  5077  61    904   crypto   kmsg         self
+1170   14047  152    17     19068  23     2710  2891  3     324   3477  3761  4529  4821  5082  62    9061  devices  kpagecount   slabinfo
+1174   14052  153    17173  19069  23055  2711  2895  3047  3261  3517  3778  4558  484   5091  677   915   diskstats    kpageflags   softirqs
+12     1409   154    1732   19075  2354   2718  29    3093  3284  3522  38    4562  4861  51    678   923   dma      loadavg      stat
+1231   1444   155    17413  2      2390   2719  2904  31    3287  3525  3803  46    4891  52    679   939   driver   locks        swaps
+1234   1446   156    17751  20     24     2723  2908  3132  3298  3528  3823  4622  49    5202  680   940   execdomains  mdstat       sys
+1236   145    1563   18     2028   2418   2763  2911  3171  33    3533  3845  4661  4907  525   687   96    fb       meminfo      sysrq-trigger
+</code></pre></div>
+<p>اعداد شناسه فرآیند هستند! همچنین فایل های دیگری مانند <bdi><code class="inline-code" dir="ltr">cpuinfo</code></bdi>، <bdi><code class="inline-code" dir="ltr">mounts</code></bdi>، <bdi><code class="inline-code" dir="ltr">meminfo</code></bdi>،...</p>
+<p><strong><em>کد</em>4</strong>_</p>
+<p>اینجا هم میتونیم بنویسیم از آنجایی که من از لپ تاپ IBM Lenovo استفاده می کنم، می توانم LED خود را با نوشتن اینجا روشن و خاموش کنم:</p>
+<p><strong><em>کد</em>5</strong>_</p>
+<p>یک مثال سنتی دیگر تغییر حداکثر تعداد فایل های باز در سراسر سیستم است:</p>
+<p><strong><em>کد</em>6</strong>_
+دایرکتوری بسیار مفید دیگر در اینجا، <bdi><code class="inline-code" dir="ltr">/proc/sys/net/ipv4</code></bdi> است که تنظیمات شبکه بلادرنگ را کنترل می کند.</p>
+<blockquote class="callout-box">
+<p>همه این تغییرات پس از بوت شدن برگردانده می شوند. برای دائمی کردن این تغییرات باید در فایل های پیکربندی در <bdi><code class="inline-code" dir="ltr">/etc/</code></bdi> بنویسید</p>
+</blockquote>
+<p>خودت را امتحان کن! <bdi><code class="inline-code" dir="ltr">/proc/ioports</code></bdi> یا <bdi><code class="inline-code" dir="ltr">/proc/dma</code></bdi> یا <bdi><code class="inline-code" dir="ltr">/proc/iomem</code></bdi> را بررسی کنید.</p>
+<h2 id="lsusb-lspci-lsblk-lshw">lsusb، lspci، lsblk، lshw</h2>
+<p>درست مانند <bdi><code class="inline-code" dir="ltr">ls</code></bdi> اما برای pci، usb، ... </p>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/b5bAXRSYmoA" title="YouTube video player" width="560"></iframe></div>
+<h3 id="lspci">lspci</h3>
+<p>دستگاه های PCI که به کامپیوتر متصل هستند را نشان می دهد.</p>
+<p><strong><em>کد</em>7</strong>_</p>
+<h3 id="lsusb">lsusb</h3>
+<p>تمام دستگاه های USB متصل به سیستم را نشان می دهد.</p>
+<p><strong><em>کد</em>8</strong>_</p>
+<h3 id="lshw">lshw</h3>
+<p>سخت افزار را نشان می دهد. ممکن است برای دریافت لیست کامل نیاز به وضعیت ریشه داشته باشد. تستش کن</p>
+<h3 id="lsblk">lsblk</h3>
+<p>برای لیست دستگاه هایی که می توانند از بلوک های داده بخوانند یا بنویسند استفاده می شود.</p>
+<h2 id="_5">ماژول های هسته قابل بارگیری</h2>
+<p>لینوکس مانند هر سیستم عامل دیگری برای کار با سخت افزار به درایور نیاز دارد. در ویندوز مایکروسافت، شما باید درایورها را جداگانه نصب کنید، اما در لینوکس، سیستم اکثر درایورها را داخلی دارد. اما برای جلوگیری از بارگذاری همزمان هسته و کاهش اندازه هسته، لینوکس از ماژول های هسته استفاده می کند. ماژول‌های هسته قابل بارگیری (فایل‌های ko) فایل‌های شی هستند که برای گسترش هسته توزیع لینوکس استفاده می‌شوند. آنها برای ارائه درایورهایی برای سخت افزارهای جدید مانند کارت های توسعه اینترنت اشیا که در توزیع لینوکس گنجانده نشده اند استفاده می شوند.</p>
+<p>می‌توانید ماژول‌ها را با استفاده از <bdi><code class="inline-code" dir="ltr">lsmod</code></bdi> بررسی کنید یا از طریق دستورات <bdi><code class="inline-code" dir="ltr">modprobe</code></bdi> مدیریت کنید.</p>
+<h3 id="lsmod">lsmod</h3>
+<p>ماژول های هسته را نشان می دهد. آنها در <bdi><code class="inline-code" dir="ltr">/lib/modules</code></bdi> واقع شده اند. </p>
+<p><strong><em>کد</em>9</strong>_</p>
+<p>اینها ماژول های هسته هستند که بارگذاری می شوند. برای دریافت اطلاعات بیشتر در مورد یک ماژول از <bdi><code class="inline-code" dir="ltr">modinfo</code></bdi> استفاده کنید. اگر بخواهید.</p>
+<p>اگر نیاز دارید یک ماژول به هسته خود اضافه کنید (مثلاً یک درایور جدید برای سخت افزار) یا آن را حذف کنید (درایور را حذف نصب کنید)، می توانید از <bdi><code class="inline-code" dir="ltr">rmmod</code></bdi> و <bdi><code class="inline-code" dir="ltr">modprobe</code></bdi> استفاده کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># rmmod iwlwifi
+</code></pre></div>
+<p>و این برای نصب ماژول ها است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># insmod kernel/drivers/net/wireless/iwlwifi.ko
+</code></pre></div>
+<p>اما هیچ‌کس از <bdi><code class="inline-code" dir="ltr">insmod</code></bdi> استفاده نمی‌کند، زیرا وابستگی‌ها را درک نمی‌کند و باید کل مسیر فایل ماژول را به آن بدهید. در عوض، از دستور <bdi><code class="inline-code" dir="ltr">modprobe</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># modprobe iwlwifi
+</code></pre></div>
+<blockquote class="callout-box">
+<p>می‌توانید از سوئیچ <bdi><code class="inline-code" dir="ltr">-f</code></bdi> به FORCE <bdi><code class="inline-code" dir="ltr">rmmod</code></bdi> برای حذف ماژول حتی اگر در حال استفاده است استفاده کنید</p>
+</blockquote>
+<p>اگر هر بار که سیستمتان بوت می شود نیاز به بارگیری چند ماژول دارید یکی از موارد زیر را انجام دهید:</p>
+<ol>
+<li>نام آنها را به این فایل اضافه کنید <bdi><code class="inline-code" dir="ltr">/etc/modules</code></bdi></li>
+<li>فایل های پیکربندی آنها را به <bdi><code class="inline-code" dir="ltr">/etc/modprobe.d/</code></bdi> اضافه کنید</li>
+</ol>
+                </div>
+
+                <div class="chapter-pager"><a href="0002_prepare-lpic101-102-lab.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">آزمایشگاه خود را آماده کنید</span></a><a href="1012_boot_the_system.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">101.2 سیستم را بوت کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

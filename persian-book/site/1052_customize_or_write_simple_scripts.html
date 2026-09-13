@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item active"><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۵</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<h4 id="_1">توضیحات</h4>
+<p>کاندیداها باید بتوانند اسکریپت های موجود را سفارشی کنند یا اسکریپت های ساده Bash جدید بنویسند.</p>
+<h4 id="_2">حوزه های دانش کلیدی:</h4>
+<ul>
+<li>از نحو استاندارد sh (حلقه ها، تست ها) استفاده کنید.</li>
+<li>از جایگزینی دستور استفاده کنید.</li>
+<li>مقادیر بازگشتی را برای موفقیت یا شکست یا سایر اطلاعات ارائه شده توسط یک فرمان آزمایش کنید.</li>
+<li>دستورات زنجیره ای را اجرا کنید.</li>
+<li>ارسال مشروط به ابرکاربر را انجام دهید.</li>
+<li>مفسر اسکریپت را از طریق خط shebang (<bdi><code class="inline-code" dir="ltr">#!</code></bdi>) به درستی انتخاب کنید.</li>
+<li>مکان، مالکیت، اجرا و حقوق خود را از اسکریپت ها مدیریت کنید.</li>
+</ul>
+<h4 id="_3">شرایط و امکانات</h4>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">for</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">while</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">test</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">if</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">read</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">seq</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">exec</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">||</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">&amp;&amp;</code></bdi></li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/0BYkWRf4Yvk" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_4">ترکیب دستورات</h2>
+<p>اگر می خواهید بیش از یک دستور را در یک خط اجرا کنید، آنها را با یک <bdi><code class="inline-code" dir="ltr">;</code></bdi> جدا کنید. بنابراین <bdi><code class="inline-code" dir="ltr">cd /tmp; ls</code></bdi> <bdi><code class="inline-code" dir="ltr">cd /tmp</code></bdi> و سپس <bdi><code class="inline-code" dir="ltr">ls</code></bdi> را اجرا می کند. اما کاربردهای پیشرفته تری نیز وجود دارد.</p>
+<p>می‌توانید از زنجیره‌بندی <bdi><code class="inline-code" dir="ltr">&amp;&amp;</code></bdi> (به‌عنوان منطقی And) و <bdi><code class="inline-code" dir="ltr">||</code></bdi> (به‌عنوان منطقی OR) استفاده کنید. در صورت And، به محض اینکه اولین مورد اجرا نشد، اجرا متوقف می شود. در مورد Or، دستور بعدی فقط در صورتی اجرا می شود که دستور اول ناموفق باشد. درست مثل گیت های منطقی.</p>
+<p>گیج کننده؟ بازم توضیح بدم سیستم همیشه سعی می کند نتیجه زنجیره شما را <em>ارزیابی</em> کند. بنابراین اگر شما <bdi><code class="inline-code" dir="ltr">A &amp;&amp; B</code></bdi> دارید، A شکست می خورد، سیستم نیازی به آزمایش B ندارد (زیرا نتیجه کلی به هر حال False خواهد بود). منطق مشابه برای <bdi><code class="inline-code" dir="ltr">A || B || C</code></bdi> کار می کند. اگر A خوب کار کند، ارزیابی کلی True خواهد بود، بنابراین نیازی به آزمایش B یا C نیست. اما اگر A شکست بخورد، سیستم B را امتحان می کند و اگر B شکست می خورد، باید C را امتحان کنیم. </p>
+<p>ما از زنجیره برای ایجاد جریان های منطقی استفاده می کنیم. به عنوان مثال:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ cp backup.gzip /backups/ &amp;&amp; rm backup.gzip
+</code></pre></div>
+<p>به این صورت عمل می کند: نسخه پشتیبان را در این مکان کپی کنید و فایل را فقط در صورت موفقیت آمیز بودن نسخه قبلی حذف کنید. </p>
+<h3 id="_5">اسکریپت های پوسته</h3>
+<p>ما می توانیم دستورات پوسته یا برنامه ها و یا برخی منطق یا حلقه ها را برای نوشتن اسکریپت های بزرگ یا کوچک ترکیب کنیم. اسکریپت های پوسته زمانی مفید هستند که می خواهید برخی از وظایف را در یک دستور بزرگتر <em>اتوماتیک</em> کنید. فرض کنید یک اسکریپت پوسته به نام "do_backup.sh" ممکن است برخی از فایل ها را در یک فایل فشرده کند، نام این فایل را بر اساس تاریخ و زمان فعلی تغییر دهید و سپس آن را در یک سایت راه دور ذخیره کنید و در نهایت موارد قدیمی تر از 1 ماه را حذف کنید.</p>
+<h3 id="_6">شبانگ</h3>
+<p>یک خط در ابتدای اسکریپت ها وجود دارد که با <bdi><code class="inline-code" dir="ltr">#!</code></bdi> شروع می شود و با یک فایل اجرایی که نیاز به اجرای این اسکریپت دارد ادامه می یابد. به آن shebang می گویند و همانطور که گفته شد، به پوسته می گوید که برای اجرای این اسکریپت از کدام <em>interpreter</em> باید استفاده شود.</p>
+<blockquote class="callout-box">
+<p>توجه: در بسیاری از زبان های برنامه نویسی (از جمله Bash و Python)، یک <bdi><code class="inline-code" dir="ltr">#</code></bdi> در ابتدای یک خط در اسکریپت نشان دهنده <em>comments</em> است. آن را با <em>Shebang</em> (<bdi><code class="inline-code" dir="ltr">#!</code></bdi>) اشتباه نگیرید</p>
+</blockquote>
+<p>معمولاً ما اسکریپت های پوسته را با استفاده از <bdi><code class="inline-code" dir="ltr">#!/bin/bash</code></bdi> یا <bdi><code class="inline-code" dir="ltr">#!/bin/sh</code></bdi> اجرا می کنیم</p>
+<p>بقیه یک اسکریپت پوسته می‌تواند از بیشتر دستوراتی که قبلاً می‌شناسید، علاوه بر برخی دستورات خاص «برنامه‌نویسی» مانند حلقه‌ها، تست‌ها و مواردی از این قبیل استفاده کند. در اینجا یک نمونه اولیه وجود دارد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">#!/bin/bash
+
+echo
+echo "We are learning! Wowww..."
+echo
+</code></pre></div>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">sh</code></bdi> پوسته ابتدایی تری است اما با بسیاری از مواردی که در مورد آنها صحبت می کنیم سازگار است. گزینه‌های دیگری مانند <bdi><code class="inline-code" dir="ltr">zsh</code></bdi> و <bdi><code class="inline-code" dir="ltr">csh</code></bdi> نیز وجود دارد، اما LPIC بر اساس <bdi><code class="inline-code" dir="ltr">bash</code></bdi> است.</p>
+</blockquote>
+<h3 id="_7">متغیرها</h3>
+<p>قبلاً در بخش قبل دیده شده است. می توانید متغیرهایی مانند این <bdi><code class="inline-code" dir="ltr">VARNAME=VALUE</code></bdi> تعریف کنید. در اینجا یک نمونه است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">#!/bin/bash
+
+NAME=Jadi
+
+echo
+echo "$NAME is learning! Wowww..."
+echo
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: در صورت نیاز به داشتن فاصله در مقادیر خود، می توانید NAME="Jadi the geeking guy" را نیز انجام دهید.</p>
+</blockquote>
+<p>اگر می خواهید به آرگومان های خط فرمان (Command Line) در اسکریپت پوسته خود دسترسی داشته باشید، از <bdi><code class="inline-code" dir="ltr">$1</code></bdi>، <bdi><code class="inline-code" dir="ltr">$2</code></bdi>، ... استفاده کنید. می توانید تعداد آرگومان های خط فرمان (Command Line) را از طریق متغیر <bdi><code class="inline-code" dir="ltr">$#</code></bdi> بیابید.</p>
+<h3 id="_8">تعویض دستور</h3>
+<p>گاهی اوقات لازم است خروجی یک دستور را در یک متغیر ذخیره کنید یا به نحوی از آن استفاده کنید. برای این کار می توانید از <bdi><code class="inline-code" dir="ltr">$(command)</code></bdi> یا به سادگی `command` (Backtick) استفاده کنید. به این دو نمونه نگاه کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">➜  FILES=$(ls -1) # the $FILES variable contains the list of all files
+
+➜  ~ date +'%Y%m%d-%H%m'
+20230408-1604
+➜  ~ touch backup_`date +'%Y%m%d-%H%m'`.tar
+➜  ~ ls
+backup_20230408-1604.tar
+</code></pre></div>
+<h3 id="_9">در حال اجرای اسکریپت ها</h3>
+<p>در دنیای یونیکس/لینوکس، فایل باید قابل اجرا باشد تا قابل اجرا باشد! :D برای این کار از دستور <bdi><code class="inline-code" dir="ltr">chmod</code></bdi> با <bdi><code class="inline-code" dir="ltr">+x</code></bdi> استفاده کنید. پس از این مرحله می توانید اسکریپت خود را با دادن مسیر آن به پوسته اجرا کنید. لطفاً توجه داشته باشید که لینوکس به طور پیش‌فرض به دایرکتوری (پوشه) فعلی نگاه نمی‌کند، بنابراین اگر می‌خواهید اسکریپتی را در فهرست فعلی اجرا کنید، باید <bdi><code class="inline-code" dir="ltr">./script_name.sh</code></bdi> را اجرا کنید.</p>
+<p>راه دیگر برای اجرای یک اسکریپت اجرای <bdi><code class="inline-code" dir="ltr">sh</code></bdi> یا <bdi><code class="inline-code" dir="ltr">bash</code></bdi> با نام اسکریپت های پوسته به عنوان آرگومان آن است. یعنی <bdi><code class="inline-code" dir="ltr">sh my_script.sh</code></bdi>.</p>
+<p>در هر دو روش بالا، اسکریپت‌ها در یک فرآیند bash فرزند اجرا می‌شوند و پس از آن <em>برمی‌گردند</em> به همان پوسته. اگر می خواهید این مورد را لغو کنید و پوسته فعلی خود را با برنامه ای که می خواهید اجرا کنید * جایگزین* کنید، از دستور داخلی <bdi><code class="inline-code" dir="ltr">exec</code></bdi> استفاده کنید. سوئیچ <bdi><code class="inline-code" dir="ltr">-c</code></bdi> فرمان را در یک محیط تمیز اجرا می کند.</p>
+<h3 id="_10">شرایط</h3>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/_4ISOx9Kxpk" title="YouTube video player" width="560"></iframe></div>
+<p>تا به حال فقط دستورات را یکی یکی اجرا می کردیم. این خیلی <em>برنامه_ای</em> نیست. اگر قرار است مقداری <em>logic</em> در برنامه هایمان داشته باشیم، به <em>conditions</em> و <em>loops</em> نیاز داریم. ابتدا شرایط را با استفاده از دستور <bdi><code class="inline-code" dir="ltr">if</code></bdi> پوشش می دهیم. کاربرد آن به این صورت است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">if [ condition ]
+then
+   do something
+   do another thing
+else
+   do new things
+   even funnier things
+fi
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: بخش دیگر اختیاری است، <bdi><code class="inline-code" dir="ltr">if</code></bdi>، <bdi><code class="inline-code" dir="ltr">then</code></bdi>، <bdi><code class="inline-code" dir="ltr">fi</code></bdi> کافی است.</p>
+</blockquote>
+<p>شرایط می تواند درست یا نادرست باشد. یک شرایط بسیار ساده <bdi><code class="inline-code" dir="ltr">if [ "Linux" = "Linux" ]</code></bdi> است. احمقانه؟ می دانم اما صبر کن؛ ما فقط در حال یادگیری نحو هستیم. لطفاً برای بررسی مساوی بودن دو رشته به <em>space</em> و <em><bdi><code class="inline-code" dir="ltr">=</code></bdi></em> توجه ویژه ای داشته باشید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">#!/bin/bash
+
+kernel=$(uname -s)
+if [ $kernel = "Linux" ]
+then
+    echo YES. You are using a Linux
+else
+    echo "Not a linux :("
+fi
+</code></pre></div>
+<p>دستور بررسی شرایط دستور <bdi><code class="inline-code" dir="ltr">test</code></bdi> است اما از آنجایی که زیاد استفاده می شود، ما یک میانبر برای آن داریم. به جای <bdi><code class="inline-code" dir="ltr">test condition</code></bdi> می توانید <bdi><code class="inline-code" dir="ltr">[ condition ]</code></bdi> بنویسید. </p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">شرایط</th>
+<th style="text-align: left;">معنی چیست</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">"a" = "b"</td>
+<td style="text-align: left;">اگر دو رشته برابر باشند (در اینجا False\ را برمی گرداند)</td>
+</tr>
+<tr>
+<td style="text-align: center;">"a" != "b"</td>
+<td style="text-align: left;">رشته a <em>برابر نیست</em> با رشته b</td>
+</tr>
+<tr>
+<td style="text-align: center;">4 - لیتر 40</td>
+<td style="text-align: left;">اگر 4 <em>کمتر از</em> 40 باشد (درست)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5 -gt 15</td>
+<td style="text-align: left;">اگر 5 <em>بزرگتر از</em> 15 باشد (نادرست)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5 -ge 5</td>
+<td style="text-align: left;">اگر 5 <em>بزرگتر یا مساوی</em> باشد 5</td>
+</tr>
+<tr>
+<td style="text-align: center;">5 - ل 3</td>
+<td style="text-align: left;">اگر 5 _کمتر یا مساوی 3 باشد</td>
+</tr>
+<tr>
+<td style="text-align: center;">9 -ne 2</td>
+<td style="text-align: left;">9 برابر نیست با 2 (True)</td>
+</tr>
+<tr>
+<td style="text-align: center;">-f FILENAME</td>
+<td style="text-align: left;">اگر فایل FILENAME وجود داشته باشد</td>
+</tr>
+<tr>
+<td style="text-align: center;">-s FILENAME</td>
+<td style="text-align: left;">اگر فایل وجود داشته باشد و اندازه آن بیشتر از 0 باشد (صفر)</td>
+</tr>
+<tr>
+<td style="text-align: center;">-x FILENAME</td>
+<td style="text-align: left;">اگر فایل وجود داشته باشد و قابل اجرا باشد</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="_11">بخوانید</h3>
+<p>با استفاده از <bdi><code class="inline-code" dir="ltr">read</code></bdi> می توانیم ورودی کاربر را بخوانیم. به این نگاه کن:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">#!/bin/sh
+
+echo "what is your name?"
+read NAME
+
+echo "Hello $NAME"
+
+if [ $NAME = "Jadi" ]
+then
+    echo "Oh I know you!"
+else
+    echo "I wish I knew you"
+fi
+echo "Bye"
+</code></pre></div>
+<p>می توانید با استفاده از <bdi><code class="inline-code" dir="ltr">-t</code></bdi> زمان انتظار را به پایان برسانید و با استفاده از <bdi><code class="inline-code" dir="ltr">-p</code></bdi> درخواستی را نشان دهید. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">if read -t 10 -p "Server address?" SERVER
+then
+    echo "Connecting to the $SERVER ..."
+else
+    echo
+    echo "Too late!"
+fi
+</code></pre></div>
+<p>حلقه های ###</p>
+<p>در برنامه نویسی از حلقه ها برای تکرار بخشی از برنامه ها استفاده می شود. ما 2 حلقه مختلف در Bash داریم. <bdi><code class="inline-code" dir="ltr">for</code></bdi> و <bdi><code class="inline-code" dir="ltr">while</code></bdi>. حلقه های for به ما اجازه می دهد بخشی از یک برنامه را برای تعداد خاصی از تکرار اجرا کنیم. حلقه <bdi><code class="inline-code" dir="ltr">while</code></bdi> زمانی استفاده می شود که بخواهیم بخشی از یک برنامه را تکرار کنیم <em>در حالی که</em> یک شرط خاص درست شد. </p>
+<h4 id="_12">برای</h4>
+<p>نحو به این صورت است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">for VAR in SOME_LIST;
+do
+  some stuff with $VAR
+  some other stuff
+done
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: <bdi><code class="inline-code" dir="ltr">in</code></bdi>، <bdi><code class="inline-code" dir="ltr">;</code></bdi>، <bdi><code class="inline-code" dir="ltr">do</code></bdi> و <bdi><code class="inline-code" dir="ltr">done</code></bdi>.</p>
+</blockquote>
+<p>در هر تکرار، VAR برابر با یکی از عناصر SOME_LIST خواهد بود. SOME_LIST می تواند اعداد، نام فایل ها، کلمات و ... باشد.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">for NUM in 1 2 3 4 5 6;
+do
+    echo $NUM
+done
+</code></pre></div>
+<p>اما اگر نیاز به دویدن از 1 تا 42 داشتید چه؟ ما دستور <bdi><code class="inline-code" dir="ltr">seq</code></bdi> را برای آن داریم. <bdi><code class="inline-code" dir="ltr">seq 1 42</code></bdi> یا مخفف آن <bdi><code class="inline-code" dir="ltr">{1..42}</code></bdi> به ما اجازه می دهد یک حلقه را 42 بار اجرا کنیم.</p>
+<p>در اینجا می توانیم از متغیرهای غیر عددی نیز استفاده کنیم. این یک مورد استفاده رایج است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">for FILE in $(ls);
+do
+    echo $FILE
+    wc -l $FILE
+done
+</code></pre></div>
+<h4 id="_13">در حالی که</h4>
+<p>این نحو است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">while [ condition ]
+do
+    do something
+    do anohter thing
+done
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر شرایط شما همیشه صادق باشد، حلقه <bdi><code class="inline-code" dir="ltr">while</code></bdi> برای همیشه اجرا می شود. این حلقه <em>بی نهایت</em> نامیده می شود و باید با یک <bdi><code class="inline-code" dir="ltr">Ctrl+C</code></bdi> متوقف شود.</p>
+</blockquote>
+<p>این نمونه است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">VAR=52
+
+while [ $VAR -gt 42 ]
+do
+    echo VAR is $VAR and it is still greater than 42
+    let VAR=VAR-1
+done
+</code></pre></div>
+<blockquote class="callout-box">
+<p>به استفاده <bdi><code class="inline-code" dir="ltr">let</code></bdi> توجه کنید! اگر فقط بگویید <bdi><code class="inline-code" dir="ltr">VAR=1</code></bdi> و سپس <bdi><code class="inline-code" dir="ltr">VAR=$VAR+1</code></bdi>، VAR برابر با <bdi><code class="inline-code" dir="ltr">1+1</code></bdi> به عنوان یک رشته خواهد بود!.</p>
+</blockquote>
+<p>ارسال ### به کاربر اصلی</p>
+<p>برای ارسال نامه، باید <bdi><code class="inline-code" dir="ltr">mailutils</code></bdi> را نصب کنید. سپس دستور <bdi><code class="inline-code" dir="ltr">mail</code></bdi> ایمیل ها را ارسال می کند. با صدور این دستور می توانید نامه را برای کاربر root ارسال کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">jadi@funlife:~$ mail root
+Cc:
+Subject: Hi there root
+hello there. This is my mail
+</code></pre></div>
+<p>و root این ایمیل را دریافت خواهد کرد. او می تواند آن را با استفاده از دستور <bdi><code class="inline-code" dir="ltr">mail</code></bdi> بخواند.</p>
+<p>اگر نیاز به ارسال ایمیل در یک اسکریپت دارید، فقط این کار را انجام دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">$ echo "Body!" | mail -s "Subject" root
+</code></pre></div>
+<h2 id="_14">مقادیر را برگرداند</h2>
+<p>در دنیای یونیکس، برنامه‌ها پس از اتمام، مقادیر را برمی‌گردانند. اگر C را برنامه ریزی کرده اید، این <bdi><code class="inline-code" dir="ltr">return 0</code></bdi> در پایان است. معمولاً 0 به معنای اجرای موفقیت آمیز است. این مقدار بازگشتی را می توان با استفاده از متغیر <bdi><code class="inline-code" dir="ltr">$?</code></bdi> خواند / بررسی کرد. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-bash">jadi@ubuntuserver:/etc/skel$ touch /chert
+touch: cannot touch '/chert': Permission denied
+$ echo $?
+1
+$ touch /tmp/11
+$ echo $?
+0
+$ test -e /
+$ echo $?
+0
+$ test -e /nonexist
+$ echo $?
+1
+$ dummycommand
+dummycommand: command not found
+$ echo $?
+127
+</code></pre></div>
+<p>برای برگرداندن مقادیر از اسکریپت های پوسته خود، از دستور <bdi><code class="inline-code" dir="ltr">exit</code></bdi> استفاده کنید. برای خروج موفقیت آمیز بگویید <bdi><code class="inline-code" dir="ltr">exit 0</code></bdi>.</p>
+<h2 id="_15">پاداش</h2>
+<p>همین الان اسکریپت <bdi><code class="inline-code" dir="ltr">general_backup.sh</code></bdi> قدیمی خود را پیدا کردم و [آن را برای شما در github آپلود کردم] (https://github.com/jadijadi/general_scripts/blob/main/backup_general_jadi.sh). هیچ چیز جالبی نیست، اما به شما نشان می دهد که چگونه یک اسکریپت کلی bash می تواند به شما در کارهای روزانه کمک کند.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1051_customize_and_use_the_shell_environment.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a><a href="1053_sql_data_management.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">105.3 حذف شد!</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item active"><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۷</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>داوطلبان باید بتوانند از تایمرهای cron و systemd برای اجرای کارها در فواصل زمانی معین و استفاده از at برای اجرای کارها در یک زمان خاص استفاده کنند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>مدیریت cron و در مشاغل.</li>
+<li>پیکربندی دسترسی کاربر به خدمات cron و at.</li>
+<li>واحدهای تایمر systemd را درک کنید.</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/cron.{d,daily,hourly,monthly,weekly}/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/at.deny</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/at.allow</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/crontab</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/cron.allow</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/cron.deny</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/var/spool/cron/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">crontab</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">at</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">atq</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">atrm</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">systemctl</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">systemd-run</code></bdi></li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/jIgJ-l_HMgE" title="YouTube video player" width="560"></iframe></div>
+<p>موارد زیادی وجود دارد که باید برخی از دستورات را در زمان ها یا بازه های زمانی مشخص اجرا کنیم. به عنوان مثال ممکن است بخواهید فرآیند پشتیبان گیری خود را هر روز صبح ساعت 03:00 انجام دهید یا لیست فایل ها را در فهرست وب خود به صورت ساعتی بازخوانی کنید.</p>
+<p>روش های مختلفی برای انجام این کار در دنیای لینوکس وجود دارد. متداول‌ترین موارد عبارتند از <bdi><code class="inline-code" dir="ltr">crontab</code></bdi> برای اجرای وظایف در فواصل زمانی خاص، <bdi><code class="inline-code" dir="ltr">at</code></bdi> برای اجرای دستورات در زمان خاص و همچنین ابزارهای کمکی ارائه شده توسط <bdi><code class="inline-code" dir="ltr">systemd</code></bdi>.</p>
+<h3 id="crontab">فرمت Crontab</h3>
+<p>Crontab با یک فایل پیکربندی کار می کند که به آن می گوید چه زمانی یک دستور را اجرا کند. به عنوان مثال می توانید بگویید "دستورات من را زمانی که ساعت 03 است و دقیقه 00 است اجرا کنید" یا "دستور من را زمانی که شنبه و ساعت 10 است و دقیقه 00 است اجرا کنید" یا "هر وقت دقیقه 00 باشد اجرا کنید". </p>
+<p>هر خط پیکربندی crontab دارای 6 فیلد است. 5 مورد اول یک بازه زمانی خاص را مشخص می کند و هر بعد از آن به عنوان "فرمان" استفاده می شود.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>A    B    C    D    E    command and arguments
+</code></pre></div>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">ثبت شده</th>
+<th style="text-align: left;">معنی</th>
+<th style="text-align: left;">ارزش ها</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">دقیقه</td>
+<td style="text-align: left;">0-59</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">ساعت</td>
+<td style="text-align: left;">0-23</td>
+</tr>
+<tr>
+<td style="text-align: center;">ج</td>
+<td style="text-align: left;">روز ماه</td>
+<td style="text-align: left;">1-31</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: left;">ماه</td>
+<td style="text-align: left;">1-12 (یا نام ها، در زیر ببینید)</td>
+</tr>
+<tr>
+<td style="text-align: center;">E</td>
+<td style="text-align: left;">روز هفته</td>
+<td style="text-align: left;">0-7 (0 یا 7 یکشنبه است یا از نام ها استفاده کنید)</td>
+</tr>
+</tbody>
+</table></div>
+<p>اگر یک فیلد را با <bdi><code class="inline-code" dir="ltr">*</code></bdi> جایگزین کنید، به معنای «هر چیزی» یا «همه» یا «هر کدام» است. همچنین اگر به جای فیلدهای زمان، <bdi><code class="inline-code" dir="ltr">@reboot</code></bdi> یا <bdi><code class="inline-code" dir="ltr">@daily</code></bdi> دارید، دستور یک بار پس از راه اندازی مجدد یا روزانه اجرا می شود. بیایید چند نمونه را ببینیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">5 0 * * *       $HOME/bin/daily.job &gt;&gt; $HOME/tmp/out 2&gt;&amp;1
+
+# run at 2:15pm on the first of every month -- output mailed to paul
+15 14 1 * *     $HOME/bin/monthly
+
+# run at 10 pm on weekdays, annoy Joe
+0 22 * * 1-5    mail -s "It's 10pm" joe%Joe,%%Where are your kids?%
+
+23 0-23/2 * * * echo "run 23 minutes after midn, 2am, 4am ..., everyday"
+5 4 * * sun     echo "run at 5 after 4 every sunday"
+
+*/5 * * * *    echo "each 5 mintues"
+
+42 8,18 * * 1-5    echo "8:42 and 18:42 and only on weekdays (monday till friday)"
+
+@reboot        echo "runs after the reboot"
+</code></pre></div>
+<p>همانطور که در مثال‌های بالا مشاهده می‌کنید، می‌توان از <bdi><code class="inline-code" dir="ltr">/</code></bdi> برای برش زمان استفاده کرد (بنابراین <bdi><code class="inline-code" dir="ltr">*/5</code></bdi> به دقیقه یعنی هر پنج دقیقه) یا از <bdi><code class="inline-code" dir="ltr">,</code></bdi> برای نشان دادن بیش از یک عدد استفاده کنید (بنابراین <bdi><code class="inline-code" dir="ltr">8,18</code></bdi> به معنای 8 و 18 است).</p>
+<blockquote class="callout-box">
+<p>هنگام استفاده از <bdi><code class="inline-code" dir="ltr">*</code></bdi> در اولین فایل، دستور خود را در هر دقیقه اجرا می کنید.</p>
+<p>چیزی شبیه <bdi><code class="inline-code" dir="ltr">42 8 1 1 0</code></bdi> فقط زمانی اجرا می شود که اول ژانویه یکشنبه باشد!</p>
+</blockquote>
+<p>هنگامی که یک cron اجرا می شود، خروجی برای صاحب cron ایمیل می شود.</p>
+<h3 id="_3">کرون های خاص کاربر</h3>
+<p>Cron یک سرویس لینوکس است. برای دیدن cron های خود می توانید از <bdi><code class="inline-code" dir="ltr">crontab -l</code></bdi> (list) و برای ویرایش آنها می توانید از <bdi><code class="inline-code" dir="ltr">crontab -e</code></bdi> (edit) استفاده کنید که فایل های cron را با یک ویرایشگر ویژه باز می کند و بعد از اتمام کار کرون های شما را اعتبارسنجی و بارگذاری می کند.</p>
+<p>فایل‌ها در <bdi><code class="inline-code" dir="ltr">/var/spool/cron/tabs/</code></bdi> یا <bdi><code class="inline-code" dir="ltr">/var/spool/crontabs</code></bdi> ذخیره می‌شوند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># cat /var/spool/cron/tabs/jadi
+# DO NOT EDIT THIS FILE - edit the master and reinstall.
+# (/tmp/crontab.khObLu installed on Thu Oct 29 22:04:43 2023)
+# (Cronie version 4.2)
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * command to be executed
+* * * * * date &gt;&gt; /tmp/date.cron.txt
+</code></pre></div>
+<blockquote class="callout-box">
+<p>هرگز این فایل ها را مستقیما ویرایش نکنید. به جای آن از <bdi><code class="inline-code" dir="ltr">crontab -e</code></bdi> استفاده کنید.</p>
+</blockquote>
+<h3 id="_4">کرون گسترده سیستم</h3>
+<p>فایلی به نام <bdi><code class="inline-code" dir="ltr">/etc/crontab</code></bdi> وجود دارد. به نظر می‌رسد این یک فایل کاربر عادی است که با <bdi><code class="inline-code" dir="ltr">crontab -e</code></bdi> باز شده است، اما یک فایل اضافی دارد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">A    B    C    D    E    USER    command and arguments
+</code></pre></div>
+<p>این فایل باید مستقیماً با یک ویرایشگر ویرایش شود و می توان اشاره کرد که کدام کاربر این دستورات را اجرا می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># cat /etc/crontab
+SHELL=/bin/sh
+PATH=/usr/bin:/usr/sbin:/sbin:/bin:/usr/lib/news/bin
+MAILTO=root
+#
+# check scripts in cron.hourly, cron.daily, cron.weekly, and cron.monthly
+#
+-*/15 * * * *   root  test -x /usr/lib/cron/run-crons &amp;&amp; /usr/lib/cron/run-crons &gt;/dev/null 2&gt;&amp;1
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: به سه خط اول نگاهی بیندازید. پوسته ای که دستورات را اجرا می کند و متغیر PATH به علاوه اینکه چه کسی ایمیل های خروجی را دریافت می کند را پیکربندی می کند.</p>
+</blockquote>
+<p>همانطور که می بینید این crontab پیش فرض کرون های دیگری را اجرا می کند! این کرون های ساعتی، روزانه، هفتگی و ماهانه هستند. بیایید در بخش بعدی نگاهی به آنها بیندازیم.</p>
+<h3 id="_5">سیستم ساعتی، روزانه، هفتگی، ماهانه، .. کرون</h3>
+<p>ما چند فایل crontab سطح سیستم را در <bdi><code class="inline-code" dir="ltr">/etc/cron.d/</code></bdi> نیز داریم. آنها شبیه فایل های crontab عمومی هستند. به عنوان مثال این یکی است که برنامه <bdi><code class="inline-code" dir="ltr">munin</code></bdi> ایجاد می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ cat /etc/cron.d/munin
+#
+# cron-jobs for munin
+#
+
+MAILTO=root
+
+*/5 * * * *     munin if [ -x /usr/bin/munin-cron ]; then /usr/bin/munin-cron; fi
+14 10 * * *     munin if [ -x /usr/share/munin/munin-limits ]; then /usr/share/munin/munin-limits --force --contact nagios --contact old-nagios; fi
+19:12:37 jadi@ocean:~$ cat /etc/cron.weekly/man-db
+</code></pre></div>
+<p>اما دایرکتوری (پوشه) هایی به نام های <bdi><code class="inline-code" dir="ltr">cron.hourly</code></bdi>، <bdi><code class="inline-code" dir="ltr">cron.daily</code></bdi>، <bdi><code class="inline-code" dir="ltr">cron.weekly</code></bdi> و <bdi><code class="inline-code" dir="ltr">cron.monthly</code></bdi> نیز وجود دارد. همانطور که از نام آنها مشخص است، هر اسکریپت / فایلی که در آنها قرار دهید، به صورت ساعتی، روزانه، هفتگی و ماهانه اجرا می شود. این کار پاکسازی عمومی، پشتیبان گیری و ... را بسیار تمیزتر می کند. کافی است اسکریپت خود را در هر یک از این دایرکتوری (پوشه) ها کپی کنید و اجازه دهید در این بازه ها اجرا شوند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ sudo tree /etc/cron*
+/etc/cron.d
+├── munin
+├── munin-node
+├── php5
+└── sendmail
+/etc/cron.daily
+├── apache2
+├── apport
+├── apt
+├── aptitude
+├── bsdmainutils
+├── dpkg
+├── logrotate
+├── man-db
+├── mlocate
+├── passwd
+├── popularity-contest
+├── sendmail
+├── update-notifier-common
+└── upstart
+/etc/cron.hourly
+/etc/cron.monthly
+/etc/crontab [error opening dir]
+/etc/cron.weekly
+├── apt-xapian-index
+├── fstrim
+├── man-db
+└── update-notifier-common
+</code></pre></div>
+<p>بیایید نگاهی به یکی از فایل های cron.d بیندازیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ cat /etc/cron.daily/mlocate
+#! /bin/bash
+
+set -e
+
+[ -x /usr/bin/updatedb.mlocate ] || exit 0
+
+if which on_ac_power &gt;/dev/null 2&gt;&amp;1; then
+    ON_BATTERY=0
+    on_ac_power &gt;/dev/null 2&gt;&amp;1 || ON_BATTERY=$?
+    if [ "$ON_BATTERY" -eq 1 ]; then
+    exit 0
+    fi
+fi
+
+# See ionice(1)
+if [ -x /usr/bin/ionice ] &amp;&amp;
+    /usr/bin/ionice -c3 true 2&gt;/dev/null; then
+    IONICE="/usr/bin/ionice -c3"
+fi
+
+flock --nonblock /run/mlocate.daily.lock $IONICE /usr/bin/updatedb.mlocate
+</code></pre></div>
+<h3 id="_6">در</h3>
+<p>ما می گوییم که crontab دستورات را در فواصل زمانی مشخص اجرا می کند، اما اگر لازم باشد یک دستور را فقط یک بار اجرا کنید چه اتفاقی می افتد؟ اینجا <bdi><code class="inline-code" dir="ltr">at</code></bdi> دوست شماست.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ at now + 1 min
+warning: commands will be executed using /bin/sh
+at&gt; touch /tmp/at
+at&gt; &lt;EOT&gt;
+job 3 at Thu Oct 29 22:12:00 2015
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: مثل همیشه در پایان ورودی Ctrl+D را فشار می دهیم</p>
+</blockquote>
+<p>اگر می‌خواهید بررسی کنید چه چیزی در صف است، می‌توانید از <bdi><code class="inline-code" dir="ltr">atq</code></bdi> استفاده کنید و سپس <bdi><code class="inline-code" dir="ltr">atrm 4</code></bdi> را برای حذف شغل شماره 4 امتحان کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ at teatime
+warning: commands will be executed using /bin/sh
+at&gt; echo "tea time is 4pm"
+at&gt; &lt;EOT&gt;
+job 4 at Fri Oct 30 16:00:00 2015
+jadi@funlife:~$ at tomorrow
+warning: commands will be executed using /bin/sh
+at&gt; echo "tomorrow this time"
+at&gt; &lt;EOT&gt;
+job 5 at Fri Oct 30 22:15:00 2015
+jadi@funlife:~$ at 17:30
+warning: commands will be executed using /bin/sh
+at&gt; echo "this is the first 17:30"
+at&gt; &lt;EOT&gt;
+job 6 at Fri Oct 30 17:30:00 2015
+jadi@funlife:~$ atq
+5    Fri Oct 30 22:15:00 2015 a jadi
+4    Fri Oct 30 16:00:00 2015 a jadi
+6    Fri Oct 30 17:30:00 2015 a jadi
+jadi@funlife:~$ atrm 4
+jadi@funlife:~$ atq
+5    Fri Oct 30 22:15:00 2015 a jadi
+6    Fri Oct 30 17:30:00 2015 a jadi
+</code></pre></div>
+<h3 id="cron">مدیریت دسترسی cron</h3>
+<p>برای کنترل دسترسی به سیستم cron 4 فایل داریم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">/etc/cron.allow
+/etc/cron.deny
+
+/etc/at.allow
+/etc/at.deny
+</code></pre></div>
+<p>در اکثر سیستم ها هیچ یک از این فایل ها وجود ندارد اما اگر آنها را ایجاد کنید به صورت زیر فعال می شوند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">پسوند فایل</th>
+<th style="text-align: left;">قابلیت</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">.اجازه</td>
+<td style="text-align: left;">فقط کاربران ذکر شده در این فایل مجاز به اجرای این سرویس هستند. همه کاربران دیگر رد خواهند شد</td>
+</tr>
+<tr>
+<td style="text-align: left;">.انکار</td>
+<td style="text-align: left;">همه می توانند از این سرویس استفاده کنند به جز کاربران ذکر شده در این فایل</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="systemd-systemd-run">systemd &amp; systemd-run</h2>
+<p>امروزه اکثر توزیع‌های گنو/لینوکس از <bdi><code class="inline-code" dir="ltr">systemd</code></bdi> استفاده می‌کنند که <strong>تایمر</strong> خود را به عنوان جایگزینی برای cron برای زمان‌بندی وظایف شما دارد. فایل‌های واحد تایمر از پسوند <bdi><code class="inline-code" dir="ltr">.timer</code></bdi> استفاده می‌کنند، و برای هر یک از آنها باید یک فایل واحد مربوطه وجود داشته باشد که واحدی را که با فعال شدن تایمر فعال می‌شود، توصیف کند. به‌طور پیش‌فرض، یک تایمر سرویسی را با همین نام، به جز پسوند، فعال می‌کند.</p>
+<p>تایمرها یک بخش [تایمر] دارند که مشخص می کند کارهای برنامه ریزی شده چه زمانی باید اجرا شوند. دو نوع تایمر وجود دارد. یکی <strong>تایمر بیدرنگ</strong> است که با گزینه <bdi><code class="inline-code" dir="ltr">OnCalendar=</code></bdi> کار می کند و نوعی تایمر نزدیک به cron را تعریف می کند (بر اساس عبارات رویداد تقویم). این نحو است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>OnCalendar=DayOfWeek Year-Month-Day Hour:Minute:Second
+</code></pre></div>
+<blockquote class="callout-box">
+<p>DayOfWeek اختیاری است و می توانید از مخفف 3 حرفی استفاده کنید (مثلا Mon)</p>
+</blockquote>
+<p><bdi><code class="inline-code" dir="ltr">*</code></bdi>، <bdi><code class="inline-code" dir="ltr">/</code></bdi> و <bdi><code class="inline-code" dir="ltr">,</code></bdi> در پیکربندی های systemd و cron یکسان کار می کنند، اما در systemd نیز می توانید از <bdi><code class="inline-code" dir="ltr">..</code></bdi> بین دو مقدار برای نشان دادن یک محدوده به هم پیوسته استفاده کنید. </p>
+<p>به عنوان مثال، برای اجرای سرویس با نام <bdi><code class="inline-code" dir="ltr">/etc/systemd/system/myservice.service</code></bdi> در ساعت 02:42 روز شنبه اول هر ماه، این خط پیکربندی باید به فایل واحد <bdi><code class="inline-code" dir="ltr">/etc/systemd/system/myservice.timer</code></bdi> اضافه شود.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[Unit]
+Description=Run the blah blah service
+
+[Timer]
+OnCalendar=Sat *-*-1..7 02:42:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+</code></pre></div>
+<p>همچنین امکان تعریف تایمر <strong>یکنواخت</strong> وجود دارد. آنها پس از گذشت مدتی از یک نقطه شروع خاص (مثلاً زمانی که دستگاه بوت شده است یا زمانی که خود تایمر فعال شده است) فعال می شوند. می توانید بین یکی از موارد زیر یکی را انتخاب کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>پیکربندی</th>
+<th>معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OnActiveSec</td>
+<td>زمان پس از فعال سازی واحد</td>
+</tr>
+<tr>
+<td>OnBootSec</td>
+<td>زمان پس از بوت شدن سیستم</td>
+</tr>
+<tr>
+<td>OnStartupSec</td>
+<td>زمان پس از راه اندازی مدیر سرویس برای خدمات سیستم، این تقریباً برابر با OnActiveSec است. از این برای خدمات کاربر استفاده کنید که در آن مدیر سرویس با ورود کاربر شروع شده است.</td>
+</tr>
+<tr>
+<td>OnUnitActiveSec</td>
+<td>زمان پس از آخرین فعال شدن سرویس مربوطه</td>
+</tr>
+<tr>
+<td>OnUnitInactiveSec</td>
+<td>زمان پس از آخرین بار غیرفعال شدن سرویس مربوطه</td>
+</tr>
+</tbody>
+</table></div>
+<p>و شما می توانید از هر یک از usec، msec، ثانیه ها، دقیقه ها، ساعت ها، روزها، هفته ها، ماه ها، سال های قبل استفاده کنید. بنابراین به عنوان مثال </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[Timer]
+OnUnitActiveSec=5minutes 20seconds
+</code></pre></div>
+<p>واحد مربوطه را 5 دقیقه و 20 ثانیه پس از آخرین فعال سازی این سرویس واحد فعال می کند.</p>
+<p>لطفاً توجه داشته باشید که پس از افزودن هر تایمر، باید آن را فعال کنید (و احتمالاً شروع کنید):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># systemctl enable myservice.timer
+# systemctl start myservice.timer
+</code></pre></div>
+<p>و همچنین فراموش نکنید که بعد از هر تغییر یک <bdi><code class="inline-code" dir="ltr">systemctl daemon-reload</code></bdi> انجام دهید.</p>
+<p>برای بررسی همه کارهای برنامه ریزی شده، دستور <bdi><code class="inline-code" dir="ltr">systemctl list-timers</code></bdi> را اجرا کنید. این تمام تایمرهای فعال را به شما نشان می دهد. از کلید <bdi><code class="inline-code" dir="ltr">--all</code></bdi> برای بررسی همه استفاده کنید.</p>
+<p>میانبرهای کمی برای زمان ها نیز وجود دارد. می توانید به جای فرمت cron برای تنظیم تایمر از این موارد استفاده کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>میانبر</th>
+<th>وقتی اجرا می شود</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ساعتی</td>
+<td>شروع هر ساعت</td>
+</tr>
+<tr>
+<td>روزانه</td>
+<td>یک روز در نیمه شب</td>
+</tr>
+<tr>
+<td>هفتگی</td>
+<td>نیمه شب دوشنبه</td>
+</tr>
+<tr>
+<td>ماهانه</td>
+<td>نیمه شب اول هر ماه</td>
+</tr>
+<tr>
+<td>سالانه</td>
+<td>نیمه شب اول ژانویه</td>
+</tr>
+</tbody>
+</table></div>
+<p>این یک نمونه از نصب اخیر فدورا است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># cat system/timers.target.wants/plocate-updatedb.timer 
+[Unit]
+Description=Update the plocate database daily
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=12h
+AccuracySec=20min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+</code></pre></div>
+<p>اگر می‌خواهید خروجی تایمرهای خود را بررسی کنید، می‌توانید از <bdi><code class="inline-code" dir="ltr">journalctl</code></bdi> استفاده کنید.</p>
+<blockquote class="callout-box">
+<p>مانند هر فعالیت <bdi><code class="inline-code" dir="ltr">systemd</code></bdi> دیگری، از سوئیچ <bdi><code class="inline-code" dir="ltr">--user</code></bdi> برای استفاده در سطح کاربری خود و نه در سطح سیستم استفاده کنید.</p>
+</blockquote>
+<p>در پایان باید از دستور <bdi><code class="inline-code" dir="ltr">systemd-run</code></bdi> اطلاع داشته باشید. می تواند یک سرویس یا محدوده گذرا را راه اندازی کند و دستورات خاصی را در آن اجرا کند. </p>
+<p>بنابراین دستوری مانند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>systemd-run --on-active="2hours" --unit="helloworld.service"
+</code></pre></div>
+<p>helloworld.service را هر 2 ساعت یکبار اجرا می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>sudo systemd-run --on-active="2hours" /usr/local/bin/helloworld.sh --language=en_US
+</code></pre></div>
+<p>آن اسکریپت خاص را با پارامترهای نشان داده شده هر 2 ساعت اجرا می کند. </p>
+<hr/>
+<p>از آنجایی که این جدید است و منابع زیادی در مورد آن وجود ندارد، برای کسب اطلاعات بیشتر به <a href="https://documentation.suse.com/smart/systems-management/html/systemd-working-with-timers/index.html">Suse Docs</a> مراجعه کنید.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a><a href="1073_localisation_and_internationalisation.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">107.3 بومی سازی و بین المللی سازی</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>108.2 ثبت سیستم | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item active"><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">108.2 ثبت سیستم</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۸</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>کاندیداها باید بتوانند rsyslog را پیکربندی کنند. این هدف همچنین شامل پیکربندی شبح ورود به سیستم برای ارسال خروجی ورود به یک سرور ثبت مرکزی یا پذیرش خروجی گزارش به عنوان سرور ثبت مرکزی است. استفاده از زیرسیستم ژورنال systemd پوشش داده شده است. همچنین، آگاهی از syslog و syslog-ng به‌عنوان سیستم‌های ثبت جایگزین گنجانده شده است.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>پیکربندی اولیه rsyslog.</li>
+<li>شناخت امکانات، اولویت ها و اقدامات استاندارد.</li>
+<li>از ژورنال systemd پرس و جو کنید.</li>
+<li>داده های مجله systemd را بر اساس معیارهایی مانند تاریخ، سرویس یا اولویت فیلتر کنید.</li>
+<li>ذخیره سازی مجله سیستم و اندازه مجله مداوم را پیکربندی کنید.</li>
+<li>داده های ژورنال systemd قدیمی را حذف کنید.</li>
+<li>داده های مجله systemd را از یک سیستم نجات یا کپی سیستم‌فایل (Filesystem) بازیابی کنید.</li>
+<li>تعامل rsyslog با systemd-journald را درک کنید.</li>
+<li>پیکربندی logrotate.</li>
+<li>آگاهی از syslog و syslog-ng.</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/rsyslog.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/var/log/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">logger</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">logrotate</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/logrotate.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/logrotate.d/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">journalctl</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">systemd-cat</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/systemd/journald.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/var/log/journal/</code></bdi></li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/qtHTf6q_UaI" title="YouTube video player" width="560"></iframe></div>
+<h3 id="_3">تاریخچه</h3>
+<p>لاگ ها بخش مهمی از فلسفه و طراحی یونیکس هستند. هسته، سرویس‌ها، برنامه‌ها و بیشتر رویدادها (بگذارید یک خرابی یا تلاش برای ورود به سیستم باشد) گزارش‌ها را ایجاد می‌کنند. این گزارش ها را می توان برای به دست آوردن بینش در مورد سیستم و وضعیت آن بررسی / نظارت کرد. اگر به مدت 1 ساعت یک مرد لینوکس را روی یک دستگاه ویندوز تماشا کنید، خواهید شنید که "Log ها کجا هستند؟" </p>
+<p>اگر هر برنامه سعی کند لاگ های خود را مدیریت کند، با 2 مشکل مواجه خواهیم شد (حداقل!). 1. برنامه نویسی دشوار خواهد بود زیرا شما نیاز به اختراع (یا وارد کردن) چرخ دارید و 2. برنامه نویسان مختلف انواع، فرمت ها و مکان های مختلفی را برای گزارش های خود تولید می کنند و نگه داشتن آنها تحت کنترل شما دشوار خواهد بود. برای غلبه بر این موضوع، جهان یونیکس راه حل خاص خود را داشت: سرویس ثبت مرکزی.</p>
+<p>ابزار قدیمی‌تر برای مدیریت گزارش‌ها <bdi><code class="inline-code" dir="ltr">syslog</code></bdi> نام داشت، سپس <bdi><code class="inline-code" dir="ltr">syslog-ng</code></bdi> (نسل جدید) و بعدا <bdi><code class="inline-code" dir="ltr">rsyslog</code></bdi> داشتیم که تا چند سال پیش اکثر توزیع‌ها از آن استفاده می‌کردند. <bdi><code class="inline-code" dir="ltr">rsyslog</code></bdi> هنوز وجود دارد و بخشی از جهان گنو/لینوکس است. می‌تواند گزارش‌ها را از برنامه‌های مختلف (حتی از طریق شبکه) دریافت کند و آنها را در مکان‌های مختلف (فایل‌ها یا فایل‌های موجود در شبکه یا حتی اجرای برخی اقدامات روی آنها) ذخیره کند. گزارش‌های آن در قالب متن ذخیره می‌شوند و می‌توانند توسط ابزار انتخابی شما مدیریت شوند، اجازه دهید <bdi><code class="inline-code" dir="ltr">grep</code></bdi>، <bdi><code class="inline-code" dir="ltr">less</code></bdi>، <bdi><code class="inline-code" dir="ltr">tail</code></bdi>، <bdi><code class="inline-code" dir="ltr">zless</code></bdi> (کمتر یک فایل فشرده بدون باز کردن صریح آن)، <strong><em>_INLINE</em>29 (به طور واضح آن را باز کنید)، </strong>__INLINE_3 <bdi><code class="inline-code" dir="ltr">grep</code></bdi>، ....</p>
+<p>اما این روزها <bdi><code class="inline-code" dir="ltr">systemd</code></bdi> در حال تسخیر بیشتر دنیای لینوکس است و لاگ ها نیز از این قاعده مستثنی نیستند. سرویس ثبت نام SystemDs <bdi><code class="inline-code" dir="ltr">journald</code></bdi> نامیده می شود و ما از دستور <bdi><code class="inline-code" dir="ltr">journalctl</code></bdi> برای خواندن گزارش های آن استفاده می کنیم. متأسفانه آنها دیگر فایل متنی نیستند.</p>
+<p>همچنین باید چند ابزار دیگر (مانند <bdi><code class="inline-code" dir="ltr">logrotate</code></bdi> برای پاکسازی گزارش‌های قدیمی‌تر) را بدانید و با برخی از گزارش‌های مهم‌تر سیستم تحت گنو/لینوکس آشنا باشید. پس بیایید شروع کنیم.</p>
+<blockquote class="callout-box">
+<p>دانستن اینکه چگونه سیاهههای مربوط به عمق بیشتری کار می کنند سرگرم کننده است. اینجاست: هرکسی که می‌خواهد چیزی را ثبت کند، در نهایت پیام‌های خود را به دستگاه‌های <bdi><code class="inline-code" dir="ltr">/dev/log</code></bdi> یا <bdi><code class="inline-code" dir="ltr">/dev/kmsg</code></bdi> می‌فرستد (اغلب با استفاده از ابزار کمکی). ابزار گزارش‌گیری (مثلا <bdi><code class="inline-code" dir="ltr">rsyslog</code></bdi>) از این دستگاه‌ها می‌خواند و گزارش‌ها را بر اساس تنظیمات آن پردازش می‌کند. و اکنون، پیام ها سیاهههای مربوط هستند!</p>
+</blockquote>
+<h2 id="dmesg">dmesg</h2>
+<p>همانطور که به شما گفتم، لینوکس لاگ را دوست دارد و از ثبت همه چیز خوشحال خواهد شد. اما در مورد فرآیند بوت چطور؟ اگر هسته بخواهد چیزی را قبل از آماده شدن دیسک ها ثبت کند، چه اتفاقی می افتد؟ این گزارش‌ها توسط هسته در <em>Kernel Ring Buffer</em> ذخیره می‌شوند. با استفاده از دستور <bdi><code class="inline-code" dir="ltr">dmesg</code></bdi> می توانید به آن دسترسی داشته باشید. </p>
+<h2 id="_4">چرخش گزارش</h2>
+<p>بنابراین سیاهههای مربوط در حال تولید و ذخیره می شوند! کسی باید آنها را تمیز کند تا از پر شدن دیسک جلوگیری کند. ابزار <bdi><code class="inline-code" dir="ltr">logrotate</code></bdi> این کار را بر عهده می گیرد.  پیکربندی اصلی در <bdi><code class="inline-code" dir="ltr">/etc/logrotate.conf</code></bdi> است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:# cat /etc/logrotate.conf
+# see "man logrotate" for details
+
+# global options do not affect preceding include directives
+
+# rotate log files weekly
+weekly
+
+# keep 4 weeks worth of backlogs
+rotate 4
+
+# create new (empty) log files after rotating old ones
+create
+
+# use date as a suffix of the rotated file
+#dateext
+
+# uncomment this if you want your log files compressed
+#compress
+
+# packages drop log rotation information into this directory
+include /etc/logrotate.d
+
+# system-specific logs may also be configured here.
+</code></pre></div>
+<p>و سرویس‌های خاص گزارش‌های خود را در <bdi><code class="inline-code" dir="ltr">/etc/logrotate.d/</code></bdi> ایجاد می‌کنند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:# cat /etc/logrotate.d/apt
+/var/log/apt/term.log {
+  rotate 12
+  monthly
+  compress
+  missingok
+  notifempty
+}
+
+/var/log/apt/history.log {
+  rotate 12
+  monthly
+  compress
+  missingok
+  notifempty
+}
+</code></pre></div>
+<p>اینها معنای برخی از این پارامترها هستند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">پارامتر</th>
+<th style="text-align: center;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">هفتگی</td>
+<td style="text-align: center;">چرخش سیاهههای مربوط به صورت هفتگی</td>
+</tr>
+<tr>
+<td style="text-align: center;">missingok</td>
+<td style="text-align: center;">اگر گزارشی برای این هفته وجود نداشته باشد خوب است</td>
+</tr>
+<tr>
+<td style="text-align: center;">چرخش 52</td>
+<td style="text-align: center;">آخرین 52 گزارش را نگه دارید و موارد قدیمی تر را حذف کنید</td>
+</tr>
+<tr>
+<td style="text-align: center;">فشرده سازی</td>
+<td style="text-align: center;">فشرده سازی سیاهههای مربوط</td>
+</tr>
+<tr>
+<td style="text-align: center;">ایجاد 0640 www-data adm</td>
+<td style="text-align: center;">فایل ها را با این دسترسی و صاحبان</td>
+</tr>
+<tr>
+<td style="text-align: center;">چرخش قبل و بعد</td>
+<td style="text-align: center;">این اسکریپت ها یا دستورات را قبل و بعد از چرخش</td>
+</tr>
+</tbody>
+</table></div>
+<p>این پیکربندی بالا یک فایل فشرده برای هر هفته ایجاد می کند و تنها 52 مورد از آنها را به جای یک فایل لاگ بزرگ برای این برنامه نگه می دارد.</p>
+<p><bdi><code class="inline-code" dir="ltr">logrotate</code></bdi> با استفاده از cron ها اجرا می شود و کار خود را به صورت روزانه بر اساس پیکربندی در <bdi><code class="inline-code" dir="ltr">/etc/cron.daily/logrotate</code></bdi> انجام می دهد.</p>
+<h2 id="_5">چند فایل لاگ معروف</h2>
+<p>معمولاً گزارش‌ها در <bdi><code class="inline-code" dir="ltr">/var/log</code></bdi> ذخیره می‌شوند. در صورت بروز هر مشکلی و اگر نمی‌دانید چه کاری باید انجام دهید، این یک روش معمول است که یک <bdi><code class="inline-code" dir="ltr">ls -ltrh /var/log/</code></bdi> را اجرا کنید تا ببینید آیا برنامه‌ای گزارش جدیدی تولید کرده است یا خیر.</p>
+<p>اما اجازه دهید نگاهی به برخی از لاگ های معروف بیندازیم:</p>
+<h5 id="varlogauthlog"><bdi><code class="inline-code" dir="ltr">/var/log/auth.log</code></bdi> (در دبیان مبتنی بر)</h5>
+<p>فرآیندهای احراز هویت در اینجا وارد می شوند. مواردی مانند مشاغل <bdi><code class="inline-code" dir="ltr">cron</code></bdi>، ورود ناموفق، اطلاعات <bdi><code class="inline-code" dir="ltr">sudo</code></bdi>، ...</p>
+<h5 id="varlogsyslog"><bdi><code class="inline-code" dir="ltr">/var/log/syslog</code></bdi></h5>
+<p>در صورتی که فایل لاگ خاصی در <bdi><code class="inline-code" dir="ltr">/etc/rsyslog.conf</code></bdi> ارائه نشده باشد، یک مکان متمرکز بیشتر گزارش‌های دریافت شده توسط <bdi><code class="inline-code" dir="ltr">rsyslogd</code></bdi></p>
+<h5 id="varlogdebug"><bdi><code class="inline-code" dir="ltr">/var/log/debug</code></bdi></h5>
+<p>اشکال زدایی اطلاعات از برنامه ها</p>
+<h5 id="varlogkernlog"><bdi><code class="inline-code" dir="ltr">/var/log/kern.log</code></bdi></h5>
+<p>پیام های هسته</p>
+<h5 id="varlogmessages"><bdi><code class="inline-code" dir="ltr">/var/log/messages</code></bdi></h5>
+<p>پیام های آموزنده از خدمات. همچنین این مکان پیش‌فرض برای گزارش‌ها برای مشتریان راه دور است.</p>
+<h5 id="varrunutmp-varlogwtmp"><bdi><code class="inline-code" dir="ltr">/var/run/utmp</code></bdi> &amp; <bdi><code class="inline-code" dir="ltr">/var/log/wtmp</code></bdi></h5>
+<p>لاگین های موفق</p>
+<h5 id="varlogbtmp"><bdi><code class="inline-code" dir="ltr">/var/log/btmp</code></bdi></h5>
+<p>ورود ناموفق شما می توانید این را بررسی کنید تا ببینید آیا کسی سعی در حدس زدن رمزهای عبور شما دارد یا خیر!</p>
+<h5 id="varlogfaillog"><bdi><code class="inline-code" dir="ltr">/var/log/faillog</code></bdi></h5>
+<p>تلاش‌های احراز هویت ناموفق بود.</p>
+<h5 id="varloglastlog"><bdi><code class="inline-code" dir="ltr">/var/log/lastlog</code></bdi></h5>
+<p>تاریخ و زمان آخرین ورود کاربران</p>
+<h5 id="_6">گزارش های خدمات</h5>
+<p>گزارش‌های سرویس فایل‌ها یا دایرکتوری (پوشه)‌ها را در <bdi><code class="inline-code" dir="ltr">/var/log</code></bdi> ایجاد می‌کنند و گزارش‌های خود را در آنجا به‌روزرسانی می‌کنند. برای مثال ممکن است یک <bdi><code class="inline-code" dir="ltr">/var/log/apache2/</code></bdi> (یا <bdi><code class="inline-code" dir="ltr">/var/log/httpd</code></bdi>) برای سرور HTTP Apache یا یک <bdi><code class="inline-code" dir="ltr">/var/log/mysql</code></bdi> برای MySQL DB وجود داشته باشد.</p>
+<h2 id="rsyslog">rsyslog</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/xliHONdwFy0" title="YouTube video player" width="560"></iframe></div>
+<p>این نسل جدید syslogs است و در بسیاری از محیط ها استفاده می شود. پیکربندی اصلی آن در <bdi><code class="inline-code" dir="ltr">/etc/rsyslog.conf</code></bdi> قرار دارد و همچنین هر چیزی را در فهرست <bdi><code class="inline-code" dir="ltr">/etc/rsyslog.d/</code></bdi> می خواند. پیکربندی آن از 3 بخش اصلی تشکیل شده است: </p>
+<ol>
+<li><bdi><code class="inline-code" dir="ltr">MODULES</code></bdi>، ماژول های استفاده شده. برای مثال اجازه دهید rsyslog از اتصالات UDP استفاده کند</li>
+<li><bdi><code class="inline-code" dir="ltr">GLOBAL DIRECTIVES</code></bdi>، پیکربندی‌های عمومی مانند دسترسی‌های دایرکتوری (پوشه)‌ها</li>
+<li><bdi><code class="inline-code" dir="ltr">RULES</code></bdi>، ترکیبی از <em>امکانات</em>، <em>اولویت</em>ها<em> و </em>اقدامات* به <bdi><code class="inline-code" dir="ltr">rsyslog</code></bdi> می گوید که با هر گزارش چه کاری انجام دهد.</li>
+</ol>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:~# cat /etc/rsyslog.conf
+# /etc/rsyslog.conf configuration file for rsyslog
+#
+# For more information install rsyslog-doc and see
+# /usr/share/doc/rsyslog-doc/html/configuration/index.html
+
+
+#################
+#### MODULES ####
+#################
+
+module(load="imuxsock") # provides support for local system logging
+module(load="imklog")   # provides kernel logging support
+#module(load="immark")  # provides --MARK-- message capability
+
+# provides UDP syslog reception
+#module(load="imudp")
+#input(type="imudp" port="514")
+
+# provides TCP syslog reception
+#module(load="imtcp")
+#input(type="imtcp" port="514")
+
+
+###########################
+#### GLOBAL DIRECTIVES ####
+###########################
+
+#
+# Set the default permissions for all log files.
+#
+$FileOwner root
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+
+#
+# Where to place spool and state files
+#
+$WorkDirectory /var/spool/rsyslog
+
+#
+# Include all config files in /etc/rsyslog.d/
+#
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+
+###############
+#### RULES ####
+###############
+
+#
+# Log anything besides private authentication messages to a single log file
+#
+*.*;auth,authpriv.none      -/var/log/syslog
+
+#
+# Log commonly used facilities to their own log file
+#
+auth,authpriv.*         /var/log/auth.log
+cron.*              -/var/log/cron.log
+kern.*              -/var/log/kern.log
+mail.*              -/var/log/mail.log
+user.*              -/var/log/user.log
+
+#
+# Emergencies are sent to everybody logged in.
+#
+*.emerg             :omusrmsg:*
+</code></pre></div>
+<p>همانطور که می بینید <strong>امکانات</strong> می تواند مواردی مانند:</p>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">kern</code></bdi>، <bdi><code class="inline-code" dir="ltr">user</code></bdi>، <bdi><code class="inline-code" dir="ltr">mail</code></bdi>، <bdi><code class="inline-code" dir="ltr">daemon</code></bdi>، <bdi><code class="inline-code" dir="ltr">cron</code></bdi>، <bdi><code class="inline-code" dir="ltr">auth</code></bdi>، <bdi><code class="inline-code" dir="ltr">ntp</code></bdi>، <strong><em>INLINE</em></strong>_IN____، <bdi><code class="inline-code" dir="ltr">syslog</code></bdi>، ... </p>
+</blockquote>
+<p><strong>اولویت</strong> می تواند یکی از موارد زیر باشد:</p>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">emerg</code></bdi>/<bdi><code class="inline-code" dir="ltr">panic</code></bdi>, <bdi><code class="inline-code" dir="ltr">alert</code></bdi>, <bdi><code class="inline-code" dir="ltr">crit</code></bdi>, <bdi><code class="inline-code" dir="ltr">err</code></bdi>/<bdi><code class="inline-code" dir="ltr">error</code></bdi>, <bdi><code class="inline-code" dir="ltr">warn</code></bdi>/<strong><em>INLINE</em></strong>_IN___, <bdi><code class="inline-code" dir="ltr">info</code></bdi> یا <bdi><code class="inline-code" dir="ltr">debug</code></bdi>. </p>
+</blockquote>
+<p>در قسمت <strong>اکشن</strong> می توانیم مواردی مانند این داشته باشیم:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">اقدام</th>
+<th style="text-align: center;">نمونه</th>
+<th style="text-align: left;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">نام فایل</td>
+<td style="text-align: center;">/usr/log/logins.log</td>
+<td style="text-align: left;">گزارش را در این فایل می نویسد</td>
+</tr>
+<tr>
+<td style="text-align: center;">نام کاربری</td>
+<td style="text-align: center;">جادی</td>
+<td style="text-align: left;">به آن شخص روی صفحه اطلاع می دهد</td>
+</tr>
+<tr>
+<td style="text-align: center;">@ip</td>
+<td style="text-align: center;">@192.168.1.100</td>
+<td style="text-align: left;">این گزارش را به این سرور ورود ارسال می کند و آن سرور ورود تصمیم می گیرد که با آن بر اساس تنظیماتش چه کند</td>
+</tr>
+</tbody>
+</table></div>
+<p>بنابراین خطی مانند این، کرنل را به یک سرور گزارش راه دور نشان می دهد و همچنین همه چیز را در هر سطح در یک فایل گزارش ثبت می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">kern.panic      @192.168.1.100
+*.*             /var/log/messages
+</code></pre></div>
+<p>اگر اولویت خاصی را وارد کنید، همه چیزهای <strong>مهمتر</strong> نیز ثبت خواهند شد! بنابراین اگر بنویسید <bdi><code class="inline-code" dir="ltr">cron.notice /var/log/cron/cron.log</code></bdi>، در حال ثبت گزارش های <bdi><code class="inline-code" dir="ltr">emerg/panic</code></bdi>، <bdi><code class="inline-code" dir="ltr">alert</code></bdi>، <bdi><code class="inline-code" dir="ltr">critical</code></bdi>، <bdi><code class="inline-code" dir="ltr">error</code></bdi>، <bdi><code class="inline-code" dir="ltr">warning</code></bdi> و <bdi><code class="inline-code" dir="ltr">notice</code></bdi> از دسته cc نیز هستید.</p>
+<p>سطوح اولویت (براساس Syslog (3) و manpage logger):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">
+       This determines the importance of the message.  The levels are, in order of decreasing importance:
+
+       emerge      system is unusable
+
+       alert      action must be taken immediately
+
+       crit       critical conditions
+
+       error        error conditions
+
+       warning    warning conditions
+
+       notice     normal, but significant, condition
+
+       info       informational message
+
+       debug      debug-level message
+
+
+       panic      deprecated synonym for emerg
+       error      deprecated synonym for err
+       warn       deprecated synonym for warning
+
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر باید فقط یک سطح خاص را وارد کنید، یک علامت مساوی (=) قبل از اولویت مانند این <bdi><code class="inline-code" dir="ltr">local3.=alert /var/log/user.alert.log</code></bdi> اضافه کنید.</p>
+</blockquote>
+<p>دانستن این نکته مهم است که باینری که رده <em>*kern</em> را ثبت می کند یک دیمون مستقل است. این دیمون <bdi><code class="inline-code" dir="ltr">klogd</code></bdi> نام دارد و از همان فایل های پیکربندی استفاده می کند. چرا؟ بنابراین حتی پس از خراب شدن همه چیز، <bdi><code class="inline-code" dir="ltr">klogd</code></bdi> می‌تواند خرابی‌های هسته را ثبت کند ;).</p>
+<h3 id="_7">لاگر</h3>
+<p>اگر می‌خواهید چیزی به سمت <bdi><code class="inline-code" dir="ltr">rsyslog</code></bdi> ارسال کنید، می‌توانید از ابزار <bdi><code class="inline-code" dir="ltr">logger</code></bdi> استفاده کنید. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:# logger Testing my lovely tool
+root@debian:# logger local1.emerg Nothing emergent for sure
+root@debian:# tail -3 /var/log/syslog
+2023-06-30T06:05:01.325358-04:00 debian CRON[914]: (root) CMD (command -v debian-sa1 &gt; /dev/null &amp;&amp; debian-sa1 1 1)
+2023-06-30T06:13:27.671410-04:00 debian root: Testing my lovely tool
+2023-06-30T06:13:45.795158-04:00 debian root: local1.emerg Nothing emergent for sure
+</code></pre></div>
+<h2 id="_8">مجله</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/jXO7q_7a6-s" title="YouTube video player" width="560"></iframe></div>
+<p>شما <bdi><code class="inline-code" dir="ltr">systemd</code></bdi> را در بخش های مختلف این دوره دیده اید. ما دیدیم که چگونه بخشی از فرآیند init است و چگونه خدمات و تایمرها را مدیریت می کند. همه این فعالیت‌ها (و سایر گزارش‌هایی که به سیستم ژورنالیست سیستم می‌رسند) در فایل‌های باینری ثبت می‌شوند و با استفاده از <bdi><code class="inline-code" dir="ltr">journalctl</code></bdi> که بخشی از ابزار <bdi><code class="inline-code" dir="ltr">systemd-journald</code></bdi> است، قابل خواندن هستند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:~# systemctl status systemd-journald
+● systemd-journald.service - Journal Service
+     Loaded: loaded (/lib/systemd/system/systemd-journald.service; static)
+     Active: active (running) since Fri 2023-06-30 05:28:50 EDT; 52min ago
+TriggeredBy: ● systemd-journald-dev-log.socket
+             ● systemd-journald-audit.socket
+             ● systemd-journald.socket
+       Docs: man:systemd-journald.service(8)
+             man:journald.conf(5)
+   Main PID: 261 (systemd-journal)
+     Status: "Processing requests..."
+      Tasks: 1 (limit: 4583)
+     Memory: 17.1M
+        CPU: 138ms
+     CGroup: /system.slice/systemd-journald.service
+             └─261 /lib/systemd/systemd-journald
+
+Jun 30 05:28:50 debian systemd-journald[261]: Journal started
+Jun 30 05:28:50 debian systemd-journald[261]: Runtime Journal (/run/log/journal/ec22e43962c64359b9b25cfa650b025b) is 4.9M, max 39.1M,&gt;
+Jun 30 05:28:50 debian systemd-journald[261]: Time spent on flushing to /var/log/journal/ec22e43962c64359b9b25cfa650b025b is 23.816ms&gt;
+Jun 30 05:28:50 debian systemd-journald[261]: System Journal (/var/log/journal/ec22e43962c64359b9b25cfa650b025b) is 28.2M, max 4.0G, &gt;
+Jun 30 05:28:50 debian systemd-journald[261]: Received client request to flush runtime journal.
+Notice: journal has been rotated since unit was started, output may be incomplete.
+</code></pre></div>
+<p>و اینجا فایل پیکربندی است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:~# cat /etc/systemd/journald.conf
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it under the
+#  terms of the GNU Lesser General Public License as published by the Free
+#  Software Foundation; either version 2.1 of the License, or (at your option)
+#  any later version.
+#
+# Entries in this file show the compile time defaults. Local configuration
+# should be created by either modifying this file, or by creating "drop-ins" in
+# the journald.conf.d/ subdirectory. The latter is generally recommended.
+# Defaults can be restored by simply deleting this file and all drop-ins.
+#
+# Use 'systemd-analyze cat-config systemd/journald.conf' to display the full config.
+#
+# See journald.conf(5) for details.
+
+[Journal]
+#Storage=auto
+#Compress=yes
+#Seal=yes
+#SplitMode=uid
+#SyncIntervalSec=5m
+#RateLimitIntervalSec=30s
+#RateLimitBurst=10000
+#SystemMaxUse=
+#SystemKeepFree=
+#SystemMaxFileSize=
+#SystemMaxFiles=100
+#RuntimeMaxUse=
+#RuntimeKeepFree=
+#RuntimeMaxFileSize=
+#RuntimeMaxFiles=100
+#MaxRetentionSec=
+#MaxFileSec=1month
+#ForwardToSyslog=yes
+#ForwardToKMsg=no
+#ForwardToConsole=no
+#ForwardToWall=yes
+#TTYPath=/dev/console
+#MaxLevelStore=debug
+#MaxLevelSyslog=debug
+#MaxLevelKMsg=notice
+#MaxLevelConsole=info
+#MaxLevelWall=emerg
+#LineMax=48K
+#ReadKMsg=yes
+#Audit=no
+</code></pre></div>
+<h3 id="_9">استعلام محتوای مجله</h3>
+<p>اگر <bdi><code class="inline-code" dir="ltr">journalctl</code></bdi> را اجرا کنید، همه گزارش‌ها را دریافت خواهید کرد... خیلی زیاد. بنابراین چند سوئیچ مفید وجود دارد:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">سوئیچ</th>
+<th style="text-align: center;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">-r</td>
+<td style="text-align: center;">نمایش معکوس؛ جدیدتر در بالا</td>
+</tr>
+<tr>
+<td style="text-align: center;">-f</td>
+<td style="text-align: center;">به نشان دادن دم ادامه دهید</td>
+</tr>
+<tr>
+<td style="text-align: center;">-e</td>
+<td style="text-align: center;">نمایش و رفتن تا آخر</td>
+</tr>
+<tr>
+<td style="text-align: center;">-n</td>
+<td style="text-align: center;">این تعداد خطوط را از آخر نشان دهید (جدیدترین ها)</td>
+</tr>
+<tr>
+<td style="text-align: center;">-k</td>
+<td style="text-align: center;">نمایش پیام هسته (برابر با <bdi><code class="inline-code" dir="ltr">dmesg</code></bdi>)</td>
+</tr>
+<tr>
+<td style="text-align: center;">-b</td>
+<td style="text-align: center;">نمایش از یک بوت خاص، -1 بوت قبلی است، 0 بوت فعلی است. می‌توانید با استفاده از <bdi><code class="inline-code" dir="ltr">--list-boots</code></bdi></td>
+</tr>
+<tr>
+<td style="text-align: center;">-p</td>
+<td style="text-align: center;">از اولویت خاص، بگویید <bdi><code class="inline-code" dir="ltr">-p err</code></bdi></td>
+</tr>
+<tr>
+<td style="text-align: center;">-u</td>
+<td style="text-align: center;">از یک واحد systemd خاص</td>
+</tr>
+</tbody>
+</table></div>
+<p>همچنین می‌توانید از <bdi><code class="inline-code" dir="ltr">--since</code></bdi> و <bdi><code class="inline-code" dir="ltr">--until</code></bdi> برای نمایش یک محدوده زمانی خاص استفاده کنید، می‌توانید زمان را به‌عنوان <bdi><code class="inline-code" dir="ltr">YYYY-MM-DD HH:MM:SS</code></bdi> ارائه کنید یا از مواردی مانند <bdi><code class="inline-code" dir="ltr">yesterday</code></bdi>، <bdi><code class="inline-code" dir="ltr">today</code></bdi>، <strong><em>INLINE</em>، حتی _1</strong>IN_، یا حتی استفاده کنید. <bdi><code class="inline-code" dir="ltr">--since "10 minutes ago"</code></bdi> که برابر است با <bdi><code class="inline-code" dir="ltr">--since "-2 minutes"</code></bdi>.</p>
+<blockquote class="callout-box">
+<p>اگر تعداد خطوط زیاد است، <bdi><code class="inline-code" dir="ltr">&gt;</code></bdi> را فشار دهید تا به انتها بپرید (یا <bdi><code class="inline-code" dir="ltr">&lt;</code></bdi> را برای رفتن به ابتدا فشار دهید)</p>
+</blockquote>
+<p>همچنین می توانید نام برنامه را به دستور اضافه کنید تا گزارش های مربوط به آن برنامه خاص را مشاهده کنید. بگویید <bdi><code class="inline-code" dir="ltr">journalctl /usr/bin/xrdp</code></bdi> یا از برخی فیلدها مانند <bdi><code class="inline-code" dir="ltr">PRIORITY=</code></bdi>، <bdi><code class="inline-code" dir="ltr">_PID=</code></bdi> استفاده کنید و مقادیر را ارائه دهید.</p>
+<h3 id="systemd-cat">systemd-cat</h3>
+<p>این ابزار زمانی استفاده می شود که بخواهید به صورت دستی گزارش ها را به سیستم ژورنالینگ ارسال کنید. ورودی خود را به ژورنال می فرستد یا در صورت ارائه دستور را اجرا می کند و نتیجه را به مجله ارسال می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>root@debian:~# echo "This is my first test" | systemd-cat
+root@debian:~# systemd-cat -p info uptime #sending priority too
+root@debian:~# journalctl -n 3
+Jun 30 06:31:01 debian systemd[1]: Finished apt-daily.service - Daily apt download activities.
+Jun 30 06:34:18 debian cat[1020]: This is my first test
+Jun 30 06:34:48 debian uptime[1022]:  06:34:48 up  1:05,  4 users,  load average: 0.00, 0.00, 0.00
+</code></pre></div>
+<h2 id="_10">مدیریت ذخیره سازی</h2>
+<p>ژورنال های systemd می توانند گزارش های خود را در حافظه نگه دارند یا آنها را روی دیسک بنویسند یا همه گزارش ها را رها کنند. این توسط پیکربندی های موجود در <bdi><code class="inline-code" dir="ltr">/etc/systemd/journald.conf</code></bdi> تعیین می شود. اما رفتار پیش فرض به صورت زیر است:</p>
+<ol>
+<li>سیستم <bdi><code class="inline-code" dir="ltr">/var/log/journal</code></bdi> را بررسی می کند. اگر این دایرکتوری (پوشه) وجود داشته باشد، گزارش‌های موجود در دایرکتوری (پوشه) داخل آن ذخیره می‌شوند. نام دایرکتوری (پوشه) با نگاه کردن به <bdi><code class="inline-code" dir="ltr">/etc/machine-id</code></bdi> تعیین می شود</li>
+<li>اگر <bdi><code class="inline-code" dir="ltr">/var/log/journal</code></bdi> وجود ندارد، گزارش‌ها در حافظه <bdi><code class="inline-code" dir="ltr">/run/log/jouranl</code></bdi> و در فهرستی که توسط <bdi><code class="inline-code" dir="ltr">/etc/machine-id</code></bdi> تعیین شده ذخیره می‌شود.</li>
+</ol>
+<p>اما می توانید با بخش های زیر بر این تنظیمات غلبه کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>Storage=volatile     # keep the logs in memory
+Storage=persistent   # keep on disk, if needed create the directories
+Storage=auto         # will write to disk only if the directory exists
+Storage=none         # do not keep logs
+</code></pre></div>
+<p>اگر گزارش‌ها روی دیسک نوشته می‌شوند، این متغیر مصرف دیسک را مدیریت می‌کند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">نام متغیر</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">SystemMaxUse</td>
+<td>حداکثر استفاده از دیسک، مثلاً 500M. پیش‌فرض روی <bdi><code class="inline-code" dir="ltr">10%</code></bdi> است</td>
+</tr>
+<tr>
+<td style="text-align: center;">SystemKeepFree</td>
+<td>حداقل این مقدار را رایگان نگه دارید، مثلاً 1G. پیش فرض 15% است</td>
+</tr>
+<tr>
+<td style="text-align: center;">SystemMaxFileSize</td>
+<td>حداکثر اندازه هر فایل جداگانه پیش فرض 1/8 SystemMaxUse</td>
+</tr>
+<tr>
+<td style="text-align: center;">SystemMaxFiles</td>
+<td>حداکثر تعداد فایل‌هایی که در حال حاضر فعال نیستند. پیش فرض 100</td>
+</tr>
+</tbody>
+</table></div>
+<p>اگر گزارش‌ها را در <strong>حافظه</strong> نگه می‌دارید، متغیرهای معادل عبارتند از <bdi><code class="inline-code" dir="ltr">RuntimeMaxUse</code></bdi>، <bdi><code class="inline-code" dir="ltr">RuntimeKeepFree</code></bdi>، <bdi><code class="inline-code" dir="ltr">RuntimeMaxFileSize</code></bdi>، و <bdi><code class="inline-code" dir="ltr">RuntimeMaxFiles</code></bdi>.  </p>
+<p>در صورتی که لازم است پاکسازی را به صورت دستی انجام دهید (حتماً با کمک ابزارهای systemd)، می توانید <bdi><code class="inline-code" dir="ltr">journalctl</code></bdi> را با این سوئیچ ها اجرا کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">سوئیچ</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">--وکیوم-زمان</td>
+<td>همه چیز قدیمی تر از این را تمیز کنید به عنوان مثال <bdi><code class="inline-code" dir="ltr">--vacuum-time=3months</code></bdi> هر چیزی قدیمی تر از 3 ماه را تمیز کنید. می‌توانید از <bdi><code class="inline-code" dir="ltr">s</code></bdi>، <bdi><code class="inline-code" dir="ltr">m</code></bdi>، <bdi><code class="inline-code" dir="ltr">h</code></bdi> برای ثانیه‌ها، دقیقه‌ها و روزها و <bdi><code class="inline-code" dir="ltr">d</code></bdi>/<bdi><code class="inline-code" dir="ltr">days</code></bdi>، <bdi><code class="inline-code" dir="ltr">months</code></bdi>، <strong><em>IN</em>LINE_1</strong>_، <strong><em>IN</em>LINE_1_14 و <bdi><code class="inline-code" dir="ltr">days</code></bdi>، <bdi><code class="inline-code" dir="ltr">m</code></bdi>، </strong>_IN_LINE_1___ و <bdi><code class="inline-code" dir="ltr">years</code></bdi>/<bdi><code class="inline-code" dir="ltr">y</code></bdi>.</td>
+</tr>
+<tr>
+<td style="text-align: center;">--وکیوم اندازه</td>
+<td>حذف تا زمانی که سیاهههای مربوط یک اندازه خاص را اشغال کنند. بگو 1G</td>
+</tr>
+<tr>
+<td style="text-align: center;">--vacuum-files</td>
+<td>فقط این مقدار فایل بایگانی را نگه دارید</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="_11">چک کردن گزارش‌ها از یک سیستم بازیابی شده</h3>
+<p>اگر یک سیستم خراب / غیر بوت شده دارید، همچنان می توانید گزارش های آن را بررسی کنید. اگر فایل ها وجود دارد همانطور که می‌دانید فایل‌ها در <bdi><code class="inline-code" dir="ltr">/var/log/journal/{mchine-id}</code></bdi> هستند، جایی که machine-id در <bdi><code class="inline-code" dir="ltr">/etc/machine-id</code></bdi> دستگاه خراب است. </p>
+<p>می‌توانید این فایل‌ها را پس از راه‌اندازی دستگاه از کار افتاده با لینوکس زنده به دایرکتوری (پوشه) منتقل کنید یا آن را روی دستگاه دیگری نصب کنید یا حتی آن‌ها را در جای خود بررسی کنید. سوئیچ <bdi><code class="inline-code" dir="ltr">-D</code></bdi> (یا <bdi><code class="inline-code" dir="ltr">--directory</code></bdi>) <bdi><code class="inline-code" dir="ltr">journalctl</code></bdi> مکان فایل های مجله را نشان می دهد. بنابراین اگر شناسه دستگاه خراب شما <bdi><code class="inline-code" dir="ltr">ec22e43962c64359b9b25cfa650b025b</code></bdi> است و <bdi><code class="inline-code" dir="ltr">/var/</code></bdi> آن را در پوشه <bdi><code class="inline-code" dir="ltr">/mnt/var/</code></bdi> خود نصب کرده اید، می توانید این دستور را صادر کنید تا گزارش های آن را بخوانید و ببینید چه اتفاقی افتاده است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>journalctl -D=/mnt/var/log/journal/ec22e43962c64359b9b25cfa650b025b/
+</code></pre></div>
+<p>همچنین می‌توانید از سوئیچ <bdi><code class="inline-code" dir="ltr">--merge</code></bdi> برای ادغام این گزارش‌ها در دستگاه خود استفاده کنید یا از <bdi><code class="inline-code" dir="ltr">--file</code></bdi> برای بررسی فقط یک فایل مجله خاص استفاده کنید. در نهایت اگر مکان دقیق فایل‌های مجله مشخص نیست، می‌توانید از <bdi><code class="inline-code" dir="ltr">--root /mnt</code></bdi> استفاده کنید و به <bdi><code class="inline-code" dir="ltr">journalctl</code></bdi> بگویید تا فایل‌های مجله را در آنجا جستجو کند.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1081_maintain_system_time.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">108.1 زمان سیستم را حفظ کنید</span></a><a href="1083_mail_transfer_agent_mta_basics.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>107.3 بومی سازی و بین المللی سازی | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item active"><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">107.3 بومی سازی و بین المللی سازی</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۷</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>داوطلبان باید بتوانند یک سیستم را به زبانی متفاوت از انگلیسی بومی سازی کنند. همچنین، درک اینکه چرا <bdi><code class="inline-code" dir="ltr">LANG=C</code></bdi> هنگام نوشتن اسکریپت مفید است.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>تنظیمات محلی و متغیرهای محیط را پیکربندی کنید.</li>
+<li>تنظیمات منطقه زمانی و متغیرهای محیط را پیکربندی کنید.</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/timezone</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/localtime</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/usr/share/zoneinfo/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">LC_*</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">LC_ALL</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">LANG</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">TZ</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/usr/bin/locale</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">tzselect</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">timedatectl</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">date</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">iconv</code></bdi></li>
+<li>UTF-8</li>
+<li>ISO-8859</li>
+<li>اسکی</li>
+<li>یونیکد</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/kqoipsM7AMA" title="YouTube video player" width="560"></iframe></div>
+<h3 id="_3">منطقه زمانی</h3>
+<p>زمین بزرگ و گرد است، بنابراین ما <strong><em>مناطق زمانی</em></strong> و <strong><em>زبان های مختلف</em></strong> داریم! حتی صحبت هایی در مورد منطقه زمانی مریخ وجود دارد و اگر با بیگانگان روبرو شویم، ممکن است آنها نیز زبان خود را داشته باشند. </p>
+<p>این چند مشکل ایجاد می کند:
+1. ممکن است زبان محلی خود را برای لینوکس ترجیح دهیم
+2. ما باید منطقه زمانی خود را به لینوکس بگوییم
+3. برنامه ها ممکن است از لینوکس در مورد ترجیحات ما در مورد زبان ها، پیکربندی صفحه کلید و ... سوال کنند.
+4. و حتی اگر در مورد خودتان چیزی ندارید، دستگاه های شما به منطقه زمانی شما نیاز دارند تا بتوانند وظایف را در زمان های مورد نیاز اجرا کنند. </p>
+<p>در این بخش به شما پاسخ هایی را نشان می دهم که لینوکس برای غلبه بر این مشکلات دارد. اما بیایید ساده شروع کنیم.</p>
+<p>در سیستم های لینوکس می توانید از دستورات <bdi><code class="inline-code" dir="ltr">date</code></bdi> و <bdi><code class="inline-code" dir="ltr">cal</code></bdi> برای بررسی تاریخ و تقویم استفاده کنید. چاپ تاریخ سفارشی با استفاده از قالب‌بندی <bdi><code class="inline-code" dir="ltr">+</code></bdi> امکان‌پذیر است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ date
+Fri Jun  2 02:07:35 PM EDT 2023
+[jadi@fedora ~]$ date +'%Y%m%d-%M'
+20230602-08
+[jadi@fedora ~]$ date +'%Y%m%d-%H%M'
+20230602-1408
+</code></pre></div>
+<p>برای دریافت اطلاعات بیشتر می توانید <bdi><code class="inline-code" dir="ltr">timedatectl</code></bdi> را امتحان کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[root@fedora ~]# timedatectl
+               Local time: Fri 2023-06-02 14:23:34 EDT
+           Universal time: Fri 2023-06-02 18:23:34 UTC
+                 RTC time: Sat 2023-06-03 02:37:51
+                Time zone: America/New_York (EDT, -0400)
+System clock synchronized: no
+              NTP service: active
+          RTC in local TZ: no
+</code></pre></div>
+<p>منطقه زمانی تعیین می کند که تفاوت زمانی شما در مقایسه با منطقه زمانی مرجع چقدر است. به این ترتیب می توانید بدون توجه به موقعیت مکانی خود در مورد زمان ها صحبت کنید. به عبارت دیگر، می توانم به شما بگویم "درخواست تغییر را در ساعت 02:30 UTC شروع کنید" و هر دوی ما می دانیم که تغییر در منطقه زمانی خودمان چه زمانی آغاز می شود (مال من 1 ساعت جلوتر خواهد بود بنابراین از ساعت 3:30 به وقت خودم شروع می کنم).</p>
+<p>اکثر توزیع ها در حین نصب از شما در مورد منطقه زمانی شما می پرسند. می‌توانید بعداً این را تغییر دهید، یا با یک رابط کاربری گرافیکی در تنظیمات سیستم یا با استفاده از یک رابط کاربری مبتنی بر متن (TUI) مانند <bdi><code class="inline-code" dir="ltr">tzconfig</code></bdi> قدیمی‌تر یا یک <bdi><code class="inline-code" dir="ltr">tzselect</code></bdi> جدیدتر.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ tzselect
+Please identify a location so that time zone rules can be set correctly.
+Please select a continent, ocean, "coord", or "TZ".
+1) Africa                                7) Europe
+2) Americas                              8) Indian Ocean
+3) Antarctica                                9) Pacific Ocean
+4) Asia                                 10) coord - I want to use geographical coordinates.
+5) Atlantic Ocean                           11) TZ - I want to specify the timezone using the Posix TZ format.
+6) Australia
+#? 5
+Please select a country whose clocks agree with yours.
+1) Bermuda                     4) Faroe Islands                   7) Spain
+2) Cape Verde                      5) Portugal
+3) Falkland Islands                6) South Georgia &amp; the South Sandwich Islands
+#? 1
+
+The following information has been given:
+
+    Bermuda
+
+Therefore TZ='Atlantic/Bermuda' will be used.
+Selected time is now:   Fri Jun  2 15:15:06 ADT 2023.
+Universal Time is now:  Fri Jun  2 18:15:06 UTC 2023.
+Is the above information OK?
+1) Yes
+2) No
+#? 1
+
+You can make this change permanent for yourself by appending the line
+    TZ='Atlantic/Bermuda'; export TZ
+to the file '.profile' in your home directory; then log out and log in again.
+
+Here is that TZ value again, this time on standard output so that you
+can use the /usr/bin/tzselect command in shell scripts:
+Atlantic/Bermuda
+</code></pre></div>
+<p>پس از اتمام، این برنامه به شما پیشنهاد می کند که متغیری به نام <bdi><code class="inline-code" dir="ltr">TZ</code></bdi> را به صورت زیر تنظیم کنید تا منطقه زمانی _خودتان را تنظیم کنید، اما نه سیستم ها:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">TZ='Atlantic/Bermuda'; export TZ
+</code></pre></div>
+<p>یا یک بار از آن برای بررسی زمان در یک شهر خاص استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ env TZ='Asia/Tokyo' date
+Sat Jun  3 03:25:40 AM JST 2023
+</code></pre></div>
+<h3 id="_4">پیکربندی منطقه زمانی</h3>
+<p>فهرست راهنمای <bdi><code class="inline-code" dir="ltr">/usr/share/zoneinfo/</code></bdi> حاوی تمام اطلاعات منطقه زمانی است. این فایل های باینری هستند. اگر می‌خواهید منطقه زمانی سیستم خود را تغییر دهید، باید <bdi><code class="inline-code" dir="ltr">/etc/localtime</code></bdi> را به یکی از این فایل‌ها پیوند کوتاه دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># ls -ltrh /etc/localtime
+lrwxrwxrwx. 1 root root 38 Apr 26 09:41 /etc/localtime -&gt; ../usr/share/zoneinfo/America/New_York
+</code></pre></div>
+<p>این فایل باید با فایل صحیح از <bdi><code class="inline-code" dir="ltr">/usr/share/zoneinfo/</code></bdi> جایگزین شود. ایجاد یک پیوند نمادین (Symbolic Link) به جای کپی کردن فایل واقعی بهتر است. این از مشکلات در طول ارتقاء بعدی جلوگیری می کند.</p>
+<h3 id="_5">پیکربندی زبان ها</h3>
+<p>برای بررسی وضعیت زبان سیستم انتخابی فعلی، از دستور <bdi><code class="inline-code" dir="ltr">locale</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[root@fedora ~]# locale
+LANG=en_US.UTF-8
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER="en_US.UTF-8"
+LC_NAME="en_US.UTF-8"
+LC_ADDRESS="en_US.UTF-8"
+LC_TELEPHONE="en_US.UTF-8"
+LC_MEASUREMENT="en_US.UTF-8"
+LC_IDENTIFICATION="en_US.UTF-8"
+LC_ALL=
+</code></pre></div>
+<p>اینها متغیرهای محیطی (Environment Variables) هستند که به سیستم می گویند از چه زبانی استفاده کند. در اینجا من از <bdi><code class="inline-code" dir="ltr">LANG=en_US.UTF-8</code></bdi> استفاده می کنم، به این معنی که از انگلیسی با نوع US و رمزگذاری UTF-8 استفاده می کنم.</p>
+<blockquote class="callout-box">
+<p>UTF-8 و سایر رمزگذاری‌ها کمی بعد در این فصل مورد بحث قرار خواهند گرفت</p>
+</blockquote>
+<p>سایر متغیرهایی که در بالا مشاهده می کنید، به سیستم می گویند که چگونه چیزهای مختلف را بر اساس سیستم های محلی سازی نشان دهد. به عنوان مثال، اگر <bdi><code class="inline-code" dir="ltr">LC_TIME</code></bdi> را به <bdi><code class="inline-code" dir="ltr">"en\_GB.UTF-8"</code></bdi> تغییر دهیم، زمان در قالب بریتانیای کبیر چاپ می شود.</p>
+<p>تنظیمات مهم دیگر <bdi><code class="inline-code" dir="ltr">LC_ALL</code></bdi> است. می توان از آن برای تغییر تنظیمات <strong>ALL</strong> استفاده کرد. اگر یک <bdi><code class="inline-code" dir="ltr">export LC_ALL=fa_IR.UTF-8</code></bdi> را انجام دهید، بدون استثنا، همه تنظیمات روی آن تنظیم می‌شوند. همیشه امکان <bdi><code class="inline-code" dir="ltr">unset LC_ALL</code></bdi> وجود دارد.</p>
+<h4 id="langc">LANG=C</h4>
+<p>تنظیمات <bdi><code class="inline-code" dir="ltr">LANG=C</code></bdi> در بسیاری از برنامه ها و اسکریپت ها استفاده می شود تا اطمینان حاصل شود که سیستم نتایج منسجم و قابل پیش بینی را در همه محیط ها ایجاد می کند. به عنوان مثال برای اطمینان از اینکه ترتیب مرتب سازی به ترتیب باینری خواهد بود و تمام تنظیمات زبان پیش فرض (en.US) خواهد بود.</p>
+<h4 id="_6">تغییر یا اضافه کردن مناطق</h4>
+<p>این بخشی از آزمون LPIC نیست، اما خوب است بدانید که در یک ماشین مبتنی بر دبیان، می‌توانید با استفاده از <bdi><code class="inline-code" dir="ltr">dpkg-reconfigure locales</code></bdi>، <em>locales</em> پیش‌فرض خود را تغییر دهید، اضافه یا تنظیم کنید.</p>
+<p>این فایل هم هست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[root@fedora ~]# cat /etc/locale.conf
+LANG="en_US.UTF-8"
+</code></pre></div>
+<p>و همچنین می توانید پیکربندی <bdi><code class="inline-code" dir="ltr">LANG</code></bdi> مورد نظر خود را به <bdi><code class="inline-code" dir="ltr">~/.bash_profile</code></bdi> یا <bdi><code class="inline-code" dir="ltr">~/.profile</code></bdi> خود اضافه کنید.</p>
+<blockquote class="callout-box">
+<p>در <bdi><code class="inline-code" dir="ltr">systemd</code></bdi> از <bdi><code class="inline-code" dir="ltr">localectl</code></bdi> برای بررسی منطقه استفاده کنید یا از <bdi><code class="inline-code" dir="ltr">localectl set-locale LANG=en_US.UTF-8</code></bdi> برای تنظیم آن استفاده کنید.</p>
+</blockquote>
+<h3 id="_7">رمزگذاری کاراکتر</h3>
+<h4 id="acsii">ACSII</h4>
+<p>کامپیوترهایی که با رمزگذاری کاراکترهای 7 بیتی کار می کردند. این به ما 128 کاراکتر می دهد که برای اعداد، علائم نگارشی و ارقام کافی است!</p>
+<h4 id="iso-8859">ISO-8859</h4>
+<p>کاراکترهای بیشتری داشت و مجموعه‌های زیادی برای زبان‌های تایلندی، عربی و دیگر زبان‌ها داشت، اما همچنان مجموعه‌های کاراکتر ASCII داشت.</p>
+<h4 id="utf-8">UTF-8</h4>
+<p><bdi><code class="inline-code" dir="ltr">Unicode Transformation Format</code></bdi> جدیدترین روش رمزگذاری است. این یک رمزگذاری جهانی واقعی با کاراکترها نه تنها برای همه زبان های نوشتاری بلکه برای کاراکترهای سرگرم کننده مانند ¾، ♠، π و ⚤ است. با ASCII سازگار است و از واحدهای کد 8 بیتی (<strong>نه کدگذاری 8 بیتی!</strong>) استفاده می کند. در بیشتر موارد استفاده از UTF-8 ایده خوبی است و مطمئن باشید که سیستم شما عملاً در همه موارد کار می کند.</p>
+<p>نماد ###</p>
+<p>اگر نیاز به تبدیل کدنویسی به یکدیگر داشتید، دستور <bdi><code class="inline-code" dir="ltr">iconv</code></bdi> است. سوئیچ <bdi><code class="inline-code" dir="ltr">-l</code></bdi> همه کدگذاری های موجود را به شما نشان می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">iconv -f WINDOWS-1258 -t UTF-8 /tmp/myfile.txt
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: -f برای "از" و -t برای "به" است. آسان به خاطر سپردن</p>
+</blockquote>
+<p>در سال 2023 به ندرت به این دستور نیاز خواهید داشت، اما دانستن آن ضروری است، به خصوص اگر در یک کشور غیر آمریکایی زندگی می کنید!</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a><a href="1081_maintain_system_time.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">108.1 زمان سیستم را حفظ کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

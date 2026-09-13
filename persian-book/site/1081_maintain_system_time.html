@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>108.1 زمان سیستم را حفظ کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item active"><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">108.1 زمان سیستم را حفظ کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۸</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>داوطلبان باید بتوانند به درستی زمان سیستم را حفظ کرده و ساعت را از طریق NTP همگام کنند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>تاریخ و زمان سیستم را تنظیم کنید.</li>
+<li>ساعت سخت افزاری را روی زمان صحیح در UTC تنظیم کنید.</li>
+<li>منطقه زمانی صحیح را پیکربندی کنید.</li>
+<li>پیکربندی اصلی NTP با استفاده از <bdi><code class="inline-code" dir="ltr">ntpd</code></bdi> و <bdi><code class="inline-code" dir="ltr">chrony</code></bdi>.</li>
+<li>دانش استفاده از سرویس <bdi><code class="inline-code" dir="ltr">pool.ntp.org</code></bdi>.</li>
+<li>آگاهی از دستور <bdi><code class="inline-code" dir="ltr">ntpq</code></bdi>.</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/usr/share/zoneinfo/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/timezone</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/localtime</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/ntp.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/chrony.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">date</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">hwclock</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">ntpd</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">ntpdate</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">chronyc</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">pool.ntp.org</code></bdi></li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/RhH-2I1dBjA" title="YouTube video player" width="560"></iframe></div>
+<h3 id="_3">چگونه یک کامپیوتر زمان خود را نگه می دارد</h3>
+<p>یک ساعت در رایانه شما وجود دارد. یک ساعت سخت افزاری روی مادربرد شما! باتری مخصوص به خود را دارد و حتی زمانی که کامپیوتر خاموش است زمان را حفظ می کند. هنگامی که سیستم بوت می شود، سیستم عامل این <strong>زمان سخت افزاری</strong> را می خواند و <strong>زمان سیستم</strong> خود را بر اساس ساعت سخت افزاری تنظیم می کند و هر زمان که نیاز به دانستن زمان داشته باشد از این ساعت استفاده می کند.</p>
+<p>ساعت سخت افزاری می تواند در زمان محلی (زمانی که در ساعت شما در هر کجا که هستید نشان داده می شود) یا زمان UTC (زمان استاندارد) تنظیم شود. <bdi><code class="inline-code" dir="ltr">hwclock</code></bdi> را می توان برای نشان دادن زمان بر اساس hwtime استفاده کرد. ببینید بر اساس زمان سخت افزاری چگونه کار می کند حتی بعد از اینکه زمان سیستم را تغییر دادیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ date
+Fri Jun 23 01:47:22 PM +0330 2023
+$ sudo date -s "Jan 22 22:22:22 2022"
+Sat Jan 22 10:22:22 PM +0330 2022
+$ date
+Sat Jan 22 10:22:29 PM +0330 2022
+$ sudo hwclock 
+2023-06-23 13:47:41.160122+03:30
+</code></pre></div>
+<blockquote class="callout-box">
+<p>حتی زمانی که ساعت سخت افزاری روی UTC تنظیم شده است، تاریخ <bdi><code class="inline-code" dir="ltr">hwclock</code></bdi> تاریخ را در زمان محلی (زمان پس از افزودن منطقه زمانی به زمان UTC) نشان می دهد.</p>
+</blockquote>
+<p>سیستم عامل های قدیمی برای تنظیم ساعت سخت افزاری در منطقه زمانی محلی به جای منطقه زمانی استفاده می شدند. این را می توان با:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># hwclock --localtime --set --date="01/05/2023 22:04:00"
+</code></pre></div>
+<p>دستورات قبلی ساعت سخت افزاری را در آن تاریخ مشخص تنظیم می کند و به آن می گوید که این زمان محلی است. اگر می‌خواهید به زمان UTC برگردید، مسئله:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># hwclock -u -w
+</code></pre></div>
+<p>در اینجا، <bdi><code class="inline-code" dir="ltr">-w</code></bdi> به <bdi><code class="inline-code" dir="ltr">hwclock</code></bdi> می گوید که زمان سخت افزار را بر اساس زمان فعلی سیستم تنظیم کند و <bdi><code class="inline-code" dir="ltr">-u</code></bdi> به ساعت hwclock می گوید که ما از UTC استفاده می کنیم. این همچنین HWClock را با استفاده از UTC در فایل <bdi><code class="inline-code" dir="ltr">\etc\adjtime</code></bdi> تنظیم می کند.</p>
+<blockquote class="callout-box">
+<p>اگر زمانی را روی ساعت سخت افزاری تنظیم کنید بدون اینکه UTC / Local بودن آن را ذکر کنید، <bdi><code class="inline-code" dir="ltr">/etc/adjtime</code></bdi> در این مورد تصمیم می گیرد، اگر این فایل وجود نداشته باشد، از UTC استفاده می شود.</p>
+</blockquote>
+<p>شما قبلاً درباره <bdi><code class="inline-code" dir="ltr">timedatectl</code></bdi> و <bdi><code class="inline-code" dir="ltr">date</code></bdi> از [فصل محلی‌سازی و جهانی‌سازی] (http://linux1st.com/1073-localisation-and-internationalisation.html) می‌دانید، بنابراین من آنها را در اینجا تکرار نمی‌کنم.</p>
+<h3 id="_4">مناطق زمانی</h3>
+<p>ما مناطق زمانی را در فصل های قبلی دیده ایم. اما به طور خلاصه دو فایل مهم در اینجا وجود دارد.</p>
+<p><bdi><code class="inline-code" dir="ltr">/etc/timezone</code></bdi> یک فایل متنی است که منطقه زمانی شما را نشان می دهد. اگر برنامه ای بخواهد در مورد منطقه زمانی نمایش شما بداند از این مورد استفاده می شود. به عنوان مثال:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ cat /etc/timezone 
+Asia/Tehran
+</code></pre></div>
+<p>اما <bdi><code class="inline-code" dir="ltr">/etc/localtime</code></bdi> یک فایل باینری است که اطلاعات منطقه زمانی شما را برای سیستم توصیف می کند (به عنوان مثال فایل <bdi><code class="inline-code" dir="ltr">date</code></bdi>):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ls -l /etc/localtime 
+lrwxrwxrwx 1 root root 31 Jun 22 11:19 /etc/localtime -&gt; /usr/share/zoneinfo/Asia/Tehran
+$ file /usr/share/zoneinfo/Asia/Tehran
+/usr/share/zoneinfo/Asia/Tehran: timezone data, version 2, no gmt time flags, no std time flags, no leap seconds, 72 transition times, 8 abbreviation chars
+</code></pre></div>
+<p>در بسیاری از موارد، این یک پیوند نرم به فایلی است که در <bdi><code class="inline-code" dir="ltr">/usr/share/zoneinfo/</code></bdi> قرار دارد، بنابراین در صورت به‌روزرسانی سیستم، به‌روزرسانی می‌شود.</p>
+<h3 id="ntp">NTP</h3>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/ntyUBmG8F40" title="YouTube video player" width="560"></iframe></div>
+<p><strong>پروتکل زمان شبکه</strong> پروتکل مورد علاقه شخصی من است. اگر به جزئیات آن بپردازید، یکی از جالب ترین پروتکل های تاریخ است. اما متاسفانه برای LPIC1 شما نیازی به شیرجه رفتن در اعماق NTP ندارید. این پروتکل از سرورهای NTP برای پیدا کردن زمان دقیق نشان داده شده توسط بهترین ساعت های اتمی در این سیاره استفاده می کند. یکی از معروف ترین سرورهایی که توسط افراد ntp استفاده می شود <bdi><code class="inline-code" dir="ltr">pool.ntp.org</code></bdi> است. اگر آن وب سایت را بررسی کنید، خواهید دید که آن یک <strong>پول</strong> از سرورهای ntp است و با دادن <bdi><code class="inline-code" dir="ltr">pool.ntp.org</code></bdi> به سرور NTP خود، به یکی از سرورهای ntp متعدد موجود در آن استخر هدایت می شود.</p>
+<h4 id="ntpdate">ntpdate</h4>
+<p>مستقیم ترین دستور برای تنظیم ساعت سیستم <bdi><code class="inline-code" dir="ltr">ntpdate</code></bdi> است و به این صورت استفاده می شود:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ sudo ntpdate pool.ntp.org
+23 Jun 14:49:55 ntpdate[160138]: adjust time server 31.214.170.254 offset +0.020196 sec
+</code></pre></div>
+<p>پس از این، باید ساعت hwclock را با استفاده از <bdi><code class="inline-code" dir="ltr">sudo hwclock -w</code></bdi> روی زمان سیستمی که اخیراً همگام‌سازی شده است، تنظیم کنیم.</p>
+<h4 id="ntpd">ntpd</h4>
+<p>به جای اینکه هر بار زمان را به صورت دستی تنظیم کنید، می توانید از یک سرویس لینوکس به نام <bdi><code class="inline-code" dir="ltr">ntp</code></bdi> استفاده کنید تا زمان خود را با استفاده از برخی سرورهای زمان نگه دارید (معروف ترین آنها pool.ntp.org\ است. <bdi><code class="inline-code" dir="ltr">ntp</code></bdi> را نصب کنید و سرور را راه اندازی کنید:</p>
+<p>در دبیان/اوبونتو: </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code># apt install ntp
+# systemctl start ntp
+</code></pre></div>
+<p>واقعیت سرگرم کننده؟ شما نمی توانید از هر دو استفاده کنید! به این نگاه کن:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">root@funlife:~# ntpdate pool.ntp.org
+23 Jun 14:49:55 ntpdate[18670]: the NTP socket is in use, exiting
+</code></pre></div>
+<p>همانطور که می بینید، اکنون <bdi><code class="inline-code" dir="ltr">ntp</code></bdi> از درگاه NTP استفاده می کند و <bdi><code class="inline-code" dir="ltr">ntpdate</code></bdi> در راه اندازی مشکل دارد.</p>
+<p>فایل پیکربندی اصلی <bdi><code class="inline-code" dir="ltr">ntp</code></bdi> در <bdi><code class="inline-code" dir="ltr">/etc/ntp.conf</code></bdi> قرار دارد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># cat /etc/ntp.conf
+# /etc/ntp.conf, configuration for ntpd; see ntp.conf(5) for help
+
+driftfile /var/lib/ntp/ntp.drift
+
+# Enable this if you want statistics to be logged.
+#statsdir /var/log/ntpstats/
+
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+
+# You do need to talk to an NTP server or two (or three).
+#server ntp.your-provider.example
+
+# pool.ntp.org maps to about 1000 low-stratum NTP servers.  Your server will
+# pick a different set every time it starts up.  Please consider joining the
+# pool: &lt;http://www.pool.ntp.org/join.html&gt;
+pool 0.debian.pool.ntp.org iburst
+pool 1.debian.pool.ntp.org iburst
+pool 2.debian.pool.ntp.org iburst
+pool 3.debian.pool.ntp.org iburst
+
+
+# Access control configuration; see /usr/share/doc/ntp-doc/html/accopt.html for
+# details.  The web page &lt;http://support.ntp.org/bin/view/Support/AccessRestrictions&gt;
+# might also be helpful.
+#
+# Note that "restrict" applies to both servers and clients, so a configuration
+# that might be intended to block requests from certain clients could also end
+# up blocking replies from your own upstream servers.
+
+# By default, exchange time with everybody, but don't allow configuration.
+restrict -4 default kod notrap nomodify nopeer noquery limited
+restrict -6 default kod notrap nomodify nopeer noquery limited
+
+# Local users may interrogate the ntp server more closely.
+restrict 127.0.0.1
+restrict ::1
+
+# Needed for adding pool entries
+restrict source notrap nomodify noquery
+
+# Clients from this (example!) subnet have unlimited access, but only if
+# cryptographically authenticated.
+#restrict 192.168.123.0 mask 255.255.255.0 notrust
+
+
+# If you want to provide time to your local subnet, change the next line.
+# (Again, the address is an example only.)
+#broadcast 192.168.123.255
+
+# If you want to listen to time broadcasts on your local subnet, de-comment the
+# next lines.  Please do this only if you trust everybody on the network!
+#disable auth
+#broadcastclient
+</code></pre></div>
+<p>در صورت نیاز، می توانید سرورهای ntp را به سرورهایی که می خواهید استفاده کنید تغییر دهید.</p>
+<p>پیکربندی را مرور کنید و چیزهای جالبی مانند ارائه سرویس ntp خود به رایانه های دیگر خواهید دید، اگرچه برای عبور LPIC به آنها نیاز ندارید.</p>
+<h4 id="ntpq">ntpq</h4>
+<p><bdi><code class="inline-code" dir="ltr">ntpq</code></bdi> سرویس ntp را پرس و جو می کند. یکی از سوئیچ های معروف <bdi><code class="inline-code" dir="ltr">-p</code></bdi> (برای چاپ) است که استخری را که ما برای همگام سازی ساعت استفاده می کنیم نشان می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"> ntpq -p
+     remote           refid      st t when poll reach   delay   offset  jitter
+==============================================================================
+ 0.debian.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
+ 1.debian.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
+ 2.debian.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
+ 3.debian.pool.n .POOL.          16 p    -   64    0    0.000    0.000   0.000
++46.209.14.1     192.168.5.2      4 u    7   64    1   58.300  -15.546  14.519
+-ntp.tums.ac.ir  195.161.115.4    4 u    4   64    1   30.636    2.485   4.025
+*194.225.150.25  194.190.168.1    2 u    5   64    1   31.478   -3.870  95.635
++5.160.24.41     192.168.5.2      4 u    3   64    1   90.000  -28.328  21.643
+</code></pre></div>
+<p>در این خروجی یک <bdi><code class="inline-code" dir="ltr">*</code></bdi> به این معنی است که ntp از این سرور به عنوان مرجع اصلی استفاده می کند، <bdi><code class="inline-code" dir="ltr">+</code></bdi> به این معنی است که این سرور خوبی است و <bdi><code class="inline-code" dir="ltr">-</code></bdi> یک سرور خارج از محدوده را نشان می دهد که نادیده گرفته می شود.</p>
+<h3 id="_5">کرونی</h3>
+<p>پروتکل NTP دیگر و جدیدتر، <bdi><code class="inline-code" dir="ltr">chrony</code></bdi> است. در مقایسه با <bdi><code class="inline-code" dir="ltr">ntpd</code></bdi>، این ابزار نتایج بهتری را در همگام سازی شرایط دشوار مانند اتصالات شبکه متناوب (مانند لپ تاپ) و شبکه های متراکم ارائه می دهد. Chrony کلاینت پیش‌فرض NTP در RedHat 8، SUSE 15 و بسیاری از توزیع‌های دیگر است. آداون دیگه</p>
+<p>این یک نمونه فایل <bdi><code class="inline-code" dir="ltr">chrony.conf</code></bdi> است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ cat /etc/chrony/chrony.conf 
+# Welcome to the chrony configuration file. See chrony.conf(5) for more
+# information about usable directives.
+
+# Include configuration files found in /etc/chrony/conf.d.
+confdir /etc/chrony/conf.d
+
+# This will use (up to):
+# - 4 sources from ntp.ubuntu.com which some are ipv6 enabled
+# - 2 sources from 2.ubuntu.pool.ntp.org which is ipv6 enabled as well
+# - 1 source from [01].ubuntu.pool.ntp.org each (ipv4 only atm)
+# This means by default, up to 6 dual-stack and up to 2 additional IPv4-only
+# sources will be used.
+# At the same time it retains some protection against one of the entries being
+# down (compare to just using one of the lines). See (LP: #1754358) for the
+# discussion.
+#
+# About using servers from the NTP Pool Project in general see (LP: #104525).
+# Approved by Ubuntu Technical Board on 2011-02-08.
+# See http://www.pool.ntp.org/join.html for more information.
+pool ntp.ubuntu.com        iburst maxsources 4
+pool 0.ubuntu.pool.ntp.org iburst maxsources 1
+pool 1.ubuntu.pool.ntp.org iburst maxsources 1
+pool 2.ubuntu.pool.ntp.org iburst maxsources 2
+
+# Use time sources from DHCP.
+sourcedir /run/chrony-dhcp
+
+# Use NTP sources found in /etc/chrony/sources.d.
+sourcedir /etc/chrony/sources.d
+
+# This directive specify the location of the file containing ID/key pairs for
+# NTP authentication.
+keyfile /etc/chrony/chrony.keys
+
+# This directive specify the file into which chronyd will store the rate
+# information.
+driftfile /var/lib/chrony/chrony.drift
+
+# Save NTS keys and cookies.
+ntsdumpdir /var/lib/chrony
+
+# Uncomment the following line to turn logging on.
+#log tracking measurements statistics
+
+# Log files location.
+logdir /var/log/chrony
+
+# Stop bad estimates upsetting machine clock.
+maxupdateskew 100.0
+
+# This directive enables kernel synchronization (every 11 minutes) of the
+# real-time clock. Note that it can’t be used along with the 'rtcfile' directive.
+rtcsync
+
+# Step the system clock instead of slewing it if the adjustment is larger than
+# one second, but only in the first three clock updates.
+makestep 1 3
+
+# Get TAI-UTC offset and leap seconds from the system tz database.
+# This directive must be commented out when using time sources serving
+# leap-smeared time.
+leapsectz right/UTC
+</code></pre></div>
+<p>برای کنترل سرویس <bdi><code class="inline-code" dir="ltr">chrony</code></bdi>، یک CLI (واسط خط فرمان (Command Line)) وجود دارد که <bdi><code class="inline-code" dir="ltr">chronyc</code></bdi> نامیده می شود. از آن برای نظارت بر عملکرد chronyd و تغییر پارامترهای عملیاتی مختلف استفاده می شود. اگر یک "فرمان" به <bdi><code class="inline-code" dir="ltr">chronyc</code></bdi> ارسال شود، نتایج نشان داده می شود، در غیر این صورت دستوری برای صدور دستورات خود دریافت خواهید کرد. نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ chronyc tracking
+Reference ID    : 0FED61D6 (paris.time.system76.com)
+Stratum         : 3
+Ref time (UTC)  : Fri Jun 23 12:44:20 2023
+System time     : 0.001574947 seconds slow of NTP time
+Last offset     : +0.000513619 seconds
+RMS offset      : 0.065126784 seconds
+Frequency       : 8.705 ppm slow
+Residual freq   : +0.278 ppm
+Skew            : 14.972 ppm
+Root delay      : 0.180896595 seconds
+Root dispersion : 0.013603540 seconds
+Update interval : 128.6 seconds
+Leap status     : Normal
+$ chronyc
+chrony version 4.2
+Copyright (C) 1997-2003, 2007, 2009-2021 Richard P. Curnow and others
+chrony comes with ABSOLUTELY NO WARRANTY.  This is free software, and
+you are welcome to redistribute it under certain conditions.  See the
+GNU General Public License version 2 for details.
+
+chronyc&gt; activity
+200 OK
+12 sources online
+0 sources offline
+0 sources doing burst (return to online)
+0 sources doing burst (return to offline)
+3 sources with unknown address
+
+chronyc&gt; sources
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^? prod-ntp-4.ntp4.ps5.cano&gt;     2   7   375    20  +5039us[+5039us] +/-   85ms
+^? prod-ntp-5.ntp4.ps5.cano&gt;     2   7   377    83    +12ms[  +15ms] +/-   87ms
+^? prod-ntp-3.ntp4.ps5.cano&gt;     2   7   177    22    +13ms[  +17ms] +/-   91ms
+^? alphyn.canonical.com          2   7   277    22  +3298us[+6616us] +/-  185ms
+^? mail.stumpflee.com            2   7   373    19  +6221us[+6221us] +/-  117ms
+^? meetbsd.ir                    2   6   377    27    -23ms[  -20ms] +/-  231ms
+^? 188.121.119.122               3   7   377    26    -27ms[  -23ms] +/-  131ms
+^+ brazil.time.system76.com      2   7   377    20    -13ms[  -13ms] +/-  190ms
+^+ ohio.time.system76.com        2   7   377    21    +23ms[  +23ms] +/-  171ms
+^+ oregon.time.system76.com      2   7   377    23    +22ms[  +26ms] +/-  217ms
+^* paris.time.system76.com       2   7   377    24  -4880us[-1560us] +/-  109ms
+^+ virginia.time.system76.c&gt;     2   7   163    19  +5465us[+5465us] +/-  148ms
+
+chronyc&gt; exit
+$ sudo chronyc makestep
+200 OK
+
+</code></pre></div>
+<p><bdi><code class="inline-code" dir="ltr">chrnoyc</code></bdi> با استفاده از سوکت های TCP یا Unix به سرویس chrony متصل می شود. بنابراین، می‌توان از یک <bdi><code class="inline-code" dir="ltr">chronyc</code></bdi> محلی برای اتصال به <bdi><code class="inline-code" dir="ltr">chrony</code></bdi> از راه دور و صدور فرمان‌ها استفاده کرد، اگرچه در این مورد به دلایل امنیتی عمدتاً به نظارت بر دستورات محدود می‌شوید.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1073_localisation_and_internationalisation.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">107.3 بومی سازی و بین المللی سازی</span></a><a href="1082_system_logging.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">108.2 ثبت سیستم</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

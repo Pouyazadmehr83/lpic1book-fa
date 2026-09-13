@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>105.3 حذف شد! | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item active"><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">105.3 حذف شد!</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۵</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p>چقدر خوش شانس! این حذف شده است. اگر اصرار دارید این متن قدیمی بود:</p>
+<h2 id="1053-sql">105.3 مدیریت داده های SQL</h2>
+<div class="alert alert-danger" role="alert">
+  This chapter is still a Work In Progress. Do not rely on it for LPIC version 500 exam. Will be updated in a few weeks.
+</div>
+<p><em>وزن: 2</em></p>
+<p>کاندیداها باید بتوانند با استفاده از دستورات اولیه SQL از پایگاه داده پرس و جو کرده و داده ها را دستکاری کنند. این هدف شامل انجام پرس و جوهایی است که شامل پیوستن به 2 جدول و/یا انتخاب فرعی است.</p>
+<h4 id="_1">حوزه های دانش کلیدی</h4>
+<ul>
+<li>استفاده از دستورات اولیه SQL</li>
+<li>دستکاری داده های اولیه را انجام دهید</li>
+</ul>
+<h4 id="_2">شرایط و امکانات</h4>
+<ul>
+<li>درج</li>
+<li>به روز رسانی</li>
+<li>انتخاب کنید</li>
+<li><bdi><code class="inline-code" dir="ltr">rm</code></bdi></li>
+<li>از</li>
+<li>کجا</li>
+<li>گروه بر اساس</li>
+<li>سفارش توسط</li>
+<li>ملحق شوید</li>
+</ul>
+<h3 id="_3">پایگاه های داده</h3>
+<p>این ماژول در مورد زبان SQL است و MySQL یکی از بسیاری از پایگاه های داده SQL است. برای این درس، یک پایگاه داده از تعدادی <strong>جدول</strong> تشکیل شده است و هر جدول دارای تعدادی<strong><em>*</em>ها و </strong>پرونده**ها است. بیایید نگاهی بیندازیم در این درس قرار نیست پایگاه داده <em>ایجاد</em> یا <em>طراحی</em> کنیم. فقط باید درک کلی از پایگاه‌های داده (پایگاه‌های داده SQL) داشته باشید و برخی از دستورات را برای استفاده از \ (خواندن پرس و جو یا به‌روزرسانی یا اضافه کردن به آنها) بدانید. پایگاه داده ای که قرار است در این درس استفاده کنم <bdi><code class="inline-code" dir="ltr">lpic</code></bdi> نام دارد و دارای دو جدول <bdi><code class="inline-code" dir="ltr">contact</code></bdi> و <bdi><code class="inline-code" dir="ltr">info</code></bdi> است.</p>
+<h3 id="command-line-mysql">خط فرمان (Command Line) mysql</h3>
+<p>همانطور که گفتم، در اینجا قرار نیست <bdi><code class="inline-code" dir="ltr">mysql</code></bdi> را یاد بگیریم، فقط باید روی <bdi><code class="inline-code" dir="ltr">SQL</code></bdi> به عنوان یک زبان پرس و جو تمرکز کنیم. فقط باید بدانید که <bdi><code class="inline-code" dir="ltr">mysql</code></bdi> یک برنامه خط فرمان (Command Line) برای اتصال غیر فعال به یک <bdi><code class="inline-code" dir="ltr">mysql-server</code></bdi> است. من از آن به این صورت استفاده می کنم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ mysql -u root -p
+</code></pre></div>
+<p>به این معنی که من از ریشه <bdi><code class="inline-code" dir="ltr">u</code></bdi>ser استفاده خواهم کرد و یک رمز عبور ارائه خواهم کرد. همچنین می شد گفت:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ mysql -u root -p mypass lpic
+</code></pre></div>
+<p>برای ارائه پاس در خط فرمان (Command Line) (به دلایل امنیتی ایده خوبی نیست!) و به برنامه mysql بگویید هنگام شروع به پایگاه داده <bdi><code class="inline-code" dir="ltr">lpic</code></bdi> متصل شود.</p>
+<h4 id="_4">با استفاده از پایگاه داده</h4>
+<p>هنگامی که به یک پایگاه داده متصل می شوید، باید از دستور <bdi><code class="inline-code" dir="ltr">use</code></bdi> برای انتخاب پایگاه داده ای که قرار است دستورات را صادر کنید، استفاده کنید. به طور معمول یک سرور پایگاه داده (مثلا mysql) می تواند 100 پایگاه داده مختلف در خود داشته باشد که هر کدام برای یک کاربر یا برنامه است.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 5.6.25-0ubuntu0.15.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| bad                |
+| good               |
+| lpic               |
+| mysql              |
+| performance_schema |
+| ugly               |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql&gt; USE LPIC;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql&gt; SHOW TABLES;
++----------------+
+| Tables_in_lpic |
++----------------+
+| info           |
+| phonebook      |
++----------------+
+2 rows in set (0.00 sec)
+</code></pre></div>
+<p>همانطور که می بینید <bdi><code class="inline-code" dir="ltr">mysql</code></bdi> دوستانه است و میزهای دوست داشتنی را نشان می دهد! به او گفتم <bdi><code class="inline-code" dir="ltr">use lpic</code></bdi> و سپس <bdi><code class="inline-code" dir="ltr">show tables</code></bdi> و اکنون می دانم که دو جدول دارم: اطلاعات و دفترچه تلفن.</p>
+<blockquote class="callout-box">
+<p>توجه: تایپ دستورات MYSQL با حروف بزرگ و نام ها و مقادیر و .. با حروف کوچک معمول است.</p>
+</blockquote>
+<h3 id="_5">انتخاب کنید</h3>
+<p><bdi><code class="inline-code" dir="ltr">SELECt</code></bdi> واضح است! از یک جدول انتخاب می کند. وقتی مطمئن نیستیم به دنبال چه فیلدی هستیم، می‌توانیم <bdi><code class="inline-code" dir="ltr">*</code></bdi> را برای دریافت همه فیلدها انتخاب کنیم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM phonebook;
++--------+------------------+----------------+
+| name   | email            | phone          |
++--------+------------------+----------------+
+| jadi   | jadi@jadi.net    | +9890something |
+| nasrin | nasrin@lpic.test | +9898989898    |
+| sina   | far@from.here    | +687randomnum  |
+| haale  |                  | 0935secret     |
++--------+------------------+----------------+
+4 rows in set (0.00 sec)
+</code></pre></div>
+<p>یا فیلد خاصی را بخواهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT name FROM phonebook;
++--------+
+| name   |
++--------+
+| jadi   |
+| nasrin |
+| sina   |
+| haale  |
++--------+
+3 rows in set (0.00 sec)
+</code></pre></div>
+<h3 id="_6">کجا</h3>
+<p>می توانید <em>conditions</em> را با استفاده از <bdi><code class="inline-code" dir="ltr">WHERE</code></bdi> به جستارهای SQL خود اضافه کنید. بیایید به جدول دیگری که داریم نگاهی بیندازیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM info;
++--------+--------+--------+-------+
+| name   | height | weight | mood  |
++--------+--------+--------+-------+
+| jadi   |    180 |     74 | happy |
+| sina   |    175 |     81 | happy |
+| nasrin |    174 |     68 | happy |
+| mina   |    171 |     59 | sad   |
++--------+--------+--------+-------+
+4 rows in set (0.00 sec)
+</code></pre></div>
+<p>اگر فقط بخواهیم دوستان _خوشحال_مان را ببینیم چه؟</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM info WHERE mood = 'happy';
++--------+--------+--------+-------+
+| name   | height | weight | mood  |
++--------+--------+--------+-------+
+| jadi   |    180 |     74 | happy |
+| sina   |    175 |     81 | happy |
+| nasrin |    174 |     68 | happy |
++--------+--------+--------+-------+
+3 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre></div>
+<p>برای _مینا نترس بعدا خوشحالش می کنیم ولی فعلا باید دوستانی که خوشحال هستند و بیش از 80 کیلوگرم هستند را ببینیم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM info WHERE mood = 'happy' AND weight &gt;= 80;
++--------+--------+--------+-------+
+| name   | height | weight | mood  |
++--------+--------+--------+-------+
+| sina   |    175 |     81 | happy |
++--------+--------+--------+-------+
+3 rows in set (0.00 sec)
+</code></pre></div>
+<p>یا اگر فقط به نام نیاز داشتم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT name FROM info WHERE mood = 'happy' AND weight &gt;= 80;
++------+
+| name |
++------+
+| sina |
++------+
+1 row in set (0.00 sec)
+</code></pre></div>
+<h3 id="_7">سفارش توسط</h3>
+<p>اگر بخواهید داده ها را بر اساس یک فیلد <strong>مرتب کنید</strong> استفاده می شود. در اینجا من دفترچه تلفن خود را بر اساس نام افراد بررسی می کنم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM phonebook ORDER BY name;
++--------+------------------+----------------+
+| name   | email            | phone          |
++--------+------------------+----------------+
+| haale  |                  | 0935secret     |
+| jadi   | jadi@jadi.net    | +9890something |
+| nasrin | nasrin@lpic.test | +9898989898    |
+| sina   | far@from.here    | +687randomnum  |
++--------+------------------+----------------+
+4 rows in set (0.00 sec)
+</code></pre></div>
+<p>این سفارش در هر فیلدی از جمله اعداد قابل انجام است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM info ORDER BY height;
++--------+--------+--------+-------+
+| name   | height | weight | mood  |
++--------+--------+--------+-------+
+| mina   |    171 |     59 | sad   |
+| nasrin |    174 |     68 | happy |
+| sina   |    175 |     81 | happy |
+| jadi   |    180 |     74 | happy |
++--------+--------+--------+-------+
+4 rows in set (0.00 sec)
+</code></pre></div>
+<h3 id="_8">گروه توسط</h3>
+<p>این خروجی را گروه بندی می کند. متاسفانه این خیلی واضح نیست. بیایید مثال اول را ببینیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM info GROUP BY mood;
++------+--------+--------+-------+
+| name | height | weight | mood  |
++------+--------+--------+-------+
+| jadi |    180 |     74 | happy |
+| mina |    171 |     59 | sad   |
++------+--------+--------+-------+
+2 rows in set (0.00 sec)
+</code></pre></div>
+<p>ما دیدیم که فقط دو <bdi><code class="inline-code" dir="ltr">mood</code></bdi> در جدول داریم: غمگین و شاد. هنگامی که <bdi><code class="inline-code" dir="ltr">SELECT</code></bdi>همه فیلدها را (یعنی <bdi><code class="inline-code" dir="ltr">*</code></bdi>) از این جدول <bdi><code class="inline-code" dir="ltr">GROUP BY</code></bdi> می کند، SQL همه حالت ها را بررسی می کند و از هر کدام فقط یک مورد را به ما نشان می دهد. این را می توان مانند دستور <bdi><code class="inline-code" dir="ltr">uniq</code></bdi> که از LPIC101 تکیه کردید استفاده کرد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT mood FROM info GROUP BY mood;
++-------+
+| mood  |
++-------+
+| happy |
+| sad   |
++-------+
+2 rows in set (0.00 sec)
+</code></pre></div>
+<p>که همه حالات موجود در جدول را به شما می دهد. در زندگی واقعی این خیلی مفید نیست و بیشتر اوقات با <bdi><code class="inline-code" dir="ltr">count</code></bdi> ترکیب می شود. نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT count(mood), mood FROM info GROUP BY mood;
++-------------+-------+
+| count(mood) | mood  |
++-------------+-------+
+|           3 | happy |
+|           1 | sad   |
++-------------+-------+
+2 rows in set (0.00 sec)
+</code></pre></div>
+<p>به نظر می رسد خانه بسیاری از ردیف ها آن حالت خاص را دارند. بنابراین من 3 دوست شاد و یک دوست غمگین دارم.</p>
+<blockquote class="callout-box">
+<p>توجه: <bdi><code class="inline-code" dir="ltr">count</code></bdi> بخشی از LPIC 105.3 نیست</p>
+</blockquote>
+<h3 id="_9">درج کنید</h3>
+<p>یک دستور واضح دیگر. این یک ردیف جدید به یک جدول اضافه می کند. بگویید می‌خواهم مقداری داده به دفترچه تلفن اضافه کنم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt;  INSERT INTO phonebook (name, phone, email) VALUES ('ghasem', '+982112345678', '');
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; SELECT * FROM phonebook;
++--------+------------------+----------------+
+| name   | email            | phone          |
++--------+------------------+----------------+
+| jadi   | jadi@jadi.net    | +9890something |
+| nasrin | nasrin@lpic.test | +9898989898    |
+| sina   | far@from.here    | +687randomnum  |
+| haale  |                  | 0935secret     |
+| ghasem |                  | +982112345678  |
++--------+------------------+----------------+
+5 rows in set (0.00 sec)
+</code></pre></div>
+<h3 id="_10">حذف</h3>
+<p>شما آن را می دانید! این از یک جدول حذف می شود. اما مواظب چیزهایی که حذف می‌کنید باشید... شیطان شما اینجاست:</p>
+<p>mysql&gt; حذف از دفترچه تلفن WHERE name = 'ghasem'; پرس و جو تأیید شد، 1 ردیف تحت تأثیر قرار گرفت (0.01 ثانیه)</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM phonebook;
++--------+------------------+----------------+
+| name   | email            | phone          |
++--------+------------------+----------------+
+| jadi   | jadi@jadi.net    | +9890something |
+| nasrin | nasrin@lpic.test | +9898989898    |
+| sina   | far@from.here    | +687randomnum  |
+| haale  |                  | 0935secret     |
++--------+------------------+----------------+
+4 rows in set (0.00 sec)
+</code></pre></div>
+<h3 id="_11">به روز رسانی</h3>
+<p>آیا به شما گفتم که SQL شبیه انگلیسی ساده است؟ حق با من بود زیرا می دانید <bdi><code class="inline-code" dir="ltr">UPDATE</code></bdi> چه می کند! ردیف (تغییرها) را به روز می کند و دوباره <bdi><code class="inline-code" dir="ltr">WHERE</code></bdi> دوست شماست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM phonebook;
++--------+------------------+----------------+
+| name   | email            | phone          |
++--------+------------------+----------------+
+| jadi   | jadi@jadi.net    | +9890something |
+| nasrin | nasrin@lpic.test | +9898989898    |
+| sina   | far@from.here    | +687randomnum  |
+| haale  |                  | 0935secret     |
++--------+------------------+----------------+
+4 rows in set (0.00 sec)
+
+mysql&gt; UPDATE phonebook SET  email='haale@lpic.fake' WHERE name = 'haale';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; SELECT * FROM phonebook;
++--------+------------------+----------------+
+| name   | email            | phone          |
++--------+------------------+----------------+
+| jadi   | jadi@jadi.net    | +9890something |
+| nasrin | nasrin@lpic.test | +9898989898    |
+| sina   | far@from.here    | +687randomnum  |
+| haale  | haale@lpic.fake  | 0935secret     |
++--------+------------------+----------------+
+4 rows in set (0.00 sec)
+</code></pre></div>
+<h3 id="_12">بپیوندید</h3>
+<p>دستور JOIN می تواند پیچیده باشد اما خوشبختانه ما در LPIC1-Exam 102 هستیم و نیازی به یادگیری چیزهای زیادی نداریم. فقط این را بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt;  SELECT * FROM phonebook JOIN info;
++--------+------------------+----------------+--------+--------+--------+-------+
+| name   | email            | phone          | name   | height | weight | mood  |
++--------+------------------+----------------+--------+--------+--------+-------+
+| jadi   | jadi@jadi.net    | +9890something | jadi   |    180 |     74 | happy |
+| nasrin | nasrin@lpic.test | +9898989898    | jadi   |    180 |     74 | happy |
+| sina   | far@from.here    | +687randomnum  | jadi   |    180 |     74 | happy |
+| haale  | haale@lpic.fake  | 0935secret     | jadi   |    180 |     74 | happy |
+| jadi   | jadi@jadi.net    | +9890something | sina   |    175 |     81 | happy |
+| nasrin | nasrin@lpic.test | +9898989898    | sina   |    175 |     81 | happy |
+| sina   | far@from.here    | +687randomnum  | sina   |    175 |     81 | happy |
+| haale  | haale@lpic.fake  | 0935secret     | sina   |    175 |     81 | happy |
+| jadi   | jadi@jadi.net    | +9890something | nasrin |    174 |     68 | happy |
+| nasrin | nasrin@lpic.test | +9898989898    | nasrin |    174 |     68 | happy |
+| sina   | far@from.here    | +687randomnum  | nasrin |    174 |     68 | happy |
+| haale  | haale@lpic.fake  | 0935secret     | nasrin |    174 |     68 | happy |
+| jadi   | jadi@jadi.net    | +9890something | mina   |    171 |     59 | sad   |
+| nasrin | nasrin@lpic.test | +9898989898    | mina   |    171 |     59 | sad   |
+| sina   | far@from.here    | +687randomnum  | mina   |    171 |     59 | sad   |
+| haale  | haale@lpic.fake  | 0935secret     | mina   |    171 |     59 | sad   |
++--------+------------------+----------------+--------+--------+--------+-------+
+16 rows in set (0.00 sec)
+</code></pre></div>
+<p>هر ردیف از جدول اول (دفترچه تلفن) در مقابل جدول دوم (اطلاعات) کپی می شود. <em>هنوز خیلی مفید نیست. زمانی مفید می شود که یک _فیلد مشترک</em> بدهید یا بر اساس یک معیار به جداول JOIN بگویید. با استفاده از <bdi><code class="inline-code" dir="ltr">WHERE</code></bdi>. جادو اینجاست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM phonebook JOIN info ON phonebook.name = info.name;
++--------+------------------+----------------+--------+--------+--------+-------+
+| name   | email            | phone          | name   | height | weight | mood  |
++--------+------------------+----------------+--------+--------+--------+-------+
+| jadi   | jadi@jadi.net    | +9890something | jadi   |    180 |     74 | happy |
+| sina   | far@from.here    | +687randomnum  | sina   |    175 |     81 | happy |
+| nasrin | nasrin@lpic.test | +9898989898    | nasrin |    174 |     68 | happy |
++--------+------------------+----------------+--------+--------+--------+-------+
+3 rows in set (0.00 sec)
+</code></pre></div>
+<p>عالیه حالا من لیست firned ها، حالات روحی و شماره تلفن آنها را دارم! بگو من حوصله ام سر رفته است و باید با یک دوست خوب تماس بگیرم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT phonebook.name, phone, mood FROM phonebook JOIN info ON phonebook.name = info.name WHERE mood = 'happy';
++--------+----------------+-------+
+| name   | phone          | mood  |
++--------+----------------+-------+
+| jadi   | +9890something | happy |
+| sina   | +687randomnum  | happy |
+| nasrin | +9898989898    | happy |
++--------+----------------+-------+
+3 rows in set (0.00 sec)
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: هر دو جدول دارای یک فیلد به نام <bdi><code class="inline-code" dir="ltr">name</code></bdi> هستند، بنابراین باید از phonebook.name استفاده کنم تا به SQL بگویم کدام نام را می خواهم نشان دهم.</p>
+</blockquote>
+<p>بدیهی است که می‌توانیم معیارهای بیشتری اضافه کنیم و با فردی با قد کوتاه‌تر از 175 سانتی‌متر بیرون برویم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT phonebook.name, phone, mood FROM phonebook JOIN info ON phonebook.name = info.name AND height &lt; 175;
++--------+-------------+-------+
+| name   | phone       | mood  |
++--------+-------------+-------+
+| nasrin | +9898989898 | happy |
++--------+-------------+-------+
+1 row in set (0.00 sec)
+</code></pre></div>
+<p>باحال؟ اما ما هنوز تمام نشده ایم من دوست ندارم دوستان غمگینی داشته باشم و یکی دارم، اجازه دهید او را نیز خوشحال کنیم!</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; SELECT * FROM info WHERE mood = 'sad';
++------+--------+--------+------+
+| name | height | weight | mood |
++------+--------+--------+------+
+| mina |    171 |     59 | sad  |
++------+--------+--------+------+
+1 row in set (0.01 sec)
+
+mysql&gt; UPDATE info SET mood = 'happy' WHERE name = 'mina';
+Query OK, 0 rows affected (0.02 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql&gt; SELECT * FROM info WHERE mood = 'sad';                                   
+Empty set (0.00 sec)
+
+mysql&gt; SELECT * FROM info;
++--------+--------+--------+-------+
+| name   | height | weight | mood  |
++--------+--------+--------+-------+
+| jadi   |    180 |     74 | happy |
+| sina   |    175 |     81 | happy |
+| nasrin |    174 |     68 | happy |
+| mina   |    171 |     59 | happy |
++--------+--------+--------+-------+
+4 rows in set (0.00 sec)
+</code></pre></div>
+<p>آسان. دستور آخر حتی ساده تر است:</p>
+<h3 id="_13">ترک</h3>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">mysql&gt; quit
+Bye
+jadi@funlife:~$
+</code></pre></div>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1052_customize_or_write_simple_scripts.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a><a href="1061_install_and_configure_x11.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">106.1 X11 را نصب و پیکربندی کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

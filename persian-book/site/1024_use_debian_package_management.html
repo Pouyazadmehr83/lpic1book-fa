@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>102.4 از مدیریت بسته دبیان استفاده کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item active"><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">102.4 از مدیریت بسته دبیان استفاده کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۲</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>کاندیداها باید بتوانند مدیریت بسته را با استفاده از ابزارهای بسته دبیان انجام دهند.</p>
+<ul>
+<li>بسته های باینری دبیان را نصب، ارتقا و حذف نصب کنید.</li>
+<li>بسته های حاوی فایل ها یا کتابخانه های خاصی را پیدا کنید که ممکن است نصب شوند یا نباشند.</li>
+<li>اطلاعات بسته مانند نسخه، محتوا، وابستگی ها، یکپارچگی بسته، و وضعیت نصب (چه بسته نصب شده باشد یا نه) را دریافت کنید.</li>
+<li>آگاهی از apt.</li>
+</ul>
+<h2 id="_1">شرایط و امکانات</h2>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/apt/sources.list</code></bdi></li>
+<li>dpkg</li>
+<li>dpkg-تنظیم مجدد</li>
+<li>apt-get</li>
+<li>apt-cache</li>
+</ul>
+<h2 id="_2">مفهوم سیستم مدیریت بسته</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/jtwbweigRxo" title="YouTube video player" width="560"></iframe></div>
+<p>برخی از مردم فکر می کنند که در گنو/لینوکس باید تمام نرم افزارهای مورد نیاز خود را به صورت دستی کامپایل کنیم. در 99 درصد موارد اینطور نیست و در 20 سال گذشته هرگز چنین نبوده است. گنو/لینوکس سلف چیزی است که ما این روزها اپ استور می نامیم. همه توزیع‌های بزرگ دارای آرشیوهای عظیمی از نرم‌افزارهای از پیش کامپایل‌شده به نام مخازن نرم‌افزاری (Repositories) خود هستند و نوعی نرم‌افزار <strong>مدیر بسته‌ها (Package Manager)</strong> است که وظیفه جستجوی این مخازن نرم‌افزاری (Repositories)، نصب نرم‌افزار از آنها، یافتن وابستگی‌ها، نصب آنها، رفع تضادها، و به روز رسانی سیستم و نرم‌افزار نصب شده را بر عهده دارد. توزیع‌های مبتنی بر دبیان از فایل‌های <bdi><code class="inline-code" dir="ltr">.deb</code></bdi> به‌عنوان «بسته» استفاده می‌کنند و از ابزارهایی مانند <bdi><code class="inline-code" dir="ltr">apt-get</code></bdi>، <bdi><code class="inline-code" dir="ltr">dpkg</code></bdi>، <bdi><code class="inline-code" dir="ltr">apt</code></bdi>، و ابزارهای دیگر برای مدیریت آن‌ها استفاده می‌کنند.</p>
+<p>بسته های دبیان نام هایی مانند <bdi><code class="inline-code" dir="ltr">NAME_VERSION-RELEASE_ARCHITECTURE.deb</code></bdi> هستند. بگویید <bdi><code class="inline-code" dir="ltr">tmux_3.2a-4build1_amd64.deb</code></bdi>. </p>
+<h2 id="repositories">مخازن نرم‌افزاری (Repositories)</h2>
+<p>اما این بسته از کجا آمده است؟ چگونه سیستم عامل می‌داند که این بسته deb را کجا جستجو کند؟ پاسخ ** مخازن نرم‌افزاری (Repositories) ** است. هر توزیع دارای مخزن بسته های خود است. این می تواند روی یک دیسک، یک درایو شبکه، مجموعه ای از دی وی دی ها، یا معمولاً یک آدرس شبکه در اینترنت باشد. </p>
+<p>در سیستم‌های دبیان، مکان‌های اصلی پیکربندی عبارتند از:
+* <bdi><code class="inline-code" dir="ltr">/etc/apt/sources.list</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">/etc/apt/sources.list.d/</code></bdi></p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@lpicjadi:~$ cat /etc/apt/sources.list
+#deb cdrom:[Ubuntu 22.04 LTS _Jammy Jellyfish_ - Beta amd64 (20220329.1)]/ jammy main restricted
+
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+deb http://us.archive.ubuntu.com/ubuntu/ jammy main restricted
+# deb-src http://us.archive.ubuntu.com/ubuntu/ jammy main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-updates main restricted
+# deb-src http://us.archive.ubuntu.com/ubuntu/ jammy-updates main restricted
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team. Also, please note that software in the universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
+deb http://us.archive.ubuntu.com/ubuntu/ jammy universe
+# deb-src http://us.archive.ubuntu.com/ubuntu/ jammy universe
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-updates universe
+# deb-src http://us.archive.ubuntu.com/ubuntu/ jammy-updates universe
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free license. Please satisfy yourself as to
+## your rights to use the software. Also, please note that the software in
+## multiverse WILL NOT receive any review or updates from the Ubuntu
+## security team.
+deb http://us.archive.ubuntu.com/ubuntu/ jammy multiverse
+# deb-src http://us.archive.ubuntu.com/ubuntu/ jammy multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-updates multiverse
+# deb-src http://us.archive.ubuntu.com/ubuntu/ jammy-updates multiverse
+
+## N.B. software from this repository may not have been tested as
+## extensively as that contained in the main release, although it includes
+## newer versions of some applications which may provide useful features.
+## Also, please note that software in backports WILL NOT receive any review
+## or updates from the Ubuntu security team.
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+# deb-src http://us.archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+
+deb http://security.ubuntu.com/ubuntu jammy-security main restricted
+# deb-src http://security.ubuntu.com/ubuntu jammy-security main restricted
+deb http://security.ubuntu.com/ubuntu jammy-security universe
+# deb-src http://security.ubuntu.com/ubuntu jammy-security universe
+deb http://security.ubuntu.com/ubuntu jammy-security multiverse
+# deb-src http://security.ubuntu.com/ubuntu jammy-security multiverse
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.
+</code></pre></div>
+<p>به روز رسانی اطلاعات منابع:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get update
+</code></pre></div>
+<p>با این کار تمام منابع موجود در تنظیمات بررسی می شود و اطلاعات مربوط به آخرین نرم افزار موجود در آنجا به روز می شود.</p>
+<blockquote class="callout-box">
+<p>این در واقع نرم افزار را ارتقا نمی دهد. <em>به روز رسانی</em> فقط <em>اطلاعات بسته ها را به روز می کند و نه خود بسته ها</em>.</p>
+</blockquote>
+<h2 id="_3">نصب پکیج</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/IBnxIX_WceI" title="YouTube video player" width="560"></iframe></div>
+<p>بگویید درباره این مالتی پلکسر ترمینال شگفت انگیز به نام <bdi><code class="inline-code" dir="ltr">tmux</code></bdi> شنیده اید و می خواهید آن را امتحان کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ tmux
+The program 'tmux' is currently not installed. You can install it by typing:
+sudo apt-get install tmux
+$ which tmux
+$ type tmux
+bash: type: tmux: not found
+</code></pre></div>
+<p>پس بیایید آن را نصب کنیم. اگر در مخازن نرم‌افزاری (Repositories) است، کافی است به مدیر بسته‌ها (Package Manager) بگویید آن را نصب کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get install tmux
+</code></pre></div>
+<p>توجه داشته باشید که</p>
+<ul>
+<li>نصب apt-get برای تأیید درخواست شد (Y)</li>
+<li>apt-get <em>dependencies</em> را حل کرد، می داند برای نصب این بسته چه چیزی لازم است و آنها را نصب می کند</li>
+<li>بسته های دبیان چیزی هستند.deb</li>
+</ul>
+<p>اگر فقط می‌خواهید یک اجرا/شبیه‌سازی خشک انجام دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get install -s tmux
+</code></pre></div>
+<p>و این فقط فایل های مورد نیاز را بدون نصب در کش دانلود می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get install --download-only tmux
+</code></pre></div>
+<p>بسته های دانلود شده به عنوان حافظه کش (Cache) در <bdi><code class="inline-code" dir="ltr">/var/cache/apt/archive/</code></bdi> ذخیره می شوند.</p>
+<p>اگر می خواهید فقط یک بسته خاص را دانلود کنید، می توانید انجام دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>apt-get download tmux
+</code></pre></div>
+<h2 id="_4">حذف بسته های دبیان</h2>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get remove tmux
+</code></pre></div>
+<p>و اگر می خواهید وابستگی های نصب شده به طور خودکار را حذف کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ apt-get autoremove tmux
+</code></pre></div>
+<p>یا حتی</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ apt-get autoremove
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+  linux-image-3.16.0-25-generic linux-image-extra-3.16.0-25-generic
+0 upgraded, 0 newly installed, 2 to remove, and 0 not upgraded.
+After this operation, 203 MB of disk space will be freed.
+Do you want to continue? [Y/n] y
+</code></pre></div>
+<p>برای حذف خودکار هر چیزی که دیگر مورد نیاز نیست.</p>
+<p>یادداشت ها:</p>
+<ul>
+<li>حذف یک بسته، وابستگی های آن را حذف نمی کند</li>
+<li>در صورت حذف یک وابستگی، هشداری در مورد مواردی که در کنار این بسته حذف خواهند شد دریافت خواهید کرد</li>
+</ul>
+<h2 id="_5">جستجو برای بسته ها</h2>
+<p>اگر از لباس مناسب استفاده می کنید، جستجو از طریق <bdi><code class="inline-code" dir="ltr">apt-cache</code></bdi> انجام می شود یا می توانید از <bdi><code class="inline-code" dir="ltr">apt</code></bdi> عمومی استفاده کنید. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ apt-cache search "tiny window"
+$ apt search grub2
+</code></pre></div>
+<h2 id="_6">ارتقاء</h2>
+<p>برای به روز رسانی یک بسته واحد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get install tzdata
+</code></pre></div>
+<p>و برای ارتقای هر آنچه که نصب شده است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get upgrade
+</code></pre></div>
+<p>یا رفتن به توزیع جدید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">apt-get dist-upgrade
+</code></pre></div>
+<p>توجه: مانند اکثر ابزارهای دیگر، می توانید تنظیمات پیش فرض را در <bdi><code class="inline-code" dir="ltr">/etc/apt/apt.conf</code></bdi> پیکربندی کنید و یک برنامه apt-config برای این منظور وجود دارد.</p>
+<h2 id="_7">پیکربندی مجدد بسته ها</h2>
+<p>بسته‌های دبیان می‌توانند دارای اقدامات پیکربندی باشند که پس از نصب بسته انجام می‌شوند. این کار توسط <bdi><code class="inline-code" dir="ltr">debconf</code></bdi> انجام می شود. به عنوان مثال، tzdata پس از نصب از شما در مورد تنظیمات منطقه زمانی سوال خواهد کرد. اگر می‌خواهید بسته‌ای را که قبلاً نصب شده است * پیکربندی مجدد* کنید، می‌توانید از <bdi><code class="inline-code" dir="ltr">dpkg-reconfigure</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"> dpkg-reconfigure tzdata
+</code></pre></div>
+<h2 id="dpkg">اطلاعات بسته با dpkg</h2>
+<p>ابزار اساسی برای کار با فایل های <bdi><code class="inline-code" dir="ltr">.deb</code></bdi> <bdi><code class="inline-code" dir="ltr">dpkg</code></bdi> است. اگر می‌خواهید اقدامات دستی روی یک بسته deb انجام دهید، این ابزار برای رفتن شماست. قالب کلی این است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>dpkg [OPTIONS] ACTION PACKAGE
+</code></pre></div>
+<p>برخی از اقدامات رایج عبارتند از:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>سوئیچ</th>
+<th>توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c یا --contents</td>
+<td>نمایش محتویات یک بسته</td>
+</tr>
+<tr>
+<td>-C یا --audit</td>
+<td>جستجو برای بسته های نصب شده خراب و پیشنهاد راه حل</td>
+</tr>
+<tr>
+<td>--پیکربندی</td>
+<td>پیکربندی مجدد بسته نصب شده</td>
+</tr>
+<tr>
+<td>-i یا --install</td>
+<td>یک بسته را نصب یا ارتقا دهید. وابستگی ها را حل / نصب نمی کند</td>
+</tr>
+<tr>
+<td>-I یا --info</td>
+<td>نمایش اطلاعات</td>
+</tr>
+<tr>
+<td>-l یا --list</td>
+<td>لیست تمام بسته های نصب شده</td>
+</tr>
+<tr>
+<td>-L یا --listfiles</td>
+<td>لیست تمام فایل های مربوط به این بسته</td>
+</tr>
+<tr>
+<td>-P یا --purge</td>
+<td>بسته و فایل های پیکربندی آن را حذف کنید</td>
+</tr>
+<tr>
+<td>-r یا --remove</td>
+<td>بسته را بردارید؛ تنظیمات را حفظ کنید</td>
+</tr>
+<tr>
+<td>-s یا --status</td>
+<td>نمایش وضعیت یک بسته</td>
+</tr>
+<tr>
+<td>-S یا --search</td>
+<td>جستجو کنید و ببینید کدام بسته مالک این فایل است</td>
+</tr>
+</tbody>
+</table></div>
+<p>می توانید مطالب را بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@lpicjadi:/tmp$ dpkg --contents bzr_2.7.0+bzr6622+brz_all.deb
+drwxr-xr-x root/root         0 2019-09-19 18:25 ./
+drwxr-xr-x root/root         0 2019-09-19 18:25 ./usr/
+drwxr-xr-x root/root         0 2019-09-19 18:25 ./usr/share/
+drwxr-xr-x root/root         0 2019-09-19 18:25 ./usr/share/doc/
+drwxr-xr-x root/root         0 2019-09-19 18:25 ./usr/share/doc/bzr/
+-rw-r--r-- root/root       404 2019-09-19 18:25 ./usr/share/doc/bzr/NEWS.Debian.gz
+-rw-r--r-- root/root      1301 2019-09-19 18:25 ./usr/share/doc/bzr/changelog.gz
+-rw-r--r-- root/root      1769 2019-09-19 18:25 ./usr/share/doc/bzr/copyright
+</code></pre></div>
+<p>یا یک بسته deb (بدون وابستگی های آن) را نصب کنید یا وضعیت آن را بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ dpkg -s bzr
+Package: bzr
+Status: deinstall ok config-files
+Priority: optional
+Section: vcs
+Installed-Size: 102
+Maintainer: Ubuntu Developers &lt;ubuntu-devel-discuss@lists.ubuntu.com&gt;
+Architecture: all
+Version: 2.6.0+bzr6595-1ubuntu1
+Config-Version: 2.6.0+bzr6595-1ubuntu1
+Depends: python-bzrlib (&lt;= 2.6.0+bzr6595-1ubuntu1.1~), python-bzrlib (&gt;= 2.6.0+bzr6595-1ubuntu1), python:any
+Recommends: python-gpgme
+Suggests: bzr-doc, bzrtools, python-bzrlib.tests
+Breaks: bzr-pqm (&lt;&lt; 1.4.0~bzr80), bzr-xmloutput (&lt;&lt; 0.8.8+bzr160), python-bzrlib (&lt;&lt; 2.4.0~beta3~)
+Conffiles:
+ /etc/bash_completion.d/bzr b8d9ca95521a7c5f14860e205a854da2
+Description: easy to use distributed version control system
+ Bazaar is a distributed version control system designed to be easy to
+ use and intuitive, able to adapt to many workflows, reliable, and
+ easily extendable.
+ .
+ Publishing of branches can be done over plain HTTP, that is, no special
+ software is needed on the server to host Bazaar branches. Branches can
+ be pushed to the server via sftp (which most SSH installations come
+ with), FTP, or over a custom and faster protocol if bzr is installed in
+ the remote end.
+ .
+ Merging in Bazaar is easy, as the implementation can avoid many
+ spurious conflicts deals well with repeated merges between branches,
+ and can handle modifications to renamed files correctly.
+ .
+ Bazaar is written in Python and has a flexible plugin interface that
+ can be used to extend its functionality. Many plugins exist, providing
+ useful commands (bzrtools), graphical interfaces (qbzr), or native
+ interaction with Subversion branches (bzr-svn).
+ .
+ Install python-paramiko if you are going to push branches to remote
+ hosts with sftp, and python-pycurl if you'd like SSL certificates
+ always to be verified.
+Homepage: http://bazaar-vcs.org
+Original-Maintainer: Debian Bazaar Maintainers &lt;pkg-bazaar-maint@lists.alioth.debian.org&gt;
+</code></pre></div>
+<p>یا حتی <strong>پاکسازی</strong> یک بسته نصب شده. حذف بسته و تمام تنظیمات آن. برای پاکسازی بسته، از کلید <strong>-P</strong> یا <strong>--purge</strong> استفاده کنید.</p>
+<p>همچنین <strong>-L</strong> برای بررسی فایل ها و دایرکتوری (پوشه) های بسته نصب شده وجود دارد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ dpkg -L bzr
+/.
+/usr
+/usr/bin
+/usr/bin/jcal
+/usr/share
+/usr/share/doc
+/usr/share/doc/jcal
+/usr/share/doc/jcal/README
+/usr/share/doc/jcal/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/jcal.1.gz
+/usr/share/doc/jcal/changelog.Debian.gz
+</code></pre></div>
+<p>و <strong>-S</strong> نشان می دهد که کدام بسته فایل داده شده را نصب کرده است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ dpkg -S /var/lib/mplayer/prefs/mirrors
+mplayer: /var/lib/mplayer/prefs/mirrors
+</code></pre></div>
+<h2 id="apt-get">گزینه های متداول apt-get</h2>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>گزینه</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoclean</td>
+<td>بسته های استفاده نشده را حذف می کند</td>
+</tr>
+<tr>
+<td>بررسی</td>
+<td>دسی بل را برای مشکلات بررسی کنید</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>DB را تمیز کنید، می توانید یک <bdi><code class="inline-code" dir="ltr">clean all</code></bdi> انجام دهید تا همه چیز را تمیز کنید و از نو شروع کنید</td>
+</tr>
+<tr>
+<td>dist-upgrade</td>
+<td>نسخه های جدید سیستم عامل را بررسی می کند. ارتقاء اساسی</td>
+</tr>
+<tr>
+<td>نصب</td>
+<td>نصب یا ارتقاء بسته ها</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>یک بسته را حذف می کند</td>
+</tr>
+<tr>
+<td>source</td>
+<td>سورس یک بسته را نصب کنید</td>
+</tr>
+<tr>
+<td>update</td>
+<td>اطلاعات مربوط به بسته ها را از مخازن نرم‌افزاری (Repositories) به روز می کند</td>
+</tr>
+<tr>
+<td>ارتقا</td>
+<td>تمام بسته ها را ارتقا می دهد</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>در برخی موارد یک بسته نصب شده است اما بدون وابستگی مناسب (مثلاً با استفاده از <bdi><code class="inline-code" dir="ltr">dpkg</code></bdi>) یا نصب به هر دلیلی قطع می شود. در این موارد ممکن است یک <bdi><code class="inline-code" dir="ltr">apt-get install -f</code></bdi> کمک کند، <bdi><code class="inline-code" dir="ltr">-f</code></bdi> برای <bdi><code class="inline-code" dir="ltr">fix broken</code></bdi> است. </p>
+</blockquote>
+<h2 id="apt-cache">گزینه های رایج apt-cache</h2>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>گزینه</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>وابستگی</td>
+<td>نمایش وابستگی</td>
+</tr>
+<tr>
+<td>pkgnames</td>
+<td>همه بسته های نصب شده را نشان می دهد</td>
+</tr>
+<tr>
+<td>جستجو</td>
+<td>جستجو</td>
+</tr>
+<tr>
+<td>showpkg</td>
+<td>نمایش اطلاعات مربوط به یک بسته</td>
+</tr>
+<tr>
+<td>stats</td>
+<td>نمایش آمار</td>
+</tr>
+<tr>
+<td>unmet</td>
+<td>نمایش وابستگی‌های برآورده نشده برای همه بسته‌های نصب‌شده یا بسته‌هایی که مشخص کرده‌اید</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="_8">ابزارهای دیگر</h2>
+<p>ابزارهای بیشتری نیز وجود دارد، ابزارهایی با رابط کاربری گرافیکی فانتزی یا ابزارهای مبتنی بر متن و ابزارهای رابط کاربری مانند <bdi><code class="inline-code" dir="ltr">aptitude</code></bdi>.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1023_manage_shared_libraries.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a><a href="1025_use_rpm_and_yum_package_management.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

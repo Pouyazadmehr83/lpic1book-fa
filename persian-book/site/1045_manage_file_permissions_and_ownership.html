@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>104.5 مدیریت مجوزها و مالکیت فایل | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item active"><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">104.5 مدیریت مجوزها و مالکیت فایل</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۴</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>نامزدها باید بتوانند دسترسی به فایل را از طریق استفاده مناسب از مجوزها و مالکیت ها کنترل کنند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li>مجوزهای دسترسی به فایل های معمولی و خاص و همچنین دایرکتوری (پوشه) ها را مدیریت کنید.</li>
+<li>برای حفظ امنیت از حالت های دسترسی مانند suid، sgid و the sticky bit استفاده کنید.</li>
+<li>نحوه تغییر ماسک ایجاد فایل را بدانید.</li>
+<li>
+<p>از فیلد گروه برای اعطای دسترسی به فایل به اعضای گروه استفاده کنید.</p>
+</li>
+<li>
+<p>chmod</p>
+</li>
+<li>Umask</li>
+<li>چاشنی</li>
+<li>chgrp</li>
+</ul>
+<h2 id="_2">کاربران و گروه ها</h2>
+<p>یک سیستم لینوکس می تواند کاربران و گروه های زیادی داشته باشد. می توانید با یک کاربر وارد شوید و از دستور <bdi><code class="inline-code" dir="ltr">su</code></bdi> برای تغییر به گروه دیگر استفاده کنید. هر کاربر به یک گروه اصلی تعلق دارد و می تواند عضو گروه های دیگر نیز باشد.</p>
+<p>برای بررسی کاربر و گروه خود از دستورات <bdi><code class="inline-code" dir="ltr">whoami</code></bdi>، <bdi><code class="inline-code" dir="ltr">groups</code></bdi> و <bdi><code class="inline-code" dir="ltr">id</code></bdi> استفاده کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">- $ whoami
+jadi
+- $ groups
+jadi adm cdrom sudo dip plugdev netdev lpadmin sambashare debian-tor
+- $ id
+uid=1000(jadi) gid=1000(jadi) groups=1000(jadi),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),102(netdev),108(lpadmin),124(sambashare),125(debian-tor)
+- $ su root -
+Password:
+- # id
+uid=0(root) gid=0(root) groups=0(root)
+- # exit
+exit
+- $ whoami
+jadi
+</code></pre></div>
+<p>همانطور که می بینید <bdi><code class="inline-code" dir="ltr">id</code></bdi> اطلاعات کاربر و گروه را نشان می دهد.</p>
+<blockquote class="callout-box">
+<p>توجه داشته باشید که 0 UID و 0 GID متعلق به کاربر root و گروه root هستند.</p>
+</blockquote>
+<p>اینها در فایل های <bdi><code class="inline-code" dir="ltr">/etc/passwd</code></bdi> و <bdi><code class="inline-code" dir="ltr">/etc/group</code></bdi> ذخیره می شوند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ cat /etc/group | grep adm
+adm:x:4:syslog,jadi
+lpadmin:x:108:jadi
+</code></pre></div>
+<h2 id="file-permissions">مالکیت و مجوزهای دسترسی به فایل (File Permissions)</h2>
+<p>لینوکس از سه لایه دسترسی/مجوز برای هر فایل یا دایرکتوری (پوشه) استفاده می کند: کاربر، گروه و دیگران.</p>
+<p>هر فایل متعلق به یک کاربر و یک گروه است و این کاربر و اعضای آن گروه دسترسی های خواندن/نوشتن/اجرای خاصی روی آن خواهند داشت. نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -ltrh script.sh
+-rwxr-xr-x 1 jadi adm 34 Mar  5  2023 script.sh
+</code></pre></div>
+<p>در مثال بالا، <bdi><code class="inline-code" dir="ltr">jadi</code></bdi> مالک فایل است. این فایل متعلق به گروه <bdi><code class="inline-code" dir="ltr">adm</code></bdi> است و مالک (<bdi><code class="inline-code" dir="ltr">jadi</code></bdi> در اینجا) مجوزهای <strong>r</strong>ead، <strong>w</strong>rite (شامل حذف و ویرایش) و e<strong>x</strong>ecute (خواندن محتوای دایرکتوری (پوشه)) روی فایل را دارد در حالی که اعضای ____INLINE_8 فقط به &amp;.</p>
+<p><img alt="" class="content-img img-fluid" src="./images/file_permissions.png"/></p>
+<blockquote class="callout-box">
+<p>در بسیاری از توزیع ها، زمانی که کاربر ایجاد می کنید، سیستم گروهی با همین نام ایجاد می کند و فایل های آن کاربر را به آن گروه اختصاص می دهد.</p>
+</blockquote>
+<p>جدول زیر اطلاعات بیشتری را در مورد قسمت اول دستور <bdi><code class="inline-code" dir="ltr">ls -l</code></bdi> نشان می دهد:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">موقعیت</th>
+<th style="text-align: center;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">این مدخل چیست. خط تیره (-) برای فایل های معمولی، 'l' برای پیوندها و 'd' برای فهرست</td>
+</tr>
+<tr>
+<td style="text-align: center;">2،3،4</td>
+<td style="text-align: center;">خواندن، نوشتن و اجرای دسترسی برای مالک</td>
+</tr>
+<tr>
+<td style="text-align: center;">5،6،7</td>
+<td style="text-align: center;">خواندن، نوشتن و اجرای دسترسی برای اعضای گروه</td>
+</tr>
+<tr>
+<td style="text-align: center;">8,9,10</td>
+<td style="text-align: center;">خواندن، نوشتن و اجرای دسترسی برای سایر کاربران</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">نشان داده شده است که آیا روش های دسترسی دیگر (مانند SELinux) برای این فایل اعمال می شود - بخشی از آزمون LPIC 101 نیست</td>
+</tr>
+</tbody>
+</table></div>
+<p>بیایید یک مثال دیگر را بررسی کنیم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -l /sbin/fdisk
+-rwxr-xr-x 1 root root 267176 Oct 15 18:58 /sbin/fdisk
+</code></pre></div>
+<p>می‌توانیم ببینیم که <bdi><code class="inline-code" dir="ltr">fdisk</code></bdi> می‌تواند توسط مالک آن (root) خوانده شود، نوشته شود و اجرا شود. سایر کاربران (حتی اگر به گروه <bdi><code class="inline-code" dir="ltr">root</code></bdi> تعلق داشته باشند) فقط می توانند آن را بخوانند و اجرا کنند.</p>
+<blockquote class="callout-box">
+<p>اگرچه کاربران غیر روت می توانند fdisk را اجرا کنند، این برنامه اگر ببیند که یک کاربر غیر ریشه آن را اجرا می کند کار زیادی انجام نمی دهد.</p>
+</blockquote>
+<p>بیایید به مثال دیگری نگاه کنیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -l /home/
+total 12
+drwxr-xr-x 160 jadi jadi 12288 Feb  7 11:44 jadi
+</code></pre></div>
+<p>اولین کاراکتر یک <bdi><code class="inline-code" dir="ltr">d</code></bdi> است، بنابراین این یک فهرست است. مالک (<bdi><code class="inline-code" dir="ltr">jadi</code></bdi>) دسترسی خواندن، نوشتن و اجرا دارد اما سایر اعضای <bdi><code class="inline-code" dir="ltr">jadi</code></bdi> <strong>گروه</strong> و <strong>سایر</strong> فقط دسترسی خواندن و اجرا در این فهرست دارند.</p>
+<p>اجرای (<bdi><code class="inline-code" dir="ltr">x</code></bdi> نویسه) به این معنی است که آنها می توانند فایل های داخل آن را ببینند، اگر dir <bdi><code class="inline-code" dir="ltr">x</code></bdi> ندارد نگاهی بیندازید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-txt">(with root user)
+$ tree /tmp/FOO
+FOO
+├── Bar1
+└── Bar2
+
+$ ls -ld /tmp/FOO/
+drw-r--r--. 2 jadi jadi 80 Mar 23 19:32 FOO/
+
+(With other user)
+$ ls -l FOO/
+ls: cannot access 'FOO/Bar2': Permission denied
+ls: cannot access 'FOO/Bar1': Permission denied
+total 0
+-????????? ? ? ? ?            ? Bar1
+-????????? ? ? ? ?            ? Bar2
+</code></pre></div>
+<h3 id="_3">تغییر مجوزها</h3>
+<p>با استفاده از دستور <bdi><code class="inline-code" dir="ltr">chmod</code></bdi> امکان تغییر مجوزها در فایل ها و دایرکتوری (پوشه) ها وجود دارد. دو راه برای گفتن این دستور وجود دارد که می خواهید انجام دهید:</p>
+<ol>
+<li>با استفاده از کدهای هشتگانه (پایه 8).</li>
+<li>استفاده از کدهای کوتاه </li>
+</ol>
+<p>هنگام استفاده از کدهای اکتال، باید یک عدد اکتال ایجاد کنید تا به chmod بگویید چه کاری می خواهید انجام دهید. در این روش، <bdi><code class="inline-code" dir="ltr">0</code></bdi> به معنای عدم دسترسی، <bdi><code class="inline-code" dir="ltr">1</code></bdi> به معنای اجرا، <bdi><code class="inline-code" dir="ltr">2</code></bdi> به معنای نوشتن و <bdi><code class="inline-code" dir="ltr">4</code></bdi> به معنای خواندن است. بنابراین اگر می‌خواهید <strong><em>read</em></strong>+<strong><em>execute</em></strong> بدهید، باید <bdi><code class="inline-code" dir="ltr">4</code></bdi>+<bdi><code class="inline-code" dir="ltr">1</code></bdi> را بدهید که <bdi><code class="inline-code" dir="ltr">5</code></bdi> است. جدول زیر هر ترکیب ممکن را نشان می دهد:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">نمادین</th>
+<th style="text-align: center;">اکتال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">rwx</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: center;">rw-</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">r-x</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">r--</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">-wx</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">-w-</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">--x</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>بنابراین اگر می‌خواهید <bdi><code class="inline-code" dir="ltr">rwx</code></bdi> را به مالک، <bdi><code class="inline-code" dir="ltr">rx</code></bdi> را به گروه و فقط <bdi><code class="inline-code" dir="ltr">x</code></bdi> را به دیگران بدهید، باید از <bdi><code class="inline-code" dir="ltr">751</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -ltrh myfile
+-rw-rw-r-- 1 jadi jadi 0 Feb  8 21:01 myfile
+$ chmod 751 myfile
+$ ls -ltrh myfile
+-rwxr-x--x 1 jadi jadi 0 Feb  8 21:01 myfile
+</code></pre></div>
+<p>این ممکن است دشوار به نظر برسد، اما برخی از ترکیب‌های رایج مانند <bdi><code class="inline-code" dir="ltr">755</code></bdi> برای فایل‌های اجرایی عمومی یا <bdi><code class="inline-code" dir="ltr">600</code></bdi> برای فایل‌های شخصی وجود دارد.</p>
+<p>یک روش آسانتر نیز وجود دارد. در این روش <bdi><code class="inline-code" dir="ltr">u</code></bdi> به معنای کاربر، <bdi><code class="inline-code" dir="ltr">g</code></bdi> به معنای گروه و <bdi><code class="inline-code" dir="ltr">o</code></bdi> به معنای دیگران است. می‌توانید <bdi><code class="inline-code" dir="ltr">+x</code></bdi> را برای دادن مجوز اجرا، <bdi><code class="inline-code" dir="ltr">+r</code></bdi> را برای اجازه خواندن و <bdi><code class="inline-code" dir="ltr">+w</code></bdi> را برای اجازه نوشتن اضافه کنید. به عنوان مثال <bdi><code class="inline-code" dir="ltr">u+x</code></bdi> اجازه اجرا را به کاربر می دهد. اگر می‌خواهید مجوزی را حذف کنید، از علامت <bdi><code class="inline-code" dir="ltr">-</code></bdi> استفاده کنید. به عنوان مثال <bdi><code class="inline-code" dir="ltr">g-r</code></bdi> برای جلوگیری از <bdi><code class="inline-code" dir="ltr">group</code></bdi> اعضای <bdi><code class="inline-code" dir="ltr">read</code></bdi><strong><em>_</em></strong>_____ کردن فایل.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -ltrh myfile
+-rwxr-x--x 1 jadi jadi 0 Feb  8 21:01 myfile
+$ chmod u-x myfile
+$ ls -ltrh myfile
+-rw-r-x--x 1 jadi jadi 0 Feb  8 21:01 myfile
+$ chmod +x myfile
+$ chmod uo+xr myfile
+$ ls -ltrh myfile
+-rwxr-xr-x 1 jadi jadi 0 Feb  8 21:01 myfile
+</code></pre></div>
+<p>یکی از کلیدهای بسیار رایج در <bdi><code class="inline-code" dir="ltr">chmod</code></bdi>، <bdi><code class="inline-code" dir="ltr">-R</code></bdi> برای <bdi><code class="inline-code" dir="ltr">chmod</code></bdi> بازگشتی روی فایل‌ها است. این به <bdi><code class="inline-code" dir="ltr">read</code></bdi> مجوز همه فایل های داخل /tmp/ را به هر کاربری می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># chmod -R o+r /tmp
+</code></pre></div>
+<h3 id="_4">تغییر مالک و گروه ها</h3>
+<p>اگر نیاز به تغییر مالکیت یا گروه یک فایل یا دایرکتوری (پوشه) دارید، از دستور <bdi><code class="inline-code" dir="ltr">chown</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -ltrh newfile
+-rw-rw-r-- 1 jadi jadi 0 Feb  8 21:38 newfile
+$ chown root:root newfile
+chown: changing ownership of ‘newfile’: Operation not permitted
+$ sudo chown root:root newfile
+[sudo] password for jadi:
+$ ls -ltrh newfile
+-rw-rw-r-- 1 root root 0 Feb  8 21:38 newfile
+</code></pre></div>
+<p>یک سوئیچ رایج به صورت بازگشتی <bdi><code class="inline-code" dir="ltr">-R</code></bdi> به <bdi><code class="inline-code" dir="ltr">chown</code></bdi> است.</p>
+<p>در صورت نیاز به تغییر گروه فقط می توانید از دستور <bdi><code class="inline-code" dir="ltr">chgrp</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ sudo chgrp postgres newfile
+$ ls -ltrh newfile
+-rw-rw-r-- 1 root postgres 0 Feb  8 21:38 newfile
+</code></pre></div>
+<p>از طریق دستور <bdi><code class="inline-code" dir="ltr">usermod</code></bdi> می توان گروه های بیشتری را به کاربر اختصاص داد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ sudo usermod -aG sudo jadi # will add jadi to the sudo group
+</code></pre></div>
+<p>از آنجایی که کاربران می‌توانند عضو گروه‌های زیادی باشند، ممکن است لازم باشد <strong>گروه پیش‌فرض</strong> خود را هنگام ایجاد فایل تغییر دهند. برای انجام این کار، گروه ها را با دستور <bdi><code class="inline-code" dir="ltr">groups</code></bdi> بررسی کنید و پیش فرض را با <bdi><code class="inline-code" dir="ltr">newgrp</code></bdi> تنظیم کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ touch newfile
+$ ls -ltrh newfile
+-rw------- 1 jadi jadi 0 Feb  8 21:53 newfile
+$ groups
+jadi adm cdrom sudo dip plugdev netdev lpadmin sambashare debian-tor
+$ newgrp adm
+$ touch newerfile
+$ ls -ltrh new*
+-rw------- 1 jadi jadi 0 Feb  8 21:53 newfile
+-rw------- 1 jadi adm  0 Feb  8 21:54 newerfile
+</code></pre></div>
+<h2 id="_5">حالت های دسترسی</h2>
+<p>یک سوال از شما: اگر دسترسی نوشتن به <bdi><code class="inline-code" dir="ltr">/etc/passwd</code></bdi> یا <bdi><code class="inline-code" dir="ltr">/etc/shadow</code></bdi> نداریم، چگونه می‌توانیم رمز عبور خود را تغییر دهیم؟</p>
+<p>معمولاً وقتی برنامه ای را اجرا می کنید، با سطح دسترسی <em>your</em> اجرا می شود. اما اگر نیاز به اجرای برنامه ای با سطح دسترسی بالاتر داشته باشید چه اتفاقی می افتد؟ می گویند برای انجام تغییرات در فایل های رمز عبور؟ برای این لینوکس دو بیت ویژه برای هر فایل تنظیم می کند. <strong>suid</strong> (تنظیم شناسه کاربر) و <strong>sgid</strong> (تنظیم شناسه گروه). اگر این بیت ها روی یک فایل تنظیم شوند، آن فایل با دسترسی <strong>مالک</strong> (یا <strong>گروه</strong>) فایل اجرا می شود و نه کاربری که آن را اجرا می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -ltrh /usr/bin/passwd
+-rwsr-xr-x 1 root root 50K Jul 18  2014 /usr/bin/passwd
+</code></pre></div>
+<p>لطفاً به <bdi><code class="inline-code" dir="ltr">s</code></bdi> در <em>بیت اجرایی</em> برای مجوزهای کاربر و همچنین برای گروه توجه کنید؟ این بدان معناست که وقتی هر کاربری این برنامه را اجرا می کند، به جای شناسه آن کاربر، با مالک سطح دسترسی فایل (که root است) اجرا می شود.</p>
+<p>می توان <bdi><code class="inline-code" dir="ltr">suid</code></bdi> و <bdi><code class="inline-code" dir="ltr">sgid</code></bdi> را با استفاده از <bdi><code class="inline-code" dir="ltr">chmod</code></bdi> و <bdi><code class="inline-code" dir="ltr">+s</code></bdi> یا <bdi><code class="inline-code" dir="ltr">-s</code></bdi> به جای <bdi><code class="inline-code" dir="ltr">x</code></bdi> تنظیم/غیر تنظیم کرد.</p>
+<p>در حالی که ما در این مورد هستیم، اجازه دهید شما را با آخرین بیت ویژه آشنا کنم. به آن <strong>sticky bit</strong> می گویند و در صورت تنظیم، فایل را در برابر <strong><em>حذف</em></strong> مقاوم می کند. اگر بیت چسبنده تنظیم شده باشد، فقط صاحب فایل می‌تواند آن را حذف کند، حتی اگر دیگران دسترسی نوشتن به آن داشته باشند. این برای مکان هایی مانند /tmp مفید است (همه دسترسی نوشتن به دایرکتوری (پوشه) /tmp دارند اما ما نمی خواهیم دیگران فایل های ما را حذف کنند).</p>
+<p>بیت چسبنده با <bdi><code class="inline-code" dir="ltr">t</code></bdi> شناسایی می شود و در آخرین بیت از یک <bdi><code class="inline-code" dir="ltr">ls -l</code></bdi> نشان داده می شود:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ ls -dl /tmp
+drwxrwxrwt 13 root root 77824 Feb  8 21:27 /tmp
+</code></pre></div>
+<p>همانطور که می بینید بیت چسبنده تنظیم شده است و اگرچه همه کاربران در این دایرکتوری (پوشه) دسترسی نوشتن دارند، نمی توانند فایل های یکدیگر را حذف کنند.</p>
+<p>اجازه می‌دهد نحوه تنظیم این حالت‌های دسترسی را مرور کنیم:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">حالت دسترسی</th>
+<th style="text-align: center;">هشتی</th>
+<th style="text-align: center;">نمادین</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">suid</td>
+<td style="text-align: center;">4000</td>
+<td style="text-align: center;">u+s</td>
+</tr>
+<tr>
+<td style="text-align: center;">sgid</td>
+<td style="text-align: center;">2000</td>
+<td style="text-align: center;">g+s</td>
+</tr>
+<tr>
+<td style="text-align: center;">چسبنده</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">+t</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>راهنما در یک دایرکتوری (پوشه)، هر فایل جدیدی را در آن دایرکتوری (پوشه) مجبور می کند که راهنمای خود دایرکتوری (پوشه) را داشته باشد.</p>
+</blockquote>
+<h2 id="_6">ماسک</h2>
+<p>یک سوال پیچیده دیگر: مجوزهای یک فایل جدید ایجاد شده چیست؟ اگر فایلی که وجود ندارد <bdi><code class="inline-code" dir="ltr">touch</code></bdi> باشد، چه اتفاقی می‌افتد؟ مجوزهای آن چه خواهد بود؟ این توسط <bdi><code class="inline-code" dir="ltr">umask</code></bdi> تنظیم شده است. این دستور به سیستم می گوید که چه مجوزهایی (علاوه بر اجرا) **نباید به ** فایل های جدید داده شود. به عبارت دیگر، تصور کنید که همه فایل‌های جدید دارای مجوز هشتگانه <bdi><code class="inline-code" dir="ltr">666</code></bdi> باشند (نوشتن + خواندن برای کاربر، گروه و دیگران)، بنابراین یک ماسک از 0002 (بله! 4 رقم) 2 (نوشتن) را برای دیگران حذف می‌کند (666-0002=664):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ umask
+0002
+</code></pre></div>
+<p>اگر بخواهیم umask را تغییر دهیم، می توان با همان دستور این کار را انجام داد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ umask
+0002
+$ touch newfile
+$ ls -ltrh newfile
+-rw-rw-r-- 1 jadi jadi 0 Feb  8 21:38 newfile
+$ mkdir newdir
+$ ls -ltrhd newdir
+drwxrwxr-x 2 jadi jadi 4.0K Feb  8 21:38 newdir
+$ umask u=rw,g=,o=
+$ touch newerfile
+$ ls -l newerfile
+-rw------- 1 jadi jadi 0 Feb  8 21:41 newerfile
+$ umask
+0177
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه داشته باشید که چگونه از <bdi><code class="inline-code" dir="ltr">u=rw,g=,o=</code></bdi> استفاده کردم تا به <bdi><code class="inline-code" dir="ltr">umask</code></bdi> یا <bdi><code class="inline-code" dir="ltr">chmod</code></bdi> بگویم دقیقاً چه چیزی از آن می‌خواستم.</p>
+</blockquote>
+                </div>
+
+                <div class="chapter-pager"><a href="1044_manage_disk_quotas.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">104.4 حذف شد</span></a><a href="1046_create_and_change_hard_and_symbolic_links.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

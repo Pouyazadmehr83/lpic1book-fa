@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>108.3 اصول اولیه عامل انتقال نامه (MTA). | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item active"><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۸</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 3</em></p>
+<p>کاندیداها باید از برنامه های متداول MTA در دسترس آگاه باشند و بتوانند تنظیمات اولیه فوروارد و نام مستعار را در میزبان مشتری انجام دهند. سایر فایل های پیکربندی پوشش داده نمی شوند.</p>
+<h3 id="_1">حوزه های دانش کلیدی</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">uname</code></bdi> مستعار ایمیل ایجاد کنید.</li>
+<li>پیکربندی ارسال ایمیل.</li>
+<li>دانش برنامه های متداول MTA (<bdi><code class="inline-code" dir="ltr">postfix</code></bdi>, <bdi><code class="inline-code" dir="ltr">sendmail</code></bdi>, <bdi><code class="inline-code" dir="ltr">exim</code></bdi>) (بدون پیکربندی)</li>
+</ul>
+<h3 id="_2">شرایط و امکانات</h3>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">~/.forward</code></bdi></li>
+<li>دستورات لایه شبیه سازی sendmail</li>
+<li><bdi><code class="inline-code" dir="ltr">newaliases</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">mail</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">mailq</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">postfix</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">sendmail</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">exim</code></bdi></li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/0Uh7jUFQAWs" title="YouTube video player" width="560"></iframe></div>
+<h3 id="mtas">MTAs</h3>
+<p>ایمیل بخشی جدایی ناپذیر از بسیاری از سیستم های گنو/لینوکس و یونیکس است. هر کاربر یک صندوق پستی دارد و می‌تواند برای سایر کاربران محلی ایمیل ارسال یا دریافت کند. این کار از طریق MTAs (Mai Transfer Agents) انجام می شود. به عبارت دیگر، MTAها برنامه هایی هستند که ایمیل ها را در سیستم عامل شما مدیریت می کنند. آنها می توانند ایمیل ها را به صورت محلی و از طریق شبکه دریافت و ارسال کنند. گزینه های مختلفی برای MTA ها وجود دارد. در این بخش، مروری سریع بر روی آن‌ها انجام می‌دهیم و خواهید دید که چگونه می‌توانید ایمیل‌ها را به موارد دیگر (یا از طریق اینترنت) ارسال کنید و چگونه می‌توانید ایمیل‌های محلی خود را بررسی کنید.</p>
+<h4 id="_3">ارسال ایمیل</h4>
+<p>یکی از قدیمی ترین گزینه های موجود است. پیکربندی آن بسیار بزرگ و به نوعی دشوار است و نه آنچنان امنیتی. به همین دلیل، تعداد کمی از سیستم ها از آن به عنوان پیش فرض MTA خود استفاده می کنند.</p>
+<h4 id="exim">exim</h4>
+<p>هدف آن این است که یک ارسال کننده عمومی و انعطاف پذیر با امکانات گسترده برای بررسی ایمیل های دریافتی باشد. این ویژگی غنی از ACL ها، احراز هویت و بسیاری از ویژگی های دیگر است.</p>
+<h4 id="_4">پسوند</h4>
+<p>این یک جایگزین جدید برای <bdi><code class="inline-code" dir="ltr">sendmail</code></bdi> است و از فایل های پیکربندی آسان برای درک استفاده می کند. از چندین دامنه، رمزگذاری و غیره پشتیبانی می کند. Postfix همان چیزی است که در اکثر توزیع ها به عنوان MTA پیش فرض می بینید.</p>
+<blockquote class="callout-box">
+<p>اکثر توزیع های دسکتاپ MTA را به طور پیش فرض نصب نمی کنند. اگر می خواهید، پیشنهاد می کنم <bdi><code class="inline-code" dir="ltr">postfix</code></bdi> (و <bdi><code class="inline-code" dir="ltr">mailx</code></bdi> یا <bdi><code class="inline-code" dir="ltr">bsd-mailx</code></bdi>) را از طریق مدیر بسته‌ها (Package Manager) خود نصب کنید.</p>
+</blockquote>
+<h3 id="sendmail">لایه شبیه سازی sendmail</h3>
+<p>همانطور که می دانید، <bdi><code class="inline-code" dir="ltr">sendmail</code></bdi> قدیمی ترین MTA موجود است و بنابراین، بسیاری از MTA های دیگر سعی می کنند از آن پیروی کنند و دارای یک لایه <em>sendmail شبیه سازی</em> هستند تا خود را با sendmail سازگار نگه دارند. به همین دلیل است که می توانید <bdi><code class="inline-code" dir="ltr">sendmail</code></bdi> را در هر توزیعی که هستید تایپ کنید یا از <bdi><code class="inline-code" dir="ltr">mailq</code></bdi> استفاده کنید و ایمیل خود را بدون توجه به انتخاب MTA خود بررسی کنید.</p>
+<h3 id="_5">نام مستعار</h3>
+<p>تعدادی نام مستعار ایمیل در سیستم وجود دارد. در <bdi><code class="inline-code" dir="ltr">/etc/aliases</code></bdi> تعریف شده است.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ cat /etc/aliases
+#
+#  Aliases in this file will NOT be expanded in the header from
+#  Mail, but WILL be visible over networks or from /bin/mail.
+#
+#       &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      The program "newaliases" must be run after
+#       &gt;&gt; NOTE &gt;&gt;      this file is updated for any changes to
+#       &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      show through to sendmail.
+#
+
+# Basic system aliases -- these MUST be present.
+mailer-daemon:  postmaster
+postmaster:     root
+
+# General redirections for pseudo accounts.
+bin:            root
+daemon:         root
+adm:            root
+lp:             root
+sync:           root
+shutdown:       root
+halt:           root
+mail:           root
+news:           root
+uucp:           root
+operator:       root
+games:          root
+www:            webmaster
+webmaster:      root
+[ .... ]
+</code></pre></div>
+<p>این به سیستم می گوید که اگر پیامی برای <em>news</em> وجود دارد، باید به <em>root</em> تحویل داده شود و اگر ایمیل به <em>www</em> نوشته شده است باید به <em>وب مستر</em> تحویل داده شود. </p>
+<p>در صورت تغییر در این فایل، باید دستور <bdi><code class="inline-code" dir="ltr">newaliases</code></bdi> را اجرا کنید.</p>
+<h3 id="_6">ارسال نامه</h3>
+<p>امکان ارسال ایمیل از خط فرمان (Command Line) با استفاده از دستور <bdi><code class="inline-code" dir="ltr">mail</code></bdi> وجود دارد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">[jadi@funlife ~]$ mail news
+Subject: Email to news user
+hahah.. we know where this will go.
+this will go to root and then to jadi!
+
+Hi Jadi!
+
+Cc:
+[jadi@funlife ~]$ mail
+Mail version 8.1.2 01/15/2001.  Type ? for help.
+"/var/mail/jadi": 12 messages 12 new
+&gt;N  1 root@funlife       Sat Jan 02 08:50   39/1373  apt-listchanges: news for f
+ N  2 root@funlife       Sat Jan 02 09:01  165/7438  apt-listchanges: news for f
+ N  3 jadi@funlife       Sat Jan 02 19:58   18/640   *** SECURITY information fo
+ N  4 jadi@funlife       Sat Jan 02 20:04   18/631   *** SECURITY information fo
+ N  5 jadi@funlife       Sun Jan 03 10:15   18/664   *** SECURITY information fo
+ N  6 root@funlife       Mon Jan 04 12:42   27/941   Cron &lt;jadi@funlife&gt; /home/j
+ N  7 root@funlife       Mon Jan 04 17:11   26/845   apt-listchanges: news for f
+ N  8 root@funlife       Tue Jan 05 18:42   27/945   Cron &lt;jadi@funlife&gt; /home/j
+ N  9 root@funlife       Wed Jan 06 09:17   46/1788  apt-listchanges: news for f
+ N 10 root@funlife       Thu Jan 07 12:42   27/945   Cron &lt;jadi@funlife&gt; /home/j
+ N 11 root@funlife       Thu Jan 07 18:42   27/943   Cron &lt;jadi@funlife&gt; /home/j
+ N 12 jadi@funlife       Thu Jan  7 19:53   17/478   Email to news user
+&amp; 12
+Message 12:
+From jadi@funlife  Thu Jan  7 19:53:08 2016
+X-Original-To: news
+To: news@funlife
+Subject: Email to news user
+Date: Thu,  7 Jan 2016 19:53:08 +0330 (IRST)
+From: jadi@funlife (jadi)
+
+hahah.. we know where this will go.
+this will go to root and then to jadi!
+
+Hi Jadi!
+
+&amp; d
+&amp; q
+Held 11 messages in /var/mail/jadi
+</code></pre></div>
+<h3 id="_7">مهاجمان محلی</h3>
+<p>دیدیم که می‌توان ایمیل‌ها را با استفاده از <bdi><code class="inline-code" dir="ltr">/etc/aliases</code></bdi> فوروارد کرد. آن فایل توسط کاربران عادی قابل نوشتن نیست، پس یک کاربر معمولی مانند <em>jadi</em> باید چه کار کند؟</p>
+<p>هر کاربر می‌تواند یک فایل <bdi><code class="inline-code" dir="ltr">.forward</code></bdi> در فهرست راهنمای خود ایجاد کند و تمام نامه‌های هدفمند به آن کاربر به آن آدرس بازارسال می‌شود.</p>
+<blockquote class="callout-box">
+<p>حتی می توانید یک آدرس ایمیل کامل مانند <bdi><code class="inline-code" dir="ltr">jadijadi@gmail.com</code></bdi> را در فایل <bdi><code class="inline-code" dir="ltr">.forward</code></bdi> خود قرار دهید.</p>
+</blockquote>
+<p>همچنین می‌تواند از طریق خط فرمان (Command Line) یا حتی در اسکریپت‌های شما ایمیل ارسال کند و چیزی مانند <bdi><code class="inline-code" dir="ltr">echo -e "email content" | mail -s "email subject" "example@example.com"</code></bdi> ارسال کند.</p>
+<h3 id="mailq">mailq</h3>
+<p>این دستور صف ایمیل را لیست می کند. هر ورودی شناسه فایل صف، اندازه پیام، زمان رسیدن، فرستنده و گیرندگانی که هنوز باید تحویل داده شوند را نشان می دهد. اگر نامه در آخرین تلاش تحویل داده نشد، دلیل شکست نشان داده می شود. sysadmin می تواند از این دستور برای بررسی وضعیت ایمیل هایی که هنوز در صف هستند استفاده کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ mailq
+-Queue ID- --Size-- ----Arrival Time---- -Sender/Recipient-------
+AA52C228E6B      468 Thu Jan  7 19:59:41  jadi@funlife
+(connect to alt2.gmail-smtp-in.l.google.com[2404:6800:4003:c01::1a]:25: Network is unreachable)
+                                         jadijadi@gmail.com
+
+-- 0 Kbytes in 1 Request.
+</code></pre></div>
+                </div>
+
+                <div class="chapter-pager"><a href="1082_system_logging.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">108.2 ثبت سیستم</span></a><a href="1084_manage_printers_and_printing.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

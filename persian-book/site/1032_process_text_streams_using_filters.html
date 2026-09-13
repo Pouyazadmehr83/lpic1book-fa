@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>103.2 جریان های متن را با استفاده از فیلترها پردازش کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item active"><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۳</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 2</em></p>
+<p>توضیحات: داوطلبان باید بتوانند فیلترهایی را برای جریان متن اعمال کنند.</p>
+<h2 id="_1">اهداف</h2>
+<p>فایل‌های متنی و جریان‌های خروجی را از طریق فیلترهای ابزار متن ارسال کنید تا خروجی را با استفاده از دستورات استاندارد یونیکس موجود در بسته GNU textutils تغییر دهید.</p>
+<h2 id="_2">شرایط</h2>
+<ul>
+<li>bzcat</li>
+<li><bdi><code class="inline-code" dir="ltr">cat</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">cut</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">head</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">less</code></bdi></li>
+<li>md5sum</li>
+<li>nl</li>
+<li>od
+<em>رب
+</em>سد</li>
+<li>sha256sum</li>
+<li>sha512sum</li>
+<li><bdi><code class="inline-code" dir="ltr">sort</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">split</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">tail</code></bdi></li>
+<li>tr</li>
+<li>یونیک</li>
+<li>توالت فرنگی</li>
+<li>xzcat</li>
+<li>zcat</li>
+</ul>
+<h2 id="_3">جریان</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/2mTH7HbErh8" title="YouTube video player" width="560"></iframe></div>
+<p>در دنیای <strong>یونیکس</strong> بسیاری از داده ها به صورت TEXT هستند. فایل‌های گزارش، پیکربندی‌ها، داده‌ها و غیره. <strong>فیلتر کردن</strong> این داده به معنای گرفتن جریان ورودی متن و انجام مقداری تبدیل روی متن قبل از ارسال آن به جریان خروجی است. در این زمینه، <strong>جریان</strong> چیزی بیش از <em>"توالی بایتی است که می توان با استفاده از توابع کتابخانه ای که جزئیات یک دستگاه زیرین را از برنامه مخفی می کند خوانده یا نوشت"</em> نیست.</p>
+<p>به عبارت ساده، جریان متن ورودی متنی از یک صفحه کلید، یک فایل، یک دستگاه شبکه و ... است که از طریق دستورات text util قابل مشاهده، تغییر، بررسی و ... است.</p>
+<p>محیط‌ها و پوسته‌های برنامه‌نویسی مدرن (از جمله bash) از سه جریان ورودی/خروجی استاندارد (Standard Output - stdout) استفاده می‌کنند:</p>
+<ul>
+<li><strong>stdin</strong> جریان ورودی استاندارد (Standard Input - stdin) است که ورودی دستورات را فراهم می کند.</li>
+<li><strong>stdout</strong> جریان خروجی استاندارد (Standard Output - stdout) است که خروجی از دستورات را نمایش می دهد.</li>
+<li><strong>stderr</strong> جریان خطای استاندارد (Standard Error - stderr) است که خروجی خطا از دستورات را نمایش می دهد</li>
+</ul>
+<p>در اینجا ما در مورد <strong>stdin</strong> و مشاهده یا دستکاری آن از طریق دستورات و ابزارهای مختلف صحبت می کنیم. در مورد این جریان‌ها بیشتر خواهید دید و خواهید دید که چگونه می‌توانیم دستورات را با ورودی‌ها و خروجی‌های <em>PIPE</em> دستورات مختلف در فصل 103.4 ترکیب کنیم.</p>
+<h2 id="_4">مشاهده دستورات</h2>
+<h3 id="_5">گربه</h3>
+<p>این دستور به سادگی جریان ورودی خود را (یا نام فایلی که به آن می‌دهید) خروجی می‌دهد. همانطور که در قسمت قبل دیدید. مانند اکثر دستورات، اگر ورودی به آن ندهید، داده ها را از صفحه کلید می خواند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat &gt; mydata
+test
+this is the second line
+bye
+jadi@funlife:~/w/lpic/101$ cat mydata
+test
+this is the second line
+bye
+</code></pre></div>
+<blockquote class="callout-box">
+<p>هنگام وارد کردن ورودی از طریق صفحه کلید، <bdi><code class="inline-code" dir="ltr">ctrl+d</code></bdi> جریان را پایان می دهد.</p>
+</blockquote>
+<p>همچنین می‌توانید بیش از یک نام فایل ورودی ارائه دهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat mydata directory_data
+test
+this is the second line
+bye
+total 0
+-rw-rw-r-- 1 jadi jadi 0 Jan  4 17:33 12
+-rw-rw-r-- 1 jadi jadi 0 Jan  4 17:33 62
+-rw-rw-r-- 1 jadi jadi 0 Jan  4 17:33 neda
+-rw-rw-r-- 1 jadi jadi 0 Jan  4 17:33 jadi
+-rw-rw-r-- 1 jadi jadi 0 Jan  4 17:33 you
+-rw-rw-r-- 1 jadi jadi 0 Jan  4 17:34 amir
+-rw-rw-r-- 1 jadi jadi 0 Jan  4 17:37 directory_data
+</code></pre></div>
+<p>برخی از کلیدهای متداول گربه عبارتند از <bdi><code class="inline-code" dir="ltr">-n</code></bdi> برای نشان دادن شماره خطوط، <bdi><code class="inline-code" dir="ltr">-s</code></bdi> برای فشردن جاهای خالی، <bdi><code class="inline-code" dir="ltr">-T</code></bdi> برای نشان دادن برگه ها، و <bdi><code class="inline-code" dir="ltr">-v</code></bdi> برای نشان دادن کاراکترهای غیرچاپی.</p>
+<h3 id="bzcat-xzcat-zcat-gzcat">bzcat، xzcat، zcat، gzcat</h3>
+<p>برای مستقیم <bdi><code class="inline-code" dir="ltr">cat</code></bdi> فایل های فشرده bz، xz، و Z و gz استفاده می شود. اینها به شما امکان می دهند محتویات فایل های فشرده را بدون اینکه ابتدا آنها را از حالت فشرده خارج کنید، مشاهده کنید.</p>
+<h3 id="_6">کمتر</h3>
+<p>این یک ابزار قدرتمند برای مشاهده فایل های متنی بزرگتر است. می تواند صفحه بندی، جستجو و حرکت در فایل های متنی را انجام دهد.</p>
+<blockquote class="callout-box">
+<p>دستور دیگری به نام <bdi><code class="inline-code" dir="ltr">more</code></bdi> وجود دارد. برای افرادی که از محیط DOS می آیند بیشتر آشناست و در دنیای لینوکس چندان رایج نیست. از آن استفاده نکنید. به خاطر داشته باشید: <bdi><code class="inline-code" dir="ltr">less</code></bdi> بیشتر از <bdi><code class="inline-code" dir="ltr">more</code></bdi> است.</p>
+</blockquote>
+<p>برخی از دستورات کمتر رایج به شرح زیر است.</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>فرمان</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ق</td>
+<td>خروج</td>
+</tr>
+<tr>
+<td>/foo</td>
+<td>جستجوی foo</td>
+</tr>
+<tr>
+<td>n</td>
+<td>بعدی (جستجو)</td>
+</tr>
+<tr>
+<td>N</td>
+<td>قبلی (جستجو)</td>
+</tr>
+<tr>
+<td>?foo</td>
+<td>جستجوی عقب برای foo</td>
+</tr>
+<tr>
+<td>G</td>
+<td>به پایان بروید</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>به خط n بروید</td>
+</tr>
+<tr>
+<td>PageUp, PageDown, UpArrow, DownArrow</td>
+<td>شما حدس بزنید!</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="od">od</h3>
+<p>این دستور _dump_s files (فایل‌ها را در قالب‌هایی غیر از متن نشان می‌دهد. رفتار عادی OctalDump است (نمایش در پایه 8):</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ od mydata
+0000000 062564 072163 072012 064550 020163 071551 072040 062550
+0000020 071440 061545 067543 062156 066040 067151 005145 074542
+0000040 005145
+0000042
+</code></pre></div>
+<p>به اندازه کافی برای انسان های عادی خوب نیست. بیایید از چند سوئیچ استفاده کنیم:</p>
+<ul>
+<li><strong>-t</strong> نشان می دهد که چه فرمتی چاپ شود:
+  <bdi><code class="inline-code" dir="ltr">-t a</code></bdi> فقط برای نمایش نویسه‌های نام‌گذاری شده
+  <bdi><code class="inline-code" dir="ltr">-t c</code></bdi> برای نمایش نویسه های فرار شده.
+می توانید دو مورد بالا را به <bdi><code class="inline-code" dir="ltr">-a</code></bdi> و <bdi><code class="inline-code" dir="ltr">-c</code></bdi> خلاصه کنید</li>
+<li><strong>-A</strong> برای انتخاب نحوه ارائه فیلد افست: 
+   <bdi><code class="inline-code" dir="ltr">-A d</code></bdi> برای اعشار،
+   <bdi><code class="inline-code" dir="ltr">-A o</code></bdi> برای Octal،
+   <bdi><code class="inline-code" dir="ltr">-A x</code></bdi> برای هگز 
+   <bdi><code class="inline-code" dir="ltr">-A n</code></bdi> برای هیچکدام</li>
+</ul>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">od</code></bdi> برای یافتن مشکلات در فایل‌های متنی شما بسیار مفید است - بگویید که آیا از برگه‌ها استفاده می‌کنید یا انتهای خطوط درست است.</p>
+</blockquote>
+<h2 id="_7">انتخاب بخش هایی از فایل ها</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/nw3Ic3RxbVI" title="YouTube video player" width="560"></iframe></div>
+<h3 id="_8">تقسیم</h3>
+<p>فایل ها را تقسیم می کند. این برای انتقال فایل های عظیم در رسانه های کوچکتر بسیار مفید است (مثلاً یک فایل 3 ترابایتی را به قطعات 8 گیگابایتی تقسیم کنید و آنها را به دستگاه دیگری با دیسک USB منتقل کنید).</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat mydata
+hello
+this is the second line
+but as you can see we are
+still writing
+and this is getting longer
+.
+.
+and longer
+and longer!
+jadi@funlife:~/w/lpic/101$ ls
+mydata
+jadi@funlife:~/w/lpic/101$ split -l 2 mydata
+jadi@funlife:~/w/lpic/101$ ls
+mydata    xaa  xab  xac  xad  xae
+jadi@funlife:~/w/lpic/101$ cat xab
+but as you can see we are
+still writing
+</code></pre></div>
+<ul>
+<li>به طور پیش فرض، split از xaa، xab، xac، ... برای نام فایل های خروجی استفاده می کند. می توان آن را با <bdi><code class="inline-code" dir="ltr">split -l 2 mydata output</code></bdi> تغییر داد که mydata را به outputaa، outputab، ... تقسیم می کند. 2 خط در هر فایل</li>
+<li><bdi><code class="inline-code" dir="ltr">-l 2</code></bdi> 2 خط را در هر فایل تقسیم می کند. می توان از <bdi><code class="inline-code" dir="ltr">-b 42</code></bdi> برای تقسیم هر 42 بایت یا حتی <bdi><code class="inline-code" dir="ltr">-n 5</code></bdi> برای اجبار 5 فایل خروجی استفاده کرد.</li>
+<li>اگر خروجی عددی می خواهید (x00, x01, ..) از گزینه <bdi><code class="inline-code" dir="ltr">-d</code></bdi> استفاده کنید.</li>
+</ul>
+<blockquote class="callout-box">
+<p>آیا باید به این فایل ها بپیوندید؟ <bdi><code class="inline-code" dir="ltr">cat</code></bdi> آنها را با <bdi><code class="inline-code" dir="ltr">cat x* &gt; originalfile</code></bdi>.</p>
+</blockquote>
+<h3 id="_9">سر و دم</h3>
+<p>ابتدا (سر) یا انتهای (دم) فایل های متنی را نشان می دهد. به‌طور پیش‌فرض، 10 خط نشان داده می‌شود، اما می‌توانید آن را با <bdi><code class="inline-code" dir="ltr">-n20</code></bdi> یا <bdi><code class="inline-code" dir="ltr">-20</code></bdi> تغییر دهید.</p>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">tail -f</code></bdi> خطوط جدیدی را که در انتهای فایل نوشته می شود، دنبال می کند. بسیار مفید.</p>
+</blockquote>
+<h3 id="_10">برش</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">cut</code></bdi> یک یا چند ستون از یک فایل را برش می دهد. مناسب برای جداسازی فیلدها:</p>
+<p>بیایید قسمت <em>first</em> یک فایل را برش دهیم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat howcool
+jadi    5
+sina    6
+rubic    2
+you     12
+jadi@funlife:~/w/lpic/101$ cut -f1 howcool
+jadi
+sina
+rubic
+you
+</code></pre></div>
+<blockquote class="callout-box">
+<p>جداکننده پیش‌فرض TAB است. از <bdi><code class="inline-code" dir="ltr">-dx</code></bdi> برای تغییر آن به "x" یا <bdi><code class="inline-code" dir="ltr">-d' '</code></bdi> برای تغییر آن به فاصله استفاده کنید</p>
+</blockquote>
+<p>همچنین می توان فیلدهای 1، 2، و 3 را با <bdi><code class="inline-code" dir="ltr">-f1-3</code></bdi> یا فقط کاراکترهایی با نمایه 4، 5، 7، 8 از هر خط <bdi><code class="inline-code" dir="ltr">-c4,5,7,8</code></bdi>_برش داد.</p>
+<h2 id="_11">تغییر جریان</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/IpJpI3CzN_o" title="YouTube video player" width="560"></iframe></div>
+<h3 id="nl">nl</h3>
+<p>این دستور برای نمایش شماره خطوط است.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ nl mydata  | head -3
+     1    hello
+     2    this is the second line
+     3    but as you can see we are
+</code></pre></div>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">cat -n</code></bdi> همچنین خطوط را شماره گذاری می کند.</p>
+</blockquote>
+<h3 id="_12">مرتب سازی و یونیک</h3>
+<p>ورودی(ها) خود را مرتب می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat uses
+you fedora
+jadi ubuntu
+rubic windows
+neda mac
+jadi@funlife:~/w/lpic/101$ cat howcool
+jadi    5
+sina    6
+rubic    2
+you     12
+jadi@funlife:~/w/lpic/101$ sort howcool uses
+jadi    5
+jadi ubuntu
+neda mac
+rubic    2
+rubic windows
+sina    6
+you     12
+</code></pre></div>
+<p>اگر مرتب‌سازی معکوس می‌خواهید، از کلید <bdi><code class="inline-code" dir="ltr">-r</code></bdi> استفاده کنید.</p>
+<blockquote class="callout-box">
+<p>اگر می‌خواهید NUMERICALLY (بنابراین 9 کمتر از 19 باشد) مرتب کنید، از <bdi><code class="inline-code" dir="ltr">-n</code></bdi> استفاده کنید.</p>
+</blockquote>
+<p>و <bdi><code class="inline-code" dir="ltr">uniq</code></bdi> ورودی های تکراری را از ورودی خود حذف می کند. رفتار عادی فقط خطوط تکراری را حذف می کند، اما شما می توانید رفتار آن را تغییر دهید، برای مثال سوئیچ <bdi><code class="inline-code" dir="ltr">-f1</code></bdi> آن را مجبور می کند که فیلد اول را بررسی نکند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ uniq what_i_have.txt
+laptop
+socks
+tshirt
+ball
+socks
+glasses
+jadi@funlife:~/w/lpic/101$ sort what_i_have.txt | uniq
+ball
+glasses
+laptop
+socks
+tshirt
+jadi@funlife:~/w/lpic/101$
+</code></pre></div>
+<blockquote class="callout-box">
+<p>همانطور که می بینید، ورودی باید مرتب شود تا uniq کار کند.</p>
+</blockquote>
+<p>uniq سوئیچ های عالی دارد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat what_i_have.txt
+laptop
+socks
+tshirt
+ball
+socks
+glasses
+jadi@funlife:~/w/lpic/101$ sort what_i_have.txt  | uniq -c  #show count of each item
+      1 ball
+      1 glasses
+      1 laptop
+      2 socks
+      1 tshirt
+jadi@funlife:~/w/lpic/101$ sort what_i_have.txt  | uniq -u #show only non-repeated items
+ball
+glasses
+laptop
+tshirt
+jadi@funlife:~/w/lpic/101$ sort what_i_have.txt  | uniq -d #show only repeated items
+socks
+</code></pre></div>
+<h2 id="_13">خمیر</h2>
+<p>دستور paste خطوط دو یا چند فایل را در کنار هم قرار می دهد! شما نمی توانید این کار را در یک ویرایشگر متن عمومی به راحتی انجام دهید!</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat howcool
+jadi    5
+sina    6
+rubic    2
+you     12
+jadi@funlife:~/w/lpic/101$ cat uses
+you fedora
+jadi ubuntu
+rubic windows
+neda mac
+jadi@funlife:~/w/lpic/101$ paste howcool uses
+jadi    5    you fedora
+sina    6    jadi ubuntu
+rubic    2    rubic windows
+you     12    neda mac
+</code></pre></div>
+<h3 id="tr">tr</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">tr</code></bdi> نویسه های موجود در جریان را _ترجمه می کند. به عنوان مثال، <bdi><code class="inline-code" dir="ltr">tr 'ABC' '123'</code></bdi> A را با 1، B را با 2، و C را با 3 در جریان ارائه شده جایگزین می کند. این یک فیلتر خالص است و نام فایل ورودی را نمی پذیرد. در صورت نیاز می توانید گربه را با آن لوله کنید (به فصل 103.4 مراجعه کنید).</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat mydata
+hello
+this is the second line
+but as you can see we are
+still writing
+and this is getting longer
+.
+.
+and longer
+and longer!
+jadi@funlife:~/w/lpic/101$ cat mydata | tr 'and' 'AND'
+hello
+this is the second liNe
+but As you cAN see we Are
+still writiNg
+AND this is gettiNg loNger
+.
+.
+AND loNger
+AND loNger!
+</code></pre></div>
+<blockquote class="callout-box">
+<p>توجه: همه <strong>'a'</strong>ها با <strong>'A'</strong> جایگزین می شوند.</p>
+</blockquote>
+<h3 id="sed">sed</h3>
+<p>sed <strong>s</strong>tream <strong>اد</strong>itor است. این قدرتمند است و می تواند کارهایی انجام دهد که دور از جادو نیست! درست مانند بسیاری از ابزارهایی که تاکنون دیده‌ایم، sed می‌تواند به عنوان یک فیلتر کار کند یا ورودی یک فایل را بگیرد. Sed یک ابزار عالی برای جایگزینی متن با استفاده از <strong>عبارات باقاعده (Regular Expressions - Regex)</strong> است. اگر نیاز دارید A را با B فقط یک بار در هر خط در جریانی جایگزین کنید، فقط <bdi><code class="inline-code" dir="ltr">sed 's/A/B/'</code></bdi> را صادر کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat uses
+you fedora
+jadi ubuntu
+rubic windows
+neda mac
+jadi@funlife:~/w/lpic/101$ sed 's/ubuntu/debian/' uses
+you fedora
+jadi debian
+rubic windows
+neda mac
+jadi@funlife:~/w/lpic/101$
+</code></pre></div>
+<p>الگوی تغییر هر رخداد A به B در یک خط، <bdi><code class="inline-code" dir="ltr">sed 's/A/B/g'</code></bdi> است.</p>
+<p>شخصیت های فرار را به خاطر دارید؟ آنها همچنین در اینجا کار می کنند و هر <em>new line</em> را از یک فایل حذف می کند و آن را با یک فاصله جایگزین می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ cat mydata
+hello
+this is the second line
+but as you can see we are
+still writing
+and this is getting longer
+.
+.
+and longer
+and longer!
+jadi@funlife:~/w/lpic/101$ sed 's/ /\t/g' mydata &gt; mydata.tab
+jadi@funlife:~/w/lpic/101$ cat mydata.tab
+hello
+this    is the second    line
+but    as    you    can    see    we    are
+still    writing
+and    this    is    getting    longer
+.
+.
+and    longer
+and    longer!
+</code></pre></div>
+<h2 id="_14">دریافت آمار</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/wUi0lmmzm3k" title="YouTube video player" width="560"></iframe></div>
+<h3 id="_15">توالت فرنگی</h3>
+<p><bdi><code class="inline-code" dir="ltr">wc</code></bdi> _شمارش کلمه است. خطوط، کلمات و بایت ها را در جریان ورودی شمارش می کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ wc mydata
+  9  25 121 mydata
+</code></pre></div>
+<blockquote class="callout-box">
+<p>شمارش شماره خطوط با سوئیچ <bdi><code class="inline-code" dir="ltr">-l</code></bdi> بسیار رایج است.</p>
+</blockquote>
+<h3 id="-">-</h3>
+<p>باید بدانید که اگر به جای نام فایل <bdi><code class="inline-code" dir="ltr">-</code></bdi> را قرار دهید، داده ها از لوله (یا صفحه کلید stdin) جایگزین می شوند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic/101$ wc -l mydata | cat mydata - mydata  
+hello
+this is the second line
+but as you can see we are
+still writing
+and this is getting longer
+.
+.
+and longer
+and longer!
+9 mydata
+hello
+this is second line
+but as you can see we are
+still writing
+and this is getting longer
+.
+.
+and longer
+and longer!
+</code></pre></div>
+<h2 id="_16">هش کردن</h2>
+<p>تابع هش هر تابعی است که می تواند برای نگاشت داده های با اندازه دلخواه به مقادیر با اندازه ثابت استفاده شود. هش های مختلفی وجود دارد و ما از آنها برای اهداف مختلف استفاده می کنیم. به عنوان مثال، یک سایت ممکن است رمز عبور شما را در پایگاه داده خود هش کند تا آن را ایمن نگه دارد (و هش رمز عبور ارائه شده را با هشی که از قبل در DB دارد در هنگام ورود بررسی کنید) ممکن است یک سایت هش یک فایل را ارائه دهد تا مطمئن شوید که فایل صحیح را دانلود کرده اید و ...</p>
+<p>الگوریتم های هش تحت پوشش LPIC1 عبارتند از:</p>
+<ul>
+<li>md5sum</li>
+<li>sha256sum</li>
+<li>sha512sum</li>
+</ul>
+<p>می‌توانید هر فایلی (یا هش جریان‌های ورودی را با چیزی شبیه به این) بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@ocean:~$ md5sum /tmp/myfile.txt
+8183aa57a23658efe7ba7aebe60816bc  /tmp/myfile.txt
+jadi@ocean:~$ sha256sum /tmp/myfile.txt
+7ddcfda184b55ee06b0c81e0ad136b1aa4a86daeb1078bcaeccc246eb2c8693b  /tmp/myfile.txt
+jadi@ocean:~$ sha512sum /tmp/myfile.txt
+79e5d789528e5e55fc1bddcb381afd56e896b1b452347a76777fb38d76c9754278700036f35df2a53c4d53d3e3623538a8b9ed155a3fd5275e667bdbf3c0b359  /tmp/myfile.txt
+</code></pre></div>
+<p>همانطور که می بینید، <bdi><code class="inline-code" dir="ltr">sha512sum</code></bdi> هش طولانی تری ایجاد می کند که ایمن تر است.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1031_work_on_the_command_line.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a><a href="1033_perform_basic_file_management.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

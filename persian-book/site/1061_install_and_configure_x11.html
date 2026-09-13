@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>106.1 X11 را نصب و پیکربندی کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item active"><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۲</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">106.1 X11 را نصب و پیکربندی کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۲</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۶</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 2</em></p>
+<p>داوطلبان باید بتوانند X11 را نصب و پیکربندی کنند.</p>
+<h4 id="_1">حوزه های دانش کلیدی</h4>
+<ul>
+<li>آشنایی با معماری X11.</li>
+<li>درک و دانش اولیه از فایل پیکربندی پنجره X.</li>
+<li>جنبه های خاصی از پیکربندی Xorg، مانند طرح صفحه کلید را بازنویسی کنید.</li>
+<li>اجزای محیط های دسکتاپ مانند مدیران نمایش و مدیران پنجره را درک کنید.</li>
+<li>دسترسی به سرور X را مدیریت کنید و برنامه های کاربردی را در سرورهای X از راه دور نمایش دهید.</li>
+<li>آگاهی از Wayland.</li>
+</ul>
+<h4 id="_2">شرایط و امکانات:</h4>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">/etc/X11/xorg.conf</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/X11/xorg.conf.d/</code></bdi></li>
+<li><bdi><code class="inline-code" dir="ltr">~/.xsession-errors</code></bdi></li>
+<li>xhost</li>
+<li>xauth</li>
+<li>نمایش</li>
+<li>X</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/JqiT4rsTvUo" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_3">مقدمه</h2>
+<p>بسیاری از مردم ترجیح می دهند سیستم خود را از طریق یک رابط کاربری گرافیکی (یا به طور خلاصه GUI) هدایت کنند و از آن استفاده کنند. یک سیستم عامل مبتنی بر رابط کاربری گرافیکی، نمادها، ماوس، پنجره ها و پوشه ها را در اختیار کاربر قرار می دهد، استعاره ای از "رومیزی" روزانه ما. اما چگونه این اتفاق می افتد؟ مانند بسیاری از چیزهای دیگر در دنیای یونیکس، این امر از طریق لایه‌هایی از برنامه‌ها اتفاق می‌افتد که یک کار را به خوبی انجام می‌دهند. این یک نمایش تقریبی از این پشته است:</p>
+<p><img alt="Linux GUI stack" class="content-img img-fluid" src="./images/gui_stack.png"/></p>
+<p>در سطح پایین تر، سخت افزار (مثلاً مانیتور شما) و سپس کرنل/هسته لینوکس و درایورهای آن را داریم. در بالای آن نرم افزاری به نام «Display Manager» یا «Display Server» وجود دارد. این برنامه می تواند از سیستم عامل (هسته) بخواهد که آنچه مدیر دسکتاپ درخواست می کند را انجام دهد. به عبارت دیگر، سرور نمایش خواسته های UI (حتی از طریق کانال شبکه) را می پذیرد و آنها را به زبانی که Kernel (و درایورهای موجود در آن) می فهمند، ترجمه می کند.</p>
+<p>در این بخش بر روی <strong>X</strong> که یکی از دو سرور اصلی نمایشگر است تمرکز می کنیم و سپس نگاهی کوتاه به دیگری خواهیم داشت. مدرن <strong>ویلند</strong>. </p>
+<h2 id="x">X</h2>
+<p>X Window System یک سیستم پنجره شفاف شبکه است که بر روی طیف وسیعی از ماشین های محاسباتی و گرافیکی اجرا می شود. از جمله در اکثر توزیع های گنو/لینوکس زمانی که به یک رابط گرافیکی نیاز دارند. تاریخچه آن کمی طولانی است و با <em>XFree86</em> شروع شد سپس X.org سرور X خود را راه اندازی کرد که امروزه X11 نامیده می شود. </p>
+<blockquote class="callout-box">
+<p>پایین رفتن از سوراخ خرگوش، <em>X Window System</em> (یا <em>X</em>)، سیستم پنجره پیش فرض برای اکثر سیستم های مشابه یونیکس و یونیکس در طول دهه 1980 بود. سرور X.Org اجرای رایگان و منبع باز سرور نمایشگر سیستم پنجره X توسط بنیاد X.Org است. این روزها وقتی می‌گوییم <em>X</em>، به کل خانواده پروتکل‌های شبکه اشاره می‌کنیم که نحوه تبادل پیام‌ها بین یک کلاینت (برنامه) و سرور نمایشگر را توصیف می‌کنند. X11 یازدهمین نسخه آنهاست.</p>
+</blockquote>
+<h3 id="etcx11xorgconf">/etc/X11/xorg.conf</h3>
+<p>این قبلاً فایل پیکربندی اصلی X بود. در روزهای اخیر X هنگام شروع به کار خود را پیکربندی می کند و به فایل پیکربندی نیاز ندارد. اما اگر می خواهید تغییراتی در فرآیند بوت آپ ایجاد کنید، می توانید با اجرای دستور زیر یک فایل <bdi><code class="inline-code" dir="ltr">xorg.conf.new</code></bdi> جدید ایجاد کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>Xorg -configure
+</code></pre></div>
+<p>و سپس آن را به <bdi><code class="inline-code" dir="ltr">/etc/X11/xorg.conf</code></bdi> منتقل کنید. این فایل شامل بخش های مختلف می باشد. بیایید نگاهی به برخی از آنها بیندازیم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">Section "Files"
+    FontPath    "/usr/share/X11/fonts/misc"
+    FontPath    "/usr/share/X11/fonts/100dpi/:unscaled"
+    FontPath    "/usr/share/X11/fonts/75dpi/:unscaled"
+    FontPath    "/usr/share/X11/fonts/Type1"
+    FontPath    "/usr/share/X11/fonts/100dpi"
+    FontPath    "/usr/share/X11/fonts/75dpi"
+    FontPath    "/var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType"
+EndSection
+</code></pre></div>
+<p>این قسمت مربوط به فونت است. هنگامی که X-Server در حال اجرا است به این فایل ها نیاز دارد. FontPaths به X11 می گوید که فونت ها کجا هستند. همچنین می تواند به یک IP که یک سرور فونت را اجرا می کند اشاره کند که این روزها رایج نیست. سرورهای فونت قبلاً مسئول رندر کردن فونت‌ها برای نمایش در کلاینت‌ها بودند، اما امروزه رایانه‌ها سریع هستند و می‌توانند فونت‌های خود را ارائه دهند. سرورهای فونت از مد افتاده اند!</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">Section "Module"
+    Load    "bitmap"
+    Load    "ddc"
+    Load    "dri"
+    Load    "extmod"
+    Load    "freetype"
+    Load    "glx"
+    Load    "int10"
+    Load    "type1"
+    Load    "vbe"
+    Load    "dbe"
+EndSection
+</code></pre></div>
+<p>اینها ماژول هستند. به عنوان مثال <bdi><code class="inline-code" dir="ltr">glx</code></bdi> از جلوه های <em>گرافیک سه بعدی</em> مراقبت می کند و ما از X می خواهیم که آن را در کنار دیگران بارگذاری کند.</p>
+<p>اینها <bdi><code class="inline-code" dir="ltr">InputDevice</code></bdi>ها هستند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">Section "InputDevice"
+    Identifier    "Generic Keyboard"
+    Driver        "kbd"
+    Option        "CoreKeyboard"
+    Option        "XkbRules"    "xorg"
+    Option        "XkbModel"    "pc105"
+    Option        "XkbLayout"    "us"
+EndSection
+
+Section "InputDevice"
+    Identifier    "Configured Mouse"
+    Driver        "mouse"
+    Option        "CorePointer"
+    Option        "Device"        "/dev/input/mice"
+    Option        "Protocol"        "ImPS/2"
+    Option        "Emulate3Buttons"    "true"
+    Option        "ZAxisMapping"        "4 5"
+EndSection
+
+Section "InputDevice"
+        Identifier      "Synaptics Touchpad"
+        Driver          "synaptics"
+        Option          "SendCoreEvents"        "true"
+        Option          "Device"                "/dev/psaux"
+        Option          "Protocol"              "auto-dev"
+        Option        "RightEdge"        "5000"
+EndSection
+</code></pre></div>
+<p>همانطور که می بینید هر دستگاه دارای <bdi><code class="inline-code" dir="ltr">Identifier</code></bdi>، <bdi><code class="inline-code" dir="ltr">Driver</code></bdi> و مقداری <bdi><code class="inline-code" dir="ltr">options</code></bdi> است. در بالا ماوس، کیبورد و تاچ پد را تعریف کردیم و نام هایی برای آنها گذاشتیم.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">Section "Device"
+    Identifier    "ATI Technologies, Inc. Radeon Mobility 7500 (M7 LW)"
+    Driver        "radeon"
+    BusID        "PCI:1:0:0"
+    Option        "DynamicClocks"    "on"
+    Option        "CRT2HSync"    "30-80"
+    Option        "CRT2VRefresh"    "59-75"
+      Option        "MetaModes"    "1024x768 800x600 640x480 1024x768+1280x1024"
+EndSection
+</code></pre></div>
+<p>یک کارت گرافیک! باز هم دارای شناسه های (name)، درایورهای آن و برخی از گزینه ها (مانند وضوح پشتیبانی، نرخ تجدید، ...) است. این دستگاه به صفحه نمایش و مانیتور نیاز دارد:</p>
+<blockquote class="callout-box">
+<p>توجه: <bdi><code class="inline-code" dir="ltr">vesa</code></bdi> به درایور با وضوح پایین و همیشه کارآمد اشاره می کند. برای عیب یابی استفاده می شود.</p>
+</blockquote>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">Section "Monitor"
+    Identifier    "Generic Monitor"
+    Option        "DPMS"
+EndSection
+
+Section "Screen"
+    Identifier    "Screen0"
+    Device        "Screen0 ATI Technologies, Inc. Radeon Mobility 7500 (M7 LW)"
+    Monitor        "Generic Monitor"
+    DefaultDepth    24
+    SubSection "Display"
+        Depth        1
+        Modes        "1024x768"
+    EndSubSection
+    SubSection "Display"
+        Depth        4
+        Modes        "1024x768"
+    EndSubSection
+    SubSection "Display"
+        Depth        8
+        Modes        "1024x768"
+    EndSubSection
+    SubSection "Display"
+        Depth        15
+        Modes        "1024x768"
+    EndSubSection
+    SubSection "Display"
+        Depth        16
+        Modes        "1024x768"
+    EndSubSection
+    SubSection "Display"
+        Depth        24
+        Modes        "1024x768"
+    EndSubSection
+EndSection
+</code></pre></div>
+<p>توجه داشته باشید که چگونه صفحه نمایش از مانیتور تعریف شده (با استفاده از شناسه آن "Generic Monitor") و یک کارت گرافیک از قبل تعریف شده استفاده می کند. همچنین به حالت‌های رنگی مختلف توجه کنید (مثلا <bdi><code class="inline-code" dir="ltr">24bit 1024x768</code></bdi>).</p>
+<p>در پایان باید همه موارد بالا را به صورت <bdi><code class="inline-code" dir="ltr">ServerLayout</code></bdi> در یک مکان بچسبانیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">Section "ServerLayout"
+    Identifier    "DefaultLayout"
+    Screen        "Default Screen"
+    InputDevice    "Generic Keyboard"
+    InputDevice    "Configured Mouse"
+    InputDevice    "Synaptics Touchpad"
+EndSection
+</code></pre></div>
+<p>ما یک طرح با صفحه نمایش و 3 دستگاه ورودی داریم:)</p>
+<blockquote class="callout-box">
+<p>توجه: نترسید. درک کلی از xorg.conf کافی است</p>
+</blockquote>
+<h3 id="etcx11xorgconfd">/etc/X11/xorg.conf.d/</h3>
+<p>اگر <bdi><code class="inline-code" dir="ltr">/etc/program.conf</code></bdi> را ویرایش کنید و سپس سیستم را به‌روزرسانی کنید، چه اتفاقی می‌افتد؟ آیا سیستم <bdi><code class="inline-code" dir="ltr">program.conf</code></bdi> شما را که به تازگی ویرایش کرده اید را با آخرین نسخه از فروشنده بازنویسی می کند؟ یا تغییرات در فروشنده را به نفع ویرایش های محلی خود حذف کنید؟ هر دو <em>بد</em> هستند.</p>
+<p>برای حل این مشکل، بسیاری از برنامه‌ها در حال ایجاد دایرکتوری (پوشه) تنظیمات جدید به نام <bdi><code class="inline-code" dir="ltr">/etc/program/program.conf.d/</code></bdi> هستند و از شما می‌خواهند تنظیمات <em>محلی</em> خود را در آنجا اضافه کنید. بنابراین فایل پیکربندی اصلی فروشنده <bdi><code class="inline-code" dir="ltr">/etc/program/program.conf</code></bdi> خواهد بود و همه پیکربندی‌های جدید شما به عنوان فایل‌های جدا شده به <bdi><code class="inline-code" dir="ltr">/etc/program/program.conf.d/</code></bdi> می‌روند. مدیریت بسیار ساده تر (زیرا فایل های اتمی کوچکتر در هر پیکربندی) و بدون دست زدن به پیکربندی فروشندگان توسط افراد محلی. باحال؟ بله... در X11 هم این اتفاق می افتد. تنظیمات خود شما باید به <bdi><code class="inline-code" dir="ltr">/etc/X11/xorg.conf.d/</code></bdi> بروند و <bdi><code class="inline-code" dir="ltr">/etc/X11/xorg.conf</code></bdi> باید دست نخورده باقی بماند.</p>
+<h3 id="xsession-errors">~/.xsession-errors</h3>
+<p>در صورت بروز هرگونه مشکلی در هنگام شروع اجرای X، خطاها به اینجا خواهند رفت. بنابراین اگر در راه اندازی رابط کاربری گرافیکی خود با مشکلی مواجه شدید، این فایلی است که باید بررسی کنید تا ببینید چه مشکلی پیش آمده است.</p>
+<h3 id="xhost">xhost</h3>
+<p>این دستور دسترسی به سرور X را کنترل می کند. اگر روی سرور X هستید و <bdi><code class="inline-code" dir="ltr">xhost</code></bdi> را اجرا می کنید، وضعیت دسترسی را به شما می گوید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ xhost
+access control enabled, only authorized clients can connect
+SI:localuser:jadi
+</code></pre></div>
+<p>همانطور که می بینید فقط مشتریان مجاز می توانند متصل شوند. برای باز کردن آن برای همه:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ xhost +
+access control disabled, clients can connect from any host
+</code></pre></div>
+<p>و برای بستن دوباره:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ xhost -
+access control enabled, only authorized clients can connect
+</code></pre></div>
+<p>یا آن را فقط برای یک IP خاص باز کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ xhost +192.168.42.85
+192.168.42.85 being added to access control list
+jadi@funlife:~$ xhost
+access control enabled, only authorized clients can connect
+INET:192.168.42.85    (no nameserver response within 5 seconds)
+SI:localuser:jadi
+</code></pre></div>
+<p>اکنون دستگاه <bdi><code class="inline-code" dir="ltr">192.168.42.85</code></bdi> (REMOTE) می تواند درخواست های گرافیکی خود را به این دستگاه ارسال کند. چه استفاده ای دارد به خواندن بخش بعدی ادامه دهید (با فرض اینکه این دستگاه <bdi><code class="inline-code" dir="ltr">192.168.42.80</code></bdi> (SERVER) نامیده می شود و ما دسترسی از به X11 آن را برای <bdi><code class="inline-code" dir="ltr">192.168.42.85</code></bdi> (REMOTE) باز کردیم).</p>
+<h3 id="_4">نمایش</h3>
+<p>این متغیر به برنامه های گرافیکی می گوید که خروجی گرافیکی خود را کجا ارسال کنند. این پیش فرض است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ echo $DISPLAY
+:0
+</code></pre></div>
+<p>بنابراین اگر من هر برنامه گرافیکی را روی دستگاه خود اجرا کنم، خروجی آن روی همان دستگاه نمایش داده می شود. </p>
+<p>اما اجازه دهید آن را به دستگاه <bdi><code class="inline-code" dir="ltr">192.168.42.80</code></bdi> (SERVER) تغییر دهیم. اگر به خاطر دارید ما به آن گفتیم که این دستگاه (REMOTE) می تواند به آن متصل شود.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ export DISPLAY=192.168.42.80:0
+$ xeyes # the eyes will be shown on 192.168.42.80 machine
+</code></pre></div>
+<p>باحال؟ بله اما این ممکن است در تنظیمات شما مشکلی ایجاد نکند. X به دلیل نگرانی های امنیتی در اکثر توزیع ها به اتصال از راه دور گوش نمی دهد. </p>
+<blockquote class="callout-box">
+<p>در فصل بعد، خواهیم دید که چگونه می توانید برنامه های گرافیکی را به درستی بر روی سرورهای راه دور اجرا کنید و قسمت GUI را در کنار خود دریافت کنید.</p>
+</blockquote>
+<h3 id="xauth">xauth</h3>
+<p>برنامه <bdi><code class="inline-code" dir="ltr">xauth</code></bdi> برای ویرایش و نمایش اطلاعات مجوز مورد استفاده در اتصال به سرور X استفاده می شود. در <a href="#xhost">xhost</a> می‌بینید که چگونه می‌توانید X خود را به IPهای راه دور باز کنید، با استفاده از <bdi><code class="inline-code" dir="ltr">xauth</code></bdi> می‌توانید همین کار را بر اساس یک «راز» مشترک انجام دهید. </p>
+<p>در این روش، <bdi><code class="inline-code" dir="ltr">X</code></bdi> یک فایل <bdi><code class="inline-code" dir="ltr">.XAuthority</code></bdi> در خانه شما ایجاد می کند و هرکس از محتویات آن اطلاع دارد، می تواند با X تماس بگیرد.</p>
+<blockquote class="callout-box">
+<p>اگر <bdi><code class="inline-code" dir="ltr">X</code></bdi> شما کار نمی کند، ممکن است یک مرحله <bdi><code class="inline-code" dir="ltr">rm``.XAuthority</code></bdi> کردن فایل <bdi><code class="inline-code" dir="ltr">.XAuthority</code></bdi> و راه اندازی مجدد X باشد. </p>
+</blockquote>
+<h2 id="_5">ویلند</h2>
+<p><em>X11</em> فوق العاده قدیمی است و فقط از طریق تعداد زیادی پچ و هک قابل استفاده است. به همین دلیل یکی از توسعه دهندگان آن یک مدیر نمایشگر مدرن به نام <em>Wayland</em> راه اندازی کرد. در سال‌های اخیر، بسیاری از توزیع‌ها از پیش‌فرض <em>X11</em> به <em>Wayland</em> تغییر می‌کنند و X11 را به‌عنوان یک گزینه ایمن نگه می‌دارند. Wayland امن تر است و نگهداری از آن بسیار آسان تر است و من می توانم به شما اطمینان دهم که در چند سال آینده ما بیشتر و بیشتر از آن خواهیم دید.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1053_sql_data_management.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">105.3 حذف شد!</span></a><a href="1062_graphical_desktops.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">106.2 دسکتاپ گرافیکی</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>103.5 ایجاد، نظارت و کشتن فرآیندها | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item active"><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">103.5 ایجاد، نظارت و کشتن فرآیندها</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۳</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>کاندیداها باید بتوانند مدیریت فرآیند پایه را انجام دهند.</p>
+<h2 id="_1">اهداف</h2>
+<ul>
+<li>کارها را در پیش زمینه و پس زمینه اجرا کنید.</li>
+<li>به یک برنامه سیگنال دهید تا پس از خروج از سیستم به اجرا ادامه دهد.</li>
+<li>نظارت بر فرآیندهای فعال</li>
+<li>فرآیندها را برای نمایش انتخاب و مرتب کنید.</li>
+<li>ارسال سیگنال به فرآیندها.</li>
+</ul>
+<h2 id="_2">شرایط</h2>
+<ul>
+<li>&amp;</li>
+<li>bg</li>
+<li>fg</li>
+<li>مشاغل
+<em>کشتن
+</em>نه آپ</li>
+<li>ps</li>
+<li>بالا</li>
+<li>رایگان</li>
+<li>زمان کار</li>
+<li><bdi><code class="inline-code" dir="ltr">kill</code></bdi></li>
+<li>pgrep
+*کشتن</li>
+<li>تماشا کنید</li>
+<li>صفحه نمایش</li>
+<li>tmux</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/PQp_YPGg7GQ" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_3">مدیریت فرآیندها</h2>
+<h3 id="_4">کارهای پیش زمینه و پس زمینه</h3>
+<p>یکی از نقاط قوت لینوکس حتی از روزهای آغازین آن، امکان اجرای همزمان برنامه ها و کارهای مختلف است. این کار با ارسال برنامه ها به پس زمینه انجام می شود.</p>
+<p>به طور معمول اگر برنامه ای را روی ترمینال اجرا کنید، ترمینال شما را در حین اجرا _بلاک می کند، اما ارسال یک دستور به پس زمینه از این امر جلوگیری می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>xeyes &amp;
+</code></pre></div>
+<p>حتی زمانی که یک برنامه به طور معمول در پیش زمینه اجرا می شود، می توانید دو کار را انجام دهید:
+- با استفاده از <bdi><code class="inline-code" dir="ltr">Ctrl+c</code></bdi> آن را بشکنید
+- <em>تعلیق</em> یا با استفاده از <bdi><code class="inline-code" dir="ltr">Ctrl+z</code></bdi> آن را متوقف کنید</p>
+<p>با استفاده از دستور <bdi><code class="inline-code" dir="ltr">fg</code></bdi> (یا پس‌زمینه با استفاده از <bdi><code class="inline-code" dir="ltr">bg</code></bdi>) می‌توان یک کار <em>توقف</em> را به پیش‌زمینه آورد. همچنین می توانید با دستور <bdi><code class="inline-code" dir="ltr">jobs</code></bdi> همه کارها را فهرست کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ xeyes
+^Z
+[1]+  Stopped                 xeyes
+$ jobs
+[1]+  Stopped                 xeyes
+$ bg
+[1]+ xeyes &amp;
+$ jobs
+[1]+  Running                 xeyes &amp;
+$ sleep 1000 &amp;
+[2] 7395
+$ jobs
+[1]-  Running                 xeyes &amp;
+[2]+  Running                 sleep 1000 &amp;
+$ fg %2
+sleep 1000
+^Z
+[2]+  Stopped                 sleep 1000
+$ jobs
+[1]-  Running                 xeyes &amp;
+[2]+  Stopped                 sleep 1000
+$ bg sle
+[2]+ sleep 1000 &amp;
+$ jobs
+[1]-  Running                 xeyes &amp;
+[2]+  Running                 sleep 1000 &amp;
+`
+</code></pre></div>
+<blockquote class="callout-box">
+<p><bdi><code class="inline-code" dir="ltr">jobs -l</code></bdi> همچنین شناسه فرآیند مشاغل را نشان می دهد</p>
+</blockquote>
+<h3 id="_5">بیهوده</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">nohup</code></bdi> به شما امکان می دهد دستورات خود را حتی پس از بستن ترمینال یا خروج از سیستم اجرا کنید. به طور پیش فرض خروجی خود را به <bdi><code class="inline-code" dir="ltr">nohup.out</code></bdi> می نویسد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ nohup ping 4.2.2.4
+nohup: ignoring input and appending output to ‘nohup.out’
+^C$ cat nohup.out
+PING 4.2.2.4 (4.2.2.4) 56(84) bytes of data.
+64 bytes from 4.2.2.4: icmp_seq=1 ttl=51 time=225 ms
+64 bytes from 4.2.2.4: icmp_seq=3 ttl=51 time=223 ms
+
+--- 4.2.2.4 ping statistics ---
+4 packets transmitted, 2 received, 50% packet loss, time 3010ms
+rtt min/avg/max/mdev = 223.584/224.767/225.950/1.183 ms
+</code></pre></div>
+<blockquote class="callout-box">
+<p>استفاده از <bdi><code class="inline-code" dir="ltr">2&gt;</code></bdi> برای ریدایرکت / تغییر مسیر (Redirection) خطاهای nohup به فایلی دیگر و استفاده از <bdi><code class="inline-code" dir="ltr">&amp;</code></bdi> برای اجرای آن در پس‌زمینه معمول است: <bdi><code class="inline-code" dir="ltr">nohup script.sh &gt; mynohup.out 2&gt;&amp;1 &amp;</code></bdi> </p>
+</blockquote>
+<h3 id="_6">بکش</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">kill</code></bdi> با وجود نام ترسناکش، <em>سیگنال</em>های یونیکس را به فرآیندها ارسال می کند. فشار دادن <bdi><code class="inline-code" dir="ltr">Ctrl+c</code></bdi> و <bdi><code class="inline-code" dir="ltr">Ctrl+z</code></bdi> نیز سیگنال هایی را ارسال می کند. به‌طور پیش‌فرض، دستور <bdi><code class="inline-code" dir="ltr">kill</code></bdi> سیگنال <strong>15</strong> را ارسال می‌کند (که TERM است و به فرآیند می‌گوید خودش خاتمه یابد).</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ jobs
+[3]   Running                 xeyes &amp;
+[4]   Running                 sleep 1000 &amp;
+[5]-  Running                 sleep 2000 &amp;
+[6]+  Running                 sleep 3000 &amp;
+$ kill %4
+$ jobs
+[3]   Running                 xeyes &amp;
+[4]   Terminated              sleep 1000
+[5]-  Running                 sleep 2000 &amp;
+[6]+  Running                 sleep 3000 &amp;
+$ jobs
+[3]   Running                 xeyes &amp;
+[5]-  Running                 sleep 2000 &amp;
+[6]+  Running                 sleep 3000 &amp;
+</code></pre></div>
+<p>همچنین امکان استفاده از PID به جای شماره کار و کشتن سیگنال های دیگر وجود دارد. قالب کلی <bdi><code class="inline-code" dir="ltr">kill -SIGNAL_ID_OR_NAME process_id</code></bdi> است:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">شماره سیگنال</th>
+<th style="text-align: center;">نام سیگنال</th>
+<th style="text-align: left;">معنی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">HUP</td>
+<td style="text-align: left;">به فرآیند اطلاع می دهد که ترمینال کنترل آن (مانند یک اتصال ssh) خاتمه یافته است</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">مدت</td>
+<td style="text-align: left;">درخواست فسخ عادی</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">کشتن</td>
+<td style="text-align: left;">به زور روند را می کشد</td>
+</tr>
+</tbody>
+</table></div>
+<p></p>
+<p>بنابراین می‌توانید یک <bdi><code class="inline-code" dir="ltr">kill -9 8733</code></bdi> انجام دهید تا شناسه 8733 را مجبور به بسته شدن کنید.</p>
+<blockquote class="callout-box">
+<p>دستور <bdi><code class="inline-code" dir="ltr">nohup</code></bdi> را به خاطر دارید؟ :) یعنی "به سیگنال هاپ پاسخ نده".</p>
+</blockquote>
+<h3 id="_7">کشتن</h3>
+<p>این دستور سیگنال داده شده (یا به طور پیش فرض 15) را به تمام فرآیندهای با نام داده شده ارسال می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ jobs
+[3]   Running                 xeyes &amp;
+[5]-  Running                 sleep 2000 &amp;
+[6]+  Running                 sleep 3000 &amp;
+$ ps -ef | grep sleep
+jadi      7864  7651  0 21:07 pts/1    00:00:00 sleep 2000
+jadi      7865  7651  0 21:07 pts/1    00:00:00 sleep 3000
+jadi      7977  7651  0 21:14 pts/1    00:00:00 grep sleep
+$ killall sleep
+[5]-  Terminated              sleep 2000
+[6]+  Terminated              sleep 3000
+$ jobs
+[3]+  Running                 xeyes &amp;
+$ ps -ef | grep sleep
+jadi      7980  7651  0 21:14 pts/1    00:00:00 grep sleep
+</code></pre></div>
+<h3 id="pkill">pkill</h3>
+<p>سیگنال داده شده (یا 15) را به تمام فرآیندها با یک الگوی خاص به نام آنها ارسال می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ jobs
+[3]   Running                 xeyes &amp;
+[5]-  Running                 sleep 2000 &amp;
+[6]+  Running                 sleep 3000 &amp;
+$ ps -ef | grep sleep
+jadi      7864  7651  0 21:07 pts/1    00:00:00 sleep 2000
+jadi      7865  7651  0 21:07 pts/1    00:00:00 sleep 3000
+jadi      7977  7651  0 21:14 pts/1    00:00:00 grep sleep
+$ pkill sle
+[5]-  Terminated              sleep 2000
+[6]+  Terminated              sleep 3000
+$ jobs
+[3]+  Running                 xeyes &amp;
+$ ps -ef | grep sleep
+jadi      7980  7651  0 21:14 pts/1    00:00:00 grep sleep
+</code></pre></div>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/wOXrckEQosU
+" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_8">فرآیندهای نظارت</h2>
+<h3 id="ps">ps</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">ps</code></bdi> فرآیندهای در حال اجرا را در رایانه شما نشان می دهد. هر فرآیند دارای یک شناسه فرآیند است که به صورت <strong>PID</strong> و یک شناسه فرآیند والد به عنوان PPID نشان داده شده است.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ sleep 1000 &amp;
+[1] 7678
+$ sleep 1001 &amp;
+[2] 7679
+$ xeyes &amp;
+[3] 7680
+$ ps
+  PID TTY          TIME CMD
+ 7651 pts/1    00:00:00 bash
+ 7678 pts/1    00:00:00 sleep
+ 7679 pts/1    00:00:00 sleep
+ 7680 pts/1    00:00:00 xeyes
+ 7681 pts/1    00:00:00 ps
+</code></pre></div>
+<p>دو ترکیب رایج سوئیچ، <bdi><code class="inline-code" dir="ltr">ps aux</code></bdi> (یا <bdi><code class="inline-code" dir="ltr">-aux</code></bdi>) و <bdi><code class="inline-code" dir="ltr">ps ef</code></bdi> است که همه فرآیندهای یک سیستم را نشان می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ps -aux | wc -l
+293
+</code></pre></div>
+<p>همچنین می توان از سوئیچ <bdi><code class="inline-code" dir="ltr">--sort</code></bdi> برای مرتب سازی خروجی بر اساس فیلدهای مختلف (+ برای صعود و - برای نزولی) استفاده کرد.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ps -af --sort +comm,-sid
+UID        PID  PPID  C STIME TTY          TIME CMD
+root      5486  5478  0 19:59 pts/12   00:00:00 -su
+root      4444  1169  0 19:56 tty4     00:00:00 -bash
+jadi      6638  5412  0 20:10 pts/0    00:00:04 node /usr/local/bin/sslocal
+jadi      7778  7651  0 20:58 pts/1    00:00:00 ps -af --sort +comm,-sid
+jadi      7678  7651  0 20:48 pts/1    00:00:00 sleep 1000
+jadi      7679  7651  0 20:48 pts/1    00:00:00 sleep 1001
+jadi      7775  7651  0 20:58 pts/1    00:00:00 sleep 1000
+jadi      7776  7651  0 20:58 pts/1    00:00:00 sleep 1000
+jadi      7777  7651  0 20:58 pts/1    00:00:00 sleep 1000
+root      5478  5477  0 19:59 pts/12   00:00:00 su -
+root      5477  5008  0 19:59 pts/12   00:00:00 sudo su -
+jadi      7680  7651  0 20:48 pts/1    00:00:01 xeyes
+</code></pre></div>
+<h3 id="pgrep">pgrep</h3>
+<p>دیده‌اید که <bdi><code class="inline-code" dir="ltr">ps -ef</code></bdi> فرآیندهای همه کاربران را نشان می‌دهد. می‌توانیم <bdi><code class="inline-code" dir="ltr">grep</code></bdi> روی آن و ببینیم چه کسی <bdi><code class="inline-code" dir="ltr">gedit</code></bdi> را اجرا می‌کند و شناسه فرآیند آن چیست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ ps -ef | grep gedit
+jadi      6213  4604  9 20:06 ?        00:04:43 gedit
+jadi      7725  7651  0 20:55 pts/1    00:00:00 grep gedit
+</code></pre></div>
+<p>اما راه مستقیم تری نیز برای بررسی PID تمام فرآیندهای gedit وجود دارد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ pgrep gedit 
+6213
+</code></pre></div>
+<h3 id="_9">بالا</h3>
+<p>این رایج ترین ابزار برای انجام نظارت ساده بر سیستم است. این وضعیت را به روز می کند و به شما نگاه خوبی به وضعیت می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$top
+
+top - 21:00:44 up  1:16,  5 users,  load average: 1.51, 1.65, 1.78
+Tasks: 293 total,   1 running, 292 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 19.0 us,  5.0 sy,  0.0 ni, 70.9 id,  5.1 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:   8060264 total,  5359812 used,  2700452 free,   169240 buffers
+KiB Swap:  7811068 total,        0 used,  7811068 free.  2250692 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                                                                
+ 6570 jadi      20   0 1437752 546064  88312 S  18.4  6.8  12:00.96 firefox                                                                                                                
+ 4870 jadi      20   0 1762516 299120  75664 S  12.2  3.7   7:37.05 compiz                                                                                                                 
+ 4492 jadi       9 -11  455152  11516   8940 S   6.1  0.1   1:06.81 pulseaudio                                                                                                             
+ 4532 root      20   0  389028  77116  60192 S   6.1  1.0  12:16.63 Xorg                                                                                                                   
+ 4723 jadi      20   0  358936   8288   5512 S   6.1  0.1   9:51.52 ibus-daemon                                                                                                            
+ 5648 jadi      20   0 1641556 203676 102840 S   6.1  2.5   3:20.88 chrome                                                                                                                 
+ 7082 jadi      20   0 1210748  73136  42528 S   6.1  0.9   0:36.51 Telegram                                                                                                               
+ 7806 jadi      20   0   33796   3004   2500 R   6.1  0.0   0:00.02 top                                                                                                                    
+    1 root      20   0   29528   4320   2584 S   0.0  0.1   0:01.71 init
+</code></pre></div>
+<p>می توانید فرآیندها، بارگذاری سیستم، زمان آپدیت، وضعیت CPU، حافظه و ... را ببینید و کارهایی را انجام دهید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">کلید در حین بالا</th>
+<th style="text-align: left;">قابلیت</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">h</td>
+<td style="text-align: left;">کمک</td>
+</tr>
+<tr>
+<td style="text-align: center;">q</td>
+<td style="text-align: left;">ترک</td>
+</tr>
+<tr>
+<td style="text-align: center;">M</td>
+<td style="text-align: left;">مرتب سازی بر اساس میزان مصرف حافظه</td>
+</tr>
+<tr>
+<td style="text-align: center;">ج</td>
+<td style="text-align: left;">نمایش دستورات کامل</td>
+</tr>
+<tr>
+<td style="text-align: center;">k</td>
+<td style="text-align: left;">کشتن بعد از پرسیدن pid و سیگنال</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="_10">رایگان</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">free</code></bdi> اطلاعات مربوط به حافظه سیستم را به شما نشان می دهد. پیش‌فرض <em>kilobytes</em> است اما می‌توانید آن را با <bdi><code class="inline-code" dir="ltr">-m</code></bdi> برای مگابایت، <bdi><code class="inline-code" dir="ltr">-g</code></bdi> برای <em>گیگابایت</em> یا حتی <bdi><code class="inline-code" dir="ltr">-b</code></bdi> برای بایت تغییر دهید. همچنین می توانید از <bdi><code class="inline-code" dir="ltr">-h</code></bdi> برای <strong>قابل خواندن توسط انسان</strong> استفاده کنید. </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ free -m
+             total       used       free     shared    buffers     cached
+Mem:          7871       5231       2640        332        169       2195
+-/+ buffers/cache:       2866       5005
+Swap:         7627          0       7627
+</code></pre></div>
+<blockquote class="callout-box">
+<p>یک <strong>نکته</strong> کلی: اگر سیستم شما از Swap استفاده می کند، مشکل حافظه دارید.</p>
+</blockquote>
+<h3 id="_11">زمان کار</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">uptime</code></bdi> زمان، زمان کارکرد سیستم (مدت زمانی که سیستم اجرا شده است)، تعداد کاربرانی که وارد سیستم شده اند و میانگین بارگذاری 1، 5 و 15 دقیقه را نشان می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ uptime
+ 21:18:52 up  1:34,  5 users,  load average: 2.38, 2.64, 2.41
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگرچه این یکی از مهمترین KPIهای وضعیت سیستم است، برخی از مدیران باتجربه لینوکس نمی دانند میانگین بارگذاری به چه معناست. میانگین بار نشان می دهد که چند فرآیند در صف <strong>برای اجرا</strong> وجود دارد. اگر این عدد از تعداد هسته های CPU شما بیشتر باشد، در وضعیت بدی قرار دارید. اگر دائماً به تعداد هسته های شما نزدیک باشد، به نوعی خطرناک است و اگر کمتر از 1/10 اعداد هسته شما باشد، سیستم شما به نوعی بیکار است. آیا به یاد دارید چگونه تعداد هسته های خود را بررسی کنید؟ در <bdi><code class="inline-code" dir="ltr">/proc/cpuinfo</code></bdi> یا <bdi><code class="inline-code" dir="ltr">nproc</code></bdi> است.</p>
+</blockquote>
+<h3 id="_12">تماشا کنید</h3>
+<p>گاهی اوقات شما دستوری دارید که یک خروجی را به شما نشان می دهد اما می خواهید به اجرای آن ادامه دهید و خروجی را مشاهده کنید. در این موارد، <bdi><code class="inline-code" dir="ltr">watch</code></bdi> دوست شماست. این به شما امکان می دهد خروجی یک فرمان را در بازه های زمانی مشخص اجرا و بررسی کنید (پیش فرض 2 ثانیه است). </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ watch free -h
+</code></pre></div>
+<p>اگر یک لوله در دستور خود دارید، باید دستور تماشا را به صورت دو نقل قول <bdi><code class="inline-code" dir="ltr">"</code></bdi> یا تک نقل قول <bdi><code class="inline-code" dir="ltr">'</code></bdi> نقل قول کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ watch "ls -ltrh | wc -l"
+</code></pre></div>
+<p>اینها برخی از سوئیچ ها هستند:</p>
+<ul>
+<li><bdi><code class="inline-code" dir="ltr">-n</code></bdi> برای تعیین فاصله در ثانیه</li>
+<li><bdi><code class="inline-code" dir="ltr">-b</code></bdi> اگر دستور خروجی غیر صفر دارد، بوق بزنید</li>
+<li><bdi><code class="inline-code" dir="ltr">-d</code></bdi> تفاوت بین اجراها را نشان می دهد</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/7SDvwr7jVU8" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_13">مالتی پلکسرهای ترمینال</h2>
+<p>صفحه نمایش ###
+اگر به سیستم مبتنی بر GUI عادت دارید، به راحتی می توانید ترمینال های مختلف را کنار هم اجرا کنید و از آنها برای اجرای برنامه های مختلف استفاده کنید. اما اگر روی سرور هستید، به ابزارهای دیگری برای مالتیپلکس کردن ترمینال خود نیاز دارید. یکی از این دستورات <bdi><code class="inline-code" dir="ltr">screen</code></bdi> است. </p>
+<p>آن را با <bdi><code class="inline-code" dir="ltr">screen</code></bdi> اجرا کنید و اینتر را فشار دهید تا از پنجره خوش آمدگویی در یک فرمان خارج شوید. می توانید از آن به عنوان یک ترمینال معمولی استفاده کنید و با استفاده از کلیدهای Ctrl + A و سپس D از آن جدا شوید (و اجازه دهید در پس زمینه اجرا شود). فهرست صفحه‌های خود را با <bdi><code class="inline-code" dir="ltr">screen -ls</code></bdi> بررسی کنید و با <bdi><code class="inline-code" dir="ltr">screen -r screen-id</code></bdi> دوباره به هر یک از آنها وصل کنید. </p>
+<p>در زیر می توانید چند سوئیچ رایج را مشاهده کنید، همه آنها باید پس از ترکیب <bdi><code class="inline-code" dir="ltr">Ctrl + A</code></bdi> صادر شوند.</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">کلید</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">\</td>
+<td>کلیه پنجره های فرآیندها را بکشید و صفحه را خاتمه دهید</td>
+</tr>
+<tr>
+<td style="text-align: center;">|</td>
+<td>پنجره فعلی را به دو کانون عمودی تقسیم کنید</td>
+</tr>
+<tr>
+<td style="text-align: center;">Shift+S</td>
+<td>پنجره جریان را به دو فوکوس افقی تقسیم کنید</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td>یک پنجره در کانون فعلی ایجاد کنید</td>
+</tr>
+<tr>
+<td style="text-align: center;">برگه</td>
+<td>به کانون بعدی بروید</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td>جدا کردن از پنجره</td>
+</tr>
+<tr>
+<td style="text-align: center;">K</td>
+<td>کشتن پنجره فعلی</td>
+</tr>
+<tr>
+<td style="text-align: center;">N</td>
+<td>انتقال به پنجره بعدی</td>
+</tr>
+<tr>
+<td style="text-align: center;">P</td>
+<td>انتقال به پنجره قبلی</td>
+</tr>
+</tbody>
+</table></div>
+<p>یک نکته عالی در مورد صفحه نمایش (و tmux) این واقعیت است که حتی پس از خروج از سیستم در حال اجرا باقی می ماند و امکان ورود مجدد و اتصال مجدد به همان صفحه (یا tmux) وجود دارد.</p>
+<h3 id="tmux">tmux</h3>
+<p>آیا یک صفحه نمایش روی استروئیدها است! در اکثر توزیع ها به طور پیش فرض نصب نمی شود و ابتدا باید آن را نصب کنید. پیشوند دستور پیش فرض <bdi><code class="inline-code" dir="ltr">Ctrl+B</code></bdi> است و پس از اجرای <bdi><code class="inline-code" dir="ltr">tmux new</code></bdi> می توانید این موارد را صادر کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">کلید</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">%</td>
+<td>تقسیم پنجره جاری به صورت عمودی</td>
+</tr>
+<tr>
+<td style="text-align: center;">"</td>
+<td>پنجره فعلی را به صورت افقی تقسیم کنید</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td>از پنجره فعلی جدا شود</td>
+</tr>
+<tr>
+<td style="text-align: center;">&amp;</td>
+<td>کشیدن پنجره فعلی</td>
+</tr>
+</tbody>
+</table></div>
+<p>می‌توانید جلسات tmux را با استفاده از <bdi><code class="inline-code" dir="ltr">tmux ls</code></bdi> فهرست کنید و با استفاده از <bdi><code class="inline-code" dir="ltr">tmux att</code></bdi> برای اتصال به آخرین جلسه یا <bdi><code class="inline-code" dir="ltr">tmux att -t session_name</code></bdi> برای پیوست کردن به یک جلسه خاص، دوباره به یکی پیوست کنید.</p>
+<blockquote class="callout-box">
+<p>من به شدت توصیه می کنم به tmux مسلط باشید. حتی زمانی که به صورت محلی روی دستگاه خود کار می کنید بسیار مفید است. ویدیوی زیر را برای جلسه عمیق تر تماشا کنید:</p>
+</blockquote>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/RvsTIt7cjy0" title="YouTube video player" width="560"></iframe></div>
+                </div>
+
+                <div class="chapter-pager"><a href="1034_use_streams_pipes_and_redirects.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a><a href="1036_modify_process_execution_priorities.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

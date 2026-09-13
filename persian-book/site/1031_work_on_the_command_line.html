@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>103.1 روی خط فرمان (Command Line) کار کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item active"><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">103.1 روی خط فرمان (Command Line) کار کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۳</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 4</em></p>
+<p>توضیحات: داوطلبان باید بتوانند با استفاده از خط فرمان (Command Line) با پوسته ها و دستورات تعامل داشته باشند. هدف، پوسته Bash را فرض می کند.</p>
+<h2 id="_1">اهداف</h2>
+<ul>
+<li>از دستورات تک پوسته و توالی دستورات یک خطی برای انجام کارهای اساسی در خط فرمان (Command Line) استفاده کنید.</li>
+<li>از محیط پوسته شامل تعریف، ارجاع و صادرات متغیرهای محیطی (Environment Variables) استفاده و اصلاح کنید.</li>
+<li>استفاده و ویرایش تاریخچه فرمان.</li>
+<li>فراخوانی دستورات در داخل و خارج از مسیر تعریف شده.</li>
+</ul>
+<h2 id="_2">شرایط</h2>
+<p>*باش
+* <bdi><code class="inline-code" dir="ltr">echo</code></bdi>
+* env
+* <bdi><code class="inline-code" dir="ltr">export</code></bdi>
+* pwd
+* <bdi><code class="inline-code" dir="ltr">set</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">unset</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">type</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">which</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">man</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">uname</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">history</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">.bash_history</code></bdi>
+* <bdi><code class="inline-code" dir="ltr">quoting</code></bdi></p>
+<h3 id="shells-and-bash">Shells and Bash</h3>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/X-zq9-FhjOA" title="YouTube video player" width="560"></iframe></div>
+<p>شما دستورات خود را در یک پوسته صادر می کنید. این رابط خط فرمان (Command Line) شماست و گزینه های مختلفی برای آن دارید. برای رسیدن به پوسته خود باید در حالت متنی وارد سیستم شوید یا یکی از <em>ترمینال شبیه سازهای</em> مختلف را در رابط کاربری گرافیکی خود اجرا کنید. برخی از نمونه‌ها <bdi><code class="inline-code" dir="ltr">gnome-terminal</code></bdi>، <bdi><code class="inline-code" dir="ltr">konsole</code></bdi>، <bdi><code class="inline-code" dir="ltr">xterm</code></bdi>، و غیره هستند.</p>
+<p>پس از اجرای Terminal Emulator یا ورود به حالت متنی، در پوسته هستید و می توانید دستوراتی را صادر کنید. اگرچه <bdi><code class="inline-code" dir="ltr">bash</code></bdi> (پوسته GNU Bourne Again) رایج ترین است، ممکن است از <bdi><code class="inline-code" dir="ltr">zsh</code></bdi>، <bdi><code class="inline-code" dir="ltr">dash</code></bdi>، <bdi><code class="inline-code" dir="ltr">ksh</code></bdi>، <bdi><code class="inline-code" dir="ltr">csh</code></bdi> و دیگران استفاده کنید.</p>
+<p>می‌توانید بررسی کنید که دستور عمومی <bdi><code class="inline-code" dir="ltr">sh</code></bdi> شما به کجا پیوند می‌خورد</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ readlink /bin/sh
+</code></pre></div>
+<p>یا متغیر <bdi><code class="inline-code" dir="ltr">$SHELL</code></bdi> خود را با استفاده از:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>echo $SHELL
+</code></pre></div>
+<p>bash شما دارای برخی دستورات <em>internal</em> است که بدون وابستگی خارجی آنها را می فهمد (مثلاً <bdi><code class="inline-code" dir="ltr">cd</code></bdi>، <bdi><code class="inline-code" dir="ltr">break</code></bdi>، <bdi><code class="inline-code" dir="ltr">exec</code></bdi>، ...) اما اگر چیزی را به صورت داخلی درک نکرد، سعی می کند آن را به عنوان یک فایل اجرایی خارجی اجرا کند.</p>
+<p>برای تعیین این مورد می توانید از دستور <bdi><code class="inline-code" dir="ltr">type</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ type cd
+cd is a shell builtin
+[jadi@fedora ~]$ type ls
+ls is aliased to `ls --color=auto'
+[jadi@fedora ~]$ type ping
+ping is /usr/bin/ping
+</code></pre></div>
+<h2 id="cd-pwd-uname">دستورات <bdi><code class="inline-code" dir="ltr">cd</code></bdi>, <bdi><code class="inline-code" dir="ltr">pwd</code></bdi> و <bdi><code class="inline-code" dir="ltr">uname</code></bdi></h2>
+<h3 id="_3">سی دی</h3>
+<p>شما قبلاً تعداد زیادی دستور <bdi><code class="inline-code" dir="ltr">cd</code></bdi> را دیده اید :) این <em>دایرکتوری (پوشه)</em> را تغییر می دهد، از جمله <bdi><code class="inline-code" dir="ltr">.</code></bdi> (دایرکتوری (پوشه) فعلی) و <bdi><code class="inline-code" dir="ltr">..</code></bdi> (دایرکتوری (پوشه) والد). </p>
+<p>شما می توانید به دو طریق به دایرکتوری (پوشه) ها اشاره کنید:</p>
+<ol>
+<li><strong>مسیرهای مطلق</strong>: مانند <bdi><code class="inline-code" dir="ltr">/home/jadi/lpic1/lesson3.1</code></bdi></li>
+<li><strong>مسیرهای نسبی</strong>: مانند <bdi><code class="inline-code" dir="ltr">lpic1/lesson3.1</code></bdi>. در این مورد، ما در ابتدا <bdi><code class="inline-code" dir="ltr">/</code></bdi> را اضافه نمی کنیم، بنابراین bash سعی می کند فهرست راهنمای <bdi><code class="inline-code" dir="ltr">lpic1</code></bdi> را در جایی که ما هستیم (محلی / نسبی) پیدا کند.</li>
+</ol>
+<blockquote class="callout-box">
+<p>کاراکترهای <bdi><code class="inline-code" dir="ltr">~</code></bdi> به معنی <em>دایرکتوری (پوشه) اصلی کاربر صادر کننده فرمان است</em></p>
+</blockquote>
+<p>همچنین امکان صدور <bdi><code class="inline-code" dir="ltr">cd</code></bdi> بدون هیچ پارامتری وجود دارد. این شما را به فهرست اصلی خود منتقل می کند. بنابراین این 3 دستور همه برابر هستند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>cd
+cd ~
+cd $HOME
+</code></pre></div>
+<h3 id="pwd">pwd</h3>
+<p>دایرکتوری (پوشه) فعلی شما را به شما نشان می دهد:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora lesson3.1]$ pwd
+/home/jadi/lpic1/lesson3.1
+</code></pre></div>
+<h3 id="unname">unname</h3>
+<p>اطلاعات مربوط به سیستم را به شما می دهد. سوئیچ های رایج عبارتند از:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">گزینه</th>
+<th style="text-align: left;">توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">-s</td>
+<td style="text-align: left;">نام هسته را چاپ کنید. اگر گزینه ای مشخص نشده باشد، این پیش فرض است.</td>
+</tr>
+<tr>
+<td style="text-align: left;">-n</td>
+<td style="text-align: left;">نام گره یا نام میزبان را چاپ کنید.</td>
+</tr>
+<tr>
+<td style="text-align: left;">-r</td>
+<td style="text-align: left;">انتشار هسته را چاپ کنید. این گزینه اغلب با دستورات مدیریت ماژول استفاده می شود.</td>
+</tr>
+<tr>
+<td style="text-align: left;">-v</td>
+<td style="text-align: left;">نسخه کرنل را چاپ کنید.</td>
+</tr>
+<tr>
+<td style="text-align: left;">-m</td>
+<td style="text-align: left;">نام سخت افزار (CPU) دستگاه را چاپ کنید.</td>
+</tr>
+<tr>
+<td style="text-align: left;">-o</td>
+<td style="text-align: left;">نام سیستم عامل را چاپ کنید.</td>
+</tr>
+<tr>
+<td style="text-align: left;">-a</td>
+<td style="text-align: left;">تمام اطلاعات بالا را چاپ کنید.</td>
+</tr>
+</tbody>
+</table></div>
+<p>مثال:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">[jadi@fedora lesson3.1]$ uname -a
+Linux fedora 5.14.0-60.fc35.aarch64 #1 SMP Mon Aug 30 16:30:42 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux
+</code></pre></div>
+<h2 id="_4">دریافت کمک</h2>
+<p>اکثر دستوراتی که ما استفاده می کنیم دارای یک کتابچه راهنمای جالب و کامل هستند که از طریق دستور <bdi><code class="inline-code" dir="ltr">man</code></bdi> قابل دسترسی است. به طور پیش‌فرض از پیجر <bdi><code class="inline-code" dir="ltr">less</code></bdi> استفاده می‌کند و حاوی اسناد، سوئیچ‌ها، پارامترها، ... دستورات و ابزارهای کمکی است. </p>
+<p>با خواندن کتابچه راهنمای فرمان <bdi><code class="inline-code" dir="ltr">yes</code></bdi> خود را با مرد آشنا کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ man yes
+</code></pre></div>
+<p>لطفا توجه داشته باشید که صفحات man در بخش های مختلف (کتاب) دسته بندی شده اند. می توانید با خواندن دفترچه راهنمای مرد این موارد را بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ man man
+$ man 5 passwd
+</code></pre></div>
+<p>`</p>
+<h2 id="_5">کاراکترهای ویژه و نقل قول/فرار</h2>
+<p>در دنیای کامپیوتر، برخی از شخصیت ها معانی خاصی دارند. برای مثال در bash، نویسه <bdi><code class="inline-code" dir="ltr">*</code></bdi> به همه فایل‌ها گسترش می‌یابد. در این مواقع، اگر می خواهید از این کاراکتر بدون این بسط استفاده کنید، باید آن را <em>نقل</em><em> یا </em>Escape* انجام دهید. در بسیاری از موارد این کار با افزودن یک کاراکتر <bdi><code class="inline-code" dir="ltr">\</code></bdi> قبل از آن انجام می شود:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ echo 2 \* 3 = 6
+2 * 3 = 6
+</code></pre></div>
+<p>اگر از آنها در دستورات خود استفاده می کنید، اینها شخصیت هایی با معانی خاصی هستند که باید آنها را نقل کنید:</p>
+<p><bdi><code class="inline-code" dir="ltr">* ?[]'"\$;&amp;()|^&lt;&gt;</code></bdi></p>
+<p>لطفاً توجه داشته باشید که یک کاراکتر فاصله در لیست کاراکترهای بالا وجود دارد.</p>
+<blockquote class="callout-box">
+<p>همانطور که می بینید، <bdi><code class="inline-code" dir="ltr">\</code></bdi> معنای خاصی دارد، بنابراین اگر می خواهید از خود اسلش عقب استفاده کنید (بدون استفاده از آن)، باید اسلش پشت خود را با اسلش عقب دیگر <bdi><code class="inline-code" dir="ltr">\\</code></bdi> * نقل قول کنید.</p>
+</blockquote>
+<p>علاوه بر فرار، می‌توانید از <bdi><code class="inline-code" dir="ltr">\</code></bdi> برای ایجاد چند کاراکتر خاص استفاده کنید. برای مثال، چون نمی‌توانید کاراکتر <em>return</em> را تایپ کنید، آن را از طریق <bdi><code class="inline-code" dir="ltr">\n</code></bdi> (خط جدید) ایجاد می‌کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ echo -e "hello\nthere"
+hello
+there
+</code></pre></div>
+<p>برخی موارد دیگر عبارتند از:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">تابع دنباله فرار</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">\a</td>
+<td style="text-align: left;">هشدار (زنگ)</td>
+</tr>
+<tr>
+<td style="text-align: left;">\b</td>
+<td style="text-align: left;">بک اسپیس</td>
+</tr>
+<tr>
+<td style="text-align: left;">\c</td>
+<td style="text-align: left;">سرکوب خط جدید انتهایی (عملکرد مشابه با -n گزینه)</td>
+</tr>
+<tr>
+<td style="text-align: left;">\f</td>
+<td style="text-align: left;">فید فرم (پاک کردن صفحه در یک نمایشگر ویدیو)</td>
+</tr>
+<tr>
+<td style="text-align: left;">\n</td>
+<td style="text-align: left;">خط جدید</td>
+</tr>
+<tr>
+<td style="text-align: left;">\r</td>
+<td style="text-align: left;">بازگشت کالسکه</td>
+</tr>
+<tr>
+<td style="text-align: left;">\t</td>
+<td style="text-align: left;">زبانه افقی</td>
+</tr>
+</tbody>
+</table></div>
+<p>در bash می‌توانید از <bdi><code class="inline-code" dir="ltr">\</code></bdi> برای شکستن یک فرمان به خطوط بیشتر استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ echo You know slashes! But this \
+is another \
+usage
+You know slashes! But this is another usage
+</code></pre></div>
+<h2 id="_6">متغیرهای محیط پوسته</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/KMvc1SyPgjw" title="YouTube video player" width="560"></iframe></div>
+<p><em>متغیرهای محیط</em> حاوی برخی تنظیمات و اطلاعات در مورد پوسته است. برای مثال، ویرایشگر پیش‌فرض شما در متغیر <bdi><code class="inline-code" dir="ltr">EDITOR</code></bdi> تنظیم شده است. شما می توانید مقدار یک متغیر پوسته را به صورت زیر جستجو کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ echo $EDITOR
+/usr/bin/nano
+</code></pre></div>
+<p>با استفاده از دستور <bdi><code class="inline-code" dir="ltr">set</code></bdi> یا <bdi><code class="inline-code" dir="ltr">env</code></bdi> می توان همه متغیرهای env را بررسی کرد. </p>
+<p>اینها برخی از پرکاربردترین متغیرهای محیط bash هستند:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: left;">نام</th>
+<th style="text-align: left;">تابع</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">کاربر</td>
+<td style="text-align: left;">نام کاربری که وارد شده است</td>
+</tr>
+<tr>
+<td style="text-align: left;">مسیر</td>
+<td style="text-align: left;">فهرست دایرکتوری (پوشه) ها برای جستجوی دستورات، دو نقطه جدا شده</td>
+</tr>
+<tr>
+<td style="text-align: left;">ویرایشگر</td>
+<td style="text-align: left;">ویرایشگر پیش فرض</td>
+</tr>
+<tr>
+<td style="text-align: left;">HISTFILE</td>
+<td style="text-align: left;">جایی که bash باید تاریخچه خود را ذخیره کند (به طور معمول <bdi><code class="inline-code" dir="ltr">.bash_history</code></bdi>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">HOSTNAME</td>
+<td style="text-align: left;">نام میزبان سیستم</td>
+</tr>
+<tr>
+<td style="text-align: left;">PS1</td>
+<td style="text-align: left;">اعلان! بازی با آن</td>
+</tr>
+<tr>
+<td style="text-align: left;">UID</td>
+<td style="text-align: left;">شناسه کاربری عددی کاربر وارد شده</td>
+</tr>
+<tr>
+<td style="text-align: left;">صفحه اصلی</td>
+<td style="text-align: left;">فهرست اصلی کاربر</td>
+</tr>
+<tr>
+<td style="text-align: left;">PWD</td>
+<td style="text-align: left;">فهرست کار فعلی</td>
+</tr>
+<tr>
+<td style="text-align: left;">SHELL</td>
+<td style="text-align: left;">نام پوسته</td>
+</tr>
+<tr>
+<td style="text-align: left;">$</td>
+<td style="text-align: left;">شناسه فرآیند (یا PID پوسته bash در حال اجرا (یا سایر) فرآیند</td>
+</tr>
+<tr>
+<td style="text-align: left;">PPID</td>
+<td style="text-align: left;">شناسه فرآیندی که این فرآیند را شروع کرده است (یعنی شناسه فرآیند والد)</td>
+</tr>
+<tr>
+<td style="text-align: left;">?</td>
+<td style="text-align: left;">کد خروج آخرین دستور</td>
+</tr>
+</tbody>
+</table></div>
+<p>هنگام تلاش برای دسترسی به مقدار، باید یک <bdi><code class="inline-code" dir="ltr">$</code></bdi> را به ابتدای نام متغیر اضافه کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ echo $USER $UID
+jadi 1000
+$ echo $SHELL $HOME $PWD
+/bin/bash /home/jadi /home/jadi/lpic
+</code></pre></div>
+<p>برای تعریف یک EV (متغیر محیطی) جدید یا تغییر یا حذف یکی، می‌توانیم انجام دهیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ MYMOOD=happy
+$ echo I am $MYMOOD
+I am happy
+$ MYMOOD="Even Happier" # space has a specific meaning
+$ unset MM
+</code></pre></div>
+<p>اگر می‌خواهید برنامه‌های جدیدی که از این پوسته شروع می‌شوند به متغیری که تعریف کرده‌اید دسترسی داشته باشند، باید آنها را با <bdi><code class="inline-code" dir="ltr">export</code></bdi> تنظیم کنید یا بعداً صادر کنید.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>$ export MYMOOD
+$ export YOURMOOD="Not Confused"
+</code></pre></div>
+<blockquote class="callout-box">
+<p>پیکربندی‌های bash جهانی در <bdi><code class="inline-code" dir="ltr">/etc/profile</code></bdi> ذخیره می‌شوند و هر کاربر پیکربندی خود را در <bdi><code class="inline-code" dir="ltr">~/.profile</code></bdi> و <bdi><code class="inline-code" dir="ltr">~/.bash\_profile</code></bdi> و <bdi><code class="inline-code" dir="ltr">~/.bash\_logout</code></bdi> دارد. اگر نیاز به تغییر دائمی دارید، تنظیمات خود را به این موارد اضافه کنید.</p>
+</blockquote>
+<h2 id="_7">مسیر</h2>
+<p>وقتی فرمانی را صادر می کنید، اگر فرمان bash داخلی باشد، bash اجرا می شود. در غیر این صورت، bash می رود و متغیرهای <bdi><code class="inline-code" dir="ltr">PATH</code></bdi> را یکی یکی بررسی می کند و سعی می کند آنها را در آنجا پیدا کند. اگر نه، به شما خطا می دهد. اگر می خواهید چیزی را در یک مسیر خاص اجرا کنید، باید به طور انحصاری مکان را توصیف کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">$ echo $PATH
+/home/jadi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+</code></pre></div>
+<p>اما اگر بخواهم <bdi><code class="inline-code" dir="ltr">tar</code></bdi> را اجرا کنم چه اتفاقی می افتد؟ بیایید با دستورات <bdi><code class="inline-code" dir="ltr">which</code></bdi>، <bdi><code class="inline-code" dir="ltr">type</code></bdi>، و <bdi><code class="inline-code" dir="ltr">whereis</code></bdi> بررسی کنیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>jadi@funlife:~$ which tar
+/bin/tar
+jadi@funlife:~$ type tar
+tar is /bin/tar
+jadi@funlife:~$ whereis tar
+tar: /usr/lib/tar /bin/tar /usr/include/tar.h /usr/share/man/man1/tar.1.gz
+</code></pre></div>
+<p>یک مثال جالب تر <bdi><code class="inline-code" dir="ltr">ping</code></bdi> در فدورا است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ whereis ping
+ping: /usr/bin/ping /usr/sbin/ping /usr/share/man/man8/ping.8.gz
+[jadi@fedora ~]$ which ping
+/usr/bin/ping
+[jadi@fedora ~]$ /usr/sbin/ping 4.2.2.4
+PING 4.2.2.4 (4.2.2.4) 56(84) bytes of data.
+64 bytes from 4.2.2.4: icmp_seq=1 ttl=50 time=160 ms
+</code></pre></div>
+<blockquote class="callout-box">
+<p>به همین دلیل است که وقتی می خواهید بگویید "run this_program in this directory" "./this_program" را صادر می کنید. شما به طور انحصاری به bash می گویید که فایل کجاست. در لینوکس، دایرکتوری (پوشه) فعلی (.) به طور پیش فرض بخشی از PATH نیست.</p>
+</blockquote>
+<h2 id="_8">تاریخچه فرمان</h2>
+<p>Bash تاریخچه خود را در <bdi><code class="inline-code" dir="ltr">~/.bash_history</code></bdi> ذخیره می کند. می توانید آن را <bdi><code class="inline-code" dir="ltr">cat</code></bdi> کنید و محتوای آن را ببینید یا دستور <bdi><code class="inline-code" dir="ltr">history</code></bdi> را اجرا کنید. همچنین می توانید از کلیدهای زیر (ترکیب) برای دسترسی به دستورات قبلی خود استفاده کنید:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th>کلید (ترکیب)</th>
+<th>استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>فلش بالا و پایین</td>
+<td>حرکت در تاریخ</td>
+</tr>
+<tr>
+<td>Ctrl+R</td>
+<td>جستجوی عقب</td>
+</tr>
+<tr>
+<td>Ctrl+O</td>
+<td>دستوری را که پیدا کردید با Ctrl+R</td>
+</tr>
+<tr>
+<td>!!</td>
+<td>آخرین دستور</td>
+</tr>
+<tr>
+<td>!10</td>
+<td>دستور شماره 10 را اجرا کنید</td>
+</tr>
+<tr>
+<td>!text</td>
+<td>متن را به عقب جستجو کنید و اولین دستور پیدا شده</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout-box">
+<p>اگر می‌خواهید سابقه خود را پاک کنید، «HISTSIZE=0» را صادر کنید</p>
+</blockquote>
+<h2 id="_9">خروج از پوسته</h2>
+<p>دستور <bdi><code class="inline-code" dir="ltr">exit</code></bdi> از پوسته خارج می شود. مانند CTRL+d.</p>
+<p>اگر دستوری را در داخل پرانتز اجرا کنید، آن دستور در یک پوسته فرعی اجرا می‌شود و <bdi><code class="inline-code" dir="ltr">exec</code></bdi> دستوری را اجرا می‌کند و پوسته فعلی را می‌بندد.</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1026_linux_as_virtualization_guest.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span></a><a href="1032_process_text_streams_using_filters.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

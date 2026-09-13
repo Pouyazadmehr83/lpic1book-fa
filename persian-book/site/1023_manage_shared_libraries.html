@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>102.3 کتابخانه های مشترک را مدیریت کنید | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item active"><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item "><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">102.3 کتابخانه های مشترک را مدیریت کنید</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۲</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 1</em></p>
+<h2 id="_1">اهداف</h2>
+<p>کاندیداها باید بتوانند کتابخانه های مشترکی را که برنامه های اجرایی به آنها وابسته هستند تعیین کرده و در صورت لزوم آنها را نصب کنند.</p>
+<ul>
+<li>کتابخانه های مشترک را شناسایی کنید.</li>
+<li>مکان های معمولی کتابخانه های سیستم را شناسایی کنید.</li>
+<li>بارگذاری کتابخانه های مشترک</li>
+</ul>
+<h2 id="_2">شرایط و امکانات</h2>
+<ul>
+<li>ldd</li>
+<li>ldconfig</li>
+<li><bdi><code class="inline-code" dir="ltr">/etc/ld.so.conf</code></bdi></li>
+<li>LD_LIBRARY_PATH</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/1P58gW8xCkk" title="YouTube video player" width="560"></iframe></div>
+<h2 id="_3">پیوند دادن</h2>
+<p>وقتی برنامه ای می نویسیم از کتابخانه ها استفاده می کنیم. به عنوان مثال، اگر نیاز به خواندن متن از ورودی استاندارد (Standard Input - stdin) دارید، باید کتابخانه ای را که این را فراهم می کند <em>link</em> کنید. پیوند فکری دو شکل دارد:</p>
+<ul>
+<li><strong>ایستا</strong> پیوند زمانی است که این کتابخانه را به برنامه اجرایی خود اضافه می کنید. در این روش اندازه برنامه شما بزرگ است زیرا تمام کتابخانه های مورد نیاز را دارد. یک مزیت خوب این است که برنامه شما می تواند بدون وابستگی به برنامه ها/کتابخانه های دیگر اجرا شود.</li>
+<li><strong>Dynamic</strong> پیوند دادن زمانی است که شما فقط در برنامه خود می گویید "برای اجرای این برنامه به این و آن کتابخانه نیاز داریم". به این ترتیب برنامه شما کوچکتر است اما باید آن کتابخانه ها را جداگانه نصب کنید. این باعث می‌شود برنامه‌ها امن‌تر شوند (زیرا کتابخانه‌ها را می‌توان به‌طور مرکزی به‌روزرسانی کرد و هر گونه پیشرفت در کتابخانه پیشرفته‌تر کل برنامه را بهبود می‌بخشد) و کوچک‌تر.</li>
+</ul>
+<p>کتابخانه‌های پویا لینوکس دارای نام‌هایی مانند <bdi><code class="inline-code" dir="ltr">libLIBNAME.so.VERSION</code></bdi> هستند و در مکان‌هایی مانند <bdi><code class="inline-code" dir="ltr">/lib*/</code></bdi> و <bdi><code class="inline-code" dir="ltr">/usr/lib*/</code></bdi> قرار دارند. در ویندوز، ما آنها را کتابخانه های پیوندی پویا (DLL) می نامیم. </p>
+<blockquote class="callout-box">
+<p>پیوندهای پویا را کتابخانه‌های <strong>اشتراک‌گذاری</strong> نیز می‌نامند، زیرا همه برنامه‌ها یک کتابخانه را به اشتراک می‌گذارند که به طور جداگانه نصب شده است.</p>
+</blockquote>
+<h2 id="_4">چه کتابخانه هایی نیاز دارم</h2>
+<p>کتابخانه‌های مربوط به برنامه‌های کاربردی سیستم در <bdi><code class="inline-code" dir="ltr">/lib</code></bdi> و <bdi><code class="inline-code" dir="ltr">/lib64</code></bdi> (برای کتابخانه‌های 32 بیتی و 64 بیتی) نصب شده‌اند و کتابخانه‌های نصب‌شده توسط نرم‌افزارهای دیگر در <bdi><code class="inline-code" dir="ltr">/usr/lib</code></bdi> و <bdi><code class="inline-code" dir="ltr">/usr/lib64</code></bdi> قرار خواهند گرفت.</p>
+<h3 id="ldd">ldd</h3>
+<p>دستور <bdi><code class="inline-code" dir="ltr">ldd</code></bdi> به شما کمک می کند تا پیدا کنید:</p>
+<ul>
+<li>اگر برنامه ای به صورت پویا یا ایستا پیوند داشته باشد</li>
+<li>یک برنامه به چه کتابخانه هایی نیاز دارد</li>
+</ul>
+<p>بیایید نگاهی به دو فایل بیندازیم:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">[jadi@fedora ~]$ ldd /sbin/ldconfig
+    not a dynamic executable
+
+[jadi@fedora ~]$ ldd /bin/ls
+    linux-vdso.so.1 (0x00007ffdd53eb000)
+    libselinux.so.1 =&gt; /lib64/libselinux.so.1 (0x00007f5cbc7b0000)
+    libcap.so.2 =&gt; /lib64/libcap.so.2 (0x00007f5cbc7a6000)
+    libc.so.6 =&gt; /lib64/libc.so.6 (0x00007f5cbc5a5000)
+    libpcre2-8.so.0 =&gt; /lib64/libpcre2-8.so.0 (0x00007f5cbc50f000)
+    /lib64/ld-linux-x86-64.so.2 (0x00007f5cbc813es
+
+</code></pre></div>
+<p>همانطور که می بینید، <bdi><code class="inline-code" dir="ltr">ldd</code></bdi> به ما می گوید که <bdi><code class="inline-code" dir="ltr">/sbin/ldconfig</code></bdi> به صورت پویا پیوند ندارد اما کتابخانه های مورد نیاز <bdi><code class="inline-code" dir="ltr">/bin/ls</code></bdi> را به ما نشان می دهد.</p>
+<h3 id="_5">پیوندهای نمادین برای کتابخانه ها</h3>
+<p>اگر در حال نوشتن برنامه ای هستید و از توابع udev استفاده می کنید، کتابخانه ای به نام <em>libudev.so.1</em> را درخواست خواهید کرد. اما یک توزیع لینوکس، ممکن است نسخه کتابخانه udev خود را <em>libudev.so.1.4.0</em> بنامد. چگونه می توانیم این مشکل را حل کنیم؟ پاسخ <strong>پیوندهای نمادین</strong> است. در فصل های بعدی بیشتر در مورد آنها خواهید آموخت، اما به طور خلاصه، نام نمادین نام جدیدی برای همان فایل است.</p>
+<p>من همین مورد را در سیستم خود بررسی خواهم کرد. ابتدا پیدا می کنم <bdi><code class="inline-code" dir="ltr">libudev.so.1</code></bdi> در سیستم من کجاست:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># locate libudev.so.1
+/lib/i386-linux-gnu/libudev.so.1
+/usr/lib64/libudev.so.1.7.3
+</code></pre></div>
+<p>و سپس آن فایل را بررسی می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># ls -la /lib/i386-linux-gnu/libudev.so.1
+lrwxrwxrwx 1 root root    16 Nov 13 23:05 /lib/i386-linux-gnu/libudev.so.1 -&gt; libudev.so.1.4.0
+</code></pre></div>
+<p>همانطور که می بینید، این یک پیوند نمادین (Symbolic Link) است که به نسخه ای از libudev اشاره می کند که من (1.4.0) را نصب کرده ام، بنابراین حتی اگر نرم افزاری بگوید به libudev.so.1 نیاز دارد، سیستم من از libusdev.so.1.4.0 آن استفاده خواهد کرد.</p>
+<h3 id="cache">تنظیمات و حافظه کش (Cache) کتابخانه پویا</h3>
+<p>مانند سایر ابزارهای لینوکس، پیوند پویا نیز با استفاده از یک فایل پیکربندی متنی پیکربندی می شود. در <em>/etc/ld.so.conf</em> واقع شده است. در یک سیستم اوبونتو فقط به فایل‌های پیکربندی دیگر در <bdi><code class="inline-code" dir="ltr">/etc/ld.so.conf.d/</code></bdi> اشاره می‌کند، اما همه آن خطوط را می‌توان در فایل اصلی نیز گنجاند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">[jadi@fedora ~]$ cat /etc/ld.so.conf
+include ld.so.conf.d/*.conf
+[jadi@fedora ~]$ ls /etc/ld.so.conf.d/
+llvm13-x86_64.conf  pipewire-jack-x86_64.conf
+[jadi@fedora ~]$ cat /etc/ld.so.conf.d/llvm13-x86_64.conf
+/usr/lib64/llvm13/lib
+</code></pre></div>
+<p>دستورات <bdi><code class="inline-code" dir="ltr">ldconfig</code></bdi> همه این فایل ها را پردازش کردند تا بارگیری کتابخانه ها سریعتر شود. این دستور <bdi><code class="inline-code" dir="ltr">ld.so.cache</code></bdi> را برای مکان یابی فایل هایی که قرار است به صورت پویا بارگیری و پیوند شوند ایجاد می کند.</p>
+<blockquote class="callout-box">
+<p>اگر <bdi><code class="inline-code" dir="ltr">ld.so.conf</code></bdi> (یا زیر شاخه‌ها) را تغییر دهید، باید <bdi><code class="inline-code" dir="ltr">ldconfig</code></bdi> را اجرا کنید. آن را با سوئیچ <bdi><code class="inline-code" dir="ltr">-v</code></bdi> امتحان کنید تا پیشرفت / داده را ببینید.</p>
+</blockquote>
+<p>برای بستن این بخش، اجازه دهید ldconfig را با سوئیچ <strong>-p</strong> اجرا کنیم تا ببینیم چه چیزی در ld.so.cache ذخیره شده است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">[jadi@fedora ~]$ ldconfig -p | head
+1373 libs found in cache `/etc/ld.so.cache'
+    libzstd.so.1 (libc6,x86-64) =&gt; /lib64/libzstd.so.1
+    libzmf-0.0.so.0 (libc6,x86-64) =&gt; /lib64/libzmf-0.0.so.0
+    libzip.so.5 (libc6,x86-64) =&gt; /lib64/libzip.so.5
+    libzhuyin.so.13 (libc6,x86-64) =&gt; /lib64/libzhuyin.so.13
+    libzck.so.1 (libc6,x86-64) =&gt; /lib64/libzck.so.1
+    libz.so.1 (libc6,x86-64) =&gt; /lib64/libz.so.1
+    libyui.so.15 (libc6,x86-64) =&gt; /lib64/libyui.so.15
+    libyui-mga.so.15 (libc6,x86-64) =&gt; /lib64/libyui-mga.so.15
+    libyelp.so.0 (libc6,x86-64) =&gt; /lib64/libyelp.so.0
+</code></pre></div>
+<p>همانطور که می بینید، این فایل به هسته می گوید که اگر کسی درخواست <bdi><code class="inline-code" dir="ltr">libzstd.so.1</code></bdi> کرد، فایل <bdi><code class="inline-code" dir="ltr">/lib64/libzstd.so.1</code></bdi> باید بارگیری و استفاده شود.</p>
+<h3 id="_6">جایی که سیستم عامل کتابخانه های پویا را پیدا می کند</h3>
+<p>هنگامی که برنامه ای که از کتابخانه های مشترک استفاده می کند اجرا می شود، سیستم (به طور خاص، پیوند دهنده پویا) فایل های .so مورد نیاز را به ترتیب جستجو می کند:</p>
+<ol>
+<li>هر مکان کدگذاری شده در داخل خود باینری (به نام <bdi><code class="inline-code" dir="ltr">RPATH</code></bdi>)</li>
+<li>متغیر محیطی <bdi><code class="inline-code" dir="ltr">LD_LIBRARY_PATH</code></bdi> (در صورت تنظیم)</li>
+<li>یک فیلد رمزگذاری شده دیگر در داخل باینری (<bdi><code class="inline-code" dir="ltr">RUNPATH</code></bdi>)، مشابه RPATH</li>
+<li>حافظه کش (Cache) کتابخانه مشترک در <bdi><code class="inline-code" dir="ltr">/etc/ld.so.cache</code></bdi> (ایجاد شده توسط فرمان <bdi><code class="inline-code" dir="ltr">ldconfig</code></bdi>، که از فهرست مسیرها در <bdi><code class="inline-code" dir="ltr">/etc/ld.so.conf</code></bdi> و <bdi><code class="inline-code" dir="ltr">/etc/ld.so.conf.d/</code></bdi> استفاده می کند)</li>
+<li>فهرست راهنمای سیستم پیش‌فرض: <bdi><code class="inline-code" dir="ltr">/lib</code></bdi>، <bdi><code class="inline-code" dir="ltr">/lib64</code></bdi>، <bdi><code class="inline-code" dir="ltr">/usr/lib</code></bdi>، و <bdi><code class="inline-code" dir="ltr">/usr/lib64</code></bdi></li>
+</ol>
+<p>در برخی موارد، ممکن است لازم باشد کتابخانه‌های پیش‌فرض سیستم را لغو کنید. چند نمونه عبارتند از:</p>
+<ul>
+<li>شما یک نرم افزار قدیمی را اجرا می کنید که به نسخه قدیمی یک کتابخانه نیاز دارد.</li>
+<li>شما در حال توسعه یک کتابخانه مشترک هستید و می خواهید آن را بدون نصب آن آزمایش کنید</li>
+<li>شما برنامه خاصی را اجرا می کنید (مثلاً از opt) که باید به کتابخانه های خودش دسترسی داشته باشد</li>
+</ul>
+<p>در این موارد می توانید متغیر محیطی <strong>LD_LIBRARY_PATH</strong> را به کتابخانه ای که باید استفاده کنید اشاره کرده و سپس برنامه خود را اجرا کنید. یک لیست دایرکتوری (پوشه) جدا شده (:) به برنامه شما می‌گوید **قبل از بررسی کتابخانه‌ها در <bdi><code class="inline-code" dir="ltr">/etc/ld.so.cache</code></bdi> کجا کتابخانه‌های مورد نیاز را جستجو کند.</p>
+<p>برای مثال، اگر این دستور را بدهید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">export  LD_LIBRARY_PATH=/usr/lib/myoldlibs:/home/jadi/lpic/libs/
+</code></pre></div>
+<p>و سپس هر دستوری را اجرا کنید، سیستم <bdi><code class="inline-code" dir="ltr">/usr/lib/myoldlibs</code></bdi> و سپس <bdi><code class="inline-code" dir="ltr">/home/jadi/lpic/libs/</code></bdi> را قبل از رفتن به کتابخانه های اصلی سیستم (تعریف شده در <bdi><code class="inline-code" dir="ltr">/etc/ld.so.cache</code></bdi>) جستجو می کند. . .</p>
+<h2 id="_7">بارگذاری پویا</h2>
+<p>در قسمت آخر این بخش، بیایید ببینیم چگونه می توانیم به صورت دستی به لینوکس بگوییم که یک برنامه را با استفاده از <em>dynamic linker</em> اجرا کند. به آن بارگذار پویا نیز می گویند و برای بارگذاری کتابخانه های پویا مورد نیاز یک فایل اجرایی استفاده می شود. ممکن است نام آن <bdi><code class="inline-code" dir="ltr">ld</code></bdi> یا <bdi><code class="inline-code" dir="ltr">ld-linux</code></bdi> باشد. با دویدن می توانید مال خود را پیدا کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ locate ld-linux
+/usr/lib64/ld-linux-x86-64.so.2
+/usr/share/man/man8/ld-linux.8.gz
+/usr/share/man/man8/ld-linux.so.8.gz
+</code></pre></div>
+<p>و با استفاده از این برنامه ها را اجرا کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ /usr/lib64/ld-linux-x86-64.so.2 /usr/bin/ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  tmp  Videos
+</code></pre></div>
+<p>آیا می‌خواهید عمیق‌تر از LPIC1 بروید و بپرسید که چرا هنگام اجرای یک فرمان نیازی به اجرای <bdi><code class="inline-code" dir="ltr">ld-linux</code></bdi> ندارید؟ از آنجایی که فایل اجرایی که اجرا می کنید یک فایل اجرایی Linux ELF است و اگر داخل آن را بررسی کنید، می بینید که می گوید "این را با استفاده از ld-linux اجرا کنید": </p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code>[jadi@fedora ~]$ readelf -Wl /usr/bin/ls
+
+Elf file type is DYN (Position-Independent Executable file)
+Entry point 0x6c00
+There are 13 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align
+  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x0002d8 0x0002d8 R   0x8
+  INTERP         0x000318 0x0000000000000318 0x0000000000000318 0x00001c 0x00001c R   0x1
+      [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x003798 0x003798 R   0x1000
+  LOAD           0x004000 0x0000000000004000 0x0000000000004000 0x013c21 0x013c21 R E 0x1000
+  LOAD           0x018000 0x0000000000018000 0x0000000000018000 0x0074d8 0x0074d8 R   0x1000
+  [...]
+</code></pre></div>
+<p>💀 اینجا یک <em>هک</em> وجود دارد: <em>شما می توانید هر فایل اجرایی لینوکس را اجرا کنید، حتی اگر بیت اجرایی آن تنظیم نشده باشد!</em> فقط آن را با استفاده از <bdi><code class="inline-code" dir="ltr">ld-linux</code></bdi> اجرا کنید، همانطور که چند خط بالا انجام دادیم!</p>
+                </div>
+
+                <div class="chapter-pager"><a href="1022_install_a_boot_manager.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">102.2 یک مدیر بوت نصب کنید</span></a><a href="1024_use_debian_package_management.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

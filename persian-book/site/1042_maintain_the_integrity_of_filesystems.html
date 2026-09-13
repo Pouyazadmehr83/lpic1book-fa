@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>104.2 حفظ یکپارچگی سیستم های فایل | کتاب فارسی LPIC-1 جادی</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="منو" onclick="toggleSidebar()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                </button>
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐧</span>
+                    <span class="logo-text">آموزش فارسی LPIC-1</span>
+                </a>
+                <span class="logo-sub">بر اساس دوره و کتاب جادی</span>
+            </div>
+            
+            <div class="nav-left">
+                <button class="search-trigger" onclick="openSearchModal()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <span>جستجوی سریع...</span>
+                    <kbd>/</kbd>
+                </button>
+                
+                <a href="https://www.youtube.com/watch?v=AKkNUvEHXhk&list=PLFOYXCPEqdNUU55Xvgst8wGTWnz_sd-cj" target="_blank" rel="noopener" class="nav-yt-btn" title="پلی‌لیست ویدیوهای جادی در یوتیوب">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span>ویدیوهای جادی</span>
+                </a>
+
+                <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" title="تغییر حالت شب و روز">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-section">
+<div class="sidebar-section-title">مقدمه و شروع</div>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مقدمه و شروع کار</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="0001_know-your-lpic1-version-500.html" class="sidebar-link"><span class="ch-title">آشنایی با آزمون LPIC-1 نسخه ۵</span></a></li>
+<li class="sidebar-item "><a href="0002_prepare-lpic101-102-lab.html" class="sidebar-link"><span class="ch-title">آزمایشگاه خود را آماده کنید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۱ (LPIC-1 Exam 101)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۱: معماری سیستم (System Architecture)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1011_determine_and_configure_hardware_settings.html" class="sidebar-link"><span class="ch-title">101.1 تنظیمات سخت افزاری را تعیین و پیکربندی کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 2</span></a></li>
+<li class="sidebar-item "><a href="1012_boot_the_system.html" class="sidebar-link"><span class="ch-title">101.2 سیستم را بوت کنید</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+<li class="sidebar-item "><a href="1013_change_runlevels_and_shutdown_or_reboot_system.html" class="sidebar-link"><span class="ch-title">101.3 تغییر سطوح اجرا / اهداف بوت و خاموش کردن یا راه اندازی مجدد سیستم</span><span class="ch-weight" title="وزن در آزمون">وزن: 3</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۲: نصب لینوکس و مدیریت بسته‌ها (Package Management)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1021_design_hard_disk_layout.html" class="sidebar-link"><span class="ch-title">102.1 طراحی چیدمان هارد دیسک</span></a></li>
+<li class="sidebar-item "><a href="1022_install_a_boot_manager.html" class="sidebar-link"><span class="ch-title">102.2 یک مدیر بوت نصب کنید</span></a></li>
+<li class="sidebar-item "><a href="1023_manage_shared_libraries.html" class="sidebar-link"><span class="ch-title">102.3 کتابخانه های مشترک را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1024_use_debian_package_management.html" class="sidebar-link"><span class="ch-title">102.4 از مدیریت بسته دبیان استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1025_use_rpm_and_yum_package_management.html" class="sidebar-link"><span class="ch-title">102.5 از مدیریت بسته RPM و YUM استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1026_linux_as_virtualization_guest.html" class="sidebar-link"><span class="ch-title">102.6 لینوکس به عنوان مهمان مجازی سازی</span><span class="ch-weight" title="وزن در آزمون">وزن: 1</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۳: دستورات گنو و یونیکس (GNU & Unix Commands)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1031_work_on_the_command_line.html" class="sidebar-link"><span class="ch-title">103.1 روی خط فرمان (Command Line) کار کنید</span></a></li>
+<li class="sidebar-item "><a href="1032_process_text_streams_using_filters.html" class="sidebar-link"><span class="ch-title">103.2 جریان های متن را با استفاده از فیلترها پردازش کنید</span></a></li>
+<li class="sidebar-item "><a href="1033_perform_basic_file_management.html" class="sidebar-link"><span class="ch-title">103.3 مدیریت فایل اولیه را انجام دهید</span></a></li>
+<li class="sidebar-item "><a href="1034_use_streams_pipes_and_redirects.html" class="sidebar-link"><span class="ch-title">103.4 از جریان ها، لوله ها و تغییر مسیرها استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1035_create-_monitor_and_kill_processes.html" class="sidebar-link"><span class="ch-title">103.5 ایجاد، نظارت و کشتن فرآیندها</span></a></li>
+<li class="sidebar-item "><a href="1036_modify_process_execution_priorities.html" class="sidebar-link"><span class="ch-title">103.6 اصلاح اولویت های اجرای فرآیند</span></a></li>
+<li class="sidebar-item "><a href="1037_search_text_files_using_regular_expressions.html" class="sidebar-link"><span class="ch-title">103.7 فایل های متنی را با استفاده از عبارات باقاعده (Regular Expressions - Regex) جستجو کنید</span></a></li>
+<li class="sidebar-item "><a href="1038_perform_basic_file_editing_operations_using_vi.html" class="sidebar-link"><span class="ch-title">103.8 ویرایش اولیه فایل</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" open>
+<summary class="sidebar-group-title">مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1041_create_partitions_and_filesystems.html" class="sidebar-link"><span class="ch-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a></li>
+<li class="sidebar-item active"><a href="1042_maintain_the_integrity_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.2 حفظ یکپارچگی سیستم های فایل</span></a></li>
+<li class="sidebar-item "><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="sidebar-link"><span class="ch-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></li>
+<li class="sidebar-item "><a href="1044_manage_disk_quotas.html" class="sidebar-link"><span class="ch-title">104.4 حذف شد</span></a></li>
+<li class="sidebar-item "><a href="1045_manage_file_permissions_and_ownership.html" class="sidebar-link"><span class="ch-title">104.5 مدیریت مجوزها و مالکیت فایل</span></a></li>
+<li class="sidebar-item "><a href="1046_create_and_change_hard_and_symbolic_links.html" class="sidebar-link"><span class="ch-title">104.6 پیوندهای سخت و نمادین ایجاد و تغییر دهید</span></a></li>
+<li class="sidebar-item "><a href="1047_find_system_files_and_place_files_in_the_correct_location.html" class="sidebar-link"><span class="ch-title">104.7 فایل های سیستم را بیابید و فایل ها را در محل صحیح قرار دهید</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">آزمون ۱۰۲ (LPIC-1 Exam 102)</div>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۵: پوسته‌ها و اسکریپت‌نویسی (Shells & Scripting)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1051_customize_and_use_the_shell_environment.html" class="sidebar-link"><span class="ch-title">105.1 محیط پوسته را سفارشی کنید و از آن استفاده کنید</span></a></li>
+<li class="sidebar-item "><a href="1052_customize_or_write_simple_scripts.html" class="sidebar-link"><span class="ch-title">105.2 اسکریپت های ساده را سفارشی کنید یا بنویسید</span></a></li>
+<li class="sidebar-item "><a href="1053_sql_data_management.html" class="sidebar-link"><span class="ch-title">105.3 حذف شد!</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۶: رابط‌های کاربری و دسکتاپ (User Interfaces & Desktops)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1061_install_and_configure_x11.html" class="sidebar-link"><span class="ch-title">106.1 X11 را نصب و پیکربندی کنید</span></a></li>
+<li class="sidebar-item "><a href="1062_graphical_desktops.html" class="sidebar-link"><span class="ch-title">106.2 دسکتاپ گرافیکی</span></a></li>
+<li class="sidebar-item "><a href="1063_accessibility.html" class="sidebar-link"><span class="ch-title">106.3 دسترسی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۷: وظایف مدیریتی سیستم (Administrative Tasks)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1071_manage_user_and_group_accounts_and_related_system_files.html" class="sidebar-link"><span class="ch-title">107.1 حساب های کاربری و گروه و فایل های سیستم مربوطه را مدیریت کنید</span></a></li>
+<li class="sidebar-item "><a href="1072_automate_system_administration_tasks_by_scheduling_jobs.html" class="sidebar-link"><span class="ch-title">107.2 خودکارسازی وظایف مدیریت سیستم با زمان بندی کارها</span></a></li>
+<li class="sidebar-item "><a href="1073_localisation_and_internationalisation.html" class="sidebar-link"><span class="ch-title">107.3 بومی سازی و بین المللی سازی</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۸: سرویس‌های اساسی سیستم (Essential Services)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1081_maintain_system_time.html" class="sidebar-link"><span class="ch-title">108.1 زمان سیستم را حفظ کنید</span></a></li>
+<li class="sidebar-item "><a href="1082_system_logging.html" class="sidebar-link"><span class="ch-title">108.2 ثبت سیستم</span></a></li>
+<li class="sidebar-item "><a href="1083_mail_transfer_agent_mta_basics.html" class="sidebar-link"><span class="ch-title">108.3 اصول اولیه عامل انتقال نامه (MTA).</span></a></li>
+<li class="sidebar-item "><a href="1084_manage_printers_and_printing.html" class="sidebar-link"><span class="ch-title">108.4 چاپگرها و چاپ را مدیریت کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۰۹: مبانی شبکه (Networking Fundamentals)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1091_fundamentals_of_internet_protocols.html" class="sidebar-link"><span class="ch-title">109.1 مبانی پروتکل های اینترنتی</span></a></li>
+<li class="sidebar-item "><a href="1092_basic_network_configuration.html" class="sidebar-link"><span class="ch-title">109.2 پیکربندی شبکه پایدار</span></a></li>
+<li class="sidebar-item "><a href="1093_basic_network_troubleshooting.html" class="sidebar-link"><span class="ch-title">109.3 عیب یابی اساسی شبکه</span></a></li>
+<li class="sidebar-item "><a href="1094_configure_client_side_dns.html" class="sidebar-link"><span class="ch-title">109.4 DNS سمت سرویس گیرنده را پیکربندی کنید</span></a></li>
+</ul>
+</details>
+<details class="sidebar-group" >
+<summary class="sidebar-group-title">مبحث ۱۱۰: امنیت سیستم (Security)</summary>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="1101_perform_security_administration_tasks.html" class="sidebar-link"><span class="ch-title">110.1 انجام وظایف مدیریت امنیتی</span></a></li>
+<li class="sidebar-item "><a href="1102_setup_host_security.html" class="sidebar-link"><span class="ch-title">110.2 راه اندازی امنیت میزبان</span></a></li>
+<li class="sidebar-item "><a href="1103_securing_data_with_encryption.html" class="sidebar-link"><span class="ch-title">110.3 ایمن سازی داده ها با رمزگذاری</span></a></li>
+</ul>
+</details>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-section-title">صفحات تکمیلی</div>
+<ul class="sidebar-list">
+<li class="sidebar-item "><a href="index.html" class="sidebar-link">صفحه اصلی کتاب</a></li>
+<li class="sidebar-item "><a href="support.html" class="sidebar-link">حمایت از جادی (Donate)</a></li>
+</ul>
+</div>
+            </div>
+        </aside>
+        
+        <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+        <main class="main-content">
+            <article class="article-body">
+                <nav class="breadcrumb">
+                    <a href="index.html">کتاب LPIC-1 فارسی</a>
+                    <span class="sep">/</span>
+                    <span class="exam-badge">آزمون ۱۰۱</span>
+                    <span class="sep">/</span>
+                    <span>مبحث ۱۰۴: دیسک‌ها، سیستم‌فایل‌ها و سلسله‌مراتب (Devices & Filesystems)</span>
+                </nav>
+                
+                <header class="chapter-header">
+                    <h1 class="chapter-title">104.2 حفظ یکپارچگی سیستم های فایل</h1>
+                    <div class="chapter-meta">
+                        <span class="meta-item exam-tag">آزمون ۱۰۱</span>
+                        
+                        <span class="meta-item topic-tag">مبحث ۱۰۴</span>
+                    </div>
+                </header>
+
+                <div class="content-text">
+                    <p><em>وزن: 2</em></p>
+<p>داوطلبان باید بتوانند یک فایل سیستم استاندارد و همچنین داده های اضافی مرتبط با فایل سیستم ژورنال را حفظ کنند.</p>
+<h2 id="_1">اهداف</h2>
+<ul>
+<li>یکپارچگی فایل سیستم ها را بررسی کنید.</li>
+<li>نظارت بر فضای آزاد و inodes.</li>
+<li>
+<p>مشکلات ساده سیستم‌فایل (Filesystem) را تعمیر کنید.</p>
+</li>
+<li>
+<p>دو</p>
+</li>
+<li>df</li>
+<li>fsck</li>
+<li>e2fsck</li>
+<li>mke2fs</li>
+<li>tune2fs</li>
+<li>xfs_repair</li>
+<li>xfs_fsr</li>
+<li>xfs_db</li>
+</ul>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/qcAZ7vr6W9U" title="YouTube video player" width="560"></iframe></div>
+<h2 id="du-df">du &amp; df</h2>
+<p>در بسیاری از موارد شما می خواهید فضای آزاد یک دیسک را بیابید یا ببینید که یک فهرست چقدر از فضای استفاده می کند یا اینکه تعداد inode های باقی مانده را بررسی کنید.</p>
+<blockquote class="callout-box">
+<p>Inode (گره شاخص) یک ساختار داده در یک سیستم‌فایل (Filesystem) به سبک یونیکس است که یک شی سیستم‌فایل (Filesystem) مانند یک فایل یا یک دایرکتوری (پوشه) را توصیف می کند. هر inode ویژگی ها و مکان های بلوک دیسک داده های شی را ذخیره می کند. ویژگی‌های شی سیستم‌فایل (Filesystem) ممکن است شامل ابرداده (زمان آخرین تغییر، دسترسی، اصلاح) و همچنین داده‌های مالک و مجوز باشد. دایرکتوری (پوشه) لیستی از اینودها با نام های اختصاص داده شده آنهاست. این فهرست شامل یک ورودی برای خودش، والدینش و هر یک از فرزندانش است. <small>(<a href="https://en.wikipedia.org/wiki/Inode">wikipedia</a>)</small></p>
+</blockquote>
+<h3 id="df">df</h3>
+<p>دستور <strong>d</strong>isk<strong>f</strong>ree برای اطلاع از فضای آزاد و استفاده شده در سیستم های فایل استفاده می شود.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ df -TH
+Filesystem        Type      Size  Used Avail Use% Mounted on
+/dev/sda2         ext4       23G   15G  7.7G  65% /
+none              tmpfs     4.0K     0  4.0K   0% /sys/fs/cgroup
+udev              devtmpfs  3.9G  4.0K  3.9G   1% /dev
+tmpfs             tmpfs     788M  1.4M  786M   1% /run
+none              tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+none              tmpfs     3.9G   19M  3.9G   1% /run/shm
+none              tmpfs     100M   28K  100M   1% /run/user
+/dev/mapper/chome ext4      243G  229G   14G  95% /home/jadi
+/dev/sdb1         vfat      3.7G  7.8M  3.6G   1% /media/jadi/BA82-BECD
+</code></pre></div>
+<p>در اینجا، سوئیچ <bdi><code class="inline-code" dir="ltr">-T</code></bdi> به <bdi><code class="inline-code" dir="ltr">df</code></bdi> می گوید تا انواع سیستم‌فایل (Filesystem) را نشان دهد و <bdi><code class="inline-code" dir="ltr">-H</code></bdi> اعداد را قابل خواندن برای انسان می کند (در توان های 1000، برای توان های 2، از <bdi><code class="inline-code" dir="ltr">-h</code></bdi> استفاده کنید).</p>
+<p>در برخی از سیستم های فایل (مانند ext2-4) تعداد inode های ثابتی داریم، بنابراین ممکن است لازم باشد تعداد inode های باقی مانده را نیز بررسی کنید. برای انجام این کار، از سوئیچ <bdi><code class="inline-code" dir="ltr">-i</code></bdi> استفاده کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ df -i
+Filesystem          Inodes  IUsed    IFree IUse% Mounted on
+/dev/sda2          1531904 458616  1073288   30% /
+none               1007533      4  1007529    1% /sys/fs/cgroup
+udev               1003703    542  1003161    1% /dev
+tmpfs              1007533    644  1006889    1% /run
+none               1007533      3  1007530    1% /run/lock
+none               1007533    162  1007371    1% /run/shm
+none               1007533     33  1007500    1% /run/user
+/dev/mapper/chome 16171008 269293 15901715    2% /home/jadi
+/dev/sdb1                0      0        0     - /media/jadi/BA82-BECD
+</code></pre></div>
+<blockquote class="callout-box">
+<p>فرمت فایل vfat فاقد اینود است. هیچ مالک یا حق دسترسی در فایل سیستم های vfat وجود ندارد.</p>
+</blockquote>
+<h3 id="_2">دو</h3>
+<p>دستور <strong>d</strong>isk<strong>u</strong>sage فضای استفاده شده <strong>دایرکتوری (پوشه) ها و فایل ها</strong> را نشان می دهد. سوئیچ های رایج عبارتند از:</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">سوئیچ</th>
+<th style="text-align: left;">استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">-h</td>
+<td style="text-align: left;">اندازه های چاپ در توان 1024 (به عنوان مثال، 1023M)</td>
+</tr>
+<tr>
+<td style="text-align: center;">-c</td>
+<td style="text-align: left;">نمایش کل کل</td>
+</tr>
+<tr>
+<td style="text-align: center;">--max-depth 2</td>
+<td style="text-align: left;">همه را محاسبه کنید اما فقط 2 دایرکتوری (پوشه) را در عمق نمایش دهید</td>
+</tr>
+<tr>
+<td style="text-align: center;">-s</td>
+<td style="text-align: left;">فقط خلاصه را نشان می دهد و نه همه دایرکتوری (پوشه) ها را یک به یک</td>
+</tr>
+</tbody>
+</table></div>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~/w/lpic$ du
+16    ./101
+701456    ./done
+701464    ./Logo/chert
+704588    ./Logo
+12    ./data
+12    ./100
+9432884    .
+jadi@funlife:~/w/lpic$ du -c
+16    ./101
+701456    ./done
+701464    ./Logo/chert
+704588    ./Logo
+12    ./data
+12    ./100
+9432884    .
+9432884    total
+jadi@funlife:~/w/lpic$ du -hs
+9.0G    .
+</code></pre></div>
+<blockquote class="callout-box">
+<p>در بسیاری از موارد وقتی می‌خواهم ببینم چه چیزی از فضای سرورهای من استفاده می‌کند، از چیزی مانند <bdi><code class="inline-code" dir="ltr">$sudo du /home -h --max-depth 1</code></bdi> استفاده می‌کنم.</p>
+</blockquote>
+<h2 id="_3">بررسی سیستم های فایل</h2>
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" loading="lazy" src="https://www.youtube.com/embed/VjnBzwDYbIY" title="YouTube video player" width="560"></iframe></div>
+<h3 id="fsck">fsck</h3>
+<p>اگر اتفاق بدی برای فایل سیستم شما بیفتد (مثلاً برق ناگهان قطع شود) یک سیستم‌فایل (Filesystem) خراب خواهید داشت. دستور کلی برای رفع این مشکل <bdi><code class="inline-code" dir="ltr">fsck</code></bdi> است. از نظر فنی این دستور یک قسمت جلویی برای بسیاری از دستورات است:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ ls /sbin/*fsck*
+/sbin/dosfsck       /sbin/fsck.ext2     /sbin/fsck.fat     /sbin/fsck.vfat
+/sbin/e2fsck       /sbin/fsck.ext3     /sbin/fsck.minix
+/sbin/fsck       /sbin/fsck.ext4     /sbin/fsck.msdos
+/sbin/fsck.cramfs  /sbin/fsck.ext4dev  /sbin/fsck.nfs
+</code></pre></div>
+<blockquote class="callout-box">
+<p>برخی از اینها فقط پیوندهای سخت به دستور <bdi><code class="inline-code" dir="ltr">e2fsck</code></bdi> هستند</p>
+</blockquote>
+<p>یک سوئیچ رایج در هنگام راه‌اندازی، <bdi><code class="inline-code" dir="ltr">-A</code></bdi> است که به <bdi><code class="inline-code" dir="ltr">fsck</code></bdi> می‌گوید همه سیستم‌های فایل را در /etc/fstab به ترتیب توسط <em>passno</em> در آن فایل که فیلد ششم است، بررسی کند.</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">root@funlife:~# fsck /dev/sdb
+fsck from util-linux 2.25.1
+e2fsck 1.42.10 (18-May-2014)
+/dev/sdb is in use.
+e2fsck: Cannot continue, aborting.
+
+
+root@funlife:~# umount /dev/sdb
+umount: /dev/sdb: not mounted
+root@funlife:~# umount /dev/sdb1
+root@funlife:~# fsck /dev/sdb
+fsck from util-linux 2.25.1
+e2fsck 1.42.10 (18-May-2014)
+ext2fs_open2: Bad magic number in super-block
+fsck.ext2: Superblock invalid, trying backup blocks...
+fsck.ext2: Bad magic number in super-block while trying to open /dev/sdb
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 &lt;device&gt;
+ or
+    e2fsck -b 32768 &lt;device&gt;
+</code></pre></div>
+<p>همچنین می‌توانید فایل‌سیستم‌ها را با UUID(آنها را با دستور <bdi><code class="inline-code" dir="ltr">blkid</code></bdi> یا با برچسب‌ها پیدا کنید) بررسی کنید:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">root@funlife:~# fsck /dev/sdb
+fsck from util-linux 2.25.1
+e2fsck 1.42.10 (18-May-2014)
+ext2fs_open2: Bad magic number in super-block
+fsck.ext2: Superblock invalid, trying backup blocks...
+fsck.ext2: Bad magic number in super-block while trying to open /dev/sdb
+
+The superblock could not be read or does not describe a valid ext2/ext3/ext4
+filesystem.  If the device is valid and it really contains an ext2/ext3/ext4
+filesystem (and not swap or ufs or something else), then the superblock
+is corrupt, and you might try running e2fsck with an alternate superblock:
+    e2fsck -b 8193 &lt;device&gt;
+ or
+    e2fsck -b 32768 &lt;device&gt;
+
+root@funlife:~# blkid
+/dev/sda1: LABEL="movies"
+/dev/sdb1: UUID="BA82-BECD" TYPE="vfat" PARTUUID="381add66-01"
+root@funlife:~# fsck LABEL=movies
+fsck from util-linux 2.25.1
+root@funlife:~# fsck UUID="BA82-BECD"
+fsck from util-linux 2.25.1
+fsck.fat 3.0.26 (2014-03-07)
+/dev/sdb1: 14 files, 1972/945094 clusters
+</code></pre></div>
+<p>از <bdi><code class="inline-code" dir="ltr">-N</code></bdi> استفاده کنید تا ببینید چه دستور/آزمایی بدون اجرای واقعی آنها اجرا می شود:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">root@funlife:~# fsck -N UUID="BA82-BECD"
+fsck from util-linux 2.25.1
+[/sbin/fsck.vfat (1) -- /dev/sdb1] fsck.vfat /dev/sdb1
+</code></pre></div>
+<blockquote class="callout-box">
+<p>اگر می خواهید یک فایل سیستم XFS را بررسی کنید، باید از دستور <bdi><code class="inline-code" dir="ltr">xfs_check</code></bdi> استفاده کنید.</p>
+</blockquote>
+<p>برخی از نسخه ها دارای <bdi><code class="inline-code" dir="ltr">-a</code></bdi> برای رفع خودکار همه مشکلات یافت شده هستند، اما توصیه نمی شود. </p>
+<h3 id="e2fsck">e2fsck</h3>
+<p><bdi><code class="inline-code" dir="ltr">e2fsck</code></bdi> برای بررسی خانواده فایل سیستم های ext2/ext3/ext4 استفاده می شود.  برای سیستم‌های فایل ext3 و ext4 که از <bdi><code class="inline-code" dir="ltr">journal</code></bdi> استفاده می‌کنند، اگر سیستم به‌طور ناپاک و بدون هیچ خطایی خاموش شده باشد، معمولاً پس از پخش مجدد تراکنش‌های تعهد شده در مجله، سیستم‌فایل (Filesystem) باید به‌عنوان تمیز علامت‌گذاری شود. بنابراین، برای سیستم‌های فایلی که از <strong>ژورنالینگ</strong> استفاده می‌کنند، e2fsck معمولاً ژورنال را دوباره پخش می‌کند و از آن خارج می‌شود، مگر اینکه بلوک فوق‌العاده آن نشان دهد که بررسی بیشتری لازم است.</p>
+<p>دستگاه یک دستگاه بلوک (به عنوان مثال، <bdi><code class="inline-code" dir="ltr">/dev/sdc1</code></bdi>) یا فایل حاوی سیستم‌فایل (Filesystem) است.</p>
+<p>توجه داشته باشید که به طور کلی اجرای <bdi><code class="inline-code" dir="ltr">e2fsck</code></bdi> در سیستم های فایل <strong><em>mounted</em></strong> ایمن نیست.  تنها استثنا این است که گزینه <bdi><code class="inline-code" dir="ltr">-n</code></bdi> مشخص شده باشد، و گزینه های <bdi><code class="inline-code" dir="ltr">-c</code></bdi>، <bdi><code class="inline-code" dir="ltr">-l</code></bdi>، یا <bdi><code class="inline-code" dir="ltr">-L</code></bdi> مشخص نشده باشند. با این حال، حتی اگر انجام این کار ایمن باشد، نتایج چاپ شده توسط <bdi><code class="inline-code" dir="ltr">e2fsck</code></bdi> معتبر نیستند اگر سیستم‌فایل (Filesystem) <strong><em>mount شده باشد</em></strong>. اگر <bdi><code class="inline-code" dir="ltr">e2fsck</code></bdi> بپرسد که آیا باید سیستم‌فایل (Filesystem) نصب شده را بررسی کنید یا نه، تنها پاسخ صحیح «خیر» است.  فقط کارشناسانی که واقعاً می دانند چه کاری انجام می دهند باید به این سؤال به روش دیگری پاسخ دهند.</p>
+<p>اگر <bdi><code class="inline-code" dir="ltr">e2fsck</code></bdi> در حالت تعاملی اجرا شود (به این معنی که هیچکدام از <bdi><code class="inline-code" dir="ltr">-y</code></bdi>، <bdi><code class="inline-code" dir="ltr">-n</code></bdi>، یا <bdi><code class="inline-code" dir="ltr">-p</code></bdi> مشخص نشده اند)، برنامه از کاربر می خواهد که هر مشکلی را که در سیستم‌فایل (Filesystem) یافت می شود برطرف کند. پاسخ <bdi><code class="inline-code" dir="ltr">'y'</code></bdi> خطا را برطرف می کند. <bdi><code class="inline-code" dir="ltr">'n'</code></bdi> خطا را رفع نمی کند. و <bdi><code class="inline-code" dir="ltr">'a'</code></bdi> مشکل و همه مشکلات بعدی را برطرف می کند. با فشردن Enter پاسخ پیش‌فرض که قبل از علامت سوال چاپ می‌شود ادامه می‌یابد.  با فشار دادن <bdi><code class="inline-code" dir="ltr">Control-C</code></bdi> بلافاصله <bdi><code class="inline-code" dir="ltr">e2fsck</code></bdi> خاتمه می شود.</p>
+<h3 id="mke2fs">mke2fs</h3>
+<p>mke2fs برای ایجاد یک فایل سیستم ext2، ext3 یا ext4، معمولاً در یک پارتیشن (Partition) دیسک استفاده می‌شود. دستگاه فایل ویژه مربوط به دستگاه است (به عنوان مثال /dev/hdXX). تعداد بلوک ها تعداد بلوک های موجود در دستگاه است. اگر حذف شود، mke2fs به طور خودکار اندازه سیستم‌فایل (Filesystem) را تعیین می کند. اگر به عنوان mkfs.ext3 نامیده شود، یک مجله ایجاد می شود که گویی گزینه <bdi><code class="inline-code" dir="ltr">-j</code></bdi> مشخص شده است.</p>
+<p>پیش‌فرض‌های پارامترهای سیستم‌فایل (Filesystem) جدید ایجاد شده، اگر توسط گزینه‌های فهرست‌شده در زیر لغو نشده باشند، توسط فایل پیکربندی /etc/mke2fs.conf کنترل می‌شوند. برای جزئیات بیشتر به صفحه راهنمای mke2fs.conf(5) مراجعه کنید.</p>
+<h3 id="tune2fs">tune2fs</h3>
+<p>این دستوری برای تنظیم فایل سیستم های <em>ext</em> است. می تواند اطلاعات را نشان دهد و گزینه های زیادی را تنظیم کند. گزینه <bdi><code class="inline-code" dir="ltr">-l</code></bdi> تنظیمات فعلی را فهرست می کند:</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">jadi@funlife:~$ sudo tune2fs -l /dev/sda2
+tune2fs 1.42.10 (18-May-2014)
+Filesystem volume name:   &lt;none&gt;
+Last mounted on:          /
+Filesystem UUID:          1651a94e-0b4e-47fb-aca0-f77e05714617
+Filesystem magic number:  0xEF53
+Filesystem revision #:    1 (dynamic)
+Filesystem features:      has_journal ext_attr resize_inode dir_index filetype needs_recovery extent flex_bg sparse_super large_file huge_file uninit_bg dir_nlink extra_isize
+Filesystem flags:         signed_directory_hash
+Default mount options:    user_xattr acl
+Filesystem state:         clean
+Errors behavior:          Continue
+Filesystem OS type:       Linux
+Inode count:              1531904
+Block count:              6123046
+Reserved block count:     306152
+Free blocks:              2302702
+Free inodes:              1073461
+First block:              0
+Block size:               4096
+Fragment size:            4096
+Reserved GDT blocks:      1022
+Blocks per group:         32768
+Fragments per group:      32768
+Inodes per group:         8192
+Inode blocks per group:   512
+Flex block group size:    16
+Filesystem created:       Mon Dec  1 10:21:42 2014
+Last mount time:          Sat Jan 31 17:21:51 2015
+Last write time:          Sat Jan 31 17:21:51 2015
+Mount count:              32
+Maximum mount count:      -1
+Last checked:             Mon Dec  1 10:21:42 2014
+Check interval:           0 (&lt;none&gt;)
+Lifetime writes:          103 GB
+Reserved blocks uid:      0 (user root)
+Reserved blocks gid:      0 (group root)
+First inode:              11
+Inode size:              256
+Required extra isize:     28
+Desired extra isize:      28
+Journal inode:            8
+First orphan inode:       786620
+Default directory hash:   half_md4
+Directory Hash Seed:      16c38a41-e709-4e04-b1c2-8a79d71ea7e8
+Journal backup:           inode blocks
+</code></pre></div>
+<h3 id="_4">اشکال زدایی می کند</h3>
+<p>این یک ابزار تعاملی برای اشکال زدایی یک فایل سیستم ext است. فایل سیستم را در حالت فقط خواندنی باز می کند مگر اینکه به آن بگوییم (با گزینه <bdi><code class="inline-code" dir="ltr">-w</code></bdi>). می تواند فایل ها و دایرکتوری (پوشه) ها را حذف کند..</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text">root@funlife:~# debugfs /dev/sda2
+debugfs 1.42.10 (18-May-2014)
+debugfs:  cd /etc/        &lt;-- cd
+debugfs:  pwd            &lt;-- show were am I
+[pwd]   INODE: 524289  PATH: /etc
+[root]  INODE:      2  PATH: /
+debugfs:  stat passwd        &lt;-- show data on one file
+Inode: 527187   Type: regular    Mode:  0644   Flags: 0x80000
+Generation: 1875144872    Version: 0x00000000:00000001
+User:     0   Group:     0   Size: 2145
+File ACL: 0    Directory ACL: 0
+Links: 1   Blockcount: 8
+Fragment:  Address: 0    Number: 0    Size: 0
+ ctime: 0x548d4241:a7b196fc -- Sun Dec 14 11:24:41 2014
+ atime: 0x54cc635b:6acfc148 -- Sat Jan 31 08:38:43 2015
+ mtime: 0x548d4241:a01076f8 -- Sun Dec 14 11:24:41 2014
+crtime: 0x548d4241:9f1c52f8 -- Sun Dec 14 11:24:41 2014
+Size of extra inode fields: 28
+EXTENTS:
+(0):2188172
+debugfs:  ncheck 527187        &lt;-- node check an inode
+Inode    Pathname        
+527187    /etc/passwd
+debugfs:  q            &lt;-- quit
+</code></pre></div>
+<h4 id="_5">سوپر بلوک</h4>
+<p>سیستم های یونیکس از سوپر بلوک ها برای ذخیره <em>فایل_سیستم متادیتا</em> استفاده می کنند. اغلب اوقات این بلوک در ابتدای سیستم‌فایل (Filesystem) قرار دارد و در مکان های دیگر نیز تکرار می شود. <bdi><code class="inline-code" dir="ltr">-n</code></bdi> از <bdi><code class="inline-code" dir="ltr">mke2fs</code></bdi> مکان های فوق بلوک را نشان می دهد</p>
+<div class="code-wrapper" dir="ltr"><div class="code-header"><span class="code-label">دستور / کد ترمینال</span><button class="copy-btn" onclick="copyCode(this)" type="button">کپی کد</button></div><pre class="code-block" dir="ltr"><code class="language-text"># mke2fs -n /dev/sda7
+mke2fs 1.41.9 (22-Aug-2009)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+7159808 inodes, 28637862 blocks
+1431893 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+874 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks:
+    32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+    4096000, 7962624, 11239424, 20480000, 23887872
+</code></pre></div>
+<h2 id="xfs">ابزار xfs</h2>
+<p>توجه: در برخی از توزیع‌ها، ابزارهای xfs به‌طور پیش‌فرض نصب نمی‌شوند و ممکن است نیاز به نصب بسته <bdi><code class="inline-code" dir="ltr">xfsprogs</code></bdi> داشته باشید. </p>
+<p>این همان <bdi><code class="inline-code" dir="ltr">tune2fs</code></bdi> است اما برای سیستم های فایل xfs.</p>
+<blockquote class="callout-box">
+<p>xfs_info باید در سیستم های فایل نصب شده استفاده شود</p>
+</blockquote>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">فرمان</th>
+<th style="text-align: left;">استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">xfs_info</td>
+<td style="text-align: left;">نمایش اطلاعات</td>
+</tr>
+<tr>
+<td style="text-align: center;">xfs_growfs</td>
+<td style="text-align: left;">گسترش فایل سیستم</td>
+</tr>
+<tr>
+<td style="text-align: center;">xfs_admin</td>
+<td style="text-align: left;">تغییر پارامترها در سیستم های فایل XFS</td>
+</tr>
+<tr>
+<td style="text-align: center;">xfs_repair</td>
+<td style="text-align: left;">رفع مشکلات لطفاً توجه داشته باشید که فایل سیستم تحت تعمیر باید unmount شود</td>
+</tr>
+<tr>
+<td style="text-align: center;">xfs_db</td>
+<td style="text-align: left;">فایل سیستم را بررسی و اشکال زدایی می کند. xfs_db برای بررسی یک فایل سیستم XFS استفاده می شود. در شرایط نادری می‌توان از آن برای اصلاح یک فایل سیستم XFS نیز استفاده کرد، اما این کار معمولاً به xfs_repair یا اسکریپت‌هایی مانند xfs_admin که xfs_db را اجرا می‌کنند واگذار می‌شود.</td>
+</tr>
+<tr>
+<td style="text-align: center;">xfs_fsr</td>
+<td style="text-align: left;">سازماندهی مجدد سیستم‌فایل (Filesystem) برای XFS. هنگامی که بدون آرگومان فراخوانی می شود، xfs_fsr همه فایل های معمولی را در همه سیستم های فایل نصب شده سازماندهی مجدد می کند. xfs_fsr چرخه‌های زیادی را بر روی /etc/mtab هر بار که یک پاس روی هر فایل سیستم XFS انجام می‌دهد، می‌سازد. هر پاس از آن عبور می کند و فایل هایی را انتخاب می کند که بیشترین تعداد دامنه را دارند. سعی می کند 10 درصد بالای این فایل ها را در هر پاس یکپارچه سازی کند.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="_6">تعمیر</h3>
+<p>ما از <bdi><code class="inline-code" dir="ltr">fsck</code></bdi> برای نمایش اطلاعات سیستم‌فایل (Filesystem) استفاده کردیم، اما برای رفع مشکل سیستم های فایل نیز طراحی شده است. اگر بررسی زمان بوت مشکلی را پیدا کرد، برای رفع مشکلات در خط فرمان (Command Line) قرار می گیرید.</p>
+<p>در سیستم‌های فایل غیرژورنالینگ (ext2) fsck سوالات زیادی در مورد هر بلوک به شما نشان می‌دهد و اگر می‌خواهید آنها را برطرف کند باید بگویید <bdi><code class="inline-code" dir="ltr">y</code></bdi>. در سیستم های فایل ژورنال (ext3&amp;4, xfs, ..) fsck وظایف بسیار کمتری برای انجام دارد.</p>
+<blockquote class="callout-box">
+<p>برای سیستم های فایل xfs، دستور <bdi><code class="inline-code" dir="ltr">xfs_check</code></bdi> را داریم</p>
+</blockquote>
+<p>یک سوئیچ مهم <bdi><code class="inline-code" dir="ltr">-n</code></bdi> است که باعث می شود این دستورات ** چیزی را اصلاح نکنند** و فقط نشان دهند که قرار است چه کاری انجام شود.</p>
+<h2 id="_7">ابزارهای دیگر</h2>
+<p>برای آزمون LPIC، دانستن این دستورات خوب است.</p>
+<div class="table-responsive"><table class="table table-styled">
+<thead>
+<tr>
+<th style="text-align: center;">فایل سیستم</th>
+<th style="text-align: center;">فرمان</th>
+<th style="text-align: left;">استفاده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">ext</td>
+<td style="text-align: center;">tune2fs</td>
+<td style="text-align: left;">نمایش یا تنظیم پارامترهای ext2 و ext3 و یا حتی تنظیم گزینه های journaling</td>
+</tr>
+<tr>
+<td style="text-align: center;">ext</td>
+<td style="text-align: center;">dumpe2fs</td>
+<td style="text-align: left;">اطلاعات توصیفگر گروه بلوک و بلوک فوق العاده را برای یک سیستم‌فایل (Filesystem) ext2 یا ext3 چاپ می کند.</td>
+</tr>
+<tr>
+<td style="text-align: center;">ext</td>
+<td style="text-align: center;">اشکال زدایی</td>
+<td style="text-align: left;">یک دیباگر سیستم‌فایل (Filesystem) تعاملی است. از آن برای بررسی یا تغییر وضعیت یک سیستم‌فایل (Filesystem) ext2 یا ext3 استفاده کنید.</td>
+</tr>
+<tr>
+<td style="text-align: center;">reiserfs</td>
+<td style="text-align: center;">reiserfstune</td>
+<td style="text-align: left;">نمایش و تنظیم پارامترها</td>
+</tr>
+<tr>
+<td style="text-align: center;">reiserfs</td>
+<td style="text-align: center;">debugreiserfs</td>
+<td style="text-align: left;">اطلاعات توصیفگر گروه بلوک و بلوک فوق العاده را برای یک سیستم‌فایل (Filesystem) ext2 یا ext3 چاپ می کند.</td>
+</tr>
+<tr>
+<td style="text-align: center;">XFS</td>
+<td style="text-align: center;">xfs_info</td>
+<td style="text-align: left;">نمایش اطلاعات</td>
+</tr>
+<tr>
+<td style="text-align: center;">XFS</td>
+<td style="text-align: center;">xfs_growfs</td>
+<td style="text-align: left;">گسترش فایل سیستم</td>
+</tr>
+<tr>
+<td style="text-align: center;">XFS</td>
+<td style="text-align: center;">xfs_admin</td>
+<td style="text-align: left;">تغییر پارامترها در سیستم های فایل XFS</td>
+</tr>
+<tr>
+<td style="text-align: center;">XFS</td>
+<td style="text-align: center;">xfs_repair</td>
+<td style="text-align: left;">تعمیر مشکلات</td>
+</tr>
+<tr>
+<td style="text-align: center;">XFS</td>
+<td style="text-align: center;">xfs_db</td>
+<td style="text-align: left;">فایل سیستم را بررسی و رفع اشکال می کند</td>
+</tr>
+</tbody>
+</table></div>
+                </div>
+
+                <div class="chapter-pager"><a href="1041_create_partitions_and_filesystems.html" class="pager-btn prev-btn"><span class="pager-hint">← درس قبلی</span><span class="pager-title">104.1 ایجاد پارتیشن (Partition) و فایل سیستم</span></a><a href="1043_control_mounting_and_unmounting_of_filesystems.html" class="pager-btn next-btn"><span class="pager-hint">درس بعدی →</span><span class="pager-title">104.3 نصب و جداسازی فایل سیستم ها را کنترل کنید</span></a></div>
+            </article>
+            
+            <footer class="site-footer">
+                <p>مبتنی بر کتاب و ویدیوهای آزاد LPIC-1 جادی (linux1st.com) • بازآفرینی شده با طراحی فارسی، قلم وزیرمتن و پشتیبانی کامل راست‌چین</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal(event)">
+        <div class="search-modal-dialog">
+            <div class="search-input-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="جستجو در تمام سرفصل‌ها و درس‌ها..." oninput="handleSearch(this.value)">
+                <button class="search-close-btn" onclick="closeSearchModal(null, true)">Esc</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
