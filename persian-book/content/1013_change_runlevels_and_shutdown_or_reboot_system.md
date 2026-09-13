@@ -23,15 +23,15 @@ Topic: System Architecture
 ## فهرستی جزئی از فایل‌ها، اصطلاحات و ابزارهای استفاده شده در زیر آمده است:
 
 - `/etc/inittab`
-- خاموش شدن
-- شروع
+- shutdown
+- init
 - `/etc/init.d/`
 - telinit
-- سیستم شده
+- systemd
 - systemctl
 - `/etc/systemd/`
 - `/usr/lib/systemd/`
-- دیوار
+- wall
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1mOKv5LsPsw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -39,7 +39,7 @@ Topic: System Architecture
 
 Runlevel ها تعریف می کنند که چه وظایفی را می توان در وضعیت فعلی \(یا runlevel\) یک سیستم لینوکس انجام داد. به آن به عنوان مراحل مختلف *زنده بودن* فکر کنید.
 
-### سیستم شده
+### systemd
 در systemd، ما اهداف مختلفی داریم که گروه‌هایی از خدمات هستند:
 
 ```
